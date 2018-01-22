@@ -1,0 +1,51 @@
+.btn-yoggie-landing {
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 32px 32px;
+    font-size: 14px;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3);
+    text-decoration: none;
+    color: white;
+    background-color: #91B060;
+    letter-spacing: 1px;
+}
+.btn-yoggie-landing:hover {
+    opacity: 0.9;
+    text-decoration: none;
+    color: white;
+}
+
+.btn-yoggie-main {
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 15px 20px;
+    font-size: 14px;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3);
+    text-decoration: none;
+    color: white;
+    background-color: #91B060;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+.btn-yoggie-main:hover {
+    opacity: 0.9;
+    text-decoration: none;
+    color: white;
+}
+

@@ -1,1 +1,56 @@
-// Specific CSS for your home-page
+.yoggie-intro {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	img {
+		width: 400px;
+	    margin: 25px 50px 0 50px;
+	    height: 300px;
+	    border-radius: 10px;
+	}
+	ul {
+		margin-top: 10px;
+		font-weight: lighter;
+	}
+	p {
+		font-weight: lighter;
+	}
+}
+.intro-standard-yoggie {
+	width: 550px;
+}
+.intro-tailored-yoggie {
+	width: 450px;
+	padding-top: 50px;
+}
+.how-it-works {
+	background-color: #F0EBE7;
+	img {
+		width: 100px;
+	    margin: 15px 50px 0 50px;
+	    height: 100px;
+	    border-radius: 10px;
+	}
+	p {
+		font-weight: lighter;
+	}
+}
+.how-it-works-left {
+	display: flex;
+	padding: 20px;
+	justify-content: center;
+	align-items: center;
+	text-align: right;
+	margin-right: 200px;
+}
+.how-it-works-right {
+	display: flex;
+	padding: 20px;
+	justify-content: center;
+	align-items: center;
+	text-align: left;
+	margin-left: 200px;
+}
+.how-it-works-text {
+	width: 400px;
+}
