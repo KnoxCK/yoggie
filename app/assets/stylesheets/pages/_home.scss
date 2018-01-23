@@ -23,8 +23,11 @@
 	width: 450px;
 	padding-top: 50px;
 }
-.how-it-works {
+.how-it-works-section {
+	position: relative;
 	background-color: #F0EBE7;
+}
+.how-it-works {
 	img {
 		width: 100px;
 	    margin: 15px 50px 0 50px;
@@ -34,6 +37,9 @@
 	p {
 		font-weight: lighter;
 	}
+}
+.border-fade img {
+	width: 100%;
 }
 .how-it-works-left {
 	display: flex;
@@ -54,3 +60,82 @@
 .how-it-works-text {
 	width: 400px;
 }
+.about-our-yoggies {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	img {
+		width: 70%;
+		height: auto;
+		margin-top: 64px;
+		margin-bottom: 50px;
+	}
+}
+.your-box {
+	background-image: url("http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516711519/Asset_3_wfzioj.png");
+	color: #393939;
+	text-align: center;
+	height: 857px;
+	width: 100%;
+	background-size: cover !important;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+}
+.your-box-content {
+  background-color: white;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 60px;
+  border-radius: 15px;
+  width: 530px;
+  margin-left: 8vw;
+  text-align: left;
+  p {
+  	margin-top: 40px;
+  }
+}
+.testimonials-section {
+	h2 {
+		text-align: center;
+	}
+}
+.testimonials {
+	display: flex;
+	align-items: center;
+	justify-content: center; 
+	align-content: center;
+}
+.testimonial {
+	border-radius: 15px;
+	width: 250px;
+	padding: 20px 10px 0px 20px;
+	margin: 40px 7px;
+	span {
+		text-align: center;
+		font-size: 14px;
+		font-weight: bold;
+	}
+}
+.testimonial-orange {
+	border: 2px dotted #F77449;
+}
+.testimonial-blue {
+	border: 2px dotted #1DA8CB;
+}
+.testimonial-red {
+	border: 2px dotted #FB0039;
+}
+.testimonial-green {
+	border: 2px dotted #0D6D5B;
+}
+
+
+
+
+
+
+
+
