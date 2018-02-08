@@ -10,25 +10,34 @@
   align-items: center;
   justify-content: left;
   h1 {
-    font-size: 50px;
-    font-weight: normal;
+    font-size: 45px;
+    font-weight: lighter;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    line-height: 54px;
   }
   p {
     font-size: 18px;
     font-weight: lighter;
     color: #393939;
   }
+  // a {
+  //   word-wrap: break-word;
+  // }
 }
 .banner-content {
   background-color: white;
   background: rgba(255, 255, 255, 0.7);
-  padding: 60px;
-  border-radius: 15px;
+  padding: 45px 42px 42px 42px;
+  border-radius: 12px;
   width: 530px;
   margin-left: 8vw;
+  margin-top: 52px;
+  p {
+    margin-bottom: 36px;
+    margin-top: 29px;
+    font-size: 21px;
+  }
 }
-
 .our-smoothies-banner {
   background-image: url('http://res.cloudinary.com/dqxvcdy6w/image/upload/v1517226527/Yoggie-smoothies-banner_niwlmx.jpg');
   color: #393939;
