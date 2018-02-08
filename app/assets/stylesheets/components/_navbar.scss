@@ -3,7 +3,7 @@
   // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: transparent;
   transition: all 0.3s ease;
-  height: 100px;
+  height: 90px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -32,6 +32,10 @@
   i {
     padding: 1px;
     color: #97B564;
+    margin-right: 3px;
+  }
+  a:hover {
+    text-decoration: none;
   }
 }
 
@@ -43,12 +47,14 @@
 .main-nav {
   font-weight: lighter;
 }
+
 /* Navbar link */
 .navbar-yoggie-link {
   color: #393939;
   font-size: 16px;
   text-decoration: none;
   padding-left: 40px;
+  letter-spacing: 0.5px;
 }
 .navbar-yoggie-link:hover {
   color: #FC0F42;
@@ -86,10 +92,10 @@
   border-top: 1px solid #E6E6E6;
 }
 
-
 // on landing scroll only
 .navbar-yoggie-scroll {
   background: white;  
+  //background: rgba(255, 255, 255, 0.8);
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -101,10 +107,30 @@
   box-shadow: 1px 1px 1px #D9D9D9;
 }
 .navbar-yoggie-brand-scroll img {
-  height: 50px;
+  height: 47px;
   margin-top: 5px;
-  margin-left: 13px;
+  margin-left: 17px;
 }
-
+.navbar-yoggie-social-scroll {
+  position: absolute;
+  right: 298px;
+  margin-top: 2px;
+  text-decoration: none;
+  p {
+    text-decoration: none;
+  }
+  i {
+    padding: 1px;
+    color: #97B564;
+    margin-right: 3px;
+  }
+  i:hover {
+    padding: 1px;
+    color: #FC0F42;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
 
 

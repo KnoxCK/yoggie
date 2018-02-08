@@ -4,28 +4,42 @@
 	align-items: center;
 	h2 {
 		font-weight: lighter;
+		margin-bottom: 22px;
 	}
-	img {
-		width: 400px;
-	    margin: 25px 50px 0 50px;
-	    height: 300px;
-	    border-radius: 10px;
+	p {
+		font-weight: lighter;
+		margin-bottom: 20px;
 	}
 	ul {
 		margin-top: 10px;
 		font-weight: lighter;
-		padding-left: 18px;
+		padding-left: 14px;
 	}
-	p {
-		font-weight: lighter;
+}
+.intro-standard-section {
+	img {
+		width: 450px;
+	    margin: 36px 90px 0 0;
+	    height: 365px;
+	    border-radius: 8px;
+	}
+}
+.intro-tailored-section {
+	margin-top: 95px;
+	img {
+		width: 450px;
+	    margin-left: 80px;
+	    height: 365px;
+	    border-radius: 8px;
+	    margin-top: 28px;
 	}
 }
 .intro-standard-yoggie {
-	width: 550px;
+	width: 400px;
 }
 .intro-tailored-yoggie {
-	width: 450px;
-	padding-top: 50px;
+	width: 400px;
+	margin-left: 50px;
 }
 .how-it-works-section {
 	position: relative;

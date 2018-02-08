@@ -50,8 +50,8 @@
     <%= link_to "About Our Yoggies", root_path(:anchor => "about-yoggies"), class: "navbar-yoggie-link"  %>
     <%= link_to "Yoggie Flavours", smoothies_path, class: "navbar-yoggie-link"  %>
   </div>
-
-  <div class="navbar-yoggie-social">
+  
+  <div class="navbar-yoggie-social-scroll">
     <%= link_to "https://www.facebook.com/yoggie", target: "_blank" do %>
       <i class="fa fa-facebook"></i>
     <% end %>
@@ -62,7 +62,8 @@
       <i class="fa fa-instagram"></i>
     <% end %>
   </div>
-  
+
+  <%= link_to "CREATE MY PERFECT SMOOTHIE", "#", class: 'btn-navbar-scroll' %>
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-yoggie-item hidden-md hidden-lg">
