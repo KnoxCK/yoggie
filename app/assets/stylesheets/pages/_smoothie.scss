@@ -74,7 +74,7 @@
 .standard-yoggie-nutrition-top {
 	display: flex;
 	justify-content: space-between;
-	padding: 0 50px;
+	padding: 0 20px 0 50px;
 }
 .standard-yoggie-nutrition-right {
 	width: 50%;
@@ -88,6 +88,7 @@
 .macro {
 	display: flex;
 	justify-content: space-between;
+	margin-top: 10px;
 }
 .nutrition-bottom-right {
 	ul {

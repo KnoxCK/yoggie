@@ -3,18 +3,19 @@
   // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: transparent;
   transition: all 0.3s ease;
-  height: 70px;
+  height: 100px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   z-index: 1000;
   position: fixed;
+  width: 100%;
 }
 
 /* Logo */
 .navbar-yoggie-brand img {
   height: 50px;
+  margin-left: 13px;
 }
 
 /* User Avatar */
@@ -24,11 +25,14 @@
   border-radius: 50%;
 }
 
-/* Right section */
-.navbar-yoggie-right {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.navbar-yoggie-social {
+  position: absolute;
+  right: 50px;
+  margin-top: 2px;
+  i {
+    padding: 1px;
+    color: #97B564;
+  }
 }
 
 /* Basic navbar item */
@@ -36,16 +40,15 @@
   cursor: pointer;
   padding: 0 20px;
 }
-
 .main-nav {
-  margin-left: 20px;
+  font-weight: lighter;
 }
 /* Navbar link */
 .navbar-yoggie-link {
   color: #393939;
   font-size: 16px;
   text-decoration: none;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 .navbar-yoggie-link:hover {
   color: #FC0F42;
@@ -82,3 +85,26 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+
+// on landing scroll only
+.navbar-yoggie-scroll {
+  background: white;  
+  transition: all 0.3s ease;
+  height: 70px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  box-shadow: 1px 1px 1px #D9D9D9;
+}
+.navbar-yoggie-brand-scroll img {
+  height: 50px;
+  margin-top: 5px;
+  margin-left: 13px;
+}
+
+
+
