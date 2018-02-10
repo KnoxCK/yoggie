@@ -1,0 +1,2 @@
+class Shake < ApplicationRecord
+end
