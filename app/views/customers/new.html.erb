@@ -1,12 +1,16 @@
-<%= simple_form_for @customer do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :age %>
-  <%= f.input :gender %>
-  <%= f.input :height %>
-  <%= f.input :weight %>
-  <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVELS.map{|a|a.humanize} %>
-  <%= f.input :goal, as: :select, collection: Customer::GOALS.map{|g|g.humanize} %>
-  <%= f.input :newsletter %>
-  <%= f.submit %>
-<% end %>
+<div class="form-wrapper">
+  <%= simple_form_for @customer do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :phone %>
+    <%= f.input :age %>
+    <%= f.input :gender, as: :select, collection: Customer::GENDER.map{|g|g.humanize} %>
+    <%= f.input :height %>
+    <%= f.input :weight %>
+    <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys.map{|a|a.humanize} %>
+    <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys.map{|g|g.humanize} %>
+    <%= f.input :newsletter %>
+    <%= f.submit %>
+  <% end %>
+</div>
