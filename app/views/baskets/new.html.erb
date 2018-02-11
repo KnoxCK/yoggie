@@ -1,3 +1,8 @@
 <h1>Baskets#new</h1>
 <p>Find me in app/views/baskets/new.html.erb</p>
-<%= link_to 'Proceed', new_customer_address_path(@customer) %>
+<%= simple_form_for [@customer, @basket] do |f| %>
+  <% @shakes.each do |shake| %>
+    <%= f.hidden_field :shake_id, value: shake %>
+  <% end %>
+<%= f.submit 'Proceed' %>
+<% end %>
