@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'smoothies', to: 'pages#smoothies'
   get 'smoothie', to: 'pages#smoothie'
 
-  resources :customers
+  resources :customers do
+    resources :baskets
+    resources :addresses
+    resources :orders
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

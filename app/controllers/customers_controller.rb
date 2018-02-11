@@ -7,11 +7,17 @@ class CustomersController < ApplicationController
   end
 
   def create
-    @customer = Customer.create(customer_params)
-    redirect_to customer_path(@customer)
+    @customer = Customer.new(customer_params)
+    if @customer.save
+      # calculate shit
+    else
+      render :new
+    end
+    redirect_to new_customer_basket_path(@customer)
   end
 
   def show
+    @basket = @customer.basket
   end
 
   def edit

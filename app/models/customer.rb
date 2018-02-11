@@ -2,8 +2,10 @@ class Customer < ApplicationRecord
   has_one :basket
   has_one :address
 
-  validates_presence_of :first_name, :last_name, :age, :gender, :activity_level
-  validates_presence_of :goal, :height, :weight
+  # validates_presence_of :first_name, :last_name, :age, :gender, :activity_level
+  # validates_presence_of :goal, :height, :weight
+
+  accepts_nested_attributes_for :address
 
   ACTIVITY_LEVEL_MULTIPLIERS = {
     'sedentary' => 1.1,
