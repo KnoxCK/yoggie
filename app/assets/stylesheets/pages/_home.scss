@@ -43,13 +43,12 @@
 }
 .how-it-works-section {
 	position: relative;
-	background-color: #F0EBE7;
+	background-color: #F8F9F5;
 }
 .how-it-works {
 	img {
-		width: 100px;
-	    margin: 15px 50px 0 50px;
-	    height: 100px;
+		width: 436px;
+	    height: auto;
 	    border-radius: 10px;
 	}
 	p {
@@ -59,21 +58,35 @@
 .border-fade img {
 	width: 100%;
 }
-.how-it-works-left {
+.how-it-works-recipe {
 	display: flex;
-	padding: 20px;
 	justify-content: center;
 	align-items: center;
 	text-align: right;
-	margin-right: 200px;
+	margin-right: 95px;
+	height: 300px;
 }
-.how-it-works-right {
+.how-it-works-deliver {
 	display: flex;
-	padding: 20px;
 	justify-content: center;
 	align-items: center;
 	text-align: left;
-	margin-left: 200px;
+	height: 300px;
+	img {
+		margin-right: 35px;
+	}
+}
+.how-it-works-making {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: right;
+	margin-right: 33px;
+	height: 300px;
+	img {
+		margin-left: 70px;
+		width: 338px;
+	}
 }
 .how-it-works-text {
 	width: 400px;
@@ -113,6 +126,9 @@
   text-align: left;
   p {
   	margin-top: 40px;
+  }
+  ul {
+  	padding-left: 14px;
   }
 }
 .testimonials-section {
