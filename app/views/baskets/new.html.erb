@@ -1,7 +1,19 @@
-<h1>Baskets#new</h1>
-<p>Find me in app/views/baskets/new.html.erb</p>
+<h1>Your Results</h1>
+<p>Based on your data we have calculated the following:</p>
+<p>Your BMR: <%= @customer.bmr %></p>
+<p>Your Total Daily Energy Expenditure: <%= @customer.tdee %></p>
+<p>Daily Target Caloric Intake: <%= @customer.daily_calorie_goal %></p>
+<p>Calories per Smoothie: <%= @customer.calories_per_shake %></p>
+<p>Percentage Protein: <%= @customer.protein %></p>
+<p>Percentage Fat: <%= @customer.fat %></p>
+<p>Percentage Carbohydrate: <%= @customer.carbs %></p>
+
+And, this is your tailored yoggie program:
+
 <%= simple_form_for [@customer, @basket] do |f| %>
   <% @shakes.each do |shake| %>
+    <p><%= shake.name %></p>
+    <%= shake.photo %>
     <%= f.hidden_field :shake_id, value: shake %>
   <% end %>
 <%= f.submit 'Proceed' %>
