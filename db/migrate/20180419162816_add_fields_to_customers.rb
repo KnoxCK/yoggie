@@ -7,5 +7,6 @@ class AddFieldsToCustomers < ActiveRecord::Migration[5.0]
     add_column :customers, :protein, :integer
     add_column :customers, :fat, :integer
     add_column :customers, :carbs, :integer
+    add_column :customers, :meals_per_day, :integer, default: 3
   end
 end

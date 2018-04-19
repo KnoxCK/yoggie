@@ -4,7 +4,8 @@ class ProteinCalculator
   end
 
   def percent_protein
-    protein_calories_per_shake / CalorieCalculator.new(customer).calories_per_shake
+    percentage = (protein_calories_per_shake / CalorieCalculator.new(customer).calories_per_shake) * 100
+    percentage.round(0)
   end
 
   private

@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20180419162816) do
     t.integer  "protein"
     t.integer  "fat"
     t.integer  "carbs"
+    t.integer  "meals_per_day",      default: 3
   end
 
   create_table "orders", force: :cascade do |t|

@@ -4,7 +4,8 @@ class FatCalculator
   end
 
   def percent_fat
-    fat_calories_per_shake / CalorieCalculator.new(customer).calories_per_shake
+    percentage = (fat_calories_per_shake / CalorieCalculator.new(customer).calories_per_shake) * 100
+    percentage.round(0)
   end
 
   GOAL_FAT_PER_KG = {
