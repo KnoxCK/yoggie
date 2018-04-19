@@ -9,9 +9,9 @@ class FatCalculator
   end
 
   GOAL_FAT_PER_KG = {
-    'lose_fat' => 0.5,
-    'maintain' => 0.625,
-    'gain_muscle' => 0.75
+    'Lose Fat' => 0.5,
+    'Health Boost' => 0.625,
+    'Gain Muscle' => 0.75
   }
 
   private

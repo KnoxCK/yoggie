@@ -4,8 +4,8 @@
     <%= f.input :age %>
     <%= f.input :height %>
     <%= f.input :weight %>
-    <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys.map{|a|a.humanize} %>
-    <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys.map{|g|g.humanize} %>
+    <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys %>
+    <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys %>
     <%= f.submit %>
   <% end %>
 </div>

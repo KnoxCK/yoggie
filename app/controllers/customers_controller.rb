@@ -10,10 +10,10 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
     if @customer.save
       @customer.calculate_stats
+      redirect_to new_customer_basket_path(@customer)
     else
       render :new
     end
-    redirect_to new_customer_basket_path(@customer)
   end
 
   def show
