@@ -21,4 +21,16 @@ class Customer < ApplicationRecord
   }.freeze
 
   GENDER = ['male', 'female'].freeze
+
+  def calculate_stats
+    update(
+      bmr: calculate_bmr,
+      tdee: calculate_TDEE,
+      daily_calorie_goal: calculate_daily_calories,
+      calories_per_shake: calculate_shake_calories,
+      protein: calculate_protein,
+      fat: calculate_fat,
+      carbs: calculate_carbs
+      )
+  end
 end

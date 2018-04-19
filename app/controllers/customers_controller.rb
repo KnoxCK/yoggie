@@ -9,7 +9,7 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     if @customer.save
-      # calculate shit and save to customer
+      @customer.calculate_stats
     else
       render :new
     end

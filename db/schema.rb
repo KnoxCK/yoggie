@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180210123202) do
+ActiveRecord::Schema.define(version: 20180419162816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,10 +47,17 @@ ActiveRecord::Schema.define(version: 20180210123202) do
     t.integer  "height"
     t.string   "activity_level"
     t.string   "goal"
-    t.boolean  "newsletter",     default: false
+    t.boolean  "newsletter",         default: false
     t.string   "postcode"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "bmr"
+    t.integer  "tdee"
+    t.integer  "daily_calorie_goal"
+    t.integer  "calories_per_shake"
+    t.integer  "protein"
+    t.integer  "fat"
+    t.integer  "carbs"
   end
 
   create_table "orders", force: :cascade do |t|

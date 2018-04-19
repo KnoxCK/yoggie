@@ -7,13 +7,14 @@ class CalorieCalculator
     daily_calories / customer.meals_per_day
   end
 
+  def TDEE
+    BMRCalculator.new(customer).calculate * Customer::ACTIVITY_LEVEL_MULTIPLIERS[customer.activity_level]
+  end
+
   private
 
   attr_reader :customer
 
-  def TDEE
-    BMRCalculator.new(customer).calculate * Customer::ACTIVITY_LEVEL_MULTIPLIERS[customer.activity_level]
-  end
 
   def daily_calories
     TDEE * Customer::GOAL_MULTIPLIERS[customer.goal]
