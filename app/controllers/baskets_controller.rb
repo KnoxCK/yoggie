@@ -16,14 +16,16 @@ class BasketsController < ApplicationController
     if @basket.save
       redirect_to new_customer_address_path
     else
-      @shakes = Shake.fetch_bundle(@customer.protein)
+      # @shakes = Shake.fetch_bundle(@customer.protein)
+      @shakes = [1,2,3,4,5]
       render :new
     end
   end
 
   def new
     @basket = Basket.new(customer_id: @customer.id)
-    @shakes = Shake.fetch_bundle(@customer.protein)
+    # @shakes = Shake.fetch_bundle(@customer.protein)
+    @shakes = [1,2,3,4,5]
   end
 
   private

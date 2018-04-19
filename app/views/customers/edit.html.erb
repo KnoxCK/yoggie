@@ -1,2 +1,10 @@
-<h1>Customers#edit</h1>
-<p>Find me in app/views/customers/edit.html.erb</p>
+<div class="form-wrapper">
+  <%= simple_form_for @customer do |f| %>
+    <%= f.input :first_name, as: :select, collection: Customer::GENDER.map{|g|g.humanize} %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :postcode %>
+    <%= f.input :newsletterm label: 'I would like to subscribe to the newsletter' %>
+    <%= f.submit %>
+  <% end %>
+</div>
