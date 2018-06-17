@@ -15,9 +15,9 @@ class Customer < ApplicationRecord
   }.freeze
 
   GOAL_MULTIPLIERS = {
-    'Lose Fat' => 0.5,
-    'Health Boost' => 0.625,
-    'Gain Muscle' => 0.75
+    'Lose Fat' => 0.8,
+    'Health Boost' => 1,
+    'Gain Muscle' => 1.1
   }.freeze
 
   GENDER = ['male', 'female'].freeze
