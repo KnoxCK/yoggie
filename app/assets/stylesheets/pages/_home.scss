@@ -21,7 +21,7 @@
 		width: 450px;
 	    margin: 36px 90px 0 0;
 	    height: 365px;
-	    border-radius: 8px;
+	    border-radius: 4px;
 	}
 }
 .intro-tailored-section {
@@ -30,7 +30,7 @@
 		width: 450px;
 	    margin-left: 80px;
 	    height: 365px;
-	    border-radius: 8px;
+	    border-radius: 4px;
 	    margin-top: 28px;
 	}
 }
@@ -43,9 +43,12 @@
 }
 .how-it-works-section {
 	position: relative;
-	background-color: #F8F9F5;
+	background-color: #F0EBE7;
 }
 .how-it-works {
+	h2 {
+		font-weight: lighter;
+	}
 	img {
 		width: 436px;
 	    height: auto;
@@ -97,6 +100,9 @@
 	justify-content: center;
 	align-content: center;
 	align-items: center;
+	h2 {
+		font-weight: lighter;
+	}
 	img {
 		width: 70%;
 		height: auto;
@@ -124,6 +130,9 @@
   width: 530px;
   margin-left: 8vw;
   text-align: left;
+  h2 {
+  	font-weight: lighter;
+  }
   p {
   	margin-top: 40px;
   }
@@ -135,6 +144,7 @@
 .testimonials-section {
 	h2 {
 		text-align: center;
+		font-weight: lighter;
 	}
 }
 .testimonials {

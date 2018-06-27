@@ -8,7 +8,7 @@
     cursor: pointer;
     background-image: none;
     white-space: nowrap;
-    padding: 32px 32px;
+    padding: 19px 23px;
     font-size: 16px;
     border-radius: 8px;
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3);
@@ -48,7 +48,7 @@
     text-decoration: none;
     color: white;
 }
-.btn-yoggie-main-white {
+.btn-yoggie-main-clear {
     display: inline-block;
     font-weight: lighter;
     text-align: center;
@@ -63,13 +63,13 @@
     border-radius: 8px;
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3);
     text-decoration: none;
-    color: #91B060;
-    background-color: #F8F9F5;
+    color: black;
+    background-color: transparent;
     letter-spacing: 1px;
     margin-top: 10px;
     border: #91B060 1px solid;
 }
-.btn-yoggie-main-white:hover {
+.btn-yoggie-main-clear:hover {
     background-color: #91B060;
     color: white;
     text-decoration: none;
