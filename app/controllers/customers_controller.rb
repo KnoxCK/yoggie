@@ -1,13 +1,17 @@
 class CustomersController < ApplicationController
-  skip_before_action :authenticate_user!
   before_action :set_customer, only: [:edit, :update, :show]
 
   def new
-    @customer = Customer.new
+    if current_user.customer
+      redirect_to edit_customer_path(current_user.customer)
+    else
+      @customer = Customer.new(user_id: current_user.id)
+    end
   end
 
   def create
     @customer = Customer.new(customer_params)
+    @customer.user = current_user
     if @customer.save
       @customer.calculate_stats
       redirect_to new_customer_basket_path(@customer)
