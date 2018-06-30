@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180617164127) do
+ActiveRecord::Schema.define(version: 20180630120816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 20180617164127) do
     t.integer  "carbs"
     t.integer  "meals_per_day",      default: 3
     t.boolean  "accepted_terms",     default: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_customers_on_user_id", using: :btree
   end
 
   create_table "orders", force: :cascade do |t|
@@ -100,5 +102,6 @@ ActiveRecord::Schema.define(version: 20180617164127) do
   add_foreign_key "addresses", "customers"
   add_foreign_key "baskets", "customers"
   add_foreign_key "baskets", "shakes"
+  add_foreign_key "customers", "users"
   add_foreign_key "orders", "baskets"
 end
