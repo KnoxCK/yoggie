@@ -5,4 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :customer
+
+  validates_acceptance_of :accepted_terms, accept: true, on: :create
+
+  def check_postcode(postcode)
+    if ['SW17'].include?(postcode)
+      update(postcode: postcode, valid_postcode: true)
+    else
+      update(postcode: postcode, valid_postcode: false)
+    end
+  end
 end
