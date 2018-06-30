@@ -5,7 +5,11 @@ class CustomersController < ApplicationController
     if current_user.customer
       redirect_to edit_customer_path(current_user.customer)
     else
-      @customer = Customer.new(user_id: current_user.id)
+      if current_user.valid_postcode?
+        @customer = Customer.new(user_id: current_user.id)
+      else
+        redirect_to postcode_checker_user_path(current_user)
+      end
     end
   end
 
