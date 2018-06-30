@@ -8,6 +8,6 @@
     <%= f.input :weight %>
     <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys %>
     <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys %>
-    <%= f.submit %>
+    <%= f.submit 'Calculate my shit' %>
   <% end %>
 </div>
