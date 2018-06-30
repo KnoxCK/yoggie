@@ -1,5 +1,7 @@
 <div class="form-wrapper">
   <%= simple_form_for @customer do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
     <%= f.input :gender, as: :select, collection: Customer::GENDER.map{|g|g.humanize} %>
     <%= f.input :age %>
     <%= f.input :height %>

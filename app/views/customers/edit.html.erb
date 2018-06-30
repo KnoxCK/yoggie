@@ -2,10 +2,12 @@
   <%= simple_form_for @customer do |f| %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
-    <%= f.input :email %>
-    <%= f.input :postcode %>
-    <%= f.input :accepted_terms, label: 'I agree to Yoggie\'s Terms' %>
-    <%= f.input :newsletter, label: 'I would like to subscribe to the newsletter' %>
+    <%= f.input :gender, as: :select, collection: Customer::GENDER.map{|g|g.humanize} %>
+    <%= f.input :age %>
+    <%= f.input :height %>
+    <%= f.input :weight %>
+    <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys %>
+    <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys %>
     <%= f.submit %>
   <% end %>
 </div>
