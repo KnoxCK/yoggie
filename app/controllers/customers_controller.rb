@@ -1,0 +1,54 @@
+class CustomersController < ApplicationController
+  before_action :set_customer, only: [:edit, :update, :show]
+
+  def new
+    if current_user.customer
+      redirect_to edit_customer_path(current_user.customer)
+    else
+      if current_user.valid_postcode?
+        @customer = Customer.new(user_id: current_user.id)
+      else
+        redirect_to postcode_checker_user_path(current_user)
+      end
+    end
+  end
+
+  def create
+    @customer = Customer.new(customer_params)
+    @customer.user = current_user
+    if @customer.save
+      @customer.calculate_stats
+      redirect_to new_customer_basket_path(@customer)
+    else
+      render :new
+    end
+  end
+
+  def show
+    @basket = @customer.basket
+  end
+
+  def edit
+  end
+
+  def update
+    if @customer.update(customer_params)
+      @customer.calculate_stats
+      redirect_to new_customer_basket_path(@customer)
+    else
+      render :edit
+    end
+  end
+
+  private
+
+  def set_customer
+    @customer = Customer.find(params[:id])
+  end
+
+  def customer_params
+    params.require(:customer).permit(:first_name, :last_name, :weight, :height,
+                                     :activity_level, :goal, :age, :gender,
+                                     :newsletter, :email, :phone)
+  end
+end
