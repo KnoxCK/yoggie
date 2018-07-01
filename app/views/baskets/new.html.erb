@@ -7,14 +7,3 @@
 <p>Percentage Protein: <%= @customer.protein %></p>
 <p>Percentage Fat: <%= @customer.fat %></p>
 <p>Percentage Carbohydrate: <%= @customer.carbs %></p>
-
-And, this is your tailored yoggie program:
-
-<%= simple_form_for [@customer, @basket] do |f| %>
-  <% @shakes.each do |shake| %>
-    <p><%#= shake.name %></p>
-    <%#= shake.photo %>
-    <%= f.hidden_field :shake_id, value: shake %>
-  <% end %>
-<%= f.submit 'Proceed' %>
-<% end %>
