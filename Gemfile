@@ -17,6 +17,7 @@ gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 gem 'sass-rails'
 gem 'simple_form'
+gem 'uk_postcode', '~> 2.1.0'
 gem 'uglifier'
 
 group :development, :test do

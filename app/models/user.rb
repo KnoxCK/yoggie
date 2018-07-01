@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  require 'uk_postcode'
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,8 +9,10 @@ class User < ApplicationRecord
 
   validates_acceptance_of :accepted_terms, accept: true, on: :create
 
-  def check_postcode(postcode)
-    if ['SW17'].include?(postcode)
+  def check_postcode(inputted_postcode)
+    postcode = inputted_postcode.tr(' ', '').upcase
+    postcode_area = UKPostcode.parse(postcode).area
+    if Addresses::DELIVERY_AREAS.include?(postcode_area)
       update(postcode: postcode, valid_postcode: true)
     else
       update(postcode: postcode, valid_postcode: false)
