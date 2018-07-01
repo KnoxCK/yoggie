@@ -18,3 +18,5 @@
 <p>Percentage Protein: <%= @customer.protein %></p>
 <p>Percentage Fat: <%= @customer.fat %></p>
 <p>Percentage Carbohydrate: <%= @customer.carbs %></p>
+
+<%= link_to 'Change my vitals and recalculate', edit_customer_path(@customer) %>

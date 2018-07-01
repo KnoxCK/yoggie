@@ -32,8 +32,12 @@ class CustomersController < ApplicationController
   end
 
   def update
-    @customer.update(customer_params)
-    redirect_to customer_path(@customer)
+    if @customer.update(customer_params)
+      @customer.calculate_stats
+      redirect_to new_customer_basket_path(@customer)
+    else
+      render :edit
+    end
   end
 
   private
