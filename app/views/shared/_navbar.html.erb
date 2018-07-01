@@ -12,6 +12,7 @@
 
   <div class="navbar-yoggie-social">
     <% if current_user %>
+      <%= link_to 'My Dashboard', customer_path(current_user.customer) %>
       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to 'Sign In', new_user_session_path %>

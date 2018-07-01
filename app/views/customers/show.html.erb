@@ -1,2 +1,20 @@
-<h1>Customers#show</h1>
-<p>Find me in app/views/customers/show.html.erb</p>
+<div style="margin-bottom:100px;"></div>
+<h2><%= @customer.first_name %></h2>
+<h2><%= @customer.last_name %></h2>
+<h1>My Vitals</h1>
+<p>Age: <%= @customer.age %></p>
+<p>Gender: <%= @customer.gender %></p>
+<p>Height: <%= @customer.height %></p>
+<p>Weight: <%= @customer.weight %></p>
+<p>Meals per day: <%= @customer.meals_per_day %></p>
+<p>Activity Level: <%= @customer.activity_level %></p>
+<p>Goal: <%= @customer.goal %></p>
+
+<h1>My Customisation</h1>
+<p>Your BMR: <%= @customer.bmr %></p>
+<p>Your Total Daily Energy Expenditure: <%= @customer.tdee %></p>
+<p>Daily Target Caloric Intake: <%= @customer.daily_calorie_goal %></p>
+<p>Calories per Smoothie: <%= @customer.calories_per_shake %></p>
+<p>Percentage Protein: <%= @customer.protein %></p>
+<p>Percentage Fat: <%= @customer.fat %></p>
+<p>Percentage Carbohydrate: <%= @customer.carbs %></p>
