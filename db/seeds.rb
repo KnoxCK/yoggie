@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Group.find_or_create_by(name: 'A')
-# Group.find_or_create_by(name: 'B')
-# Group.find_or_create_by(name: 'C')
+Group.find_or_create_by(name: 'A')
+Group.find_or_create_by(name: 'B')
+Group.find_or_create_by(name: 'C')
 
-# Size.find_or_create_by(name: , kcal: 200)
-# Size.find_or_create_by(name: , kcal: 325)
-# Size.find_or_create_by(name: , kcal: 450)
-# Size.find_or_create_by(name: , kcal: 575)
-# Size.find_or_create_by(name: , kcal: 700)
+Size.find_or_create_by(name: , kcal: 200)
+Size.find_or_create_by(name: , kcal: 325)
+Size.find_or_create_by(name: , kcal: 450)
+Size.find_or_create_by(name: , kcal: 575)
+Size.find_or_create_by(name: , kcal: 700)
 
 # Shake.all.destroy_all
 
