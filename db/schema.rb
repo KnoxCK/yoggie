@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180630151002) do
+ActiveRecord::Schema.define(version: 20180710135318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +29,14 @@ ActiveRecord::Schema.define(version: 20180630151002) do
 
   create_table "baskets", force: :cascade do |t|
     t.integer  "customer_id"
-    t.integer  "shake_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["customer_id"], name: "index_baskets_on_customer_id", using: :btree
-    t.index ["shake_id"], name: "index_baskets_on_shake_id", using: :btree
+  end
+
+  create_table "baskets_shakes", id: false, force: :cascade do |t|
+    t.integer "shake_id",  null: false
+    t.integer "basket_id", null: false
   end
 
   create_table "customers", force: :cascade do |t|
@@ -60,6 +63,11 @@ ActiveRecord::Schema.define(version: 20180630151002) do
     t.index ["user_id"], name: "index_customers_on_user_id", using: :btree
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.string  "name"
+    t.integer "protein"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer  "basket_id"
     t.float    "amount"
@@ -70,11 +78,24 @@ ActiveRecord::Schema.define(version: 20180630151002) do
 
   create_table "shakes", force: :cascade do |t|
     t.string   "name"
-    t.string   "group"
-    t.integer  "size"
-    t.float    "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "size_id"
+    t.integer  "group_id"
+    t.string   "image"
+    t.string   "logo"
+    t.text     "great_with"
+    t.text     "ingredient_description"
+    t.text     "story"
+    t.text     "when"
+    t.text     "benefits_one"
+    t.text     "benefits_two"
+    t.text     "benefits_three"
+  end
+
+  create_table "sizes", force: :cascade do |t|
+    t.string  "name"
+    t.integer "kcal"
   end
 
   create_table "users", force: :cascade do |t|
@@ -101,7 +122,6 @@ ActiveRecord::Schema.define(version: 20180630151002) do
 
   add_foreign_key "addresses", "customers"
   add_foreign_key "baskets", "customers"
-  add_foreign_key "baskets", "shakes"
   add_foreign_key "customers", "users"
   add_foreign_key "orders", "baskets"
 end
