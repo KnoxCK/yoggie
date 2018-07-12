@@ -11,7 +11,6 @@ class User < ApplicationRecord
 
   def check_postcode(inputted_postcode)
     postcode = inputted_postcode.tr(' ', '').upcase
-    byebug
     postcode_outcode = UKPostcode.parse(postcode).outcode
     if Address::DELIVERY_AREAS.include?(postcode_outcode)
       update(postcode: postcode, valid_postcode: true)
