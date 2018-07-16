@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180710144221) do
+ActiveRecord::Schema.define(version: 20180716180017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,9 +27,13 @@ ActiveRecord::Schema.define(version: 20180710144221) do
     t.index ["customer_id"], name: "index_addresses_on_customer_id", using: :btree
   end
 
-  create_table "basket_shakes", id: false, force: :cascade do |t|
-    t.integer "shake_id",  null: false
-    t.integer "basket_id", null: false
+  create_table "basket_smoothies", force: :cascade do |t|
+    t.integer  "basket_id"
+    t.integer  "smoothie_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["basket_id"], name: "index_basket_smoothies_on_basket_id", using: :btree
+    t.index ["smoothie_id"], name: "index_basket_smoothies_on_smoothie_id", using: :btree
   end
 
   create_table "baskets", force: :cascade do |t|
@@ -76,7 +80,12 @@ ActiveRecord::Schema.define(version: 20180710144221) do
     t.index ["basket_id"], name: "index_orders_on_basket_id", using: :btree
   end
 
-  create_table "shakes", force: :cascade do |t|
+  create_table "sizes", force: :cascade do |t|
+    t.string  "name"
+    t.integer "kcal"
+  end
+
+  create_table "smoothies", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -91,11 +100,6 @@ ActiveRecord::Schema.define(version: 20180710144221) do
     t.text     "benefits_one"
     t.text     "benefits_two"
     t.text     "benefits_three"
-  end
-
-  create_table "sizes", force: :cascade do |t|
-    t.string  "name"
-    t.integer "kcal"
   end
 
   create_table "users", force: :cascade do |t|
@@ -121,7 +125,11 @@ ActiveRecord::Schema.define(version: 20180710144221) do
   end
 
   add_foreign_key "addresses", "customers"
+  add_foreign_key "basket_smoothies", "baskets"
+  add_foreign_key "basket_smoothies", "smoothies", column: "smoothie_id"
   add_foreign_key "baskets", "customers"
   add_foreign_key "customers", "users"
   add_foreign_key "orders", "baskets"
+  add_foreign_key "smoothies", "groups"
+  add_foreign_key "smoothies", "sizes"
 end

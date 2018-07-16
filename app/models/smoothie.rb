@@ -1,4 +1,6 @@
-class Shake < ApplicationRecord
+class Smoothie < ApplicationRecord
+  has_many :basket_smoothies
+
   def self.fetch_bundle(protein)
     group = group_name(protein)
     where(group: group)

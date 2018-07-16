@@ -1,4 +1,4 @@
 class Basket < ApplicationRecord
   belongs_to :customer
-  has_many :shakes
+  has_many :basket_smoothies
 end
