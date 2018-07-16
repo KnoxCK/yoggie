@@ -7,3 +7,8 @@
 <p>Percentage Protein: <%= @customer.protein %></p>
 <p>Percentage Fat: <%= @customer.fat %></p>
 <p>Percentage Carbohydrate: <%= @customer.carbs %></p>
+
+
+<% @smoothies.each do |smoothie| %>
+  <p><%= smoothie.name %></p>
+<% end %>

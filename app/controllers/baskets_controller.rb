@@ -24,8 +24,7 @@ class BasketsController < ApplicationController
 
   def new
     @basket = Basket.new(customer_id: @customer.id)
-    # @shakes = Shake.fetch_bundle(@customer.protein)
-    @shakes = [1,2,3,4,5]
+    @smoothies = Smoothie.fetch_bundle(@customer)
   end
 
   private
