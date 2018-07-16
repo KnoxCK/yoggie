@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Group.find_or_create_by(name: 'A', protein:)
-Group.find_or_create_by(name: 'B', protein:)
-Group.find_or_create_by(name: 'C', protein:)
+Group.find_or_create_by(name: 'A', protein: 26)
+Group.find_or_create_by(name: 'B', protein: 36)
+Group.find_or_create_by(name: 'C', protein: 100)
 
 Size.find_or_create_by(name: 'i', kcal: 200)
 Size.find_or_create_by(name: 'ii', kcal: 325)
@@ -16,25 +16,33 @@ Size.find_or_create_by(name: 'iii', kcal: 450)
 Size.find_or_create_by(name: 'iv', kcal: 575)
 Size.find_or_create_by(name: 'v', kcal: 700)
 
-# Smoothie.all.destroy_all
+Smoothie.all.destroy_all
 
-# Smoothie.create(name: 'Apple Crumble' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: 200).id)
-# Smoothie.create(name: 'Blueberry' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: 325).id)
-# Smoothie.create(name: 'Choc & Nut' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: 450).id)
-# Smoothie.create(name: 'Tropical Fruit' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: 575).id)
-# Smoothie.create(name: 'Pomegranate & Banana' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: 700).id)
+[200, 325, 450, 575, 700].each do |cal|
+  Smoothie.create(name: 'Apple & Blackberry Crumble' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Peachy Mangos' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Crushed Cherries' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Berry Bomb' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Banana Split with Almonds' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Green Apple & Grapes' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Kiwi & Mango with Raisin' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
 
-# Smoothie.create(name: 'Pear & Cashew' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: 200).id)
-# Smoothie.create(name: 'Peach' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: 325).id)
-# Smoothie.create(name: 'Cherry' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: 450).id)
-# Smoothie.create(name: 'Lemon & Lime' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: 575).id)
-# Smoothie.create(name: 'Raspberry' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: 700).id)
+  Smoothie.create(name: 'Apple & Blackberry Crumble' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Strawberry' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Peachy Mangos' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Crushed Cherries' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Berry Bomb' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Tropical Fruit' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Kiwi & Mango' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
 
-# Smoothie.create(name: 'Espresso Martini' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: 200).id)
-# Smoothie.create(name: 'Vanilla & Strawberry' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: 325).id)
-# Smoothie.create(name: 'Grape' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: 450).id)
-# Smoothie.create(name: 'Apple & Cinnamon' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: 575).id)
-# Smoothie.create(name: 'Cacao & Vanilla' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: 700).id)
+  Smoothie.create(name: 'Blueberry' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Summer Fruit Salad' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Crushed Cherries' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Tropical Fruit' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Vanilla & Cocao' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Raspberry' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Kiwi & Mango' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
+end
 
 # NutritionalInfo.find_or_create_by(smoothie_id:)
 # NutritionalInfo.find_or_create_by(smoothie_id:)

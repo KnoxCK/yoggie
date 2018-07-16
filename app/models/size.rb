@@ -1,3 +1,3 @@
 class Size < ApplicationRecord
-  has_many :shakes
+  has_many :smoothies
 end
