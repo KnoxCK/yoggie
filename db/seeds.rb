@@ -23,7 +23,7 @@ Smoothie.all.destroy_all
   Smoothie.create(name: 'Peachy Mangos' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
   Smoothie.create(name: 'Crushed Cherries' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
   Smoothie.create(name: 'Berry Bomb' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Banana Split with Almonds' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Banana Split' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
   Smoothie.create(name: 'Green Apple & Grapes' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
   Smoothie.create(name: 'Kiwi & Mango with Raisin' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
 
@@ -39,9 +39,9 @@ Smoothie.all.destroy_all
   Smoothie.create(name: 'Summer Fruit Salad' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
   Smoothie.create(name: 'Crushed Cherries' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
   Smoothie.create(name: 'Tropical Fruit' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Vanilla & Cocao' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Cocao & Vanilla' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
   Smoothie.create(name: 'Raspberry' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Kiwi & Mango' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
+  Smoothie.create(name: 'Strawberry' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
 end
 
 # NutritionalInfo.find_or_create_by(smoothie_id:)
