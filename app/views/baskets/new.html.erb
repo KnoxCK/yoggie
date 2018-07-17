@@ -13,8 +13,17 @@
 <% end %>
 <%= form_for [@customer, @basket] do |b| %>
   <% @smoothies.each do |smoothie| %>
+  <div class="smoothie" data-id="<%= smoothie.id %>"></div>
     <p><%= smoothie.name %></p>
     <%= select_tag "quantity[#{smoothie.id}]", options_for_select([0, 1, 2, 3, 4, 5]) %>
   <% end %>
   <%= b.submit 'Add My Smoothies' %>
 <% end %>
+
+<div id="modal-container"></div>
+
+<script>
+  $('.smoothie').click(function(){
+    var smoothieId = $(this).data('id')
+  })
+</script>
