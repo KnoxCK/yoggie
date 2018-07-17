@@ -22,6 +22,7 @@ class BasketsController < ApplicationController
   def create
     @basket = Basket.create(customer_id: params[:customer_id])
     if check_quantity
+      @basket.add_smoothies(params[:quantity])
       redirect_to new_customer_address_path
     else
       @smoothies = Smoothie.fetch_bundle(@customer)
@@ -48,7 +49,6 @@ class BasketsController < ApplicationController
   def check_quantity
     total = 0
     params[:quantity].each_value {|q| total += q.to_i }
-    byebug
     total == 5
   end
 end

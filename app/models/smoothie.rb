@@ -2,6 +2,7 @@ class Smoothie < ApplicationRecord
   has_many :basket_smoothies
   belongs_to :group
   belongs_to :size
+  has_many :baskets, through: :basket_smoothies
 
   def self.fetch_bundle(customer)
     protein = customer.protein
