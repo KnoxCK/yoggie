@@ -1,0 +1,9 @@
+<div style="padding-top:200px;"></div>
+<%= form_tag customer_payments_path(@customer) do %>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-email="<%= @customer.user.email %>"
+          data-amount="500"
+          data-locale="auto"></script>
+<% end %>
