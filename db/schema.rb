@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180716180017) do
+ActiveRecord::Schema.define(version: 20180811205945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,8 +38,9 @@ ActiveRecord::Schema.define(version: 20180716180017) do
 
   create_table "baskets", force: :cascade do |t|
     t.integer  "customer_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "status",      default: "pending"
     t.index ["customer_id"], name: "index_baskets_on_customer_id", using: :btree
   end
 
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 20180716180017) do
     t.integer  "carbs"
     t.integer  "meals_per_day",      default: 3
     t.integer  "user_id"
+    t.string   "stripe_id"
     t.index ["user_id"], name: "index_customers_on_user_id", using: :btree
   end
 
@@ -126,7 +128,7 @@ ActiveRecord::Schema.define(version: 20180716180017) do
 
   add_foreign_key "addresses", "customers"
   add_foreign_key "basket_smoothies", "baskets"
-  add_foreign_key "basket_smoothies", "smoothies", column: "smoothie_id"
+  add_foreign_key "basket_smoothies", "smoothies"
   add_foreign_key "baskets", "customers"
   add_foreign_key "customers", "users"
   add_foreign_key "orders", "baskets"
