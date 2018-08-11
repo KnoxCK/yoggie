@@ -8,30 +8,22 @@ class PaymentsController < ApplicationController
 
   def create
 
-    if @customer.stripe_customer_id?
-      customer = Stripe::Customer.retrieve(@customer.stripe_customer_id)
-      plan = Stripe::Plan.retrieve("#{@customer.email}-#{@basket.id}")
+    if @customer.stripe_id?
+      customer = Stripe::Customer.retrieve(@customer.stripe_id)
     else
       customer = Stripe::Customer.create(
         source: params[:stripeToken],
-        email:  @customer.email,
-        )
-      plan = Stripe::Plan.create(
-        name:     "Customer #{@customer.id} - #{@customer.full_name}, Basket ##{@customer.basket.id}",
-        id:       "#{@customer.email}-#{@basket.id}",
-        interval: "week",
-        currency: "gbp",
-        amount:   4900,
+        email:  params[:stripeEmail]
         )
     end
 
     Stripe::Subscription.create(
       customer: customer.id,
-      plan: plan.id,
+      plan: 'plan_DOtRJy6h8Pv9dj'
     )
 
 
-    @customer.update(stripe_customer_id: customer.id)
+    @customer.update(stripe_id: customer.id)
     # @customer.basket.update(status: 'active')
     # OrderMailer.order_confirmation(@customer).deliver_now
     # OrderMailer.order_received(@customer).deliver_now
