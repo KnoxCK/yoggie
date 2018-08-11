@@ -1,6 +1,6 @@
 class Customer < ApplicationRecord
   belongs_to :user
-  has_many :baskets
+  has_one :basket
   has_one :address
 
   # validates_presence_of :first_name, :last_name, :age, :gender, :activity_level
@@ -22,6 +22,10 @@ class Customer < ApplicationRecord
   }.freeze
 
   GENDER = ['male', 'female'].freeze
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 
   def calculate_stats
     update(

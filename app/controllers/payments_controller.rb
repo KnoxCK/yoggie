@@ -3,65 +3,45 @@ class PaymentsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def new
+    @basket = @customer.basket
   end
 
   def create
-    @amount = 500
 
-    customer = Stripe::Customer.create(
-      :email => params[:stripeEmail],
-      :source  => params[:stripeToken]
+    if @customer.stripe_customer_id?
+      customer = Stripe::Customer.retrieve(@customer.stripe_customer_id)
+      plan = Stripe::Plan.retrieve("#{@customer.email}-#{@basket.id}")
+    else
+      customer = Stripe::Customer.create(
+        source: params[:stripeToken],
+        email:  @customer.email,
+        )
+      plan = Stripe::Plan.create(
+        name:     "Customer #{@customer.id} - #{@customer.full_name}, Basket ##{@customer.basket.id}",
+        id:       "#{@customer.email}-#{@basket.id}",
+        interval: "week",
+        currency: "gbp",
+        amount:   4900,
+        )
+    end
+
+    Stripe::Subscription.create(
+      customer: customer.id,
+      plan: plan.id,
     )
-
-    charge = Stripe::Charge.create(
-      :customer    => customer.id,
-      :amount      => @amount,
-      :description => 'Rails Stripe customer',
-      :currency    => 'gbp'
-    )
-
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_charge_path
-  end
-
-  def create
-    customer = Stripe::Customer.create(
-      source: params[:stripeToken],
-      email:  @customer.email,
-      )
-
-
-      if @order.state == 'Error'
-        plan = Stripe::Plan.retrieve("#{@customer.email}-#{@order.id}")
-      else
-        plan = Stripe::Plan.create(
-          name:     "#{@customer.full_name}-#{@customer_plan.meal_plan.name}
-                      Plan - Order ##{@order.id}",
-          id:       "#{@customer.email}-#{@order.id}",
-          interval: "week",
-          currency: "gbp",
-          amount:   @order.total_price_pennies,
-          )
-      end
-
-      Stripe::Subscription.create(
-        customer: customer.id,
-        plan: plan.id,
-      )
 
 
     @customer.update(stripe_customer_id: customer.id)
-    @order.update(state: 'Paid')
-    OrderMailer.order_confirmation(@customer).deliver_now
-    OrderMailer.order_received(@customer).deliver_now
+    # @customer.basket.update(status: 'active')
+    # OrderMailer.order_confirmation(@customer).deliver_now
+    # OrderMailer.order_received(@customer).deliver_now
     flash[:notice] = "Thank you, your payment was successful."
-    redirect_to customer_customer_plan_order_path(@customer, @customer_plan, @order)
+    redirect_to root_path
 
   rescue Stripe::CardError => e
     @order.update(state: 'Error')
     flash[:alert] = "#{e.message} Please try again."
-    redirect_to new_customer_customer_plan_order_payment_path(@customer, @customer_plan, @order)
+    redirect_to new_customer_payment_path(@customer)
   end
 
   protect_from_forgery
