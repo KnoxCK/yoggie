@@ -1,6 +1,6 @@
 class Customer < ApplicationRecord
   belongs_to :user
-  has_one :basket
+  has_many :baskets
   has_one :address
 
   # validates_presence_of :first_name, :last_name, :age, :gender, :activity_level
