@@ -23,6 +23,10 @@ class Customer < ApplicationRecord
 
   GENDER = ['male', 'female'].freeze
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   def calculate_stats
     update(
       bmr: calculate_bmr,

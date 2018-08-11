@@ -11,7 +11,7 @@ class BasketsController < ApplicationController
   def update
     @basket = Basket.find_or_create_by(customer_id: params[:customer_id])
     if check_quantity
-      redirect_to new_customer_address_path
+      after_basket_path
     else
       @smoothies = Smoothie.fetch_bundle(@customer)
       @message = 'Please select a total of 5 smoothies.'
@@ -23,7 +23,7 @@ class BasketsController < ApplicationController
     @basket = Basket.create(customer_id: params[:customer_id])
     if check_quantity
       @basket.add_smoothies(params[:quantity])
-      redirect_to new_customer_address_path
+      after_basket_path
     else
       @smoothies = Smoothie.fetch_bundle(@customer)
       @message = 'Please select a total of 5 smoothies.'
@@ -50,5 +50,13 @@ class BasketsController < ApplicationController
     total = 0
     params[:quantity].each_value {|q| total += q.to_i }
     total == 5
+  end
+
+  def after_basket_path
+    if !@customer.address.nil?
+      redirect_to new_customer_payment_path
+    else
+      redirect_to new_customer_address_path
+    end
   end
 end

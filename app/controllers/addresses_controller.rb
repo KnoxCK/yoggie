@@ -1,6 +1,7 @@
 class AddressesController < ApplicationController
   before_action :set_customer
   skip_before_action :authenticate_user!
+
   def edit
   end
 
@@ -9,8 +10,9 @@ class AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
+    @address.customer_id = @customer.id
     if @address.save
-      redirect_to root_path
+      redirect_to new_customer_payment_path
     else
       render :new
     end
