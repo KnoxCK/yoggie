@@ -25,8 +25,8 @@ class PaymentsController < ApplicationController
 
     @customer.update(stripe_id: customer.id)
     @customer.basket.update(status: 'active')
-    # OrderMailer.order_confirmation(@customer).deliver_now
-    # OrderMailer.order_received(@customer).deliver_now
+    CustomerMailer.order_confirmation(@customer).deliver_now
+    AdminMailer.new_order(@customer).deliver_now
     flash[:notice] = "Thank you, your payment was successful."
     redirect_to customer_path(@customer)
 

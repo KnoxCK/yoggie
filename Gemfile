@@ -25,6 +25,7 @@ gem 'uglifier'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'letter_opener'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
