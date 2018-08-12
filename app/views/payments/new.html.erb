@@ -1,7 +1,19 @@
 <div style="padding-top:200px;"></div>
-Customer Deets <br/>
-Basket Deets [Edit]<br/>
-Address Deets [Edit]<br/>
+<h3>Review your order:</h3>
+<p>Smoothies:</p>
+<ul>
+  <% @customer.basket.smoothies.each do |smoothie| %>
+    <p><%= smoothie.name %></p>
+  <% end %>
+</ul>
+<%= link_to 'Change my Smoothies', edit_customer_basket_path(@customer, @customer.basket) %>
+<p>Delivery Address:</p>
+<p><%= @customer.address.address_line_one %></p>
+<p><%= @customer.address.address_line_two %></p>
+<p><%= @customer.address.postcode %></p>
+<p><%= @customer.address.delivery_instructions %></p>
+<%= link_to 'Change my Address', edit_customer_address_path(@customer, @customer.address) %>
+<br/>
 <%= form_tag customer_payments_path(@customer) do %>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"

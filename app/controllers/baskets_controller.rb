@@ -20,7 +20,7 @@ class BasketsController < ApplicationController
   end
 
   def create
-    @basket = Basket.create(customer_id: params[:customer_id])
+    @basket = Basket.create(customer_id: @customer.id)
     if check_quantity
       @basket.add_smoothies(params[:quantity])
       after_basket_path
