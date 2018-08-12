@@ -18,7 +18,7 @@ class AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
     @address.customer_id = @customer.id
-    if @address.check_postcode(params[:postcode])
+    if @address.check_postcode(address_params[:postcode])
       @address.save
       redirect_to new_customer_payment_path
     else

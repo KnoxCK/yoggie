@@ -28,7 +28,7 @@ class PaymentsController < ApplicationController
     # OrderMailer.order_confirmation(@customer).deliver_now
     # OrderMailer.order_received(@customer).deliver_now
     flash[:notice] = "Thank you, your payment was successful."
-    redirect_to root_path
+    redirect_to customer_path(@customer)
 
   rescue Stripe::CardError => e
     @order.update(state: 'Error')
