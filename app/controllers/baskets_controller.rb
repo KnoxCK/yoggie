@@ -56,10 +56,12 @@ class BasketsController < ApplicationController
   end
 
   def after_basket_path
-    if !@customer.address.nil?
-      redirect_to new_customer_payment_path
-    else
+    if @customer.basket.status == 'active'
+      redirect_to customer_path(@customer)
+    elsif @customer.address.nil?
       redirect_to new_customer_address_path
+    else
+      redirect_to new_customer_payment_path
     end
   end
 end

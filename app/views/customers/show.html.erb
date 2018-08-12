@@ -19,3 +19,11 @@
 <p>Percentage Carbohydrate: <%= @customer.carbs %></p>
 
 <%= link_to 'Change my vitals and recalculate', edit_customer_path(@customer) %>
+
+
+<h1>My Smoothies</h1>
+<ul>
+  <% @customer.basket.smoothies.each do |smoothie| %>
+    <p><%= smoothie.name %></p>
+  <% end %>
+</ul>
