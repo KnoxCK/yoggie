@@ -6,16 +6,19 @@ class BasketsController < ApplicationController
   end
 
   def edit
+    @smoothies = Smoothie.fetch_bundle(@customer)
   end
 
   def update
-    @basket = Basket.find_or_create_by(customer_id: params[:customer_id])
+    @basket = Basket.find_or_create_by(customer_id: @customer.id)
     if check_quantity
+      BasketSmoothie.where(basket_id: @basket.id).destroy_all
+      @basket.add_smoothies(params[:quantity])
       after_basket_path
     else
       @smoothies = Smoothie.fetch_bundle(@customer)
       @message = 'Please select a total of 5 smoothies.'
-      render :new
+      render :edit
     end
   end
 

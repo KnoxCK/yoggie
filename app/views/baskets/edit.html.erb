@@ -1,7 +1,7 @@
 <% if @message %>
   <p style="color:red;"><%= @message %></p>
 <% end %>
-<%= form_for [@customer, @basket] do |b| %>
+<%= form_for [@customer, @customer.basket] do |b| %>
   <% @smoothies.each do |smoothie| %>
   <div class="smoothie" data-id="<%= smoothie.id %>"></div>
     <p><%= smoothie.name %></p>
