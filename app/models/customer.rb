@@ -6,6 +6,9 @@ class Customer < ApplicationRecord
   # validates_presence_of :first_name, :last_name, :age, :gender, :activity_level
   # validates_presence_of :goal, :height, :weight
 
+  extend FriendlyId
+  friendly_id :full_name, use: :slugged
+
   accepts_nested_attributes_for :address
 
   ACTIVITY_LEVEL_MULTIPLIERS = {
@@ -65,5 +68,11 @@ class Customer < ApplicationRecord
 
   def calculate_carbs
     100 - calculate_protein - calculate_fat
+  end
+
+  private
+
+  def should_generate_new_friendly_id?
+    self.slug.nil?
   end
 end
