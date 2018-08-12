@@ -6,14 +6,23 @@ class AddressesController < ApplicationController
   end
 
   def update
+    if @customer.address.check_postcode(address_params[:postcode])
+      @customer.address.update(address_params)
+      redirect_to new_customer_payment_path
+    else
+      @customer.address.errors.add(:postcode, 'We do not deliver to this postcode')
+      render :edit
+    end
   end
 
   def create
     @address = Address.new(address_params)
     @address.customer_id = @customer.id
-    if @address.save
+    if @address.check_postcode(params[:postcode])
+      @address.save
       redirect_to new_customer_payment_path
     else
+      @address.errors.add(:postcode, 'We do not deliver to this postcode')
       render :new
     end
   end
