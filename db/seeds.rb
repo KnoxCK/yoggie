@@ -36,6 +36,7 @@ CSV.foreach(filepath) do |row|
   puts "#{row}"
   smoothie = Smoothie.create!(name: row[0].downcase.tr(' ', '_'), image: row[1])
   NutriInfo.create!(smoothie_id: smoothie.id, energy_kJ: row[], energy_kcal: row[], fat_g: row[], fat_saturates_g: row[], )
+  SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id:, )
 end
 
 [200, 325, 450, 575, 700].each do |cal|
