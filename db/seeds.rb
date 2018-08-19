@@ -9,6 +9,7 @@
 Group.find_or_create_by(name: 'A', protein: 26)
 Group.find_or_create_by(name: 'B', protein: 36)
 Group.find_or_create_by(name: 'C', protein: 100)
+Group.find_or_create_by(name: 'Std')
 
 Size.find_or_create_by(name: 'i', kcal: 200)
 Size.find_or_create_by(name: 'ii', kcal: 325)
@@ -16,7 +17,26 @@ Size.find_or_create_by(name: 'iii', kcal: 450)
 Size.find_or_create_by(name: 'iv', kcal: 575)
 Size.find_or_create_by(name: 'v', kcal: 700)
 
+filepath = 'ingredients.csv'
+CSV.foreach(filepath) do |row|
+  puts "#{row}"
+  Ingredient.create!(name: row[0].downcase.tr(' ', '_'), allergen: row[1], special: row[2], superfood: row[3], contents: row[4], image: row[5])
+end
+
+filepath = 'badges.csv'
+CSV.foreach(filepath) do |row|
+  puts "#{row}"
+  Badge.create!(name: row[0].downcase.tr(' ', '_'), image: row[1])
+end
+
 Smoothie.all.destroy_all
+
+filepath = 'badges.csv'
+CSV.foreach(filepath) do |row|
+  puts "#{row}"
+  smoothie = Smoothie.create!(name: row[0].downcase.tr(' ', '_'), image: row[1])
+  NutriInfo.create!(smoothie_id: smoothie.id, energy_kJ: row[], energy_kcal: row[], fat_g: row[], fat_saturates_g: row[], )
+end
 
 [200, 325, 450, 575, 700].each do |cal|
   Smoothie.create(name: 'Apple & Blackberry Crumble' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
