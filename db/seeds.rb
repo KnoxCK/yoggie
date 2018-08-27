@@ -29,82 +29,35 @@ CSV.foreach(filepath) do |row|
   Badge.create!(name: row[0].downcase.tr(' ', '_'), image: row[1])
 end
 
-Smoothie.all.destroy_all
-
-filepath = 'badges.csv'
-CSV.foreach(filepath) do |row|
-  puts "#{row}"
-  smoothie = Smoothie.create!(name: row[0].downcase.tr(' ', '_'), image: row[1])
-  NutriInfo.create!(smoothie_id: smoothie.id, energy_kJ: row[], energy_kcal: row[], fat_g: row[], fat_saturates_g: row[], )
-  SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id:, )
+filepath = 'smoothies.csv'
+Size.all.each do |size|
+  CSV.foreach(filepath) do |row|
+    puts "#{size.name} - #{row}"
+    smoothie = Smoothie.create!(name: row[0].downcase.tr(' ', '_'), group_id: Group.find_by(name: row[1]).id, size_id: size.id,
+                                number: row[2].to_i, description: row[3], great_with: row[4], ingredient_description: row[5],
+                                story: row[6], benefits_one: row[7], benefits_two: row[8], benefits_three: row[9],
+                                when: row[10], contains: row[11], superfood: row[12].downcase.tr(' ', '_'), image: row[42], logo: row[43])
+    NutriInfo.create!(smoothie_id: smoothie.id, energy_kJ: row[13].to_f, energy_kcal: row[14].to_f, fat_g: row[15].to_f, fat_saturates_g: row[16].to_f,
+                      carbs_g: row[17].to_f, carbs_sugars_g: row[18].to_f, fibre_g: row[19].to_f, protein_g: row[20].to_f, salt_g: row[21].to_f)
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[22].downcase.tr(' ', '_')).id, large: true, special: false)
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[23].downcase.tr(' ', '_')).id, large: true, special: false) unless row[23].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[24].downcase.tr(' ', '_')).id, large: true, special: false) unless row[24].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[25].downcase.tr(' ', '_')).id, large: true, special: false) unless row[25].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[26].downcase.tr(' ', '_')).id, large: false, special: false)
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[27].downcase.tr(' ', '_')).id, large: false, special: false) unless row[27].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[28].downcase.tr(' ', '_')).id, large: false, special: false) unless row[28].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[29].downcase.tr(' ', '_')).id, large: false, special: false) unless row[29].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[30].downcase.tr(' ', '_')).id, large: false, special: false) unless row[30].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[31].downcase.tr(' ', '_')).id, large: false, special: false) unless row[31].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[32].downcase.tr(' ', '_')).id, large: false, special: false) unless row[32].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[33].downcase.tr(' ', '_')).id, large: false, special: false) unless row[33].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[34].downcase.tr(' ', '_')).id, large: false, special: false) unless row[34].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[35].downcase.tr(' ', '_')).id, large: false, special: true) unless row[35].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[36].downcase.tr(' ', '_')).id, large: false, special: true) unless row[36].nil?
+    SmoothieIngredient.create!(smoothie_id: smoothie.id, ingredient_id: Ingredient.find_by(name: row[37].downcase.tr(' ', '_')).id, large: false, special: true) unless row[37].nil?
+    SmoothieBadge.create!(smoothie_id: smoothie.id, badge_id: Badge.find_by(name: row[38].downcase.tr(' ', '_')).id)
+    SmoothieBadge.create!(smoothie_id: smoothie.id, badge_id: Badge.find_by(name: row[39].downcase.tr(' ', '_')).id) unless row[39].nil?
+    SmoothieBadge.create!(smoothie_id: smoothie.id, badge_id: Badge.find_by(name: row[40].downcase.tr(' ', '_')).id) unless row[40].nil?
+    SmoothieBadge.create!(smoothie_id: smoothie.id, badge_id: Badge.find_by(name: row[41].downcase.tr(' ', '_')).id) unless row[41].nil?
+  end
 end
-
-[200, 325, 450, 575, 700].each do |cal|
-  Smoothie.create(name: 'Apple & Blackberry Crumble' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Peachy Mangos' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Crushed Cherries' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Berry Bomb' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Banana Split' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Green Apple & Grapes' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Kiwi & Mango with Raisin' ,group_id: Group.find_by(name: 'A').id, size_id: Size.find_by(kcal: cal).id)
-
-  Smoothie.create(name: 'Apple & Blackberry Crumble' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Strawberry' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Peachy Mangos' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Crushed Cherries' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Berry Bomb' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Tropical Fruit' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Kiwi & Mango' ,group_id: Group.find_by(name: 'B').id, size_id: Size.find_by(kcal: cal).id)
-
-  Smoothie.create(name: 'Blueberry' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Summer Fruit Salad' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Crushed Cherries' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Tropical Fruit' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Cocao & Vanilla' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Raspberry' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
-  Smoothie.create(name: 'Strawberry' ,group_id: Group.find_by(name: 'C').id, size_id: Size.find_by(kcal: cal).id)
-end
-
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-# NutritionalInfo.find_or_create_by(smoothie_id:)
-
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-# Ingredient.find_or_create_by(name:)
-
-# SmoothieIngredient.find_or_create_by(smoothie_id:, ingredient_id:)
-# SmoothieIngredient.find_or_create_by(smoothie_id:, ingredient_id:)
-# SmoothieIngredient.find_or_create_by(smoothie_id:, ingredient_id:)
-# SmoothieIngredient.find_or_create_by(smoothie_id:, ingredient_id:)
-# SmoothieIngredient.find_or_create_by(smoothie_id:, ingredient_id:)
