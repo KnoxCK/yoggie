@@ -1,5 +1,10 @@
 class Smoothie < ApplicationRecord
   has_many :basket_smoothies
+  has_many :smoothie_ingredients
+  has_many :ingredients, through: :smoothie_ingredients
+  has_many :smoothie_badges
+  has_many :badges, through: :smoothie_badges
+  has_one :nutri_info
   belongs_to :group
   belongs_to :size
   has_many :baskets, through: :basket_smoothies
