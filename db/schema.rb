@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180812131743) do
+ActiveRecord::Schema.define(version: 20180827144238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 20180812131743) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.index ["customer_id"], name: "index_addresses_on_customer_id", using: :btree
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "basket_smoothies", force: :cascade do |t|
@@ -75,6 +82,33 @@ ActiveRecord::Schema.define(version: 20180812131743) do
     t.integer "protein"
   end
 
+  create_table "ingredients", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "allergen"
+    t.boolean  "special"
+    t.boolean  "superfood"
+    t.text     "contents"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "nutri_infos", force: :cascade do |t|
+    t.integer  "smoothie_id"
+    t.float    "energy_kJ"
+    t.float    "energy_kcal"
+    t.float    "fat_g"
+    t.float    "fat_saturates_g"
+    t.float    "carbs_g"
+    t.float    "carbs_sugars_g"
+    t.float    "fibre_g"
+    t.float    "protein_g"
+    t.float    "salt_g"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["smoothie_id"], name: "index_nutri_infos_on_smoothie_id", using: :btree
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer  "basket_id"
     t.float    "amount"
@@ -86,6 +120,26 @@ ActiveRecord::Schema.define(version: 20180812131743) do
   create_table "sizes", force: :cascade do |t|
     t.string  "name"
     t.integer "kcal"
+  end
+
+  create_table "smoothie_badges", force: :cascade do |t|
+    t.integer  "smoothie_id"
+    t.integer  "badge_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["badge_id"], name: "index_smoothie_badges_on_badge_id", using: :btree
+    t.index ["smoothie_id"], name: "index_smoothie_badges_on_smoothie_id", using: :btree
+  end
+
+  create_table "smoothie_ingredients", force: :cascade do |t|
+    t.integer  "smoothie_id"
+    t.integer  "ingredient_id"
+    t.boolean  "large"
+    t.boolean  "special"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["ingredient_id"], name: "index_smoothie_ingredients_on_ingredient_id", using: :btree
+    t.index ["smoothie_id"], name: "index_smoothie_ingredients_on_smoothie_id", using: :btree
   end
 
   create_table "smoothies", force: :cascade do |t|
@@ -103,6 +157,10 @@ ActiveRecord::Schema.define(version: 20180812131743) do
     t.text     "benefits_one"
     t.text     "benefits_two"
     t.text     "benefits_three"
+    t.text     "description"
+    t.integer  "number"
+    t.text     "contains"
+    t.string   "superfood"
   end
 
   create_table "users", force: :cascade do |t|
@@ -132,7 +190,12 @@ ActiveRecord::Schema.define(version: 20180812131743) do
   add_foreign_key "basket_smoothies", "smoothies"
   add_foreign_key "baskets", "customers"
   add_foreign_key "customers", "users"
+  add_foreign_key "nutri_infos", "smoothies"
   add_foreign_key "orders", "baskets"
+  add_foreign_key "smoothie_badges", "badges"
+  add_foreign_key "smoothie_badges", "smoothies"
+  add_foreign_key "smoothie_ingredients", "ingredients"
+  add_foreign_key "smoothie_ingredients", "smoothies"
   add_foreign_key "smoothies", "groups"
   add_foreign_key "smoothies", "sizes"
 end
