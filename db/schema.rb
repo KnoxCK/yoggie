@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 20180716180017) do
 
   add_foreign_key "addresses", "customers"
   add_foreign_key "basket_smoothies", "baskets"
-  add_foreign_key "basket_smoothies", "smoothies", column: "smoothie_id"
+  add_foreign_key "basket_smoothies", "smoothies"
   add_foreign_key "baskets", "customers"
   add_foreign_key "customers", "users"
   add_foreign_key "orders", "baskets"
