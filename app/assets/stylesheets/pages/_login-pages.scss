@@ -1,0 +1,19 @@
+.login-pages {
+	padding: 10%;
+}
+.signup-links {
+	padding-top: 10px;
+    font-weight: lighter;
+    font-size: 14px;
+    border-top: 1px solid #333333;
+	a {
+		text-decoration: none;
+		color: #333333;
+	}
+	a:hover {
+		color: #FC0F42;
+	}
+}
+abbr[title], abbr[data-original-title] {
+    display: none;
+}
