@@ -1,4 +1,7 @@
+<div class="our-smoothies-banner"></div>
 <div class="form-wrapper">
+  <h3 class="text-center">Please fill out your vitals</h3>
+  <br>
   <%= simple_form_for @customer do |f| %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
@@ -8,6 +11,6 @@
     <%= f.input :weight, label: 'Weight (kg)' %>
     <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys %>
     <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys %>
-    <%= f.submit 'Calculate my shiiit' %>
+    <%= f.submit 'Calculate', class: "btn-yoggie-main-green" %>
   <% end %>
 </div>
