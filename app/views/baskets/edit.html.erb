@@ -1,6 +1,6 @@
 <div class="choose-smoothies-wrapper">
   <% if @message %>
-    <p style="color:red;"><%= @message %></p>
+    <p style="color:#91B060;"><%= @message %></p>
   <% end %>
   <%= form_for [@customer, @customer.basket] do |b| %>
     <% @smoothies.each do |smoothie| %>
