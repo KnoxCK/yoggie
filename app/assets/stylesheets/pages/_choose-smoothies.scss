@@ -1,5 +1,5 @@
 .choose-smoothies-wrapper {
-	padding: 200px 130px;
+	padding: 200px 122px 0 122px;
 }
 .edit_basket {
 	display: flex;
@@ -14,4 +14,9 @@
 	display: flex;
     flex-direction: column;
     align-items: center;
+}
+.yoggie-add {
+	display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
 }
