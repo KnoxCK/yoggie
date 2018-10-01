@@ -1,19 +1,25 @@
-<% if @message %>
-  <p style="color:red;"><%= @message %></p>
-<% end %>
-<%= form_for [@customer, @customer.basket] do |b| %>
-  <% @smoothies.each do |smoothie| %>
-  <div class="smoothie" data-id="<%= smoothie.id %>"></div>
-    <p><%= smoothie.name %></p>
-    <%= select_tag "quantity[#{smoothie.id}]", options_for_select([0, 1, 2, 3, 4, 5]) %>
+<div class="choose-smoothies-wrapper">
+  <% if @message %>
+    <p style="color:red;"><%= @message %></p>
   <% end %>
-  <%= b.submit 'Add My Smoothies' %>
-<% end %>
+  <%= form_for [@customer, @customer.basket] do |b| %>
+    <% @smoothies.each do |smoothie| %>
+    <div class="smoothie" data-id="<%= smoothie.id %>"></div>
+      
+        <div class="smoothie-quantity-image">
+          <%= image_tag "http://res.cloudinary.com/dqxvcdy6w/image/upload/v1517227077/Peachy_Mangos_zpkava.png" %>
+          <p><%= smoothie.name.capitalize %> 
+          <%= select_tag "quantity[#{smoothie.id}]", options_for_select([0, 1, 2, 3, 4, 5]) %></p>
+        </div>
+    <% end %>
+    <%= b.submit 'Add My Smoothies' %>
+  <% end %>
 
-<div id="modal-container"></div>
+  <div id="modal-container"></div>
 
-<script>
-  $('.smoothie').click(function(){
-    var smoothieId = $(this).data('id')
-  })
-</script>
+  <script>
+    $('.smoothie').click(function(){
+      var smoothieId = $(this).data('id')
+    })
+  </script>
+</div>

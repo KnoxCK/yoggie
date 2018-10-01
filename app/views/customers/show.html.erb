@@ -1,37 +1,38 @@
+<div class="dashboard-banner"></div>
 <div class="customer-vitals-wrapper">
-	<h4><%= @customer.first_name %> <%= @customer.last_name %></h4>
+	<h4><i><%= @customer.first_name %> <%= @customer.last_name %></i></h4>
+	<h2>My Dashboard</h2>
 	<div class="customer-vitals">
 		<div class="customer-vitals-details">
-			<h1>My Vitals</h1>
-			<p>Age: <%= @customer.age %></p>
-			<p>Gender: <%= @customer.gender %></p>
-			<p>Height: <%= @customer.height %></p>
-			<p>Weight: <%= @customer.weight %></p>
-			<p>Meals per day: <%= @customer.meals_per_day %></p>
-			<p>Activity Level: <%= @customer.activity_level %></p>
-			<p>Goal: <%= @customer.goal %></p>
+			<h4>My Vitals</h4>
+			<p>Age: <span><%= @customer.age %></span></p>
+			<p>Gender: <span><%= @customer.gender %></span></p>
+			<p>Height: <span><%= @customer.height %></span></p>
+			<p>Weight: <span><%= @customer.weight %></span></p>
+			<p>Meals per day: <span><%= @customer.meals_per_day %></span></p>
+			<p>Activity Level: <span><%= @customer.activity_level %></span></p>
+			<p>Goal: <span><%= @customer.goal %></span></p>
+			<%= link_to 'Change my vitals', edit_customer_path(@customer), class: 'btn-yoggie-main-clear' %>
 		</div>
 		<div class="customer-vitals-details">
-			<h1>My Customisation</h1>
-			<p>Your BMR: <%= @customer.bmr %></p>
-			<p>Your Total Daily Energy Expenditure: <%= @customer.tdee %></p>
-			<p>Daily Target Caloric Intake: <%= @customer.daily_calorie_goal %></p>
-			<p>Calories per Smoothie: <%= @customer.calories_per_shake %></p>
-			<p>Percentage Protein: <%= @customer.protein %></p>
-			<p>Percentage Fat: <%= @customer.fat %></p>
-			<p>Percentage Carbohydrate: <%= @customer.carbs %></p>
-
-			<%= link_to 'Change my vitals and recalculate', edit_customer_path(@customer) %>
+			<h4>My Results</h4>
+			<p>Your BMR: <span><%= @customer.bmr %></span></p>
+			<p>Total Daily Energy Expenditure: <span><%= @customer.tdee %></span></p>
+			<p>Daily Target Caloric Intake: <span><%= @customer.daily_calorie_goal %></span></p>
+			<p>Calories per Smoothie: <span><%= @customer.calories_per_shake %></span></p>
+			<p>Percentage Protein: <span><%= @customer.protein %></span></p>
+			<p>Percentage Fat: <span><%= @customer.fat %></span></p>
+			<p>Percentage Carbohydrate: <span><%= @customer.carbs %></span></p>
 		</div>
 
-		<div class="customer-vitals-details">
-			<h1>My Smoothies</h1>
+		<div class="customer-vitals-details customer-vitals-details-last">
+			<h4>My Smoothies</h4>
 			<ul>
 			  <% @customer.basket.smoothies.each do |smoothie| %>
 			    <p><%= smoothie.name %></p>
 			  <% end %>
 			</ul>
-			<%= link_to 'Change my Smoothies', edit_customer_basket_path(@customer, @customer.basket) %>
+			<%= link_to 'Change my Smoothies', edit_customer_basket_path(@customer, @customer.basket), class: 'btn-yoggie-main-clear' %>
 		</div>
 	</div>
 </div>
