@@ -1,5 +1,14 @@
 .customer-vitals-wrapper {
-	padding: 20px 30px 20px 40px;
+	margin: 30px 5% 0 5%;
+	padding: 40px; 
+	background-color: #f7f7f7;
+	height: auto;
+	position: absolute;
+    top: 136px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    min-height: 757px;
 	h2 {
 		margin-bottom: 24px;
 	}
@@ -7,17 +16,15 @@
 .customer-vitals {
 	display: flex;
 	justify-content: center;
-	background-color: #F0EBE7;
-    padding: 42px 32px;
+    //padding: 42px 32px;
 }
 .customer-vitals-details {
-	padding:0 30px;
-	padding: 0 30px;
+	padding: 0 85px;
     border-right: solid 1px grey;
-    width: 500px;
+    width: auto;
 	h4 {
 		font-weight: bold;
-		color: #98B468;
+		color: #343434;
 		padding-bottom: 5px;
 	}
 	ul  {

@@ -1,7 +1,9 @@
-<div class="dashboard-banner"></div>
+<div class="dashboard-background"></div>
 <div class="customer-vitals-wrapper">
-	<h4><i><%= @customer.first_name %> <%= @customer.last_name %></i></h4>
 	<h2>My Dashboard</h2>
+	<h4><i><%= @customer.first_name %> <%= @customer.last_name %></i></h4>
+	<hr>
+	<br></br>
 	<div class="customer-vitals">
 		<div class="customer-vitals-details">
 			<h4>My Vitals</h4>
@@ -24,7 +26,6 @@
 			<p>Percentage Fat: <span><%= @customer.fat %></span></p>
 			<p>Percentage Carbohydrate: <span><%= @customer.carbs %></span></p>
 		</div>
-
 		<div class="customer-vitals-details customer-vitals-details-last">
 			<h4>My Smoothies</h4>
 			<ul>

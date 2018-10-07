@@ -61,16 +61,17 @@
   display: flex;
   align-items: center;
 }
-.dashboard-banner {
-  background-image: url('http://res.cloudinary.com/dqxvcdy6w/image/upload/v1517226527/Yoggie-smoothies-banner_niwlmx.jpg');
+.dashboard-background {
+    background-image: url('https://res.cloudinary.com/dqxvcdy6w/image/upload/v1516371426/Yoggie_background_xrpspj.png');
   color: #393939;
   text-align: center;
-  height: 50vh;
+  height: 100vh;
   width: 100%;
   background-size: cover !important;
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: left;
 }
 @media only screen and (max-width: 1000px){
   .banner {
