@@ -1,0 +1,35 @@
+.customer-vitals-wrapper {
+	padding: 20px 30px 20px 40px;
+	h2 {
+		margin-bottom: 24px;
+	}
+}
+.customer-vitals {
+	display: flex;
+	justify-content: center;
+	background-color: #F0EBE7;
+    padding: 42px 32px;
+}
+.customer-vitals-details {
+	padding:0 30px;
+	padding: 0 30px;
+    border-right: solid 1px grey;
+    width: 500px;
+	h4 {
+		font-weight: bold;
+		color: #98B468;
+		padding-bottom: 5px;
+	}
+	ul  {
+		padding-left: 0;
+	}
+	span {
+		color: #98B468;
+		font-weight: lighter;
+	}
+}
+.customer-vitals-details-last {
+	border-right: none;
+}
+
+

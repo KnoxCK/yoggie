@@ -1,0 +1,22 @@
+.choose-smoothies-wrapper {
+	padding: 200px 122px 0 122px;
+}
+.edit_basket {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    p {
+    	padding: 30px;
+    }
+}
+.smoothie-quantity-image {
+	padding: 0 44px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.yoggie-add {
+	display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}

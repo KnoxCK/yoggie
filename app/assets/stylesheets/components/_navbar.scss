@@ -1,9 +1,49 @@
+/* Top login logout links */
+.navbar-yoggie-top-nav {
+  background: #97B564;
+  height: 30px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1001;
+  width: 100vw;
+  max-width: 100%;
+  //box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  i {
+    padding: 1px;
+    color: #97B564;
+    margin-right: 3px;
+  }
+}
+.top-nav-links {
+  display: flex;
+  flex-end: initial;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding-top: 5px;
+  padding-right: 45px;
+  a { 
+    color: white;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 0.25px;
+    font-size: 14px;  
+    padding-right: 10px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+.top-nav-line {
+  border-left: white solid 1px;
+  padding: 0 5px;
+}
 /* Main navbar */
 .navbar-yoggie {
-  // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  //box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: transparent;
   transition: all 0.3s ease;
-  height: 90px;
+  height: 160px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -24,7 +64,6 @@
   width: 35px;
   border-radius: 50%;
 }
-
 .navbar-yoggie-social {
   position: absolute;
   right: 50px;
@@ -33,6 +72,10 @@
     padding: 1px;
     color: #97B564;
     margin-right: 3px;
+  }
+  i:hover {
+    text-decoration: none;
+    color: #FC0F42;
   }
   a:hover {
     text-decoration: none;
@@ -118,6 +161,7 @@
   text-decoration: none;
   p {
     text-decoration: none;
+    font-weight: lighter;
   }
   i {
     padding: 1px;
