@@ -156,7 +156,29 @@
 }
 .navbar-yoggie-social-scroll {
   position: absolute;
-  right: 298px;
+  right: 360px;
+  margin-top: 2px;
+  text-decoration: none;
+  p {
+    text-decoration: none;
+    font-weight: lighter;
+  }
+  i {
+    padding: 1px;
+    color: #97B564;
+    margin-right: 3px;
+  }
+  i:hover {
+    padding: 1px;
+    color: #FC0F42;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+.navbar-yoggie-login-scroll {
+  position: absolute;
+  right: 20px;
   margin-top: 2px;
   text-decoration: none;
   p {

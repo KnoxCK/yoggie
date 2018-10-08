@@ -12,6 +12,7 @@ gem 'redis'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+gem "font-awesome-rails"
 gem 'friendly_id', '~> 5.2.0'
 gem 'jquery-rails'
 gem 'postmark-rails'

@@ -65,33 +65,22 @@
     <%= link_to "Our Yoggies", smoothies_path, class: "navbar-yoggie-link"  %>
   </div>
 
-  <div class="navbar-yoggie-social-scroll">
-    <% if current_user %>
-        <%= link_to customer_path(current_user.customer) do %>
-          <i class="fa fa-user"></i>
-        <%end%>
-        <%= link_to destroy_user_session_path, method: :delete  do %>
-           <i class="far fa-user-slash"></i>
-        <%end%>
-    <% else %>
-        <%= link_to new_user_session_path do %>
-          <i class="fa fa-user"></i>
-        <%end%>
-    <% end %>
+  <%= link_to "CREATE MY PERFECT SMOOTHIE", new_customer_path, class: 'btn-navbar-scroll' %>
 
-    <%= link_to "https://www.facebook.com/yoggie", target: "_blank" do %>
-      <i class="fa fa-facebook"></i>
-    <% end %>
-    <%= link_to "https://twitter.com/yoggie", target: "_blank" do %>
-      <i class="fa fa-twitter"></i>
-    <% end %>
-    <%= link_to "https://www.instagram.com/yoggie/", target: "_blank" do %>
-      <i class="fa fa-instagram"></i>
-    <% end %>
-
-  </div>
-
-  <%= link_to "CREATE MY PERFECT SMOOTHIE", "#", class: 'btn-navbar-scroll' %>
+<div class="navbar-yoggie-login-scroll">
+  <% if current_user %>
+    <%= link_to customer_path(current_user.customer) do %>
+      <i class="fa fa-user"></i>
+    <%end%>
+    <%= link_to destroy_user_session_path, method: :delete  do %>
+      <i class="fa fa-sign-out"></i>
+    <%end%>
+  <% else %>
+    <%= link_to new_user_session_path do %>
+      <i class="fa fa-user"></i>
+    <%end%>
+  <% end %>
+</div>
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-yoggie-item hidden-md hidden-lg">

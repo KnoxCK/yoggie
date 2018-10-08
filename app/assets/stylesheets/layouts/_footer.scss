@@ -23,6 +23,14 @@
     margin-top: 15px;
     margin-right: 64px;
 }
+.social-footer {
+	display: flex;
+	align-items: left;
+	a {
+		padding-left: 0;
+		padding-right: 8px;
+	}
+}
 @media only screen and (max-width: 1000px){
 	.footer {
 		flex-wrap: wrap;
