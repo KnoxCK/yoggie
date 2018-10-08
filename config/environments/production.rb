@@ -58,7 +58,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "yoggie_#{Rails.env}"
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :postmark
-  config.action_mailer.postmark_settings = { ENV["c629a9c0-8212-47cc-abcf-20859269c6d7"] }
+  config.action_mailer.postmark_settings = { :api_token => "025df502-1b27-4e2b-9956-e9209e41e19e" }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
