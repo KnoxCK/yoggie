@@ -42,9 +42,9 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-yoggie-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to "How Yoggie Works", root_path(:anchor => "how-it-works") %></li>
+        <li><%= link_to "About", root_path(:anchor => "about-yoggies") %></li>
+        <li><%= link_to "Our Yoggies", smoothies_path %></li>
       </ul>
     </div>
   </div>
@@ -61,11 +61,24 @@
 
   <div class="main-nav hidden-xs hidden-sm">
     <%= link_to "How Yoggie Works", root_path(:anchor => "how-it-works"), class: "navbar-yoggie-link" %>
-    <%= link_to "About Our Yoggies", root_path(:anchor => "about-yoggies"), class: "navbar-yoggie-link"  %>
-    <%= link_to "Yoggie Flavours", smoothies_path, class: "navbar-yoggie-link"  %>
+    <%= link_to "About", root_path(:anchor => "about-yoggies"), class: "navbar-yoggie-link"  %>
+    <%= link_to "Our Yoggies", smoothies_path, class: "navbar-yoggie-link"  %>
   </div>
 
   <div class="navbar-yoggie-social-scroll">
+    <% if current_user %>
+        <%= link_to customer_path(current_user.customer) do %>
+          <i class="fa fa-user"></i>
+        <%end%>
+        <%= link_to destroy_user_session_path, method: :delete  do %>
+           <i class="far fa-user-slash"></i>
+        <%end%>
+    <% else %>
+        <%= link_to new_user_session_path do %>
+          <i class="fa fa-user"></i>
+        <%end%>
+    <% end %>
+
     <%= link_to "https://www.facebook.com/yoggie", target: "_blank" do %>
       <i class="fa fa-facebook"></i>
     <% end %>
@@ -75,6 +88,7 @@
     <%= link_to "https://www.instagram.com/yoggie/", target: "_blank" do %>
       <i class="fa fa-instagram"></i>
     <% end %>
+
   </div>
 
   <%= link_to "CREATE MY PERFECT SMOOTHIE", "#", class: 'btn-navbar-scroll' %>
@@ -84,9 +98,10 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-yoggie-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "How Yoggie Works", root_path(:anchor => "how-it-works") %></li>
+        <li><%= link_to "About", root_path(:anchor => "about-yoggies") %></li>
+        <li><%= link_to "Our Yoggies", smoothies_path %></li>
       </ul>
     </div>
   </div>
