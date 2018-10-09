@@ -69,9 +69,11 @@
 
 <div class="navbar-yoggie-login-scroll">
   <% if current_user %>
-    <%= link_to customer_path(current_user.customer) do %>
-      <i class="fa fa-user"></i>
-    <%end%>
+    <% if current_user.customer %>
+      <%= link_to customer_path(current_user.customer) do %>
+        <i class="fa fa-user"></i>
+      <%end%>
+    <% end %>
     <%= link_to destroy_user_session_path, method: :delete  do %>
       <i class="fa fa-sign-out"></i>
     <%end%>
