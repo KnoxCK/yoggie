@@ -1,9 +1,9 @@
-
-<p style="margin-bottom:150px;">Sorry we don't deliver to you.</p>
-
-
-Newsletter?
-<%= simple_form_for @user do |f| %>
-  <%= f.input :newsletter %>
-  <%= f.submit %>
-<% end %>
+<div class="postcode-wrapper text-center">
+	<h2>Sorry we don't deliver to you.</h2>
+	<p>But please keep in touch and we will let you know when we do.</p><br>
+	<%= simple_form_for @user do |f| %>
+	  Would you like to join our mailing list?<br>
+	  <%= f.input :newsletter %><br>
+	  <%= f.submit %>
+	<% end %>
+</div>

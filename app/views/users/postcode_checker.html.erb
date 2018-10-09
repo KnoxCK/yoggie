@@ -1,6 +1,9 @@
-Check your postcode
-<div style="margin-bottom:100px"></div>
-<%= simple_form_for @user, url: postcode_result_user_path do |f| %>
-  <%= f.input :postcode %>
-  <%= f.submit 'Check my postcode' %>
-<% end %>
+<div class="postcode-wrapper">
+	<h2>Enter your postcode</h2>
+	To see if we deliver to you!
+	<div style="margin-bottom:100px"></div>
+	<%= simple_form_for @user, url: postcode_result_user_path do |f| %>
+	  <%= f.input :postcode %>
+	  <%= f.submit 'Check my postcode', class: "btn-yoggie-main-green" %>
+	<% end %>
+</div>
