@@ -1,9 +1,11 @@
 
-<%= simple_form_for [@customer, @address] do |f| %>
-  <%= f.input :address_line_one %>
-  <%= f.input :address_line_two %>
-  <%= f.input :address_line_three %>
-  <%= f.input :postcode %>
-  <%= f.input :delivery_instructions %>
-  <%= f.submit 'Submit' %>
-<% end %>
+<div class="address-wrapper">
+	<%= simple_form_for [@customer, @address] do |f| %>
+	  <%= f.input :address_line_one %>
+	  <%= f.input :address_line_two %>
+	  <%= f.input :address_line_three %>
+	  <%= f.input :postcode %>
+	  <%= f.input :delivery_instructions %>
+	  <%= f.submit 'Submit', class: "btn-yoggie-main-green" %>
+	<% end %>
+</div>

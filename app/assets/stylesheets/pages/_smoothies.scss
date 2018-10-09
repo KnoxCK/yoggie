@@ -9,6 +9,10 @@
 		text-decoration: none;
 	}
 }
+.our-smoothies-intro {
+ 	padding-left: 15%;
+ 	padding-right: 15%; 
+}
 .standard-yoggie {
 	margin: 10px;
 	border-radius: 5px;
@@ -31,4 +35,9 @@
 	margin-bottom: 1px;
 	border-radius: 0 0 5px 5px;
 	width: 100%;
+}
+@media only screen and (max-width: 1500px) {
+	.our-smoothies {
+		padding: 0 5%;
+	}
 }

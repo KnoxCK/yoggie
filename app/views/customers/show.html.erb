@@ -6,7 +6,7 @@
 	<br></br>
 	<div class="customer-vitals">
 		<div class="customer-vitals-details">
-			<h4>My Vitals</h4>
+			<h4>My Vitals:</h4>
 			<p>Age: <span><%= @customer.age %></span></p>
 			<p>Gender: <span><%= @customer.gender %></span></p>
 			<p>Height: <span><%= @customer.height %></span></p>
@@ -17,7 +17,7 @@
 			<%= link_to 'Change my vitals', edit_customer_path(@customer), class: 'btn-yoggie-main-clear' %>
 		</div>
 		<div class="customer-vitals-details">
-			<h4>My Results</h4>
+			<h4>My Results:</h4>
 			<p>Your BMR: <span><%= @customer.bmr %></span></p>
 			<p>Total Daily Energy Expenditure: <span><%= @customer.tdee %></span></p>
 			<p>Daily Target Caloric Intake: <span><%= @customer.daily_calorie_goal %></span></p>
@@ -27,10 +27,10 @@
 			<p>Percentage Carbohydrate: <span><%= @customer.carbs %></span></p>
 		</div>
 		<div class="customer-vitals-details customer-vitals-details-last">
-			<h4>My Smoothies</h4>
+			<h4>My Smoothies:</h4>
 			<ul>
 			  <% @customer.basket.smoothies.each do |smoothie| %>
-			    <p><%= smoothie.name %></p>
+			    <p><%= smoothie.name.titleize %></p>
 			  <% end %>
 			</ul>
 			<%= link_to 'Change my Smoothies', edit_customer_basket_path(@customer, @customer.basket), class: 'btn-yoggie-main-clear' %>

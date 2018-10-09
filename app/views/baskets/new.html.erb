@@ -21,12 +21,12 @@
     <%= form_for [@customer, @basket] do |b| %>
       <% @smoothies.each do |smoothie| %>
       <div class="smoothie" data-id="<%= smoothie.id %>"></div>
-        <p><%= smoothie.name.capitalize %></p>
+        <p><%= smoothie.name.capitalize.humanize.titleize %></p>
         <%= select_tag "quantity[#{smoothie.id}]", options_for_select([0, 1, 2, 3, 4, 5]) %>
-      <% end %><br>
+      <% end %><br></br>
       <%= b.submit 'Add My Smoothies', class: "btn-yoggie-main-green"  %>
     <% end %>
-
+    <br>
     <div id="modal-container"></div>
 
     <script>

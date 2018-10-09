@@ -1,10 +1,13 @@
 .choose-smoothies-wrapper {
-	padding: 200px 122px 0 122px;
+	padding: 130px 5% 0 5%;
 }
 .edit_basket {
 	display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    input, select, textarea {
+        margin-top: 10px;
+    } 
     p {
     	padding: 30px;
     }
