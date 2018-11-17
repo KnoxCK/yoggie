@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
     @customer.user = current_user
     if @customer.save
-      @customer.calculate_stats
+      @customer.calculate_stats if !@customer.standard?
       redirect_to new_customer_basket_path(@customer)
     else
       render :new

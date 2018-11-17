@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
-  get 'smoothies', to: 'pages#smoothies'
+  # get 'smoothies', to: 'pages#smoothies'
   get 'smoothie', to: 'pages#smoothie'
 
   resources :users do
@@ -16,5 +16,7 @@ Rails.application.routes.draw do
     resources :addresses
     resources :payments, only: [:new, :create]
   end
+
+  resources :smoothies
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

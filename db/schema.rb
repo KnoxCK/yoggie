@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180827144238) do
+ActiveRecord::Schema.define(version: 20181117163154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20180827144238) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "status",      default: "pending"
+    t.boolean  "tailored",    default: true
     t.index ["customer_id"], name: "index_baskets_on_customer_id", using: :btree
   end
 
@@ -61,8 +62,8 @@ ActiveRecord::Schema.define(version: 20180827144238) do
     t.integer  "height"
     t.string   "activity_level"
     t.string   "goal"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "bmr"
     t.integer  "tdee"
     t.integer  "daily_calorie_goal"
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(version: 20180827144238) do
     t.integer  "user_id"
     t.string   "stripe_id"
     t.string   "slug"
+    t.boolean  "tailored",           default: true
     t.index ["user_id"], name: "index_customers_on_user_id", using: :btree
   end
 
@@ -181,6 +183,7 @@ ActiveRecord::Schema.define(version: 20180827144238) do
     t.boolean  "valid_postcode"
     t.boolean  "newsletter"
     t.boolean  "accepted_terms"
+    t.boolean  "standard",               default: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

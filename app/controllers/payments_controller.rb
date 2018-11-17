@@ -4,6 +4,7 @@ class PaymentsController < ApplicationController
 
   def new
     @basket = @customer.basket
+    @fee = @basket.tailored ? Basket::SUBSCRIPTION_FEE[:tailored] : Basket::SUBSCRIPTION_FEE[:standard]
   end
 
   def create

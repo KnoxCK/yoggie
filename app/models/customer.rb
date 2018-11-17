@@ -70,6 +70,10 @@ class Customer < ApplicationRecord
     100 - calculate_protein - calculate_fat
   end
 
+  def standard?
+    user.standard
+  end
+
   private
 
   def should_generate_new_friendly_id?
