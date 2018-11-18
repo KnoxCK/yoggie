@@ -41,6 +41,14 @@ class BasketsController < ApplicationController
     @smoothies = Smoothie.fetch_bundle(@customer)
   end
 
+  def cancel_subscription
+    @basket = Basket.find(params[:id])
+    subscription = Stripe::Subscription.retrieve(@basket.stripe_sub_id)
+    subscription.delete
+    @basket.update(status: 'cancelled')
+    redirect_to customer_path(@basket.customer), notice: 'Your subscription has been cancelled'
+  end
+
   private
 
   def set_customer

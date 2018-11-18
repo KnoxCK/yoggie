@@ -17,4 +17,12 @@ class Basket < ApplicationRecord
       end
     end
   end
+
+  def active?
+    status == 'active'
+  end
+
+  def cancelled?
+    status == 'cancelled'
+  end
 end

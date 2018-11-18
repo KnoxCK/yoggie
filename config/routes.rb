@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   end
 
   resources :customers do
-    resources :baskets
+    resources :baskets do
+      patch :cancel_subscription, on: :member
+    end
     resources :addresses
     resources :payments, only: [:new, :create]
   end

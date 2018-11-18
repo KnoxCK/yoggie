@@ -29,13 +29,14 @@
 			<%= link_to 'Change to standard smoothies', user_path(@customer.user, user: { standard: true }), method: :patch, class: 'btn-yoggie-main-clear' if @customer.tailored? %>
 		</div>
 		<div class="customer-vitals-details customer-vitals-details-last">
-			<h4>My <%= @customer.standard? ? 'Standard' : 'Tailored' %> Smoothies:</h4>
+			<h4>My <%= @customer.standard? ? 'Standard' : 'Tailored' %> Subscription:</h4>
 			<ul>
 			  <% @customer.basket.smoothies.each do |smoothie| %>
 			    <p><%= smoothie.name.titleize %></p>
 			  <% end %>
 			</ul>
 			<%= link_to 'Change my Smoothies', edit_customer_basket_path(@customer, @customer.basket), class: 'btn-yoggie-main-clear' %>
+			<%= link_to 'Cancel My Subscription', cancel_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
 		</div>
 	</div>
 </div>
