@@ -23,6 +23,7 @@
     <%= form_for [@customer, @basket] do |b| %>
       <%= b.hidden_field :customer_id, value: @customer.id %>
       <%= b.hidden_field :tailored, value: false if @customer.standard? %>
+      <%= b.hidden_field :tailored, value: true if @customer.tailored? %>
       <% @smoothies.each do |smoothie| %>
       <div class="smoothie" data-id="<%= smoothie.id %>"></div>
         <p><%= smoothie.name.capitalize.humanize.titleize %></p>

@@ -10,7 +10,8 @@ class BasketsController < ApplicationController
   end
 
   def update
-    @basket = Basket.find_or_create_by(customer_id: @customer.id)
+    @basket = Basket.find_or_create_by!(customer_id: @customer.id)
+    @basket.update(basket_params) if params[:basket]
     if check_quantity
       BasketSmoothie.where(basket_id: @basket.id).destroy_all
       @basket.add_smoothies(params[:quantity])
@@ -23,7 +24,8 @@ class BasketsController < ApplicationController
   end
 
   def create
-    @basket = Basket.create(basket_params)
+    @basket = Basket.find_or_create_by!(basket_params)
+    @basket.update(basket_params) if params[:basket]
     if check_quantity
       @basket.add_smoothies(params[:quantity])
       after_basket_path
@@ -35,7 +37,7 @@ class BasketsController < ApplicationController
   end
 
   def new
-    @basket = Basket.new(customer_id: @customer.id)
+    @basket = Basket.find_or_initialize_by(customer_id: @customer.id)
     @smoothies = Smoothie.fetch_bundle(@customer)
   end
 
