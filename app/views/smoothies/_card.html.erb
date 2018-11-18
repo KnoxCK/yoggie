@@ -2,7 +2,7 @@
   <div class="standard-yoggie">
     <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1538941091/Yoggie_EtonMess_pwdxyi.png" %>
     <div class="standard-yoggie-content">
-      <h3>Eton Mess<br></br></h3>
+      <h3><%= smoothie.name.titleize %><br></br></h3>
       <%= link_to " VIEW YOGGIE", smoothie_path(smoothie), class: 'btn-yoggie-main-clear' %>
     </div>
   </div>

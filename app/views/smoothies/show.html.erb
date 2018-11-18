@@ -1,4 +1,61 @@
-<div style="padding-top:100px;">
-  <h1><%= @smoothie.name.titleize %></h1>
+<!-- <div class="smoothie-banner"></div> -->
+<div class="smoothie-wrapper">
+  <div class="smoothie">
+    <div class="standard-yoggie-main section-padding">
+      <h2><%= @smoothie.name.titleize %></h2>
+      <div class="standard-yoggie-main-content">
+        <%= image_tag "http://res.cloudinary.com/dqxvcdy6w/image/upload/v1517227077/Peachy_Mangos_zpkava.png" %>
+        <div class="standard-yoggie-main-details">
+          <h4><%= @smoothie.description %><br></br></h4>
+        </div>
+      </div>
+      <div class="badges">
+        <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1539104477/badge_healthymeal_copy_o8dz8s.png" %>
+        <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1539104476/badge_energy_copy_s4yfin.png" %>
+        <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1539104477/badge_fibre_copy_pn7lnx.png" %>
+      </div>
+    </div>
+  </div>
+  <div class="standard-yoggie-nutrition">
+    <div class="nutrition-border section-padding">
+      <div class="standard-yoggie-nutrition-top">
+        <div class="standard-yoggie-nutrition-topleft">
+          <h4>Includes:</h4>
+          <p>
+            <% @smoothie.ingredients.uniq.each do |i| %>
+              <ul>✓ &nbsp; <%= i.name.titleize %></ul>
+            <% end %>
+          </p>
+        </div>
+        <div class="standard-yoggie-nutrition-right">
+          <h4>Why It's Delicious:</h4>
+          <p><%= @smoothie.ingredient_description %></p>
+        </div>
+      </div>
+      <div class="standard-yoggie-nutrition-bottom">
+        <h4>Macro &nbsp; | &nbsp; Nutrition &nbsp; | &nbsp; Ingredients:</h4>
+        <div class="macro">
+          <div class="nutrition-bottom-left">
+            <p>
+              <ul>✓ &nbsp; Turbo Tasty</ul>
+              <ul>✓ &nbsp; Real organic whole foods</ul>
+              <ul>✓ &nbsp; Nutritionist Approved</ul>
+              <ul>✓ &nbsp; Ready in 20 seconds</ul>
+            </p>
+          </div>
+          <div class="nutrition-bottom-right">
+            <p>
+              <ul>✓ &nbsp; Turbo Tasty</ul>
+              <ul>✓ &nbsp; Real organic whole foods</ul>
+              <ul>✓ &nbsp; Nutritionist Approved</ul>
+              <ul>✓ &nbsp; Ready in 20 seconds</ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
 </div>
+
 <%= link_to 'Back to Smoothies', smoothies_path %>
