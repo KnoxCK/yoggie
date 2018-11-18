@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
   # get 'smoothies', to: 'pages#smoothies'
-  get 'smoothie', to: 'pages#smoothie'
 
   resources :users do
     get :postcode_checker, on: :member
