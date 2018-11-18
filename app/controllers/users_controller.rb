@@ -3,7 +3,10 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
-    redirect_to edit_customer_basket_path(@user.customer, @user.basket)
+    respond_to do |format|
+      format.html { redirect_to edit_customer_basket_path(@user.customer, @user.basket) }
+      format.js
+    end
   end
 
   def postcode_checker
