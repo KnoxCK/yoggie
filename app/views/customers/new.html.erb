@@ -6,10 +6,16 @@
     <%= f.input :last_name %>
     <%= f.input :gender, as: :select, collection: Customer::GENDER.map{|g|g.humanize} %>
     <%= f.input :age %>
-    <%= f.input :height, label: 'Height (cm)' %>
-    <%= f.input :weight, label: 'Weight (kg)' %>
-    <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys %>
-    <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys %>
-    <%= f.submit 'Calculate', class: "btn-yoggie-main-green" %>
+    <% if !current_user.standard %>
+      <%= link_to 'Prefer our standard smoothies? Click here', user_path(current_user, user: { standard: true }), method: :patch, remote: true %>
+      <%= f.input :height, label: 'Height (cm)' %>
+      <%= f.input :weight, label: 'Weight (kg)' %>
+      <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys %>
+      <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys %>
+      <%= f.submit 'Calculate', class: "btn-yoggie-main-green" %>
+    <% else %>
+      <%= link_to 'Want smoothies tailored to your needs? Click here', user_path(current_user, user: { standard: false }), method: :patch, remote: true %>
+      <%= f.submit 'Submit', class: "btn-yoggie-main-green" %>
+    <% end %>
   <% end %>
 </div>

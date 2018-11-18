@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180827144238) do
+ActiveRecord::Schema.define(version: 20181118190809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,9 +45,11 @@ ActiveRecord::Schema.define(version: 20180827144238) do
 
   create_table "baskets", force: :cascade do |t|
     t.integer  "customer_id"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "status",      default: "pending"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "status",        default: "pending"
+    t.boolean  "tailored",      default: true
+    t.string   "stripe_sub_id"
     t.index ["customer_id"], name: "index_baskets_on_customer_id", using: :btree
   end
 
@@ -181,6 +183,7 @@ ActiveRecord::Schema.define(version: 20180827144238) do
     t.boolean  "valid_postcode"
     t.boolean  "newsletter"
     t.boolean  "accepted_terms"
+    t.boolean  "standard",               default: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

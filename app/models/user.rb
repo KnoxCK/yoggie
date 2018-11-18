@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :customer
+  has_one :basket, through: :customer
 
   validates_acceptance_of :accepted_terms, accept: true, on: :create
 

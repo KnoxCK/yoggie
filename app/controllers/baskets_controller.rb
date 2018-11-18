@@ -10,7 +10,8 @@ class BasketsController < ApplicationController
   end
 
   def update
-    @basket = Basket.find_or_create_by(customer_id: @customer.id)
+    @basket = Basket.find_or_create_by!(customer_id: @customer.id)
+    @basket.update(basket_params) if params[:basket]
     if check_quantity
       BasketSmoothie.where(basket_id: @basket.id).destroy_all
       @basket.add_smoothies(params[:quantity])
@@ -23,7 +24,8 @@ class BasketsController < ApplicationController
   end
 
   def create
-    @basket = Basket.create(customer_id: @customer.id)
+    @basket = Basket.find_or_create_by!(basket_params)
+    @basket.update(basket_params) if params[:basket]
     if check_quantity
       @basket.add_smoothies(params[:quantity])
       after_basket_path
@@ -35,8 +37,16 @@ class BasketsController < ApplicationController
   end
 
   def new
-    @basket = Basket.new(customer_id: @customer.id)
+    @basket = Basket.find_or_initialize_by(customer_id: @customer.id)
     @smoothies = Smoothie.fetch_bundle(@customer)
+  end
+
+  def cancel_subscription
+    @basket = Basket.find(params[:id])
+    subscription = Stripe::Subscription.retrieve(@basket.stripe_sub_id)
+    subscription.delete
+    @basket.update(status: 'cancelled')
+    redirect_to customer_path(@basket.customer), notice: 'Your subscription has been cancelled'
   end
 
   private
@@ -46,7 +56,7 @@ class BasketsController < ApplicationController
   end
 
   def basket_params
-    params.require(:basket).permit(:customer_id)
+    params.require(:basket).permit(:customer_id, :tailored)
   end
 
   def check_quantity

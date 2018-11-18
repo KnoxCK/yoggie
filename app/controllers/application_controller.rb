@@ -5,7 +5,15 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def after_sign_in_path_for(resource)
+    if resource.customer.present?
+      customer_path(resource.customer)
+    else
+      root_path
+    end
+  end
+
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:accepted_terms])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:accepted_terms, :standard])
   end
 end

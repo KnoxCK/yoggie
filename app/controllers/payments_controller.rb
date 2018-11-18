@@ -4,6 +4,7 @@ class PaymentsController < ApplicationController
 
   def new
     @basket = @customer.basket
+    @fee = @basket.tailored ? Basket::SUBSCRIPTION_FEE[:tailored] : Basket::SUBSCRIPTION_FEE[:standard]
   end
 
   def create
@@ -17,14 +18,14 @@ class PaymentsController < ApplicationController
         )
     end
 
-    Stripe::Subscription.create(
+    subscription = Stripe::Subscription.create(
       customer: customer.id,
       plan: 'plan_DOtRJy6h8Pv9dj'
     )
 
 
     @customer.update(stripe_id: customer.id)
-    @customer.basket.update(status: 'active')
+    @customer.basket.update(status: 'active', stripe_sub_id: subscription.id)
     CustomerMailer.order_confirmation(@customer).deliver_now
     AdminMailer.new_order(@customer).deliver_now
     flash[:notice] = "Thank you, your payment was successful."

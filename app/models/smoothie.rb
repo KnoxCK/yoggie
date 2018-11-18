@@ -9,7 +9,10 @@ class Smoothie < ApplicationRecord
   belongs_to :size
   has_many :baskets, through: :basket_smoothies
 
+  scope :standard, -> { where(group_id: Group.find_by(name: 'Std'), size_id: 3) }
+
   def self.fetch_bundle(customer)
+    return standard if customer.standard?
     protein = customer.protein
     kcal = customer.calories_per_shake
     where(group: fetch_group(protein), size: fetch_size(kcal))

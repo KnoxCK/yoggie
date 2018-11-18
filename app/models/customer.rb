@@ -40,6 +40,7 @@ class Customer < ApplicationRecord
       fat: calculate_fat,
       carbs: calculate_carbs
       )
+    user.update(standard: false)
   end
 
   def calculate_bmr
@@ -68,6 +69,14 @@ class Customer < ApplicationRecord
 
   def calculate_carbs
     100 - calculate_protein - calculate_fat
+  end
+
+  def standard?
+    user.standard
+  end
+
+  def tailored?
+    !user.standard
   end
 
   private

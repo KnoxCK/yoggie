@@ -1,0 +1,5 @@
+<% @smoothies.each do |smoothie| %>
+  <%= render 'smoothies/card', smoothie: smoothie %>
+<% end %>
+
+<%= link_to "ORDER STANDARD YOGGIES", new_user_registration_path(standard: true), class: 'btn-yoggie-main-green' %>
