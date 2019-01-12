@@ -11,12 +11,13 @@ class BasketsController < ApplicationController
 
   def update
     @basket = Basket.find_or_create_by!(customer_id: @customer.id)
+    prev_status = @basket.tailored?
     @basket.update(basket_params) if params[:basket]
     if check_quantity
       BasketSmoothie.where(basket_id: @basket.id).destroy_all
       @basket.add_smoothies(params[:quantity])
-      send_change_notification if @basket.stripe_sub_id
-      after_basket_path
+      send_change_notification if @basket.stripe_sub_id && prev_status == @basket.tailored?
+      after_basket_path(prev_status)
     else
       @smoothies = Smoothie.fetch_bundle(@customer)
       @message = 'Please select a total of 5 smoothies.'
@@ -71,8 +72,8 @@ class BasketsController < ApplicationController
     AdminMailer.smoothie_change(@basket).deliver
   end
 
-  def after_basket_path
-    if @customer.basket.status == 'active'
+  def after_basket_path(prev_status)
+    if @customer.basket.status == 'active' && prev_status == @basket.tailored?
       redirect_to customer_path(@customer)
     elsif @customer.address.nil?
       redirect_to new_customer_address_path
