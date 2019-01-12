@@ -25,6 +25,7 @@ class CustomersController < ApplicationController
   end
 
   def show
+    @customer.check_status
     @basket = @customer.basket
   end
 

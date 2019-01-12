@@ -31,4 +31,12 @@ class Smoothie < ApplicationRecord
     return Size.find_by(name: 'iv') if kcal < (Size.find_by(name: 'iv').kcal + 25)
     Size.find_by(name: 'v')
   end
+
+  def standard?
+    group.name == 'Std'
+  end
+
+  def tailored?
+    !standard?
+  end
 end
