@@ -1,0 +1,21 @@
+<p>Someone has changed their subscription:</p>
+
+Customer Details:
+<br/>
+<p>Name: <%= @customer.full_name %></p>
+<p>Email: <%= @customer.user.email %></p>
+<p>Type: <%= @customer.standard? ? 'STANDARD' : 'TAILORED' %></p>
+
+Smoothies:
+<ul>
+  <% @customer.basket.smoothies.each do |smoothie| %>
+    <p><%= smoothie.name.titleize %> - Size: <%= smoothie.size.name %></p>
+  <% end %>
+</ul>
+
+Address:
+<p><%= @customer.address.address_line_one %></p>
+<p><%= @customer.address.address_line_two %></p>
+<p><%= @customer.address.address_line_three %></p>
+<p><%= @customer.address.postcode %></p>
+<p>Delivery Info: <%= @customer.address.delivery_instructions %></p>
