@@ -5,7 +5,7 @@
 Smoothies:
 <ul>
   <% @customer.basket.smoothies.each do |smoothie| %>
-    <p><%= smoothie.name %></p>
+    <p><%= smoothie.name.titleize %></p>
   <% end %>
 </ul>
 

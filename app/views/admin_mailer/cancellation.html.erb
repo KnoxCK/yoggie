@@ -8,7 +8,7 @@ Customer Details:
 Smoothies:
 <ul>
   <% @customer.basket.smoothies.each do |smoothie| %>
-    <p><%= smoothie.name %></p>
+    <p><%= smoothie.name.titleize %> - Size: <%= smoothie.size.name %></p>
   <% end %>
 </ul>
 
