@@ -1,5 +1,5 @@
 class AdminMailer < ApplicationMailer
-  default from: 'info@yoggie.com'
+  default from: 'info@yoggie.co.uk'
   layout 'mailer'
 
   def new_order(customer)
@@ -9,9 +9,18 @@ class AdminMailer < ApplicationMailer
       subject: 'New Order!')
   end
 
-  def smoothie_change
+  def smoothie_change(basket)
+    @basket = basket
+    @customer = basket.customer
+    mail(
+      to: 'charlie@yoggie.com',
+      subject: 'Smoothie Change')
   end
 
-  def cancellation
+  def cancellation(customer)
+    @customer = customer
+    mail(
+      to: 'charlie@yoggie.com',
+      subject: 'Cancelled Subscription')
   end
 end

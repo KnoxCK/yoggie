@@ -1,0 +1,20 @@
+<p>Smoothies have been changed for the below customer:</p>
+
+Customer Details:
+<br/>
+<p>Name: <%= @customer.full_name %></p>
+<p>Email: <%= @customer.user.email %></p>
+
+New Smoothie selection:
+<ul>
+  <% @basket.smoothies.each do |smoothie| %>
+    <p><%= smoothie.name %></p>
+  <% end %>
+</ul>
+
+Address:
+<p><%= @customer.address.address_line_one %></p>
+<p><%= @customer.address.address_line_two %></p>
+<p><%= @customer.address.address_line_three %></p>
+<p><%= @customer.address.postcode %></p>
+<p>Delivery Info: <%= @customer.address.delivery_instructions %></p>
