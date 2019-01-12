@@ -29,7 +29,7 @@
 			<%= link_to 'Change to standard smoothies', user_path(@customer.user, user: { standard: true }), method: :patch, class: 'btn-yoggie-main-clear' if @customer.tailored? %>
 		</div>
 		<div class="customer-vitals-details customer-vitals-details-last">
-			<h4>My <%= @customer.standard? ? 'Standard' : 'Tailored' %> Subscription:</h4>
+			<h4>My <%= @status %> Subscription:</h4>
 			<ul>
 			  <% @customer.basket.smoothies.each do |smoothie| %>
 			    <p><%= smoothie.name.titleize %></p>

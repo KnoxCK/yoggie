@@ -27,6 +27,7 @@ class CustomersController < ApplicationController
   def show
     @customer.check_status
     @basket = @customer.basket
+    @status = determine_status
   end
 
   def edit
@@ -42,6 +43,12 @@ class CustomersController < ApplicationController
   end
 
   private
+
+  def determine_status
+    return 'Cancelled' if @customer.basket.status == 'cancelled'
+    return 'Standard' if @customer.standard?
+    return 'Tailored' if @customer.tailored?
+  end
 
   def set_customer
     @customer = Customer.friendly.find(params[:id])
