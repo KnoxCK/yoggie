@@ -6,7 +6,6 @@
       <p><%= smoothie.name.titleize %></p>
     <% end %>
   </ul>
-  <%= link_to 'Change my Smoothies', edit_customer_basket_path(@customer, @customer.basket), class: "btn-yoggie-main-clear", style:"width: 253px;" %>
   <br></br>
   <h4>Delivery Address:</h4><br>
   <p><%= @customer.address.address_line_one %></p>
