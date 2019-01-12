@@ -4,6 +4,7 @@ Customer Details:
 <br/>
 <p>Name: <%= @customer.full_name %></p>
 <p>Email: <%= @customer.user.email %></p>
+<p>Type: <%= @customer.standard? ? 'STANDARD' : 'TAILORED' %></p>
 
 New Smoothie selection:
 <ul>

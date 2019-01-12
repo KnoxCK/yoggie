@@ -80,8 +80,8 @@ class Customer < ApplicationRecord
   end
 
   def check_status
-    return if basket.smoothies.first.standard? && standard?
-    return if basket.smoothies.first.tailored? && tailored?
+    return if !basket.tailored? && standard?
+    return if basket.tailored? && tailored?
     update_user_status
   end
 
