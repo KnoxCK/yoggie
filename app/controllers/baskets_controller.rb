@@ -15,6 +15,7 @@ class BasketsController < ApplicationController
     if check_quantity
       BasketSmoothie.where(basket_id: @basket.id).destroy_all
       @basket.add_smoothies(params[:quantity])
+      send_change_notification if @basket.stripe_sub_id
       after_basket_path
     else
       @smoothies = Smoothie.fetch_bundle(@customer)
@@ -46,6 +47,7 @@ class BasketsController < ApplicationController
     subscription = Stripe::Subscription.retrieve(@basket.stripe_sub_id)
     subscription.delete
     @basket.update(status: 'cancelled')
+    AdminMailer.cancellation(@customer).deliver
     redirect_to customer_path(@basket.customer), notice: 'Your subscription has been cancelled'
   end
 
@@ -63,6 +65,10 @@ class BasketsController < ApplicationController
     total = 0
     params[:quantity].each_value {|q| total += q.to_i }
     total == 5
+  end
+
+  def send_change_notification
+    AdminMailer.smoothie_change(@basket).deliver
   end
 
   def after_basket_path

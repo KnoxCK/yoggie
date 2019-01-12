@@ -1,5 +1,5 @@
 class CustomerMailer < ApplicationMailer
-  default from: 'info@yoggie.com'
+  default from: 'henrietta@yoggie.co.uk'
   layout 'mailer'
 
   def order_confirmation(customer)
