@@ -79,6 +79,20 @@ class Customer < ApplicationRecord
     !user.standard
   end
 
+  def check_status
+    return if !basket.tailored? && standard?
+    return if basket.tailored? && tailored?
+    update_user_status
+  end
+
+  def update_user_status
+    user.update(standard: current_standard_status)
+  end
+
+  def current_standard_status
+   basket.smoothies.first.standard? ? true : false
+  end
+
   private
 
   def should_generate_new_friendly_id?

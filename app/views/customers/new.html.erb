@@ -1,5 +1,6 @@
 <div class="our-smoothies-banner"></div>
 <div class="form-wrapper">
+  <%= link_to 'Prefer our standard smoothies? Click here', user_path(current_user, user: { standard: true }), method: :patch, remote: true if !current_user.standard %>
   <h3 class="text-center">Please fill out your vitals</h3>
   <%= simple_form_for @customer do |f| %>
     <%= f.input :first_name %>
@@ -7,7 +8,6 @@
     <%= f.input :gender, as: :select, collection: Customer::GENDER.map{|g|g.humanize} %>
     <%= f.input :age %>
     <% if !current_user.standard %>
-      <%= link_to 'Prefer our standard smoothies? Click here', user_path(current_user, user: { standard: true }), method: :patch, remote: true %>
       <%= f.input :height, label: 'Height (cm)' %>
       <%= f.input :weight, label: 'Weight (kg)' %>
       <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys %>

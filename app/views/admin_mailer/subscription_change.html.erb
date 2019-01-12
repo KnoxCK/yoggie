@@ -1,9 +1,10 @@
-<p>The below subscription has been cancelled:</p>
+<p>Someone has changed their subscription:</p>
 
 Customer Details:
 <br/>
 <p>Name: <%= @customer.full_name %></p>
 <p>Email: <%= @customer.user.email %></p>
+<p>Type: <%= @customer.standard? ? 'STANDARD' : 'TAILORED' %></p>
 
 Smoothies:
 <ul>
