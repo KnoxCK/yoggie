@@ -9,6 +9,8 @@ class Smoothie < ApplicationRecord
   belongs_to :size
   has_many :baskets, through: :basket_smoothies
 
+  mount_uploader :image, SmoothieUploader
+
   scope :standard, -> { where(group_id: Group.find_by(name: 'Std'), size_id: 3) }
 
   def self.fetch_bundle(customer)
