@@ -25,19 +25,15 @@
       <%= b.hidden_field :tailored, value: false if @customer.standard? %>
       <%= b.hidden_field :tailored, value: true if @customer.tailored? %>
       <% @smoothies.each do |smoothie| %>
-      <div class="smoothie" data-id="<%= smoothie.id %>"></div>
-        <p><%= smoothie.name.capitalize.humanize.titleize %></p>
+        <%= link_to smoothie_path(smoothie) do %>
+          <p><%= smoothie.name.capitalize.humanize.titleize %></p>
+          <%= cl_image_tag smoothie.image %>
+        <% end %>
         <%= select_tag "quantity[#{smoothie.id}]", options_for_select([0, 1, 2, 3, 4, 5]) %>
       <% end %><br></br>
       <%= b.submit 'Add My Smoothies', class: "btn-yoggie-main-green"  %>
     <% end %>
     <br>
-    <div id="modal-container"></div>
 
-    <script>
-      $('.smoothie').click(function(){
-        var smoothieId = $(this).data('id')
-      })
-    </script>
   </div>
 </div>

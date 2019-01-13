@@ -25,18 +25,29 @@
 			<p>Percentage Protein: <span><%= @customer.protein %></span></p>
 			<p>Percentage Fat: <span><%= @customer.fat %></span></p>
 			<p>Percentage Carbohydrate: <span><%= @customer.carbs %></span></p>
-			<%= link_to 'Change to tailored smoothies', edit_customer_path(@customer), class: 'btn-yoggie-main-clear' if @customer.standard? %>
-			<%= link_to 'Change to standard smoothies', user_path(@customer.user, user: { standard: true }), method: :patch, class: 'btn-yoggie-main-clear' if @customer.tailored? %>
+			<% if @customer&.basket.active? %>
+				<%= link_to 'Change to tailored smoothies', edit_customer_path(@customer), class: 'btn-yoggie-main-clear' if @customer.standard? %>
+				<%= link_to 'Change to standard smoothies', user_path(@customer.user, user: { standard: true }), method: :patch, class: 'btn-yoggie-main-clear' if @customer.tailored? %>
+			<% end %>
 		</div>
 		<div class="customer-vitals-details customer-vitals-details-last">
-			<h4>My <%= @status %> Subscription:</h4>
+			<h4>My <span style='color:#91B060;font-weight:700;'><%= @status %></span> Subscription:</h4>
 			<ul>
 			  <% @customer.basket.smoothies.each do |smoothie| %>
 			    <p><%= smoothie.name.titleize %></p>
 			  <% end %>
 			</ul>
-			<%= link_to 'Change my Smoothies', edit_customer_basket_path(@customer, @customer.basket), class: 'btn-yoggie-main-clear' %>
-			<%= link_to 'Cancel My Subscription', cancel_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
+			<% if @customer&.basket.active? %>
+				<%= link_to 'Change my Smoothies', edit_customer_basket_path(@customer, @customer.basket), class: 'btn-yoggie-main-clear' %>
+				<% unless @sub_status %>
+					<p>Your subscription needs updating: <%= link_to 'Click here to update', new_customer_payment_path(@customer) %></p>
+				<% end %>
+				<%= link_to 'Cancel My Subscription', cancel_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
+			<% end %>
 		</div>
 	</div>
+	<% if @customer&.basket.cancelled? %>
+		<%= link_to "ORDER STANDARD YOGGIES", user_path(@customer.user, user: { standard: true }), method: :patch, class: 'btn-yoggie-main-green' %>
+		<%= link_to "ORDER CUSTOM YOGGIES", edit_customer_path(@customer), class: 'btn-yoggie-main-green' %>
+	<% end %>
 </div>

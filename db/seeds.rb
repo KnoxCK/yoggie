@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+User.create!(email: 'admin@yoggie.co.uk', password: '123456', admin: true, accepted_terms: true) if Rails.env.development?
+
 Group.find_or_create_by(name: 'A', protein: 26)
 Group.find_or_create_by(name: 'B', protein: 36)
 Group.find_or_create_by(name: 'C', protein: 100)

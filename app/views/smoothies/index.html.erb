@@ -1,5 +1,8 @@
+<div style="padding-top:80px;"></div>
+<h4>OUR STANDARD YOGGIES:</h4>
 <% @smoothies.each do |smoothie| %>
   <%= render 'smoothies/card', smoothie: smoothie %>
 <% end %>
 
 <%= link_to "ORDER STANDARD YOGGIES", new_user_registration_path(standard: true), class: 'btn-yoggie-main-green' %>
+<%= link_to "ORDER CUSTOM YOGGIES", new_user_registration_path(standard: false), class: 'btn-yoggie-main-green' %>
