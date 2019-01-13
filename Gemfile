@@ -23,10 +23,13 @@ gem 'simple_form'
 gem 'stripe'
 gem 'uk_postcode', '~> 2.1.0'
 gem 'uglifier'
+gem 'carrierwave', '~> 1.0'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'dotenv-rails'
   gem 'letter_opener'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
