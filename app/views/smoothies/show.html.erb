@@ -11,9 +11,9 @@
         </div>
       </div>
       <div class="badges">
-        <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1539104477/badge_healthymeal_copy_o8dz8s.png" %>
-        <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1539104476/badge_energy_copy_s4yfin.png" %>
-        <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1539104477/badge_fibre_copy_pn7lnx.png" %>
+        <% @smoothie.badges.each do |badge| %>
+          <%= cl_image_tag badge.image %>
+        <% end %>
       </div>
     </div>
   </div>
