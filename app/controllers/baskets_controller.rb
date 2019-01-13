@@ -16,7 +16,6 @@ class BasketsController < ApplicationController
     if check_quantity
       BasketSmoothie.where(basket_id: @basket.id).destroy_all
       @basket.add_smoothies(params[:quantity])
-      send_change_notification if @basket.stripe_sub_id && prev_status == @basket.tailored?
       after_basket_path(prev_status)
     else
       @smoothies = Smoothie.fetch_bundle(@customer)
@@ -30,7 +29,7 @@ class BasketsController < ApplicationController
     @basket.update(basket_params) if params[:basket]
     if check_quantity
       @basket.add_smoothies(params[:quantity])
-      after_basket_path
+      after_basket_path(@basket.tailored)
     else
       @smoothies = Smoothie.fetch_bundle(@customer)
       @message = 'Please select a total of 5 smoothies.'
@@ -73,12 +72,19 @@ class BasketsController < ApplicationController
   end
 
   def after_basket_path(prev_status)
-    if @customer.basket.status == 'active' && prev_status == @basket.tailored?
+    if @basket.stripe_sub_id && correct_subscription?
+      send_change_notification unless prev_status == @basket.tailored?
       redirect_to customer_path(@customer)
     elsif @customer.address.nil?
       redirect_to new_customer_address_path
     else
       redirect_to new_customer_payment_path
     end
+  end
+
+  def correct_subscription?
+    subscription = Stripe::Subscription.retrieve(@basket&.stripe_sub_id)
+    type = @basket.tailored? ? :tailored : :standard
+    subscription['plan']['amount'] == Basket::SUBSCRIPTION_FEE[type]
   end
 end

@@ -28,6 +28,7 @@ class CustomersController < ApplicationController
     @customer.check_status
     @basket = @customer.basket
     @status = determine_status
+    @sub_status = correct_subscription?
   end
 
   def edit
@@ -48,6 +49,12 @@ class CustomersController < ApplicationController
     return 'Cancelled' if @customer.basket.status == 'cancelled'
     return 'Standard' if @customer.standard?
     return 'Tailored' if @customer.tailored?
+  end
+
+  def correct_subscription?
+    subscription = Stripe::Subscription.retrieve(@customer&.basket&.stripe_sub_id)
+    type = @customer&.basket&.tailored? ? :tailored : :standard
+    subscription['plan']['amount'] == Basket::SUBSCRIPTION_FEE[type]
   end
 
   def set_customer
