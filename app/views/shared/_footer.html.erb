@@ -4,12 +4,14 @@
 	</div>
 	<div class="footer-column footer-left">
 		<%= link_to "How Yoggie Works", "#" %>
-		<%= link_to "About Our Yoggies", "#" %>
-		<%= link_to "Yoggie Flavours", smoothies_path %>
+		<%= link_to "About Us", "#" %>
+		<%= link_to "FAQs", '#' %>
+		<%= link_to "Blog", '#' %>
 	</div>
 	<div class="footer-column footer-center">
-		<%= link_to "Privacy Policy", "#" %>
-		<%= link_to "Terms and Conditions", "#" %>
+		<%= link_to "Contact Us", '#' %>
+		<%= link_to "Privacy", "#" %>
+		<%= link_to "Terms", "#" %>
 		<%= link_to "Website by MouseCode", "http://www.mouse-code.com", target: "_blank" %>
 	</div>
 	<div class="footer-column footer-right">
@@ -24,6 +26,6 @@
       			<i class="fa fa-instagram"></i>
     		<% end %>
     	</div>
-		<p>©2018 Yoggie</p>
+		<p>©<%= Date.today.year %> Yoggie</p>
 	</div>
 </div>

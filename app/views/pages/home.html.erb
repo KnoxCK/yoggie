@@ -9,34 +9,37 @@
 </div>
 
 <!-- Landing intro for standard/tailored Yoggies -->
-<div class="landing-intro-section section-padding">
-	<div class="yoggie-intro intro-standard-section">
-		<%= image_tag "http://res.cloudinary.com/dehjqm9b4/image/upload/v1530007690/Yoggie_standard_smoothie_agdbed.png" %>
-		<div class="intro-standard-yoggie">
-			<h2>Standard Yoggie</h2>
-			<p>Simply delicious smoothie recipes created by our taste experts. Packed and ready to blend.</p>
-			<p>
-				<ul>✓ &nbsp; Turbo Tasty</ul>
-				<ul>✓ &nbsp; Real organic whole foods</ul>
-				<ul>✓ &nbsp; Nutritionist Approved</ul>
-				<ul>✓ &nbsp; Ready in 20 seconds</ul>
-			</p>
-			<%= link_to "SEE STANDARD YOGGIES", smoothies_path, class: 'btn-yoggie-main-green' %>
+<div class="pick-plan-section section-padding">
+	<h2 class="pick-plan-title">Pick your plan</h2>
+	<div class="pick-plan">
+		<div class="yoggie-standard">
+			<%= image_tag "http://res.cloudinary.com/dehjqm9b4/image/upload/v1530007690/Yoggie_standard_smoothie_agdbed.png" %>
+			<div class="yoggie-standard-text">
+				<h2>Yoggie</h2>
+				<p>Delicious smoothie mixes created by Nutritionists. Quicker, tastier alternative to breakfast (and super-good for you)! Box of 5 (1-a-day, Mon to Fri) delivered weekly to your doorstep. Blend straight from frozen for max taste!</p>
+				<p>
+					<ul>✓ &nbsp; choose from range of uber-yummy smoothies</ul>
+					<ul>✓ &nbsp; complete meal</ul>
+					<ul>✓ &nbsp; ready in 30 seconds</ul>
+					<ul>✓ &nbsp; 100% balanced nutrition</ul>
+					<ul>✓ &nbsp; 100% natural (no powders!)</ul>
+				</p>
+				<%= link_to "CHOOSE MY YOGGIES", smoothies_path, class: 'btn-yoggie-main-green' %>
+			</div>
 		</div>
-	</div>
-	<div class="yoggie-intro intro-tailored-section">
-		<div class="intro-tailored-yoggie">
-			<h2>Tailored Yoggie</h2>
-			<p>Complete, delicious smoothie mixes tailored to you by our nutritionists and taste experts.</p>
-			<p>
-				<ul>✓ &nbsp; Super Tasty</ul>
-				<ul>✓ &nbsp; Nutritionally tailored to you</ul>
-				<ul>✓ &nbsp; Real foods – no powders, no artificial &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sweetners, no flavourings</ul>
-				<ul>✓ &nbsp; Healthy, complete meal in 20 seconds</ul>
-			</p>
-			<%= link_to "CREATE MY PERFECT SMOOTHIE", new_customer_path, class: 'btn-yoggie-main-green' %>
+		<div class="yoggie-custom">
+			<%= image_tag "http://res.cloudinary.com/dehjqm9b4/image/upload/v1530010895/Yoggie_tailored_smoothie_nzm9ds.png" %>
+			<div class="yoggie-custom-text">
+				<h2>Yoggie Custom</h2>
+				<p>Same delicious flavours as Yoggie with the protein, carbs, fats & calories customised to your body & goals! [We just need to know a little bit about you to crunch the numbers. Our [7] question quiz take just 26 seconds to complete!]</p>
+				<p>
+					<ul>✓ &nbsp; same delicious flavours as yoggie</ul>
+					<ul>✓ &nbsp; customised to your body</ul>
+					<ul>✓ &nbsp; choose to lose weight, gain weight, boost health</ul>
+				</p>
+				<%= link_to "CREATE MY PERFECT SMOOTHIE", new_customer_path, class: 'btn-yoggie-main-green' %>
+			</div>
 		</div>
-		<%= image_tag "http://res.cloudinary.com/dehjqm9b4/image/upload/v1530010895/Yoggie_tailored_smoothie_nzm9ds.png" %>
 	</div>
 </div>
 
@@ -46,7 +49,7 @@
 		<%= image_tag "http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516705807/Asset_5_oihd9x.png" %>
 	</div>
 	<div class="how-it-works section-padding">
-		<h2>How Yoggie Works</h2>
+		<h2>How it works</h2>
 		<div class="how-it-works-recipe">
 			<div class="how-it-works-text">
 				<h4>Choose Recipe</h4>
@@ -68,7 +71,7 @@
 			</div>
 			<%= image_tag "http://res.cloudinary.com/dqxvcdy6w/image/upload/v1518602752/Yoggie_artwork_sketch_03_FINAL_vigwda.png" %>
 		</div>
-		<%= link_to "SEE STANDARD YOGGIES", smoothies_path, class: 'btn-yoggie-main-clear' %>
+		<%= link_to "GET STARTED", smoothies_path, class: 'btn-yoggie-main-clear' %>
 		<div class="border-fade">
 		</div>
 	</div>
@@ -79,21 +82,21 @@
 
 <!-- About Our Yoggies -->
 <div class="about-our-yoggies section-padding text-center" id="about-yoggies">
-	<h2>About Our Yoggies</h2>
+	<h2>What is Yoggie?</h2>
 	<%= image_tag "http://res.cloudinary.com/dehjqm9b4/image/upload/v1530108928/HowYoggieWorks_j4zqms.png" %>
 </div>
 
 <!-- What's in your weekly Yoggie box -->
-<div class="your-box">
-	<div class="your-box-content">
-		<h2>What's In Your Weekly Yoggie Box</h2>
+<div class="yoggie-benefits">
+	<div class="yoggie-benefits-content">
+		<h2>Benefits of Yoggie</h2>
 		<p>
 			<ul>✓ &nbsp; Turbo Tasty</ul>
 			<ul>✓ &nbsp; Real organic whole foods</ul>
 			<ul>✓ &nbsp; Nutritionist Approved</ul>
 			<ul>✓ &nbsp; Ready in 20 seconds</ul>
 		</p>
-		<%= link_to "SEE STANDARD YOGGIES", smoothies_path, class: 'btn-yoggie-main-green' %>
+		<%= link_to "GET STARTED", smoothies_path, class: 'btn-yoggie-main-green' %>
 	</div>
 </div>
 

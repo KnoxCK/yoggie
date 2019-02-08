@@ -1,10 +1,16 @@
-.yoggie-intro {
+.pick-plan-title {
+	text-align: center;
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+.pick-plan {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	margin: 0px 20px;
 	h2 {
 		font-weight: lighter;
-		margin-bottom: 22px;
+		margin-bottom: 15px;
+		margin-top: 30px;
 	}
 	p {
 		font-weight: lighter;
@@ -15,31 +21,19 @@
 		font-weight: lighter;
 		padding-left: 14px; 
 	}
-}
-.intro-standard-section {
 	img {
-		width: 450px;
-	    margin: 36px 90px 0 0;
-	    height: 365px;
-	    border-radius: 4px;
+		width: 500px;
+	    height: auto;
+	    border-radius: 3px;
 	}
 }
-.intro-tailored-section {
-	margin-top: 95px;
-	img {
-		width: 450px;
-	    margin-left: 80px;
-	    height: 365px;
-	    border-radius: 4px;
-	    margin-top: 28px;
-	}
+.yoggie-standard {
+	margin: 10px;
+	width: 500px;
 }
-.intro-standard-yoggie {
-	width: 400px;
-}
-.intro-tailored-yoggie {
-	width: 400px;
-	margin-left: 50px;
+.yoggie-custom {
+	margin: 10px;
+	width: 500px;
 }
 .how-it-works-section {
 	position: relative;
@@ -110,7 +104,7 @@
 		margin-bottom: 50px;
 	}
 }
-.your-box {
+.yoggie-benefits {
 	background-image: url("http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516711519/Asset_3_wfzioj.png");
 	color: #393939;
 	text-align: center;
@@ -122,7 +116,7 @@
 	align-items: center;
 	justify-content: left;
 }
-.your-box-content {
+.yoggie-benefits-content {
   background-color: white;
   background: rgba(255, 255, 255, 0.7);
   padding: 60px;
