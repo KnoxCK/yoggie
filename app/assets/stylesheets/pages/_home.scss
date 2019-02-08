@@ -1,3 +1,4 @@
+//PICK PLAN SECTION
 .pick-plan-title {
 	text-align: center;
 	margin-bottom: 30px;
@@ -22,19 +23,40 @@
 		padding-left: 14px; 
 	}
 	img {
-		width: 500px;
-	    height: auto;
-	    border-radius: 3px;
+		width: 385px;
+		height: auto;
+		border-radius: 3px;
+		margin: 30px 30px 0 30px;
 	}
 }
 .yoggie-standard {
-	margin: 10px;
 	width: 500px;
+	margin: 30px;
+	background-color: #f1f1f1;
+	border-radius: 3px;
+}
+.yoggie-standard-text {
+	padding: 10px 40px 40px 40px;
+}
+.yoggie-standard:hover {
+	background-color: #E6577A;
+	color: white;
 }
 .yoggie-custom {
-	margin: 10px;
 	width: 500px;
+	margin: 30px;
+	background-color: #f1f1f1;
+	border-radius: 3px;
 }
+.yoggie-custom-text {
+	padding: 10px 40px 40px 40px;
+}
+.yoggie-custom:hover {
+	background-color: #E6577A;
+	color: white;
+}
+
+//HOW IT WORKS
 .how-it-works-section {
 	position: relative;
 	background-color: #F7F7F7;
