@@ -20,7 +20,7 @@ class AdminMailer < ApplicationMailer
   def cancellation(customer)
     @customer = customer
     mail(
-      to: 'charlie@yoggie.com',
+      to: 'cancel@yoggie.com',
       subject: 'Cancelled Subscription')
   end
 

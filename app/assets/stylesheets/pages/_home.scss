@@ -1,8 +1,7 @@
 //PICK PLAN SECTION
 .pick-plan-title {
 	text-align: center;
-	margin-bottom: 30px;
-	margin-top: 10px;
+	margin-top: 60px;
 }
 .pick-plan {
 	display: flex;
@@ -56,69 +55,45 @@
 	color: white;
 }
 
-//HOW IT WORKS
+//HOW IT WORKS SECTION
 .how-it-works-section {
 	position: relative;
 	background-color: #F7F7F7;
-}
-.how-it-works {
-	h2 {
+	h4 {
+		margin-top: 30px;
+	}
+	p {
 		font-weight: lighter;
 	}
 	img {
-		width: 436px;
-	    height: auto;
+		width: auto;
+	    height: 100px;
 	    border-radius: 10px;
 	}
+}
+.how-it-works {
+	display: flex;
+	justify-content: center;
+	padding: 0 50px;
+}
+.how-it-works-icons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 400px;
+	margin: 30px;
 }
 .border-fade img {
 	width: 100%;
 }
-.how-it-works-recipe {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: right;
-	margin-right: 95px;
-	height: 300px;
-}
-.how-it-works-deliver {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: left;
-	height: 300px;
-	img {
-		margin-right: 35px;
-	}
-}
-.how-it-works-making {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: right;
-	margin-right: 33px;
-	height: 300px;
-	img {
-		margin-left: 70px;
-		width: 338px;
-	}
-}
-.how-it-works-text {
-	width: 400px;
-	p {
-		font-weight: lighter;
-	}
-}
+
+//ABOUT SECTION
 .about-our-yoggies {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
 	align-items: center;
-	h2 {
-		font-weight: lighter;
-	}
 	img {
 		width: 70%;
 		height: auto;
@@ -129,35 +104,45 @@
 .yoggie-benefits {
 	background-image: url("http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516711519/Asset_3_wfzioj.png");
 	color: #393939;
-	text-align: center;
-	height: 857px;
+	text-align: left;
+	height: 840px;
 	width: 100%;
 	background-size: cover !important;
 	position: relative;
 	display: flex;
 	align-items: center;
-	justify-content: left;
+	justify-content: center;
 }
 .yoggie-benefits-content {
   background-color: white;
   background: rgba(255, 255, 255, 0.7);
-  padding: 60px;
-  border-radius: 15px;
-  width: 530px;
-  margin-left: 8vw;
-  text-align: left;
-  h2 {
-  	font-weight: lighter;
-  }
+  padding: 40px 60px;
+  border-radius: 5px;
+  margin: 2vw;
+  text-align: center;
+  width: 90%;
+      margin-top: 100px;
   p {
-  	margin-top: 40px;
-  }
-  ul {
-  	padding-left: 14px;
+  	margin-top: 10px;
   	font-weight: lighter;
   }
 }
+.benefits-row {
+	display: flex;
+	justify-content: center;
+}
+.benefits-icons {
+	padding: 15px;
+	width: auto;
+	img {
+		margin: 20px 0;
+	}
+}
+
+
+//TESTIMONIALS SECTION
 .testimonials-section {
+	padding-top: 50px;
 	h2 {
 		text-align: center;
 		font-weight: lighter;
@@ -175,7 +160,7 @@
 	padding: 20px 10px 0px 20px;
 	margin: 40px 7px;
 	span {
-		text-align: center;
+		text-align: left;
 		font-size: 14px;
 		font-weight: bold;
 	}
@@ -196,73 +181,25 @@
 	border: 2px dotted #0D6D5B;
 }
 @media only screen and (max-width: 1000px){
-	.yoggie-intro {
-		flex-wrap: wrap;
-		padding: 0;
+	.pick-plan {
+	    flex-direction: column;
+	    align-items: center;
 	}
-	.intro-standard-section img {
-		width: 95%;
-    	margin: 0;
-    	height: auto;
+	.pick-plan img {
+		width: 552px;
 	}
-	.intro-standard-yoggie {
-		justify-content: left;
-		width: 90%;
-		margin-left: 50px;
-	}
-	.intro-tailored-section {
-		flex-direction: column-reverse;
-		img {
-			width: 95%;
-	    	margin: 0;
-	    	height: auto;
-	    }
-	}
-	.intro-tailored-yoggie {
-		justify-content: left;
-		width: 90%;
-	}
-	.how-it-works-recipe {
-		flex-direction: column-reverse;
-		text-align: center;
-		margin-right: 0;
-		height: auto;
-		h4 {
-			margin-top: -10px;
-		}
-	}
-	.how-it-works-deliver {
-		flex-direction: column;
-		text-align: center;
-		height: auto;
-		img {
-			margin-right: 0;
-			margin-top: -50px;
-		}
-		h4 {
-			margin-top: -65px;
-		}
-	}
-	.how-it-works-making {
-		flex-direction: column-reverse;
-		text-align: center;
-		margin-right: 0;
-		margin-top: 50px;
-		height: auto;
-		img {
-			margin-left: 0;
-			width: 338px;
-		}
-		h4 {
-			margin-top: 10px;
-		}
-	}
-	.your-box {
+	.yoggie-standard {
+    	width: 615px;
+    }
+	.yoggie-custom {
+    	width: 615px;
+    }
+	.yoggie-benefits {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-	.your-box-content {
+	.yoggie-benefits-content {
 	  width: 90%;
 	  margin-left: 0;
 	  text-align: left;
