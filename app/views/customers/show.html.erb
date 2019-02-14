@@ -17,7 +17,7 @@
 			<%= link_to 'Change my vitals', edit_customer_path(@customer), class: 'btn-yoggie-main-clear' if @customer.tailored? %>
 		</div>
 		<div class="customer-vitals-details">
-			<h4>My Results:</h4>
+			<h4>My Nutrition:</h4>
 			<p>Your BMR: <span><%= @customer.bmr %></span></p>
 			<p>Total Daily Energy Expenditure: <span><%= @customer.tdee %></span></p>
 			<p>Daily Target Caloric Intake: <span><%= @customer.daily_calorie_goal %></span></p>
@@ -47,7 +47,7 @@
 		</div>
 	</div>
 	<% if @customer&.basket.cancelled? %>
-		<%= link_to "ORDER STANDARD YOGGIES", user_path(@customer.user, user: { standard: true }), method: :patch, class: 'btn-yoggie-main-green' %>
-		<%= link_to "ORDER CUSTOM YOGGIES", edit_customer_path(@customer), class: 'btn-yoggie-main-green' %>
+		<%= link_to "ORDER YOGGIES", user_path(@customer.user, user: { standard: true }), method: :patch, class: 'btn-yoggie-main-green' %>
+		<%= link_to "ORDER YOGGIE CUSTOM", edit_customer_path(@customer), class: 'btn-yoggie-main-green' %>
 	<% end %>
 </div>
