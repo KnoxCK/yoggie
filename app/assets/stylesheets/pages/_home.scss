@@ -8,7 +8,6 @@
 	justify-content: center;
 	margin: 0px 20px;
 	h2 {
-		font-weight: lighter;
 		margin-bottom: 15px;
 		margin-top: 30px;
 	}
@@ -40,6 +39,10 @@
 .yoggie-standard:hover {
 	background-color: #E6577A;
 	color: white;
+	.btn-yoggie-main-clear {
+		background-color: #91B060;
+		color: white;
+	}
 }
 .yoggie-custom {
 	width: 500px;
@@ -53,12 +56,19 @@
 .yoggie-custom:hover {
 	background-color: #E6577A;
 	color: white;
+	.btn-yoggie-main-clear {
+		background-color: #91B060;
+		color: white;
+	}
 }
 
 //HOW IT WORKS SECTION
 .how-it-works-section {
 	position: relative;
 	background-color: #F7F7F7;
+	h2 {
+		margin-bottom: 35.5px;
+	}
 	h4 {
 		margin-top: 30px;
 	}
@@ -67,7 +77,7 @@
 	}
 	img {
 		width: auto;
-	    height: 100px;
+	    height: 80px;
 	    border-radius: 10px;
 	}
 }
@@ -95,12 +105,12 @@
 	align-content: center;
 	align-items: center;
 	img {
-		width: 70%;
+		width: 100%;
 		height: auto;
-		margin-top: 64px;
 		margin-bottom: 50px;
 	}
 }
+//YOGGIE BENEFITS SECTION
 .yoggie-benefits {
 	background-image: url("http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516711519/Asset_3_wfzioj.png");
 	color: #393939;
@@ -145,7 +155,6 @@
 	padding-top: 50px;
 	h2 {
 		text-align: center;
-		font-weight: lighter;
 	}
 }
 .testimonials {
