@@ -16,7 +16,7 @@
   <% end %>
   <h3 class="text-center">Choose Your Flavours</h3>
   <div class="results-content">
-    <h5>Please select a total of 5 smoothies from the list below:</h5>
+    <h5>Please select a total of <span style="color: #E6577A;">5</span> smoothies from the list below:</h5>
     <% if @message %>
       <p style="color: red;"><%= @message %></p>
     <% end %>
@@ -24,8 +24,9 @@
       <%= b.hidden_field :customer_id, value: @customer.id %>
       <%= b.hidden_field :tailored, value: false if @customer.standard? %>
       <%= b.hidden_field :tailored, value: true if @customer.tailored? %>
+      <div class="smoothie-results-row">
       <% @smoothies.each do |smoothie| %>
-        <div class="smoothie-quantity-image standard-yoggie">
+        <div class="smoothie-quantity-image results-yoggie">
           <%= link_to smoothie_path(smoothie) do %>
             <%= image_tag "http://res.cloudinary.com/dqxvcdy6w/image/upload/v1517227077/Peachy_Mangos_zpkava.png" %>
             <p><%= smoothie.name.capitalize.humanize.titleize %></p>
@@ -33,7 +34,10 @@
           <%= select_tag "quantity[#{smoothie.id}]", options_for_select([0, 1, 2, 3, 4, 5]) %>
         </div>
       <% end %><br></br>
-      <%= b.submit 'Add My Smoothies', class: "btn-yoggie-main-green"  %>
+      </div>
+      <div class="results-button">
+        <%= b.submit 'Add My Smoothies', class: "btn-yoggie-main-green results-button"  %>
+        </div>
     <% end %>
     <br>
 

@@ -10,13 +10,18 @@
     } 
     p {
     	padding: 30px;
+        color: black;
     }
 }
 .smoothie-quantity-image {
-	padding: 0 44px;
+	padding: 0 44px 10px 44px;
 	display: flex;
     flex-direction: column;
     align-items: center;
+}
+.smoothie-results-row {
+    display: flex;
+    flex-wrap: wrap;
 }
 .yoggie-add {
 	display: flex;

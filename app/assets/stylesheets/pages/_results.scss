@@ -9,10 +9,28 @@
 		padding-top: 20px;
 	}
 }
+.results-yoggie {
+	margin: 10px;
+	border-radius: 5px;
+	background-color: #f0f0f0;
+	border: solid 1px #e1e1e1;
+	width: 288px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+	img {
+		padding: 30px 40px 20px 40px;
+		width: 100%;
+	}
+}
 .results-content {
 	padding-top: 15px;
 	justify-content: center;
 	align-content: center;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
 	h5 {
 		margin-bottom: 30px;
 		margin-bottom: 30px;
@@ -22,6 +40,8 @@
 	}
 	p {
 		font-weight: lighter;
+		text-align: center;
+    	color: black;
 	}
 }
 .results-line {
@@ -31,5 +51,10 @@
 	margin-bottom: 20px;
 }
 .your-results {
-	color: #98B468;
+	color: #E6577A;
+}
+.results-button {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
 }
