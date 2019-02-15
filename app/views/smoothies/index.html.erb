@@ -1,8 +1,17 @@
-<div style="padding-top:80px;"></div>
-<h4>OUR STANDARD YOGGIES:</h4>
+<div class="our-smoothies-banner"></div>
+<div class="our-smoothies-intro section-padding text-center">
+	<br>
+	<h2>Pick Your Yoggies</h2>
+	<p>Choose your 5 smoothies for the week</p>
+	<br>
+</div>
+<div class="our-smoothies">
 <% @smoothies.each do |smoothie| %>
   <%= render 'smoothies/card', smoothie: smoothie %>
 <% end %>
-
-<%= link_to "ORDER STANDARD YOGGIES", new_user_registration_path(standard: true), class: 'btn-yoggie-main-green' %>
-<%= link_to "ORDER CUSTOM YOGGIES", new_user_registration_path(standard: false), class: 'btn-yoggie-main-green' %>
+</div>
+<div class="text-center"><br>
+	<%= link_to "ORDER STANDARD YOGGIES", new_user_registration_path(standard: true), class: 'btn-yoggie-main-green' %>
+	<%= link_to "ORDER CUSTOM YOGGIES", new_user_registration_path(standard: false), class: 'btn-yoggie-main-green' %>
+</div>
+<br></br>
