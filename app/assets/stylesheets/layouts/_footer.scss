@@ -17,6 +17,11 @@
 	display: flex;
 	flex-direction: column;
 	font-size: 14px;
+	text-decoration: none;
+	a:hover {
+		text-decoration: none;
+		color: #E6577A;
+	}
 }
 .footer-logo img {
 	width: 227px;
