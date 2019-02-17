@@ -6,14 +6,8 @@
       <%= link_to " VIEW YOGGIE", smoothie_path(smoothie), class: 'btn-yoggie-main-clear' %>
       <%= link_to "ADD TO BOX", "#", class: 'btn-yoggie-main-clear' %>
       <p class="hatch"><br>
-		✓ &nbsp; Strawberries<br>
-		✓ &nbsp; Merringues</br>
-		✓ &nbsp; Carrots</br>
-		✓ &nbsp; Muesli</br>
-		✓ &nbsp; Strawberries<br>
-		✓ &nbsp; Merringues</br>
-		✓ &nbsp; Carrots</br>
-		✓ &nbsp; Muesli</br></p>
+		    <% @smoothie.ingredients.uniq.each do |i| %>
+              <ul>✓ &nbsp; <%= i.name.titleize %></p>
     </div>
   </div>
 <% end %>
