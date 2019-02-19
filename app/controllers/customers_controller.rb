@@ -52,6 +52,7 @@ class CustomersController < ApplicationController
   end
 
   def correct_subscription?
+    return false unless @customer.basket&.stripe_sub_id
     subscription = Stripe::Subscription.retrieve(@customer&.basket&.stripe_sub_id)
     type = @customer&.basket&.tailored? ? :tailored : :standard
     subscription['plan']['amount'] == Basket::SUBSCRIPTION_FEE[type]
