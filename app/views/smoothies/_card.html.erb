@@ -6,17 +6,9 @@
       <%= link_to " VIEW YOGGIE", smoothie_path(smoothie), class: 'btn-yoggie-main-clear' %>
       <%= link_to "ADD TO BOX", "#", class: 'btn-yoggie-main-clear' %>
       <p class="hatch"><br>
-        <!-- <% smoothie.ingredients.each do |ingredient| %>
-          <p>✓ &nbsp;<%= ingredient.name %></p> this is not working 
-        <% end %>--> 
-    		✓ &nbsp; Strawberries<br>
-    		✓ &nbsp; Merringues</br>
-    		✓ &nbsp; Carrots</br>
-    		✓ &nbsp; Muesli</br>
-    		✓ &nbsp; Strawberries<br>
-    		✓ &nbsp; Merringues</br>
-    		✓ &nbsp; Carrots</br>
-    		✓ &nbsp; Muesli</br>
+        <% smoothie.ingredients.each do |ingredient| %>
+          ✓ &nbsp;<%= ingredient.name.titleize %></br>
+        <% end %>
       </p>
     </div>
   </div>
