@@ -4,19 +4,15 @@
     <div class="standard-yoggie-content">
       <h3><%= smoothie.name.titleize %><br></br></h3>
       <%= link_to " VIEW YOGGIE", smoothie_path(smoothie), class: 'btn-yoggie-main-clear' %>
-      <%= link_to "ADD TO BOX", "#", class: 'btn-yoggie-main-clear' %>
+      <% if current_user %>
+        <%= link_to "ADD TO BOX", new_customer_basket_path(current_user.customer), class: 'btn-yoggie-main-clear' %>
+      <% else %>
+        <%= link_to "ADD TO BOX", new_customer_path, class: 'btn-yoggie-main-clear' %>
+      <% end %>
       <p class="hatch"><br>
-        <!-- <% smoothie.ingredients.each do |ingredient| %>
-          <p>✓ &nbsp;<%= ingredient.name %></p> this is not working 
-        <% end %>--> 
-    		✓ &nbsp; Strawberries<br>
-    		✓ &nbsp; Merringues</br>
-    		✓ &nbsp; Carrots</br>
-    		✓ &nbsp; Muesli</br>
-    		✓ &nbsp; Strawberries<br>
-    		✓ &nbsp; Merringues</br>
-    		✓ &nbsp; Carrots</br>
-    		✓ &nbsp; Muesli</br>
+        <% smoothie.ingredients.each do |ingredient| %>
+          ✓ &nbsp;<%= ingredient.name.titleize %></br>
+        <% end %>
       </p>
     </div>
   </div>
