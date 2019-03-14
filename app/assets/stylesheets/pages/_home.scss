@@ -31,7 +31,7 @@
 	width: 500px;
 	margin: 30px;
 	background-color: #f1f1f1;
-	border-radius: 3px;
+	border-radius: 5px;
 }
 .yoggie-standard-text {
 	padding: 10px 40px 40px 40px;
@@ -48,7 +48,7 @@
 	width: 500px;
 	margin: 30px;
 	background-color: #f1f1f1;
-	border-radius: 3px;
+	border-radius: 5px;
 }
 .yoggie-custom-text {
 	padding: 10px 40px 40px 40px;
@@ -112,7 +112,6 @@
 }
 //YOGGIE BENEFITS SECTION
 .yoggie-benefits {
-	background-image: url("http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516711519/Asset_3_wfzioj.png");
 	color: #393939;
 	text-align: left;
 	height: 840px;
@@ -124,8 +123,7 @@
 	justify-content: center;
 }
 .yoggie-benefits-content {
-  background-color: white;
-  background: rgba(255, 255, 255, 0.9);
+  background-color: #F7F7F7;
   padding: 40px 60px;
   border-radius: 5px;
   margin: 2vw;
