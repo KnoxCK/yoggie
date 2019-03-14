@@ -7,14 +7,14 @@
     <% end %>
   </ul>
   <br></br>
-  <h4>Weekly Subscription: £<%= @fee /100 %></h4>
+  <h4>Weekly Subscription: </h4><p>£<%= @fee /100 %></p>
   <br></br>
   <h4>Delivery Address:</h4><br>
   <p><%= @customer.address.address_line_one %></p>
   <p><%= @customer.address.address_line_two %></p>
   <p><%= @customer.address.postcode %></p>
   <p><%= @customer.address.delivery_instructions %></p>
-  <%= link_to 'Change my Address', edit_customer_address_path(@customer, @customer.address), class: "btn-yoggie-main-clear", style:"width: 253px;" %>
+  <%= link_to 'Change my Address', edit_customer_address_path(@customer, @customer.address) %>
   <br><br/>
   <h4>You're done!</h4><br>
   <%= form_tag customer_payments_path(@customer) do %>
