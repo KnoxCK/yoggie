@@ -1,5 +1,4 @@
 .customer-vitals-wrapper {
-	margin: 30px 5% 0 5%;
 	padding: 40px 40px 0 40px; 
 	background-color: #f7f7f7;
 	height: auto;
@@ -12,37 +11,75 @@
 	h2 {
 		margin-bottom: 24px;
 	}
-}
-.customer-vitals {
-	display: flex;
-	justify-content: center;
-    //padding: 42px 32px;
-}
-.customer-vitals-details {
-	padding: 0 85px;
-    border-right: solid 1px grey;
-    width: auto;
+	h3 {
+		color: #343434;
+		font-size: 23px;
+	}
 	h4 {
 		font-weight: bold;
-		color: #343434;
-		padding-bottom: 5px;
+		color: white;
+		padding-bottom: 15px;
+	}
+	p {
+		font-weight: lighter;
+		color: white;
 	}
 	ul  {
 		padding-left: 0;
 	}
 	span {
-		color: #98B468;
-		font-weight: lighter;
+		color: #CDDBB6;
 	}
+	i {
+		color: #91B060;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	a {
+		color: white;
+		font-weight: lighter;
+		font-size: 15px;
+		text-decoration: underline;
+	}
+	label {
+		color: white;
+	}
+}
+.customer-vitals {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+.customer-vitals-details {
+	padding: 0 85px;
+    width: 50%;
+    border-right: solid 1px white;
+    background-color: #E6577A;
+    padding: 40px;
+    border-top-left-radius: 5px;
+}
+.customer-vitals-nutrition {
+	padding: 0 85px;
+    width: 50%;
+    background-color: #E6577A;
+   	padding: 40px;
+   	border-top-right-radius: 5px;
+}
+.customer-vitals-subscription {
+	background-color: #E6577A;
+	border-top: solid 1px white;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-content: center;
+	padding: 40px;
+	border-bottom-left-radius: 5px;
+	border-top-right-radius: 5px;
 	p {
+		color: white;
 		font-weight: lighter;
+		font-size: 15px;
 	}
-}
-.customer-vitals-details-last {
-	border-right: none;
-}
-label {
-	color: #E6577A;
 }
 
 
