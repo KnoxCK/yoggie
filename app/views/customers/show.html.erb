@@ -1,53 +1,55 @@
-<div class="dashboard-background"></div>
 <div class="customer-vitals-wrapper">
-	<h2>My Dashboard</h2>
-	<h4><%= @customer.first_name %> <%= @customer.last_name %></h4>
-	<hr>
-	<br></br>
-	<div class="customer-vitals">
-		<div class="customer-vitals-details">
-			<h4>My Vitals:</h4>
-			<p>Age: <span><%= @customer.age %></span></p>
-			<p>Gender: <span><%= @customer.gender %></span></p>
-			<p>Height: <span><%= @customer.height %></span></p>
-			<p>Weight: <span><%= @customer.weight %></span></p>
-			<p>Meals per day: <span><%= @customer.meals_per_day %></span></p>
-			<p>Activity Level: <span><%= @customer.activity_level %></span></p>
-			<p>Goal: <span><%= @customer.goal %></span></p>
-			<%= link_to 'Change my vitals', edit_customer_path(@customer), class: 'btn-yoggie-main-clear' if @customer.tailored? %>
-		</div>
-		<div class="customer-vitals-details">
-			<h4>My Nutrition:</h4>
-			<p>Your BMR: <span><%= @customer.bmr %></span></p>
-			<p>Total Daily Energy Expenditure: <span><%= @customer.tdee %></span></p>
-			<p>Daily Target Caloric Intake: <span><%= @customer.daily_calorie_goal %></span></p>
-			<p>Calories per Smoothie: <span><%= @customer.calories_per_shake %></span></p>
-			<p>Percentage Protein: <span><%= @customer.protein %></span></p>
-			<p>Percentage Fat: <span><%= @customer.fat %></span></p>
-			<p>Percentage Carbohydrate: <span><%= @customer.carbs %></span></p>
-			<% if @customer&.basket.active? %>
-				<%= link_to 'Change to tailored smoothies', edit_customer_path(@customer), class: 'btn-yoggie-main-clear' if @customer.standard? %>
-				<%= link_to 'Change to standard smoothies', user_path(@customer.user, user: { standard: true }), method: :patch, class: 'btn-yoggie-main-clear' if @customer.tailored? %>
-			<% end %>
-		</div>
-		<div class="customer-vitals-details customer-vitals-details-last">
-			<h4>My <span style='color:#91B060;font-weight:700;'><%= @status %></span> Subscription:</h4>
-			<ul>
-			  <% @customer.basket.smoothies.each do |smoothie| %>
-			    <p><%= smoothie.name.titleize %></p>
-			  <% end %>
-			</ul>
-			<% if @customer&.basket.active? %>
-				<%= link_to 'Change my Smoothies', edit_customer_basket_path(@customer, @customer.basket), class: 'btn-yoggie-main-clear' %>
-				<% unless @sub_status %>
-					<p>Your subscription needs updating: <%= link_to 'Click here to update', new_customer_payment_path(@customer) %></p>
+	<div class="customer-vitals-box">
+		<h2>My Dashboard</h2>
+		<h3>&nbsp;<%= @customer.first_name %> <%= @customer.last_name %></h3>
+		<hr>
+		<div class="customer-vitals">
+			<div class="customer-vitals-details">
+				<h4>My Vitals:</h4>
+				<p>Age: <span><%= @customer.age %></span></p>
+				<p>Gender: <span><%= @customer.gender %></span></p>
+				<p>Height: <span><%= @customer.height %></span></p>
+				<p>Weight: <span><%= @customer.weight %></span></p>
+				<p>Meals per day: <span><%= @customer.meals_per_day %></span></p>
+				<p>Activity Level: <span><%= @customer.activity_level %></span></p>
+				<p>Goal: <span><%= @customer.goal %></span></p>
+				<%= link_to 'Change my vitals', edit_customer_path(@customer) if @customer.tailored? %>
+			</div>
+			<div class="customer-vitals-nutrition">
+				<h4>My Nutrition:</h4>
+				<p>My BMR: <span><%= @customer.bmr %></span></p>
+				<p>Total Daily Energy Expenditure: <span><%= @customer.tdee %></span></p>
+				<p>Daily Target Caloric Intake: <span><%= @customer.daily_calorie_goal %></span></p>
+				<p>Calories per Smoothie: <span><%= @customer.calories_per_shake %></span></p>
+				<p>Percentage Protein: <span><%= @customer.protein %></span></p>
+				<p>Percentage Fat: <span><%= @customer.fat %></span></p>
+				<p>Percentage Carbohydrate: <span><%= @customer.carbs %></span></p>
+				<% if @customer&.basket.active? %>
+					<%= link_to 'Change to tailored smoothies', edit_customer_path(@customer) if @customer.standard? %>
+					<%= link_to 'Change to standard smoothies', user_path(@customer.user, user: { standard: true }), method: :patch if @customer.tailored? %>
 				<% end %>
-				<%= link_to 'Cancel My Subscription', cancel_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
-			<% end %>
+			</div>
 		</div>
+		<div class="customer-vitals-subscription text-center">
+				<h4>My <u><%= @status %></u> Subscription:</h4>
+				<ul>
+				  <% @customer.basket.smoothies.each do |smoothie| %>
+				    <p><span><%= smoothie.name.titleize %></span></p>
+				  <% end %>
+				</ul>
+				<% if @customer&.basket.active? %>
+					<%= link_to 'Change my Smoothies', edit_customer_basket_path(@customer, @customer.basket) %>
+					<% unless @sub_status %>
+						<p>Your subscription needs updating: <%= link_to 'Click here to update', new_customer_payment_path(@customer) %></p>
+					<% end %>
+					<%= link_to 'Cancel My Subscription', cancel_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
+				<% end %>
+			</div>
+			<div class="cancel-order-buttons">
+				<% if @customer&.basket.cancelled? %>
+					<%= link_to "ORDER YOGGIES", user_path(@customer.user, user: { standard: true }), method: :patch, class: 'btn-yoggie-main-clear' %>
+					<%= link_to "ORDER YOGGIE CUSTOM", edit_customer_path(@customer), class: 'btn-yoggie-main-clear' %>
+				<% end %>
+			</div>
 	</div>
-	<% if @customer&.basket.cancelled? %>
-		<%= link_to "ORDER YOGGIES", user_path(@customer.user, user: { standard: true }), method: :patch, class: 'btn-yoggie-main-green' %>
-		<%= link_to "ORDER YOGGIE CUSTOM", edit_customer_path(@customer), class: 'btn-yoggie-main-green' %>
-	<% end %>
 </div>

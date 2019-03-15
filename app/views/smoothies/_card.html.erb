@@ -9,7 +9,7 @@
       <% else %>
         <%= link_to "ADD TO BOX", new_customer_path, class: 'btn-yoggie-main-clear' %>
       <% end %>
-      <p class="hatch"><br>
+      <p class="hatch">
         <% smoothie.ingredients.each do |ingredient| %>
           ✓ &nbsp;<%= ingredient.name.titleize %></br>
         <% end %>
