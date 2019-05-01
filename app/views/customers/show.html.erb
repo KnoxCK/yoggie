@@ -49,6 +49,7 @@
 				<% if @customer&.basket.cancelled? %>
 					<%= link_to "ORDER YOGGIES", user_path(@customer.user, user: { standard: true }), method: :patch, class: 'btn-yoggie-main-clear' %>
 					<%= link_to "ORDER YOGGIE CUSTOM", edit_customer_path(@customer), class: 'btn-yoggie-main-clear' %>
+					<%= link_to "ORDER YOGGIE CUSTOM", edit_customer_path(@customer), class: 'btn-yoggie-main-clear' %>
 				<% end %>
 			</div>
 	</div>
