@@ -1,0 +1,17 @@
+.contact {
+	display: flex;
+	justify-content: center;
+}
+.contact-section {
+	padding-top: 20px;
+	max-width: 700px;
+	p {
+ 		color: #E6577A;
+ 		font-weight: lighter;
+ 		margin-top: 30px;
+ 		margin-bottom: 0;
+ 	}
+ 	a {
+ 		color: #91B060;
+ 	}
+}
