@@ -1,5 +1,8 @@
 .faqs {
 	margin-top: 40px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
 	h2 {
 		padding-bottom: 30px;
 		padding-top: 30px;
@@ -25,7 +28,10 @@
  	}
 }
 .faqs-sub-section {
-	padding: 40px;
+	padding: 5px;
+	h3 {
+		width: 260px;
+	}
 }
 .faqs-right-column {
 	display: flex;
