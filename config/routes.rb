@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # get 'smoothies', to: 'pages#smoothies'
   get 'contact', to: 'pages#contact'
   get 'faqs', to: 'pages#faqs'
+  get 'privacy', to: 'pages#privacy'
+
 
   resources :users do
     get :postcode_checker, on: :member
