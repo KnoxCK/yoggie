@@ -1,16 +1,17 @@
 s<div class="our-smoothies-banner"></div>
 <div class="form-wrapper vitals-form">
-  <h3 class="text-center">Please fill out your vitals</h3>
+  <h3 class="text-center">In 7 questions, we'll create your nutritionally perfect smoothie! Go...</h3>
   <br>
   <%= simple_form_for @customer do |f| %>
     <%= f.input :first_name %>
-    <%= f.input :last_name %>
+   
+    <!-- <%= f.input :last_name %> -->
     <%= f.input :gender, as: :select, collection: Customer::GENDER.map{|g|g.humanize} %>
     <%= f.input :age %>
     <%= f.input :height, label: 'Height (cm)' %>
     <%= f.input :weight, label: 'Weight (kg)' %>
     <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys %>
     <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys %>
-    <%= f.submit 'Calculate', class: "btn-yoggie-main-green" %>
+    <%= f.submit 'Get my results', class: "btn-yoggie-main-green text-center" %>
   <% end %>
 </div>

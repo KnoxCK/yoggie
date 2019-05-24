@@ -20,11 +20,11 @@ class Customer < ApplicationRecord
 
   GOAL_MULTIPLIERS = {
     'Lose Fat' => 0.8,
-    'Health Boost' => 1,
+    'Boost my health' => 1,
     'Gain Muscle' => 1.1
   }.freeze
 
-  GENDER = ['male', 'female'].freeze
+  GENDER = ['Guy', 'Girl'].freeze
 
   def full_name
     "#{first_name} #{last_name}"

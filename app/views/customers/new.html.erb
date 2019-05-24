@@ -4,7 +4,7 @@
     <div class="yoggie-form-link">
       <%= link_to 'Prefer to choose from our Standard Yoggie flavours? Click here...', user_path(current_user, user: { standard: true }), method: :patch, remote: true %>
     </div>
-    <h3 class="text-center" style="padding-bottom: 20px;">Please fill out your vitals, for tailored Yoggies</h3>
+    <h3 class="text-center" style="padding-bottom: 20px;">In 7 questions, we'll create your nutritionally perfect smoothie! Go...</h3>
   <% else %>
     <div class="yoggie-form-link">
       <%= link_to 'Prefer to choose from our Tailored Yoggies? Click here...', user_path(current_user, user: { standard: false }), method: :patch, remote: true %>
@@ -13,7 +13,7 @@
   <% end %>
   <%= simple_form_for @customer do |f| %>
     <%= f.input :first_name %>
-    <%= f.input :last_name %>
+    <!-- <%= f.input :last_name %> -->
     <%= f.input :gender, as: :select, collection: Customer::GENDER.map{|g|g.humanize} %>
     <%= f.input :age %>
     <% if !current_user.standard %>
@@ -21,7 +21,7 @@
       <%= f.input :weight, label: 'Weight (kg)' %>
       <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys %>
       <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys %>
-      <%= f.submit 'Calculate', class: "btn-yoggie-main-green" %>
+      <%= f.submit 'Get my results', class: "btn-yoggie-main-green text-center" %>
     <% else %>
       <!-- <%= link_to 'Want smoothies tailored to your needs? Click here', user_path(current_user, user: { standard: false }), method: :patch, remote: true %> -->
       <%= f.submit 'Submit', class: "btn-yoggie-main-green" %>
