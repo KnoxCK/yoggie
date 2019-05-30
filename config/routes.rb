@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   get 'faqs', to: 'pages#faqs'
   get 'privacy', to: 'pages#privacy'
+  get 'terms', to: 'pages#terms'
 
 
   resources :users do

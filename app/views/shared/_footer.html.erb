@@ -6,11 +6,12 @@
 		<%= link_to "How Yoggie Works", root_path(:anchor => "how-it-works") %>
 		<%= link_to "About Us", root_path(:anchor => "about-yoggies") %>
 		<%= link_to "Contact Us", contact_path %>
-		<!-- <%= link_to "Blog", '#' %> -->
+		<%= link_to "Blog", '#' %>
 	</div>
 	<div class="footer-column footer-center">
 		<%= link_to "FAQs", faqs_path %>
 		<%= link_to "Privacy", privacy_path %>
+		<%= link_to "Terms", terms_path %>
 		<%= link_to "Website by MouseCode", "http://www.mouse-code.com", target: "_blank" %>
 	</div>
 	<div class="footer-column footer-right">
@@ -25,6 +26,6 @@
       			<i class="fa fa-instagram"></i>
     		<% end %>
     	</div>
-		<p>©<%= Date.today.year %> Yoggie</p>
+		<p>Copyright © <%= Date.today.year %> Yoggie</p>
 	</div>
 </div>
