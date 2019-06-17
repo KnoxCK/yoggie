@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'faqs', to: 'pages#faqs'
   get 'privacy', to: 'pages#privacy'
   get 'terms', to: 'pages#terms'
-
+  get 'smoothies/:id', to: "smoothies#show", as: :smothie_page
+  get 'add_to_basket/:smoothie_id/:customer_id/', to: 'baskets#add_to_basket', as: :add_to_basket
 
   resources :users do
     get :postcode_checker, on: :member
@@ -24,5 +25,6 @@ Rails.application.routes.draw do
   end
 
   resources :smoothies
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

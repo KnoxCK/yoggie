@@ -11,7 +11,7 @@
 }
 .our-smoothies-intro {
  	padding-left: 15%;
- 	padding-right: 15%; 
+ 	padding-right: 15%;
  	p {
  		color: #E6577A;
  		font-weight: lighter;
@@ -47,18 +47,19 @@
 		height: 95px;
 	}
 	p {
-		padding: 40px;
-	    position: absolute;
-	    top: 5px;
-	    background-color: #E6577A;
-	    left: 5px;
-	    right: 5px;
-	    bottom: 202px;
-	    font-weight: lighter;
-	    color: white;
-	    text-align: left;
-	    display: none;
-	    border-radius: 5px;
+		padding: 20px;
+    position: absolute;
+    top: 5px;
+    background-color: #E6577A;
+    left: 5px;
+    right: 5px;
+    bottom: 202px;
+    font-weight: lighter;
+    color: white;
+    text-align: left;
+    display: none;
+    border-radius: 5px;
+    height: 110px;
 	}
 }
 .standard-yoggie:hover {

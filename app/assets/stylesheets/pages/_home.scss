@@ -18,7 +18,7 @@
 	ul {
 		margin-top: 10px;
 		font-weight: lighter;
-		padding-left: 14px; 
+		padding-left: 14px;
 	}
 	img {
 		width: 385px;
@@ -39,6 +39,7 @@
 .yoggie-standard:hover {
 	background-color: #E6577A;
 	color: white;
+  transition: background-color 0.8s ease;
 	.btn-yoggie-main-clear {
 		background-color: #91B060;
 		color: white;
@@ -155,7 +156,7 @@
 .testimonials {
 	display: flex;
 	align-items: center;
-	justify-content: center; 
+	justify-content: center;
 	align-content: center;
 }
 .testimonial {

@@ -2,12 +2,10 @@ class Customer < ApplicationRecord
   belongs_to :user
   has_one :basket
   has_one :address
-
+  extend FriendlyId
+  friendly_id :slug, use: :slugged
   # validates_presence_of :first_name, :last_name, :age, :gender, :activity_level
   # validates_presence_of :goal, :height, :weight
-
-  extend FriendlyId
-  friendly_id :full_name, use: :slugged
 
   accepts_nested_attributes_for :address
 

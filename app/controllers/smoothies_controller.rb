@@ -6,6 +6,10 @@ class SmoothiesController < ApplicationController
   end
 
   def show
-    @smoothie = Smoothie.find(params[:id])
+    @smoothie = Smoothie.all.find {|a| a.slug == params[:id]}
+    @basket = BasketSmoothie.new
+
+    # @smoothie = Smoothie.find(params[:id])
   end
+
 end
