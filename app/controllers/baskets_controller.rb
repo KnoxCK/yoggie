@@ -1,5 +1,5 @@
 class BasketsController < ApplicationController
-  before_action :set_customer, except: :add_to_basket
+  before_action :set_customer
   skip_before_action :authenticate_user!
 
   def show
@@ -39,20 +39,38 @@ class BasketsController < ApplicationController
 
   def add_to_basket
     # find customer
-    # raise
-    @customer = Customer.find(params[:customer_id])
      # check if they have a basket
-    if @customer.basket.where(status: 'active').any?
-      @order = @customer.basket.where(status: 'active').last
+    if @customer.basket
+      @basket = @customer.basket
     else
-      @customer_basket = CustomerBasket.create(customer: @customer.basket)
+      @basket = Basket.create(customer: @customer)
     end
     # finding which smoothie we clicked on add to basket
     # url: products/1/orders
-    @smoothie = Smoothie.find(params[:smoothie_id])
-    @basket_smoothie = BasketSmoothie.create(product: @product, order: @order)
+    # if @basket.smoothies.count >= 5
+    # # raise
+    #   after_basket_path(@basket.tailored)
+    # else
+      @smoothie = Smoothie.find(params[:smoothie_id])
+      @quantity = params[:quantity].to_i
+      BasketSmoothie.where(smoothie: @smoothie, basket: @basket).destroy_all
+      available = 5 - @basket.smoothies.count
+      if available > @quantity
+        @quantity.times do
+          @basket_smoothie = BasketSmoothie.create(smoothie: @smoothie, basket: @basket)
+        end
+      else
+        available.times do
+          @basket_smoothie = BasketSmoothie.create(smoothie: @smoothie, basket: @basket)
+        end
+      end
+      if @basket.smoothies.count >= 5
+        @message = "You already have a total of 5 smoothies."
+      else
+        @message = "Smoothies added, you need another #{5 - @basket.smoothies.length}."
+      end
 
-    redirect_to basket_path(@order)
+      redirect_to smoothies_path, notice: @message
   end
 
   def new

@@ -4,7 +4,7 @@ s<div class="our-smoothies-banner"></div>
   <br>
   <%= simple_form_for @customer do |f| %>
     <%= f.input :first_name %>
-   
+
     <!-- <%= f.input :last_name %> -->
     <%= f.input :gender, as: :select, collection: Customer::GENDER.map{|g|g.humanize} %>
     <%= f.input :age %>
@@ -12,6 +12,8 @@ s<div class="our-smoothies-banner"></div>
     <%= f.input :weight, label: 'Weight (kg)' %>
     <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys %>
     <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys %>
-    <%= f.submit 'Get my results', class: "btn-yoggie-main-green text-center" %>
-  <% end %>
+    <div class="results-button">
+      <%= f.submit 'Get my results', class: "btn-yoggie-main-green text-center" %>
+      <% end %>
+    </div>
 </div>

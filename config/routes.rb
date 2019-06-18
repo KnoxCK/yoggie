@@ -9,12 +9,14 @@ Rails.application.routes.draw do
   get 'privacy', to: 'pages#privacy'
   get 'terms', to: 'pages#terms'
   get 'smoothies/:id', to: "smoothies#show", as: :smothie_page
-  get 'add_to_basket/:smoothie_id/:customer_id/', to: 'baskets#add_to_basket', as: :add_to_basket
+  patch 'add_to_basket', to: 'baskets#add_to_basket', as: :add_to_basket
 
   resources :users do
     get :postcode_checker, on: :member
     patch :postcode_result, on: :member
   end
+
+# basket - customers/:customer_id/baskets/:basket_id
 
   resources :customers do
     resources :baskets do
