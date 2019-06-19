@@ -7,7 +7,6 @@
       <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
       <% if current_user %>
         <%#= link_to "ADD TO BOX", new_customer_basket_path(current_user.customer), class: 'btn-yoggie-main-clear' %>
-        <%= @message %>
         <%= form_for [current_user.customer, current_user.customer.basket], :url => url_for(:controller => 'baskets', :action => 'add_to_basket') do |f| %>
           <%= hidden_field_tag 'customer_id', current_user.customer.id %>
           <%= hidden_field_tag 'smoothie_id', smoothie.id %>
