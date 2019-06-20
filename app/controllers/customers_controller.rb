@@ -3,10 +3,16 @@ class CustomersController < ApplicationController
 
   def new
     if current_user.customer
+      if current_user.customer.basket.nil?
+        @basket = Basket.create(customer: current_user.customer)
+      end
       redirect_to edit_customer_path(current_user.customer)
     else
       if current_user.valid_postcode?
-        @customer = Customer.new(user_id: current_user.id)
+        @customer = Customer.create(user_id: current_user.id)
+        if @customer.basket.nil?
+          @basket = Basket.create(customer: current_user.customer)
+        end
       else
         redirect_to postcode_checker_user_path(current_user)
       end
@@ -37,9 +43,26 @@ class CustomersController < ApplicationController
   def update
     if @customer.update(customer_params)
       @customer.calculate_stats
-      redirect_to new_customer_basket_path(@customer)
+
+      redirect_to smoothies_path
     else
       render :edit
+    end
+  end
+
+  def choose_standard
+    if user_signed_in?
+      current_user.standard = true
+      current_user.save
+      redirect_to smoothies_path
+    end
+  end
+
+  def choose_custom
+    if user_signed_in?
+      current_user.standard = false
+      current_user.save
+      redirect_to smoothies_path
     end
   end
 

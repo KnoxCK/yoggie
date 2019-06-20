@@ -20,7 +20,7 @@ class BasketsController < ApplicationController
     else
       @smoothies = Smoothie.fetch_bundle(@customer)
       @message = 'Please select a total of 5 smoothies.'
-      render :edit
+      redirect_to new_customer_basket_path, notice: @message
     end
   end
 
@@ -33,7 +33,7 @@ class BasketsController < ApplicationController
     else
       @smoothies = Smoothie.fetch_bundle(@customer)
       @message = 'Please select a total of 5 smoothies.'
-      render :new
+      render :show
     end
   end
 
@@ -72,6 +72,8 @@ class BasketsController < ApplicationController
 
       redirect_to smoothies_path, notice: @message
   end
+
+
 
   def new
     @basket = Basket.find_or_initialize_by(customer_id: @customer.id)

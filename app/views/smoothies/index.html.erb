@@ -7,13 +7,18 @@
 	<p>Choose your 5 smoothies for the week</p>
 	<br>
 </div>
+
 <div class="our-smoothies">
 <% @smoothies.each do |smoothie| %>
-  <%= render 'smoothies/card', smoothie: smoothie %>
+  <% if current_user.customer.standard? %>
+   <%= link_to "ORDER STANDARD YOGGIES", new_user_registration_path(standard: true), class: 'btn-yoggie-main-green' %>
+    <%= render 'smoothies/card', smoothie: smoothie %>
+  <% end %>
 <% end %>
+ <% if !current_user.customer.standard? %>
+   <%= link_to "ORDER CUSTOM YOGGIES", new_user_registration_path(standard: false), class: 'btn-yoggie-main-green' %>
+    <%= render 'smoothies/card_tailored', smoothie: @smoothies %>
+  <% end %>
 </div>
-<div class="text-center"><br>
-	<%= link_to "ORDER STANDARD YOGGIES", new_user_registration_path(standard: true), class: 'btn-yoggie-main-green' %>
-	<!-- <%= link_to "ORDER CUSTOM YOGGIES", new_user_registration_path(standard: false), class: 'btn-yoggie-main-green' %> -->
-</div>
+
 <br></br>

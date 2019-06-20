@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get 'faqs', to: 'pages#faqs'
   get 'privacy', to: 'pages#privacy'
   get 'terms', to: 'pages#terms'
+  get 'customer/choose_standard', to: 'customers#choose_standard', as: :choose_standard
+  get 'customer/choose_custom', to: 'customers#choose_custom', as: :choose_custom
   get 'smoothies/:id', to: "smoothies#show", as: :smothie_page
   patch 'add_to_basket', to: 'baskets#add_to_basket', as: :add_to_basket
+
 
   resources :users do
     get :postcode_checker, on: :member

@@ -1,23 +1,22 @@
-<%= render 'shared/flashes' %>
-<div class="our-smoothies-banner"></div>
 <div class="results-wrapper">
-  <% unless @customer.standard? %>
+  <% unless current_user.customer.standard? %>
     <h3 class="text-center">Your Nutrition</h3>
     <div class="results-content">
       <h5>Based on your data we have calculated the following:</h5>
-      <p><span>Your BMR: </span><span class="your-results"><%= @customer.bmr %></span></p>
-      <p><span>Your Total Daily Energy Expenditure: </span><span class="your-results"><%= @customer.tdee %></span></p>
-      <p><span>Daily Target Caloric Intake: </span><span class="your-results"><%= @customer.daily_calorie_goal %> CAL</span></p>
-      <p><span>Calories per Smoothie: </span><span class="your-results"><%= @customer.calories_per_shake %> CAL</span></p>
-      <p><span>Percentage of Protein: </span><span class="your-results"><%= @customer.protein %></span></p>
-      <p><span>Percentage of Fat: </span><span class="your-results"><%= @customer.fat %></span></p>
-      <p><span>Percentage of Carbohydrate: </span><span class="your-results"><%= @customer.carbs %></span></p>
+      <p><span>Your BMR: </span><span class="your-results"><%= current_user.customer.bmr %></span></p>
+      <p><span>Your Total Daily Energy Expenditure: </span><span class="your-results"><%=current_user.customer.tdee %></span></p>
+      <p><span>Daily Target Caloric Intake: </span><span class="your-results"><%= current_user.customer.daily_calorie_goal %> CAL</span></p>
+      <p><span>Calories per Smoothie: </span><span class="your-results"><%= current_user.customer.calories_per_shake %> CAL</span></p>
+      <p><span>Percentage of Protein: </span><span class="your-results"><%= current_user.customer.protein %></span></p>
+      <p><span>Percentage of Fat: </span><span class="your-results"><%= current_user.customer.fat %></span></p>
+      <p><span>Percentage of Carbohydrate: </span><span class="your-results"><%= current_user.customer.carbs %></span></p>
     </div>
     <div class="results-line"></div>
     <% end %>
 </div>
-  <h3 class="text-center">Choose Your Flavours</h3>
+
   <div class="results-content">
+    <h3 class="text-center">Choose Your Flavours</h3>
     <h5>Please select a total of <span style="color: #E6577A;">5</span> smoothies from the list below:</h5>
     <% if @message %>
       <p style="color: red;"><%= @message %></p>
@@ -37,8 +36,8 @@
             <%= form_for [current_user.customer, current_user.customer.basket], :url => url_for(:controller => 'baskets', :action => 'add_to_basket') do |f| %>
               <%= hidden_field_tag 'customer_id', current_user.customer.id %>
               <%= hidden_field_tag 'smoothie_id', smoothie.id %>
-              <%= f.hidden_field :tailored, value: false if @customer.standard? %>
-              <%= f.hidden_field :tailored, value: true if @customer.tailored? %>
+              <%= f.hidden_field :tailored, value: false if current_user.customer.standard? %>
+              <%= f.hidden_field :tailored, value: true if current_user.customer.tailored? %>
               <%= select_tag "quantity", options_for_select([0, 1, 2, 3, 4, 5], BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count) %>
             <%= f.submit 'Add My Smoothies', class: "btn-yoggie-main-green results-button"  %>
           <% end %>

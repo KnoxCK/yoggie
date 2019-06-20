@@ -18,7 +18,7 @@ class Customer < ApplicationRecord
 
   GOAL_MULTIPLIERS = {
     'Lose Fat' => 0.8,
-    'Boost my health' => 1,
+    'Health Boost' => 1,
     'Gain Muscle' => 1.1
   }.freeze
 
