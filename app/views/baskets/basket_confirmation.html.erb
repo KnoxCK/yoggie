@@ -1,28 +1,52 @@
-<%= render 'shared/flashes' %>
 
 <div class="our-smoothies-banner"></div>
-<div class="customer-vitals-subscription text-center">
+<div class="text-center">
   <h4>My <u><%= @status %></u> Subscription:</h4>
   <ul>
   <div class="confirmation-page">
     <h3>My nutrition</h3>
-    <p>So Clarissa. You told us that you are a girl age 25. You are 160cm tall and weigh 65kg. On most weekdays you eat 4 meals. You say you are moderately active and your current goal is to boost your health.</p>
+    <p>So Clarissa. You told us that you are a <%= @customer.gender %> age <%= @customer.age %>. You are <%= @customer.height %> tall and weigh <%= @customer.weight %>kg. On most weekdays you eat <%= @customer.meals_per_day %> meals. You say you are <%= @customer.activity_level %> and your current goal is to <%= @customer.goal %>.</p>
     <p>Based on this our clever nutrition computer has calculated that...</p>
+    <h4>Fact 1: </h4>
+    <p>If you spent a day lying in bed your body would use up <%= @customer.bmr %> Calories per day to keep you alive!</p>
+    <p>Energy your body uses at rest e.g. to breathe, pump blood, think etc. It’s called your “Basal Metabolic Rate” (BMR)</p>
+    <h4>Fact 2: </h4>
+    <p> Your body uses <%= @customer.tdee %> Calories of energy to get you through an average day! </p>
+    <p>This is the above plus the energy you use to walk, move, run and exercise. It’s called your Total Daily Energy Expenditure (TDEE)</p>
+    <% if @basket.customer.goal == "Lose Fat" %>
+    <h4>Fact 3:</h4>
+    <p>To lose weight you simply have to consume around <%= @customer.daily_calorie_goal %> Calories each day. This is 20%  less than your body uses (TDEE) so your body will burn fat stores to get what it needs.</p>
+    <p>If you have <%= @customer.meals_per_day %> meals per day this is about <%= @customer.daily_calorie_goal / @customer.meals_per_day %> Calories each meal.</p>
+    <p>Simply swap out one of these meals for a super-healthy yoggie custom!</p>
+      <ul>
+        <li>✔ Tastes amazing!</li>
+        <li>✔ Gives you 410 micronutrient dense Calories</li>
+        <li>✔  Protein/carbs/fats ratio specially tweaked to promote fat loss - high protein, low carb</li>
+      </ul>
+    </p>
+    <% elsif @basket.customer.goal == "Health Boost"%>
+    <h4>Fact 3:</h4>
+    <p>Each day you use <%= @customer.daily_calorie_goal %> Calories. You could get these by eating <%= @customer.tdee / 233%> Mars Bars, <%= @customer.tdee / 291 %> croissants or <%= @customer.tdee / 21.75 %> Jelly Babies! * </p>
+    <p>However to boost your health you should have ‘nutrient rich’ food and drink bursting with vitamins, minerals, antioxidants and good fats!</p>
+    <p>If you have <%= @customer.meals_per_day %> meals per day you need about <%= @customer.daily_calorie_goal / @customer.meals_per_day %> Calories each meal.</p>
+    <p>Simply swap out one of these meals for a health boosting yoggie custom bursting with nutrients!</p>
+      <ul>
+        <li>✔ Taste treat!</li>
+        <li>✔ Gives you 510 naturally nutrient-rich Calories</li>
+        <li>✔ Balanced protein, carbs and fats to give you 100% complete nutrition</li>
+      <ul>
+    <% else %>
+    <h4>Fact 3:</h4>
+    <p>To gain weight you should aim to consume around <%= @customer.daily_calorie_goal %> Calories each day. This is 10% more than it needs. If you regularly exercise with heavy weights it will use the surplus to build your muscles. If not it will store it as fat.</p>
+    <p>If you have <%= @customer.meals_per_day %> meals per day this is about <%= @customer.daily_calorie_goal / @customer.meals_per_day %> Calories each meal.</p>
+    <p>Simply swap out one of these meals for a muscle building yoggie custom!</p>
+      <ul>
+        <li>✔ Tastes superb!</li>
+        <li>✔ Gives you 610 micronutrient dense Calories</li>
+        <li>✔  High protein macronutrient (protein, carbs & fats) ratio specially tweaked to promote muscle gain</li>
+      </ul>
+    <% end %>
   </div>
-
-
-
-
-Fact 2: Your body uses 2030Calories of energy to get you through an average day!  This is the above plus the energy you use to walk, move, run and exercise. It’s called your Total Daily Energy Expenditure (TDEE)
-Fact 3: To gain weight you should aim to consume around 2450Calories each day. This is 10% more than your body needs so if you exercise with heavy weights it will use the surplus to build your muscles. If not it may store it as fat|
-If you have 4 meals per day this is about 610 Calories each meal.
-Simply swap out one of these meals for a muscle building yoggie custom!
-
-✔ Tastes superb!
-✔ Gives you 610 micronutrient dense Calories
-✔  High protein macronutrient (protein, carbs & fats) ratio specially tweaked to promote muscle gain
-
-Insert button: [pick your yoggies]; path: Pick your yoggies (custom)
   </ul>
 </div>
 <div class="cancel-order-buttons">

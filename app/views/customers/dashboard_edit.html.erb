@@ -4,7 +4,7 @@
   <h3 class="text-center">In 7 questions, we'll create your nutritionally perfect smoothie! Go...</h3>
   <br>
 
-  <%= simple_form_for @customer do |f| %>
+  <%= simple_form_for @customer, url: dashboard_update_path, method: :patch do |f| %>
 
     <%= f.input :first_name %>
 

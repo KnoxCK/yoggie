@@ -13,7 +13,7 @@
 				<p>Meals per day: <span><%= @customer.meals_per_day %></span></p>
 				<p>Activity Level: <span><%= @customer.activity_level %></span></p>
 				<p>Goal: <span><%= @customer.goal %></span></p>
-				<%= link_to 'Change my vitals', edit_customer_path(@customer) if @customer.tailored? %>
+				<%= link_to 'Change my vitals', dashboard_edit_path(@customer) %>
 			</div>
       <% if @customer.basket %>
   			<div class="customer-vitals-nutrition">
@@ -26,8 +26,8 @@
   				<p>Percentage Fat: <span><%= @customer.fat %></span></p>
   				<p>Percentage Carbohydrate: <span><%= @customer.carbs %></span></p>
   				<% if @customer&.basket.active? %>
-  					<%= link_to 'Change to tailored smoothies', edit_customer_path(@customer) if @customer.standard? %>
-  					<%= link_to 'Change to standard smoothies', user_path(@customer.user, user: { standard: true }), method: :patch if @customer.tailored? %>
+  					<%= link_to 'Change to tailored smoothies', update_subscription_path(@customer, standard: false) if @customer.standard? %>
+  					<%= link_to 'Change to standard smoothies', update_subscription_path(@customer, standard: true) if !@customer.standard? %>
   				<% end %>
   			</div>
 		</div>
@@ -40,7 +40,7 @@
 				  <% end %>
 				</ul>
         <%= link_to 'Change my Smoothies', smoothies_path(@customer, @customer.basket) %>
-        <%= link_to "Pay For Your Yoggies", edit_customer_path(current_user.customer) if @customer&.basket.status == 'pending'  %>
+        <%= link_to "Pay For Your Yoggies", edit_customer_path(current_user.customer) if @customer&.basket.status == 'pending' && @basket.smoothies.count == 5  %>
 				<% if @customer&.basket.active? %>
 					<% unless @sub_status %>
 						<p>Your subscription needs updating: <%= link_to 'Click here to update', new_customer_payment_path(@customer) %></p>

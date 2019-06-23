@@ -148,9 +148,14 @@
 			<p>"My post gym Yoggie is my ritual. It basically gets me through my day."</p>
 			<span><p>– Tom M</p></span>
 		</div>
+
 	</div>
 </div>
-
+<div class="instagram-grid">
+  <% @popular.data.first(10).each do |popular| %>
+      <%= image_tag popular.images.low_resolution.url %>
+  <% end %>
+</div>
 
 
 

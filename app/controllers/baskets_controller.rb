@@ -7,6 +7,7 @@ class BasketsController < ApplicationController
 
   def basket_confirmation
     @basket = Basket.find(params[:basket_id])
+    @customer = @basket.customer
   end
 
   def edit

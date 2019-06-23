@@ -3,8 +3,9 @@ class PaymentsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def new
+    redirect_to new_customer_address_path if @customer.address.nil?
     @basket = @customer.basket
-    @fee = @basket.tailored ? Basket::SUBSCRIPTION_FEE[:tailored] : Basket::SUBSCRIPTION_FEE[:standard]
+    @fee = @customer.tailored? ? Basket::SUBSCRIPTION_FEE[:tailored] : Basket::SUBSCRIPTION_FEE[:standard]
   end
 
   def create

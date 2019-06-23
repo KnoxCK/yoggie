@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:edit, :update, :show]
+  before_action :set_customer, only: [:edit, :update, :show, :update_subscription, :dashboard_edit, :dashboard_update]
 
   def new
     if current_user.customer
@@ -44,17 +44,46 @@ class CustomersController < ApplicationController
   end
 
   def update
-    if @customer.user.standard
-      redirect_to new_customer_address_path(current_user.customer)
-    elsif !@customer.user.standard && @customer.update(customer_params)
+    @customer.update(customer_params)
+    if @customer.tailored?
       @customer.calculate_stats
+    end
+
+    if @customer.standard? && @customer.address.nil?
+      redirect_to new_customer_address_path(current_user.customer)
+    elsif @customer.basket && @customer.basket.full?
+      redirect_to new_customer_payment_path(@customer)
+    else
       redirect_to smoothies_path
+    end
+  end
+
+
+  def update_subscription
+    if @customer.user.standard
+      @customer.user.update(standard: params[:standard])
+      redirect_to edit_customer_path(@customer)
+    else
+      @customer.user.update(standard: params[:standard])
+      redirect_to smoothies_path(@customer)
+    end
+  end
+
+  def dashboard_edit
+  end
+
+
+  def dashboard_update
+    if @customer.update(customer_params)
+      redirect_to customer_path(@customer)
     else
       render :edit
     end
   end
 
+
   def choose_standard
+
     if user_signed_in?
       current_user.standard = true
       current_user.save

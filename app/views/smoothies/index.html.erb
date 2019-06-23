@@ -25,7 +25,7 @@
 </div>
   <div class="our-smoothies">
      <% if !current_user.customer.standard? %>
-      <% if current_user.customer.basket.status == 'pending' %>
+      <% if current_user.customer.basket.status == 'pending' && current_user.customer.basket.smoothies.count == 5 %>
           <%= link_to "PAY FOR CUSTOM YOGGIES", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green' %>
        <% end %>
            <%= render 'smoothies/card_tailored', smoothie: @smoothies %>

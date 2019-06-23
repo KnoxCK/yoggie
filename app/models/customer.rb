@@ -96,7 +96,7 @@ class Customer < ApplicationRecord
   end
 
   def current_standard_status
-   basket.smoothies.first.standard? ? true : false
+   user.standard ? true : false
   end
 
   private
