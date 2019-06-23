@@ -1,12 +1,16 @@
 class BasketsController < ApplicationController
-  before_action :set_customer
+  before_action :set_customer, except: :basket_confirmation
   skip_before_action :authenticate_user!
 
   def show
   end
 
+  def basket_confirmation
+    @basket = Basket.find(params[:basket_id])
+  end
+
   def edit
-    @smoothies = Smoothie.fetch_bundle(@customer)
+      @smoothies = Smoothie.fetch_bundle(@customer)
   end
 
   def update
@@ -65,7 +69,7 @@ class BasketsController < ApplicationController
         end
       end
       if @basket.smoothies.count >= 5
-        @message = "You already have a total of 5 smoothies."
+        @message = "You have a total of 5 smoothies."
       else
         @message = "Smoothies added, you need another #{5 - @basket.smoothies.length}."
       end
@@ -87,6 +91,15 @@ class BasketsController < ApplicationController
     @basket.update(status: 'cancelled')
     AdminMailer.cancellation(@customer).deliver
     redirect_to customer_path(@basket.customer), notice: 'Your subscription has been cancelled'
+  end
+
+  def pause_subscription
+    @basket = Basket.find(params[:id])
+    subscription = Stripe::Subscription.retrieve(@basket.stripe_sub_id)
+    subscription.delete
+    @basket.update(status: 'pending')
+    AdminMailer.subscription_paused(@customer).deliver
+    redirect_to customer_path(@basket.customer), notice: 'Your subscription has been paused'
   end
 
   private

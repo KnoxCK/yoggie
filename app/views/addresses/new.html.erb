@@ -1,13 +1,13 @@
 <div class="address-wrapper">
 	<h3>Enter your address</h3>
-	<%= simple_form_for [@customer, @address] do |f| %>
-	  <%= f.input :address_line_one %>
-	  <%= f.input :address_line_two %>
-	  <%= f.input :address_line_three %>
-	  <%= f.input :postcode %>
-	  <%= f.input :delivery_instructions %>
-	  <div class="results-button">
-      <%= f.submit 'Submit', class: "btn-yoggie-main-green" %>
-	     <% end %>
-    </div>
+	<%= simple_form_for [@customer, @customer.address] do |f| %>
+    <%= f.input :address_line_one, input_html: {value: @customer.address.address_line_one } %>
+    <%= f.input :address_line_two, input_html: {value: @customer.address.address_line_two } %>
+    <%= f.input :address_line_three, input_html: {value: @customer.address.address_line_three } %>
+    <%= f.input :postcode, input_html: {value: @customer.user.postcode } %>
+    <p style= "font-size:16px;"><i>We will deliver your Yoggie box between 3am and 6am. Where can we safely leave it? Be specific:</i><%= @customer.address.delivery_instructions %></p>
+    <%= f.input :delivery_instructions, input_html: {value: @customer.address.delivery_instructions } %>
+    <%= f.submit 'Submit', class: "btn-yoggie-main-green" %>
+  <% end %>
 </div>
+

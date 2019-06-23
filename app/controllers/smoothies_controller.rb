@@ -3,11 +3,9 @@ class SmoothiesController < ApplicationController
 
   def index
     @smoothies = Smoothie.standard
-      if current_user.customer.basket.nil?
-        @basket = Basket.create(customer: current_user.customer)
-      end
-
-
+    if user_signed_in? && current_user.customer.basket.nil?
+      @basket = Basket.create(customer: current_user.customer)
+    end
   end
 
   def show

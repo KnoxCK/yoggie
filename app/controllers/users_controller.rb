@@ -4,9 +4,14 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
     respond_to do |format|
-      format.html { redirect_to edit_customer_basket_path(@user.customer, @user.basket) }
+      format.html { redirect_to root_path }
       format.js
     end
+  end
+
+   def update_newsletter
+    @user.update(user_params)
+    redirect_to root_path
   end
 
   def postcode_checker
@@ -16,6 +21,8 @@ class UsersController < ApplicationController
     @user.check_postcode(user_params[:postcode])
     if @user.valid_postcode?
       redirect_to new_customer_path, notice: 'Yes! We deliver to your area!'
+    else
+      @customer = Customer.create(user_id: current_user.id)
     end
   end
 

@@ -15,34 +15,39 @@
 				<p>Goal: <span><%= @customer.goal %></span></p>
 				<%= link_to 'Change my vitals', edit_customer_path(@customer) if @customer.tailored? %>
 			</div>
-			<div class="customer-vitals-nutrition">
-				<h4>My Nutrition:</h4>
-				<p>My BMR: <span><%= @customer.bmr %></span></p>
-				<p>Total Daily Energy Expenditure: <span><%= @customer.tdee %></span></p>
-				<p>Daily Target Caloric Intake: <span><%= @customer.daily_calorie_goal %></span></p>
-				<p>Calories per Smoothie: <span><%= @customer.calories_per_shake %></span></p>
-				<p>Percentage Protein: <span><%= @customer.protein %></span></p>
-				<p>Percentage Fat: <span><%= @customer.fat %></span></p>
-				<p>Percentage Carbohydrate: <span><%= @customer.carbs %></span></p>
-				<% if @customer&.basket.active? %>
-					<%= link_to 'Change to tailored smoothies', edit_customer_path(@customer) if @customer.standard? %>
-					<%= link_to 'Change to standard smoothies', user_path(@customer.user, user: { standard: true }), method: :patch if @customer.tailored? %>
-				<% end %>
-			</div>
+      <% if @customer.basket %>
+  			<div class="customer-vitals-nutrition">
+  				<h4>My Nutrition:</h4>
+  				<p>My BMR: <span><%= @customer.bmr %></span></p>
+  				<p>Total Daily Energy Expenditure: <span><%= @customer.tdee %></span></p>
+  				<p>Daily Target Caloric Intake: <span><%= @customer.daily_calorie_goal %></span></p>
+  				<p>Calories per Smoothie: <span><%= @customer.calories_per_shake %></span></p>
+  				<p>Percentage Protein: <span><%= @customer.protein %></span></p>
+  				<p>Percentage Fat: <span><%= @customer.fat %></span></p>
+  				<p>Percentage Carbohydrate: <span><%= @customer.carbs %></span></p>
+  				<% if @customer&.basket.active? %>
+  					<%= link_to 'Change to tailored smoothies', edit_customer_path(@customer) if @customer.standard? %>
+  					<%= link_to 'Change to standard smoothies', user_path(@customer.user, user: { standard: true }), method: :patch if @customer.tailored? %>
+  				<% end %>
+  			</div>
 		</div>
 		<div class="customer-vitals-subscription text-center">
 				<h4>My <u><%= @status %></u> Subscription:</h4>
 				<ul>
-				  <% @customer.basket.smoothies.each do |smoothie| %>
-				    <p><span><%= smoothie.name.titleize %></span></p>
+
+				 <% @customer.basket.smoothies.group_by {|smoothie| smoothie.name}.each do |smoothie_array| %>
+				    <p><span><%= smoothie_array[0].titleize %> x <%= smoothie_array[1].count %> </span></p>
 				  <% end %>
 				</ul>
+        <%= link_to 'Change my Smoothies', smoothies_path(@customer, @customer.basket) %>
+        <%= link_to "Pay For Your Yoggies", edit_customer_path(current_user.customer) if @customer&.basket.status == 'pending'  %>
 				<% if @customer&.basket.active? %>
-					<%= link_to 'Change my Smoothies', edit_customer_basket_path(@customer, @customer.basket) %>
 					<% unless @sub_status %>
 						<p>Your subscription needs updating: <%= link_to 'Click here to update', new_customer_payment_path(@customer) %></p>
 					<% end %>
 					<%= link_to 'Cancel My Subscription', cancel_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
+          <%= link_to 'Pause My Subscription', pause_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
+          <%= link_to 'Order Confirmation', basket_confirmation_path(@customer.basket) %>
 				<% end %>
 			</div>
 			<div class="cancel-order-buttons">
@@ -51,5 +56,6 @@
 					<%= link_to "ORDER YOGGIE CUSTOM", edit_customer_path(@customer), class: 'btn-yoggie-main-clear' %>
 				<% end %>
 			</div>
+      <% end %>
 	</div>
 </div>

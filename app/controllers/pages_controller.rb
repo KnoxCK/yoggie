@@ -13,13 +13,17 @@ class PagesController < ApplicationController
   def contact
   end
 
-  def faqs 
+  def faqs
   end
 
   def privacy
   end
 
   def terms
+  end
+
+
+  def newsletter
   end
 
 end

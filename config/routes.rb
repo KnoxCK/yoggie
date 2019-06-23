@@ -8,22 +8,25 @@ Rails.application.routes.draw do
   get 'faqs', to: 'pages#faqs'
   get 'privacy', to: 'pages#privacy'
   get 'terms', to: 'pages#terms'
+  get 'newsletter', to: 'pages#newsletter'
   get 'customer/choose_standard', to: 'customers#choose_standard', as: :choose_standard
   get 'customer/choose_custom', to: 'customers#choose_custom', as: :choose_custom
   get 'smoothies/:id', to: "smoothies#show", as: :smothie_page
   patch 'add_to_basket', to: 'baskets#add_to_basket', as: :add_to_basket
+  patch 'update_newsletter', to: 'users#update_newsletter', as: :update_newsletter
+  get 'basket_confirmation/:basket_id', to: 'baskets#basket_confirmation', as: :basket_confirmation
 
+# basket - customers/:customer_id/baskets/:basket_id
 
   resources :users do
     get :postcode_checker, on: :member
     patch :postcode_result, on: :member
   end
 
-# basket - customers/:customer_id/baskets/:basket_id
-
   resources :customers do
     resources :baskets do
       patch :cancel_subscription, on: :member
+      patch :pause_subscription, on: :member
     end
     resources :addresses
     resources :payments, only: [:new, :create]

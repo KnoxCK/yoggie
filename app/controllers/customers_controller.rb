@@ -31,19 +31,23 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @customer.check_status
-    @basket = @customer.basket
-    @status = determine_status
-    @sub_status = correct_subscription?
+    if @customer.basket
+      @customer.check_status
+      @basket = @customer.basket
+      @status = determine_status
+      @sub_status = correct_subscription?
+    end
   end
+
 
   def edit
   end
 
   def update
-    if @customer.update(customer_params)
+    if @customer.user.standard
+      redirect_to new_customer_address_path(current_user.customer)
+    elsif !@customer.user.standard && @customer.update(customer_params)
       @customer.calculate_stats
-
       redirect_to smoothies_path
     else
       render :edit
@@ -88,6 +92,6 @@ class CustomersController < ApplicationController
   def customer_params
     params.require(:customer).permit(:first_name, :last_name, :weight, :height,
                                      :activity_level, :goal, :age, :gender,
-                                     :newsletter, :email, :phone)
+                                     :newsletter, :email, :phone, :meals_per_day)
   end
 end

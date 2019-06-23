@@ -22,6 +22,12 @@ class Customer < ApplicationRecord
     'Gain Muscle' => 1.1
   }.freeze
 
+  MEALS_PER_DAY = {
+    '3 or less' => 3,
+    '4' => 4,
+    '5 or more' => 5
+  }
+
   GENDER = ['Guy', 'Girl'].freeze
 
   def full_name
@@ -78,9 +84,11 @@ class Customer < ApplicationRecord
   end
 
   def check_status
-    return if !basket.tailored? && standard?
-    return if basket.tailored? && tailored?
-    update_user_status
+    if !basket.nil?
+      return if !basket.tailored? && standard?
+      return if basket.tailored? && tailored?
+      update_user_status
+    end
   end
 
   def update_user_status

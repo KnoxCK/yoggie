@@ -24,6 +24,13 @@ class AdminMailer < ApplicationMailer
       subject: 'Cancelled Subscription')
   end
 
+  def subscription_paused(customer)
+    @customer = customer
+    mail(
+      to: 'cancel@yoggie.com',
+      subject: 'Changed Subscription')
+  end
+
   def subscription_change(customer)
     @customer = customer
     mail(

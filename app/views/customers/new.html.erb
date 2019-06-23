@@ -19,6 +19,7 @@
     <% if !current_user.standard %>
       <%= f.input :height, label: 'Height (cm)' %>
       <%= f.input :weight, label: 'Weight (kg)' %>
+      <%= f.input :meals_per_day, as: :select, collection: Customer::MEALS_PER_DAY.keys  %>
       <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys %>
       <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys %>
       <%= f.submit 'Get my results', class: "btn-yoggie-main-green text-center" %>
@@ -27,4 +28,4 @@
       <%= f.submit 'Submit', class: "btn-yoggie-main-green" %>
     <% end %>
   <% end %>
-</div> 
+</div>

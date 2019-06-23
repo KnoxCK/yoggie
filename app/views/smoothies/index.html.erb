@@ -7,18 +7,37 @@
 	<p>Choose your 5 smoothies for the week</p>
 	<br>
 </div>
+<div class="text-center">
+  <% if user_signed_in? %>
 
-<div class="our-smoothies">
-<% @smoothies.each do |smoothie| %>
-  <% if current_user.customer.standard? %>
-   <%= link_to "ORDER STANDARD YOGGIES", new_user_registration_path(standard: true), class: 'btn-yoggie-main-green' %>
-    <%= render 'smoothies/card', smoothie: smoothie %>
-  <% end %>
-<% end %>
- <% if !current_user.customer.standard? %>
-   <%= link_to "ORDER CUSTOM YOGGIES", new_user_registration_path(standard: false), class: 'btn-yoggie-main-green' %>
-    <%= render 'smoothies/card_tailored', smoothie: @smoothies %>
-  <% end %>
+    <% if current_user.customer.standard? %>
+      <% if current_user.customer.basket.status == 'pending' %>
+        <%= link_to "PAY FOR STANDARD YOGGIES", edit_customer_path(current_user.customer), class: 'btn-yoggie-main-green' %>
+      <% end %>
+      <div class="our-smoothies">
+        <% @smoothies.each do |smoothie| %>
+          <%#= link_to "ORDER STANDARD YOGGIES", new_user_registration_path(standard: true), class: 'btn-yoggie-main-green' %>
+          <%= render 'smoothies/card', smoothie: smoothie %>
+        <% end %>
+      </div>
+    <% end %>
+
 </div>
-
+  <div class="our-smoothies">
+     <% if !current_user.customer.standard? %>
+      <% if current_user.customer.basket.status == 'pending' %>
+          <%= link_to "PAY FOR CUSTOM YOGGIES", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green' %>
+       <% end %>
+           <%= render 'smoothies/card_tailored', smoothie: @smoothies %>
+    <% end %>
+  </div>
+<% else %>
+  <div class="our-smoothies">
+    <% @smoothies.each do |smoothie| %>
+      <%= render 'smoothies/card_guest', smoothie: smoothie %>
+    <% end %>
+  </div>
+<% end %>
 <br></br>
+
+<!-- new_customer_payment_path(current_user.customer) -->
