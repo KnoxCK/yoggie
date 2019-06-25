@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:edit, :update, :show, :update_subscription, :dashboard_edit, :dashboard_update]
+  before_action :set_customer, only: [:edit, :update, :show, :update_subscription, :dashboard_edit, :dashboard_update, :update_status]
 
   def new
     if current_user.customer
@@ -45,9 +45,7 @@ class CustomersController < ApplicationController
 
   def update
     @customer.update(customer_params)
-    if @customer.tailored?
-      @customer.calculate_stats
-    end
+    @customer.calculate_stats
 
     if @customer.standard? && @customer.address.nil?
       redirect_to new_customer_address_path(current_user.customer)
@@ -95,6 +93,13 @@ class CustomersController < ApplicationController
     if user_signed_in?
       current_user.standard = false
       current_user.save
+      redirect_to smoothies_path
+    end
+  end
+
+  def update_status
+    if current_user.basket.status == 'cancelled'
+      current_user.basket.update(status: '')
       redirect_to smoothies_path
     end
   end

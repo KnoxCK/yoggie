@@ -30,7 +30,7 @@
       <%#= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1538941091/Yoggie_EtonMess_pwdxyi.png" %>
         <div class="standard-yoggie-content <%= "active" if BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count >= 1 %>">
           <h3><%= smoothie.name.titleize %><br></br></h3>
-          <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
+
           <% if current_user %>
             <%#= link_to "ADD TO BOX", new_customer_basket_path(current_user.customer), class: 'btn-yoggie-main-clear' %>
             <%= form_for [current_user.customer, current_user.customer.basket], :url => url_for(:controller => 'baskets', :action => 'add_to_basket') do |f| %>
@@ -39,9 +39,13 @@
               <%= f.hidden_field :tailored, value: false if current_user.customer.standard? %>
               <%= f.hidden_field :tailored, value: true if current_user.customer.tailored? %>
               <%= select_tag "quantity", options_for_select([0, 1, 2, 3, 4, 5], BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count) %>
-            <%= f.submit 'Add My Smoothies', class: "btn-yoggie-main-green results-button"  %>
+            <div class="flex">
+              <%= f.submit 'ADD TO BOX', class: "btn-yoggie-main-green"  %>
+              <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
+            </div>
           <% end %>
         <% else %>
+          <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
         <% end %>
           <p class="hatch">
             <% smoothie.ingredients.each do |ingredient| %>

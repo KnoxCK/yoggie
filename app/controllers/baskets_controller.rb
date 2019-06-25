@@ -8,6 +8,7 @@ class BasketsController < ApplicationController
   def basket_confirmation
     @basket = Basket.find(params[:basket_id])
     @customer = @basket.customer
+    @status = determine_status
   end
 
   def edit
@@ -104,6 +105,12 @@ class BasketsController < ApplicationController
   end
 
   private
+
+  def determine_status
+    return 'Cancelled' if @customer.basket.status == 'cancelled'
+    return 'Standard' if @customer.standard?
+    return 'Tailored' if @customer.tailored?
+  end
 
   def set_customer
     @customer = Customer.friendly.find(params[:customer_id])
