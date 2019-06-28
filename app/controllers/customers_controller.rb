@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:edit, :update, :show, :update_subscription, :dashboard_edit, :dashboard_update, :update_status]
-
+   # skip_before_action :authenticate_user!, only:[:choose_standard, :choose_]
   def new
     if current_user.customer
       if current_user.customer.basket.nil?

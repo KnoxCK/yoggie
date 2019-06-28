@@ -9,12 +9,12 @@
     <%= f.input :first_name %>
 
     <%= f.input :last_name %>
-    <%= f.input :gender, as: :select, collection: Customer::GENDER.map{|g|g.humanize}, required: true %>
+    <%= f.input :gender, label:'I am a...',  as: :select, collection: Customer::GENDER.map{|g|g.humanize}, required: true %>
     <%= f.input :age , required: true%>
     <%= f.input :height, label: 'Height (cm)', required: true %>
     <%= f.input :weight, label: 'Weight (kg)' , required: true%>
     <%= f.input :meals_per_day, as: :select, collection: Customer::MEALS_PER_DAY.keys, required: true  %>
-    <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys, required: true %>
+    <%= f.input :activity_level, label:'On a weekday I eat this many meals', as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys, required: true %>
     <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys, required: true %>
     <div class="results-button">
       <%= f.submit 'Get my results', class: "btn-yoggie-main-green text-center" %>

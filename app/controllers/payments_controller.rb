@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :set_customer
-  # skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!
 
   def new
     redirect_to new_customer_address_path if @customer.address.nil?
@@ -36,7 +36,7 @@ class PaymentsController < ApplicationController
     @customer.basket.update(status: 'active', stripe_sub_id: subscription.id)
     CustomerMailer.order_confirmation(@customer).deliver_now
     flash[:notice] = "Thank you, your payment was successful."
-    redirect_to basket_confirmation_path(@customer.basket)
+    redirect_to customer_path(@customer)
 
   rescue Stripe::CardError => e
     flash[:alert] = "#{e.message} Please try again."

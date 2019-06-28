@@ -1,7 +1,7 @@
 class BasketsController < ApplicationController
   before_action :set_customer, except: :basket_confirmation
   skip_before_action :authenticate_user!
-
+# , except:
   def show
   end
 

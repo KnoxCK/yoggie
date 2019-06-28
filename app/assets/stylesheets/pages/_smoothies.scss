@@ -58,13 +58,12 @@
     color: white;
     text-align: left;
     display: none;
-    border-radius: 5px;
     height: 110px;
 	}
 }
 
 .active {
-  border: 5px solid pink;
+  border: 5px solid #E6577A;
 }
 
 
@@ -78,4 +77,10 @@
 	.our-smoothies {
 		padding: 0 5%;
 	}
+}
+
+input, button, select, textarea {
+ background-color: white;
+ border: none;
+ font-size: 13px;
 }

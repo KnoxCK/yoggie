@@ -2,7 +2,7 @@
 	background-color: #E6577A;
 }
 .customer-vitals-box {
-	padding: 90px 40px 0 40px; 
+	padding: 90px 40px 0 40px;
 	background-color: white;
 	height: auto;
 	//position: absolute;
@@ -32,7 +32,7 @@
 		padding-left: 0;
 	}
 	span {
-		color: #E6577A;
+		color: black;
 	}
 	i {
 		color: #91B060;
@@ -84,6 +84,9 @@
 		font-weight: lighter;
 		font-size: 15px;
 	}
+  h4 {
+    color: #E6577A
+  }
 }
 .cancel-order-buttons {
 	display: flex;
@@ -95,5 +98,6 @@
 		width: 270px;
 	}
 }
-
-
+.small-font {
+  font-size: $font-size-confirmation;
+}

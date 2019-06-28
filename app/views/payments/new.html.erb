@@ -7,22 +7,25 @@
     <p>Total of <%= @customer.basket.smoothies.count %> smoothies </p>
   </ul>
   <br>
-  <h4>Weekly Subscription: </h4>
+  <h4>Weekly Subscription </h4>
   <p>£<%= @fee /100 %></p>
   </br>
-  <h4>Delivery Address:</h4>
+  <h4>Delivery Address</h4>
   <p><%= @customer.address.address_line_one %></p>
   <p><%= @customer.address.address_line_two %></p>
   <p><%= UKPostcode.parse(@customer.address.postcode) %></p>
   <p> Safe place: <%= @customer.address.delivery_instructions %></p>
   <%= link_to 'Change', edit_customer_address_path(@customer, @customer.address) %>
   <br>
-  <p>Box price: £ <%= @fee / 100 %></p>
-  <p>Price per yoggie: £ <%= @fee / 500.0 %>0</p>
-  <p>Delivery: Free</p>
-  <p>Delivery day: xx <i class="fa fa-info" data-toggle="tooltip" data-placement="top" title="We will leave your frozen box in your Safe Placebetween 3am and 6am in the morning. Don't forget to put your packs in the freezer"></i>
-  <p>Next delivery: xx</p>
-  <p class="text-center"><input type="checkbox" id="terms"> I agree to the <%= link_to "Privacy Policy", privacy_path %> and the <%= link_to "Terms & Conditions", terms_path %>
+  <h4>Order details</h4>
+    <div class="order-details">
+    <p>Box price: £ <%= @fee / 100 %></p>
+    <p>Price per yoggie: £ <%= @fee / 500.0 %>0</p>
+    <p>Delivery: Free</p>
+    <p>Delivery day: xx <i class="fa fa-info" data-toggle="tooltip" data-placement="top" title="We will leave your frozen box in your Safe Placebetween 3am and 6am in the morning. Don't forget to put your packs in the freezer"></i>
+    <p>Next delivery: xx</p>
+  </div>
+  <p class="text-center small-font"><input type="checkbox" id="terms"> I agree to the <%= link_to "Privacy Policy", privacy_path %> and the <%= link_to "Terms & Conditions", terms_path %>
   I know I am signing up to recuring deliveries, which I can cancel at anytime </p>
   <p></p>
   <%= form_tag customer_payments_path(@customer) do %>
@@ -38,6 +41,7 @@
     <br>
 </div>
 <script>
+
 
 const terms = document.getElementById("terms");
 const stripe = document.getElementsByClassName("stripe-button-el");

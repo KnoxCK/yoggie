@@ -1,8 +1,29 @@
+<%= render 'shared/flashes' %>
 <div class="customer-vitals-wrapper">
 	<div class="customer-vitals-box">
 		<h2>My Dashboard</h2>
 		<h3>&nbsp;<%= @customer.first_name %> <%= @customer.last_name %></h3>
 		<hr>
+    <div class="customer-vitals-subscription text-center">
+        <h4>My <u><%= @status %></u> Subscription</h4>
+        <ul>
+
+         <% @customer.basket.smoothies.group_by {|smoothie| smoothie.name}.each do |smoothie_array| %>
+            <p><span><%= smoothie_array[0].titleize %> x <%= smoothie_array[1].count %> </span></p>
+          <% end %>
+        </ul>
+        <h4>Amend</h4>
+        <%= link_to 'Change my Smoothies', smoothies_path(@customer, @customer.basket) %>
+        <%= link_to "Pay For Your Yoggies", edit_customer_path(current_user.customer) if @customer&.basket.status == 'pending' && @basket.smoothies.count == 5  %>
+        <% if @customer&.basket.active? %>
+          <% unless @sub_status %>
+            <p>Your subscription needs updating: <%= link_to 'Click here to update', new_customer_payment_path(@customer) %></p>
+          <% end %>
+          <%= link_to 'Cancel My Subscription', cancel_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
+          <%= link_to 'Pause My Subscription', pause_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
+          <%= link_to 'My nutrition section', basket_confirmation_path(@customer.basket) %>
+        <% end %>
+      </div>
 		<div class="customer-vitals">
 			<div class="customer-vitals-details">
 				<h4>My Vitals:</h4>
@@ -31,31 +52,6 @@
   				<% end %>
   			</div>
 		</div>
-		<div class="customer-vitals-subscription text-center">
-				<h4>My <u><%= @status %></u> Subscription:</h4>
-				<ul>
-
-				 <% @customer.basket.smoothies.group_by {|smoothie| smoothie.name}.each do |smoothie_array| %>
-				    <p><span><%= smoothie_array[0].titleize %> x <%= smoothie_array[1].count %> </span></p>
-				  <% end %>
-				</ul>
-        <%= link_to 'Change my Smoothies', smoothies_path(@customer, @customer.basket) %>
-        <%= link_to "Pay For Your Yoggies", edit_customer_path(current_user.customer) if @customer&.basket.status == 'pending' && @basket.smoothies.count == 5  %>
-				<% if @customer&.basket.active? %>
-					<% unless @sub_status %>
-						<p>Your subscription needs updating: <%= link_to 'Click here to update', new_customer_payment_path(@customer) %></p>
-					<% end %>
-					<%= link_to 'Cancel My Subscription', cancel_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
-          <%= link_to 'Pause My Subscription', pause_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
-          <%= link_to 'Order Confirmation', basket_confirmation_path(@customer.basket) %>
-				<% end %>
-			</div>
-			<div class="cancel-order-buttons">
-				<% if @customer&.basket.cancelled? %>
-					<%= link_to "ORDER YOGGIES", update_status_path(@customer), class: 'btn-yoggie-main-clear' %>
-
-				<% end %>
-			</div>
-      <% end %>
+    <% end %>
 	</div>
 </div>
