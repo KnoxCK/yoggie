@@ -1,6 +1,6 @@
-<%= link_to smoothie_path(smoothie) do %>
+<%= link_to smoothie_path(smoothie.slug) do %>
   <div class="standard-yoggie">
-  <%#= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1538941091/Yoggie_EtonMess_pwdxyi.png" %>
+  <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1538941091/Yoggie_EtonMess_pwdxyi.png" %>
     <% if user_signed_in? %>
     <div class="standard-yoggie-content <%= "active" if BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count >= 1 %>">
     <% else %>
