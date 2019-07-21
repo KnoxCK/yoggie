@@ -1,11 +1,10 @@
 class BasketsController < ApplicationController
-  before_action :set_customer, except: :basket_confirmation
-  skip_before_action :authenticate_user!
-# , except:
+  before_action :set_customer, except: :my_nutrition
+  # skip_before_action :authenticate_user!
   def show
   end
 
-  def basket_confirmation
+  def my_nutrition
     @basket = Basket.find(params[:basket_id])
     @customer = @basket.customer
     @status = determine_status
@@ -46,6 +45,12 @@ class BasketsController < ApplicationController
   def add_to_basket
     # find customer
      # check if they have a basket
+     # raise
+    if current_user.customer.basket.status == 'cancelled'
+      current_user.customer.basket.status = 'pending'
+      # current_user.customer.basket.update(status: "pending")
+      current_user.customer.basket.save
+    end
     if @customer.basket
       @basket = @customer.basket
     else

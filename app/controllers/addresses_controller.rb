@@ -6,6 +6,7 @@ class AddressesController < ApplicationController
   end
 
   def update
+
     if @customer.address.check_postcode(address_params[:postcode])
       @customer.address.update(address_params)
       redirect_to new_customer_payment_path

@@ -21,7 +21,7 @@
           <% end %>
           <%= link_to 'Cancel My Subscription', cancel_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
           <%= link_to 'Pause My Subscription', pause_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
-          <%= link_to 'My nutrition section', basket_confirmation_path(@customer.basket) %>
+          <%= link_to 'My nutrition section', my_nutrition_path(@customer.basket) %>
         <% end %>
       </div>
 		<div class="customer-vitals">

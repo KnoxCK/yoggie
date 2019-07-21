@@ -18,6 +18,10 @@ class UsersController < ApplicationController
   end
 
   def postcode_result
+    if session[:standard]
+      current_user.standard = true
+      current_user.save
+    end
     @user.check_postcode(user_params[:postcode])
     if @user.valid_postcode?
       redirect_to new_customer_path, notice: 'Yes! We deliver to your area!'

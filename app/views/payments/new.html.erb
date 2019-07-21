@@ -48,7 +48,7 @@ const stripe = document.getElementsByClassName("stripe-button-el");
 stripe[0].disabled=true
 
 terms.addEventListener("click", (event) => {
-  if (stripe[0].disabled) {
+  if (terms.checked) {
     stripe[0].disabled=false
   } else {
     stripe[0].disabled=true

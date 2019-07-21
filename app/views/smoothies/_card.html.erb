@@ -16,12 +16,13 @@
           <%= select_tag "quantity", options_for_select([0, 1, 2, 3, 4, 5], BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count) %>
           <%#= link_to "ADD TO BOX", new_customer_path, class: 'btn-yoggie-main-clear' %>
           <div class="flex">
-            <%= f.submit 'UPDATE BOX', class: "btn-yoggie-main-green "  %>
+            <%= f.submit 'UPDATE BOX', class: "btn-yoggie-main-green "%>
             <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
           </div>
           <% end %>
         <% else %>
-      <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
+        <%= link_to 'UPDATE BOX', class: "btn-yoggie-main-green "%>
+        <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
       <% end %>
 
       <p class="hatch">

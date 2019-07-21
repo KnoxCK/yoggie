@@ -1,8 +1,8 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:edit, :update, :show, :update_subscription, :dashboard_edit, :dashboard_update, :update_status]
-   # skip_before_action :authenticate_user!, only:[:choose_standard, :choose_]
+   skip_before_action :authenticate_user!, only:[:choose_standard]
   def new
-    if current_user.customer
+    if current_user.customer && !current_user.standard
       if current_user.customer.basket.nil?
         @basket = Basket.create(customer: current_user.customer)
       end
@@ -13,6 +13,7 @@ class CustomersController < ApplicationController
         if @customer.basket.nil?
           @basket = Basket.create(customer: current_user.customer)
         end
+
       else
         redirect_to postcode_checker_user_path(current_user)
       end
@@ -45,12 +46,19 @@ class CustomersController < ApplicationController
 
   def update
     @customer.update(customer_params)
-    @customer.calculate_stats
 
     if @customer.standard? && @customer.address.nil?
-      redirect_to new_customer_address_path(current_user.customer)
+      if @customer.basket && @customer.basket.full?
+        redirect_to new_customer_address_path(current_user.customer)
+      else
+        redirect_to smoothies_path
+      end
     elsif @customer.basket && @customer.basket.full?
       redirect_to new_customer_payment_path(@customer)
+    elsif !@customer.standard?
+      @customer.calculate_stats
+      raise
+      redirect_to smoothies_path
     else
       redirect_to smoothies_path
     end
@@ -85,16 +93,18 @@ class CustomersController < ApplicationController
     if user_signed_in?
       current_user.standard = true
       current_user.save
-      redirect_to smoothies_path
+    else
+      session[:standard] = true
     end
+    redirect_to smoothies_path
   end
 
   def choose_custom
     if user_signed_in?
       current_user.standard = false
       current_user.save
-      redirect_to smoothies_path
     end
+    redirect_to smoothies_path
   end
 
   def update_status

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'smoothies/:id', to: "smoothies#show", as: :smothie_page
   patch 'add_to_basket', to: 'baskets#add_to_basket', as: :add_to_basket
   patch 'update_newsletter', to: 'users#update_newsletter', as: :update_newsletter
-  get 'basket_confirmation/:basket_id', to: 'baskets#basket_confirmation', as: :basket_confirmation
+  get 'my_nutrition/:basket_id', to: 'baskets#my_nutrition', as: :my_nutrition
   get 'update_subscription/:id', to: 'customers#update_subscription', as: :update_subscription
   get 'customers/:id/dashboard_edit', to: "customers#dashboard_edit", as: :dashboard_edit
   patch 'customers/:id/dashboard_update', to: "customers#dashboard_update", as: :dashboard_update
