@@ -26,9 +26,7 @@
         <% end %>
       </div>
     <% end %>
-
 </div>
-
      <% if !current_user.customer.standard? %>
       <% if current_user.customer.basket.status == 'pending' && current_user.customer.basket.smoothies.count == 5 %>
           <div class="text-center">

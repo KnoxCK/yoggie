@@ -2,7 +2,8 @@
 <div class="customer-vitals-wrapper">
 	<div class="customer-vitals-box">
 		<h2>My Dashboard</h2>
-		<h3>&nbsp;<%= @customer.first_name %> <%= @customer.last_name %></h3>
+		<h3><%= @customer.first_name %> <%= @customer.last_name %></h3>
+    <%= link_to 'Change my address', edit_customer_address_path(@customer) %>
 		<hr>
     <div class="customer-vitals-subscription text-center">
         <h4>My <u><%= @status %></u> Subscription</h4>
@@ -27,6 +28,7 @@
 		<div class="customer-vitals">
 			<div class="customer-vitals-details">
 				<h4>My Vitals:</h4>
+        <p>Name: <span><%= @customer.first_name %></span></p>
 				<p>Age: <span><%= @customer.age %></span></p>
 				<p>Gender: <span><%= @customer.gender %></span></p>
 				<p>Height: <span><%= @customer.height %></span></p>
@@ -36,7 +38,7 @@
 				<p>Goal: <span><%= @customer.goal %></span></p>
 				<%= link_to 'Change my vitals', dashboard_edit_path(@customer) %>
 			</div>
-      <% if @customer.basket %>
+      <% if @customer.basket && !@customer.standard? %>
   			<div class="customer-vitals-nutrition">
   				<h4>My Nutrition:</h4>
   				<p>My BMR: <span><%= @customer.bmr %></span></p>

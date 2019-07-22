@@ -57,7 +57,6 @@ class CustomersController < ApplicationController
       redirect_to new_customer_payment_path(@customer)
     elsif !@customer.standard?
       @customer.calculate_stats
-      raise
       redirect_to smoothies_path
     else
       redirect_to smoothies_path
