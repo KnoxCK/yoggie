@@ -1,6 +1,10 @@
 <%= render 'shared/flashes' %>
 
-<div class="our-smoothies-banner"></div>
+<% if !current_user.customer.basket.status == 'pending' && !current_user.customer.basket.smoothies.count == 5 %>
+  <div class="our-smoothies-banner"></div>
+<% else %>
+  <div class="banner-padding"></div>
+<% end %>
 <div class="our-smoothies-intro section-padding text-center">
 	<br>
 	<h2>Pick Your Yoggies</h2>

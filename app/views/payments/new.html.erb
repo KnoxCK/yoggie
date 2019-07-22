@@ -10,20 +10,19 @@
   <h4>Weekly Subscription </h4>
   <p>£<%= @fee /100 %></p>
   </br>
-  <h4>Delivery Address</h4>
+  <h4>Order details</h4>
+  <p><%= @customer.user.email %></p>
   <p><%= @customer.address.address_line_one %></p>
   <p><%= @customer.address.address_line_two %></p>
   <p><%= UKPostcode.parse(@customer.address.postcode) %></p>
   <p> Safe place: <%= @customer.address.delivery_instructions %></p>
-  <%= link_to 'Change', edit_customer_address_path(@customer, @customer.address) %>
+  <%= link_to 'Change my address', edit_customer_address_path(@customer, @customer.address) %>
   <br>
-  <h4>Order details</h4>
     <div class="order-details">
     <p>Box price: £ <%= @fee / 100 %></p>
     <p>Price per yoggie: £ <%= @fee / 500.0 %>0</p>
     <p>Delivery: Free</p>
-    <p>Delivery day <i class="fa fa-info" data-toggle="tooltip" data-placement="top" title="We will leave your frozen box in your Safe Placebetween 3am and 6am in the morning. Don't forget to put your packs in the freezer"></i>: Tuesday
-    <p>Next delivery: xx</p>
+    <p>Delivery day: Tuesday<span><i class="fa fa-info" data-toggle="tooltip" data-placement="top" title="We will leave your frozen box in your Safe Placebetween 3am and 6am in the morning. Don't forget to put your packs in the freezer"></i></span>
   </div>
   <p class="text-center small-font"><input type="checkbox" id="terms"> I agree to the <%= link_to "Privacy Policy", privacy_path %> and the <%= link_to "Terms & Conditions", terms_path %>
   I know I am signing up to recuring deliveries, which I can cancel at anytime </p>
