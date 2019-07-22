@@ -1,8 +1,10 @@
-<%= link_to smoothie_path(smoothie.slug) do %>
+
   <div class="standard-yoggie">
   <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1538941091/Yoggie_EtonMess_pwdxyi.png" %>
     <div class="standard-yoggie-content ">
-        <h3><%= smoothie.name.titleize %><br></br></h3>
+       <%= link_to smoothie_path(smoothie.slug) do %>
+            <h3><%= smoothie.name.titleize %><br></br></h3>
+          <% end %>
           <%= link_to 'UPDATE BOX', new_user_session_path, class: "btn-yoggie-main-green"%>
           <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
         <p class="hatch">
@@ -12,4 +14,3 @@
         </p>
     </div>
   </div>
-<% end %>

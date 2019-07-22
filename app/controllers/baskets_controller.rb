@@ -45,7 +45,6 @@ class BasketsController < ApplicationController
   def add_to_basket
     # find customer
      # check if they have a basket
-     # raise
     if current_user.customer.basket.status == 'cancelled'
       current_user.customer.basket.status = 'pending'
       # current_user.customer.basket.update(status: "pending")
@@ -59,7 +58,6 @@ class BasketsController < ApplicationController
     # finding which smoothie we clicked on add to basket
     # url: products/1/orders
     # if @basket.smoothies.count >= 5
-    # # raise
     #   after_basket_path(@basket.tailored)
     # else
       @smoothie = Smoothie.find(params[:smoothie_id])
