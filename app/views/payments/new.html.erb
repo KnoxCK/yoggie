@@ -1,22 +1,32 @@
 <div class="review-order-wrapper">
-  <h3>Review Your Order</h3><br>
-  <h4>Your Smoothies:</h4><br>
-  <ul>
-    <% @customer.basket.smoothies.each do |smoothie| %>
-      <p><%= smoothie.name.titleize %></p>
+  <h3>Review Your Order</h3>
+    <h4>Your <%= @customer.user.standard ? "standard" : "tailored" %> smoothies</h4><br>
+    <% @customer.basket.smoothies.group_by {|smoothie| smoothie.name}.each do |smoothie_array| %>
+      <p><span> <%= smoothie_array[1].count %>  x   <%= smoothie_array[0].titleize %></span></p>
     <% end %>
+    <p>Total of <%= @customer.basket.smoothies.count %> smoothies </p>
   </ul>
-  <br></br>
-  <h4>Weekly Subscription: </h4><p>£<%= @fee /100 %></p>
-  <br></br>
-  <h4>Delivery Address:</h4><br>
+  <br>
+  <h4>Weekly Subscription </h4>
+  <p>£<%= @fee /100 %></p>
+  </br>
+  <h4>Order details</h4>
+  <p><%= @customer.user.email %></p>
   <p><%= @customer.address.address_line_one %></p>
   <p><%= @customer.address.address_line_two %></p>
-  <p><%= @customer.address.postcode %></p>
-  <p><%= @customer.address.delivery_instructions %></p>
-  <%= link_to 'Change my Address', edit_customer_address_path(@customer, @customer.address) %>
-  <br><br/>
-  <h4>You're done!</h4><br>
+  <p><%= UKPostcode.parse(@customer.address.postcode) %></p>
+  <p> Safe place: <%= @customer.address.delivery_instructions %></p>
+  <%= link_to 'Change my address', edit_customer_address_path(@customer, @customer.address) %>
+  <br>
+    <div class="order-details">
+    <p>Box price: £ <%= @fee / 100 %></p>
+    <p>Price per yoggie: £ <%= @fee / 500.0 %>0</p>
+    <p>Delivery: Free</p>
+    <p>Delivery day: Tuesday<span><i class="fa fa-info" data-toggle="tooltip" data-placement="top" title="We will leave your frozen box in your Safe Placebetween 3am and 6am in the morning. Don't forget to put your packs in the freezer"></i></span>
+  </div>
+  <p class="text-center small-font"><input type="checkbox" id="terms"> I agree to the <%= link_to "Privacy Policy", privacy_path %> and the <%= link_to "Terms & Conditions", terms_path %>
+  I know I am signing up to recuring deliveries, which I can cancel at anytime </p>
+  <p></p>
   <%= form_tag customer_payments_path(@customer) do %>
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -24,7 +34,24 @@
       data-email="<%= @customer.user.email %>"
       data-amount="<%= @fee %>"
       data-currency="gbp"
-      data-locale="auto"></script>
+      data-locale="auto"
+      data-label="Place order"></script>
     <% end %>
     <br>
 </div>
+<script>
+
+
+const terms = document.getElementById("terms");
+const stripe = document.getElementsByClassName("stripe-button-el");
+stripe[0].disabled=true
+
+terms.addEventListener("click", (event) => {
+  if (terms.checked) {
+    stripe[0].disabled=false
+  } else {
+    stripe[0].disabled=true
+  }
+
+});
+</script>

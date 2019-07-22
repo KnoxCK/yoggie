@@ -26,3 +26,18 @@
 		font-size: 14px;
 	}
 }
+
+.order-details{
+  position: relative;
+  i {
+    font-size: 15px;
+    font-weight: lighter;
+    position: absolute;
+    top: 112px;
+    padding-left: 5px;
+
+  }
+  span {
+    padding-right: 8px;
+  }
+}

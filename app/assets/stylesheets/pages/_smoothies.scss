@@ -9,9 +9,13 @@
 		text-decoration: none;
 	}
 }
+
+// .quantity-tag{
+
+// }
 .our-smoothies-intro {
  	padding-left: 15%;
- 	padding-right: 15%; 
+ 	padding-right: 15%;
  	p {
  		color: #E6577A;
  		font-weight: lighter;
@@ -30,8 +34,7 @@
     align-items: center;
     position: relative;
 	img {
-		padding: 30px 40px 20px 40px;
-		width: 100%;
+		padding: 25px 20px;
 	}
 }
 .standard-yoggie-content {
@@ -47,20 +50,26 @@
 		height: 95px;
 	}
 	p {
-		padding: 40px;
-	    position: absolute;
-	    top: 5px;
-	    background-color: #E6577A;
-	    left: 5px;
-	    right: 5px;
-	    bottom: 202px;
-	    font-weight: lighter;
-	    color: white;
-	    text-align: left;
-	    display: none;
-	    border-radius: 5px;
+		padding: 20px;
+    position: absolute;
+    top: 5px;
+    background-color: #E6577A;
+    left: 5px;
+    right: 5px;
+    bottom: 202px;
+    font-weight: lighter;
+    color: white;
+    text-align: left;
+    display: none;
+    height: 340px;
 	}
 }
+
+.active {
+  border: 5px solid #E6577A;
+}
+
+
 .standard-yoggie:hover {
 	p {
 		display: block;
@@ -71,4 +80,10 @@
 	.our-smoothies {
 		padding: 0 5%;
 	}
+}
+
+input, button, select, textarea {
+ background-color: white;
+ border: none;
+ font-size: 13px;
 }

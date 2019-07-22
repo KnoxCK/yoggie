@@ -1,0 +1,8 @@
+<div class="postcode-wrapper text-center">
+  <h2>Join our mailing list!</h2>
+  <%= simple_form_for @newsletter do |f| %>
+    Would you like to join our mailing list?<br>
+    <%= f.input :email %><br>
+    <%= f.submit 'Update', class: "btn-yoggie-main-green" %>
+  <% end %>
+</div>

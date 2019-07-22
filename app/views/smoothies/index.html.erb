@@ -1,17 +1,53 @@
-<div class="our-smoothies-banner"></div>
+<%= render 'shared/flashes' %>
+
+<% if !current_user.customer.basket.status == 'pending' && !current_user.customer.basket.smoothies.count == 5 %>
+  <div class="our-smoothies-banner"></div>
+<% else %>
+  <div class="banner-padding"></div>
+<% end %>
 <div class="our-smoothies-intro section-padding text-center">
 	<br>
 	<h2>Pick Your Yoggies</h2>
 	<p>Choose your 5 smoothies for the week</p>
 	<br>
 </div>
-<div class="our-smoothies">
-<% @smoothies.each do |smoothie| %>
-  <%= render 'smoothies/card', smoothie: smoothie %>
+<div class="text-center">
+  <% if user_signed_in? %>
+    <% if current_user.customer.standard? %>
+      <% if current_user.customer.basket.status == 'pending' && current_user.customer.basket.smoothies.count == 5 %>
+      <!-- <#% raise %> -->
+      <% if  current_user.customer.first_name.nil?%>
+        <%= link_to "PAY FOR STANDARD YOGGIES", edit_customer_path(current_user.customer), class: 'btn-yoggie-main-green' %>
+      <% else %>
+       <%= link_to "PAY FOR STANDARD YOGGIES", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green' %>
+      <% end %>
+
+      <% end %>
+      <div class="our-smoothies">
+        <% @smoothies.each do |smoothie| %>
+          <%#= link_to "ORDER STANDARD YOGGIES", new_user_registration_path(standard: true), class: 'btn-yoggie-main-green' %>
+          <%= render 'smoothies/card', smoothie: smoothie %>
+        <% end %>
+      </div>
+    <% end %>
+</div>
+     <% if !current_user.customer.standard? %>
+      <% if current_user.customer.basket.status == 'pending' && current_user.customer.basket.smoothies.count == 5 %>
+          <div class="text-center">
+            <%= link_to "PAY FOR CUSTOM YOGGIES", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green text-center' %>
+          </div>
+       <% end %>
+       <div class="our-smoothies">
+           <%= render 'smoothies/card_tailored', smoothies: @smoothies %>
+        </div>
+    <% end %>
+<% else %>
+  <div class="our-smoothies">
+    <% @smoothies.each do |smoothie| %>
+      <%= render 'smoothies/card_guest', smoothie: smoothie %>
+    <% end %>
+  </div>
 <% end %>
-</div>
-<div class="text-center"><br>
-	<%= link_to "ORDER STANDARD YOGGIES", new_user_registration_path(standard: true), class: 'btn-yoggie-main-green' %>
-	<!-- <%= link_to "ORDER CUSTOM YOGGIES", new_user_registration_path(standard: false), class: 'btn-yoggie-main-green' %> -->
-</div>
 <br></br>
+
+<!-- new_customer_payment_path(current_user.customer) -->

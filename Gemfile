@@ -25,6 +25,7 @@ gem 'uk_postcode', '~> 2.1.0'
 gem 'uglifier'
 gem 'carrierwave', '~> 1.0'
 gem 'cloudinary'
+gem 'instagram_api_client'
 
 group :development, :test do
   gem 'pry-byebug'

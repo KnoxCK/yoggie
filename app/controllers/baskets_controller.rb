@@ -1,12 +1,17 @@
 class BasketsController < ApplicationController
-  before_action :set_customer
-  skip_before_action :authenticate_user!
-
+  before_action :set_customer, except: :my_nutrition
+  # skip_before_action :authenticate_user!
   def show
   end
 
+  def my_nutrition
+    @basket = Basket.find(params[:basket_id])
+    @customer = @basket.customer
+    @status = determine_status
+  end
+
   def edit
-    @smoothies = Smoothie.fetch_bundle(@customer)
+      @smoothies = Smoothie.fetch_bundle(@customer)
   end
 
   def update
@@ -20,7 +25,7 @@ class BasketsController < ApplicationController
     else
       @smoothies = Smoothie.fetch_bundle(@customer)
       @message = 'Please select a total of 5 smoothies.'
-      render :edit
+      redirect_to new_customer_basket_path, notice: @message
     end
   end
 
@@ -33,9 +38,53 @@ class BasketsController < ApplicationController
     else
       @smoothies = Smoothie.fetch_bundle(@customer)
       @message = 'Please select a total of 5 smoothies.'
-      render :new
+      render :show
     end
   end
+
+  def add_to_basket
+    # find customer
+     # check if they have a basket
+     # raise
+    if current_user.customer.basket.status == 'cancelled'
+      current_user.customer.basket.status = 'pending'
+      # current_user.customer.basket.update(status: "pending")
+      current_user.customer.basket.save
+    end
+    if @customer.basket
+      @basket = @customer.basket
+    else
+      @basket = Basket.create(customer: @customer)
+    end
+    # finding which smoothie we clicked on add to basket
+    # url: products/1/orders
+    # if @basket.smoothies.count >= 5
+    # # raise
+    #   after_basket_path(@basket.tailored)
+    # else
+      @smoothie = Smoothie.find(params[:smoothie_id])
+      @quantity = params[:quantity].to_i
+      BasketSmoothie.where(smoothie: @smoothie, basket: @basket).destroy_all
+      available = 5 - @basket.smoothies.count
+      if available > @quantity
+        @quantity.times do
+          @basket_smoothie = BasketSmoothie.create(smoothie: @smoothie, basket: @basket)
+        end
+      else
+        available.times do
+          @basket_smoothie = BasketSmoothie.create(smoothie: @smoothie, basket: @basket)
+        end
+      end
+      if @basket.smoothies.count >= 5
+        @message = "You have a total of 5 smoothies."
+      else
+        @message = "Smoothies added, you need another #{5 - @basket.smoothies.length}."
+      end
+
+      redirect_to smoothies_path, notice: @message
+  end
+
+
 
   def new
     @basket = Basket.find_or_initialize_by(customer_id: @customer.id)
@@ -51,7 +100,22 @@ class BasketsController < ApplicationController
     redirect_to customer_path(@basket.customer), notice: 'Your subscription has been cancelled'
   end
 
+  def pause_subscription
+    @basket = Basket.find(params[:id])
+    subscription = Stripe::Subscription.retrieve(@basket.stripe_sub_id)
+    subscription.delete
+    @basket.update(status: 'pending')
+    AdminMailer.subscription_paused(@customer).deliver
+    redirect_to customer_path(@basket.customer), notice: 'Your subscription has been paused'
+  end
+
   private
+
+  def determine_status
+    return 'Cancelled' if @customer.basket.status == 'cancelled'
+    return 'Standard' if @customer.standard?
+    return 'Tailored' if @customer.tailored?
+  end
 
   def set_customer
     @customer = Customer.friendly.find(params[:customer_id])

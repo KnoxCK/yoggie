@@ -2,7 +2,7 @@
 	background-color: #E6577A;
 }
 .customer-vitals-box {
-	padding: 90px 40px 0 40px; 
+	padding: 90px 40px 0 40px;
 	background-color: white;
 	height: auto;
 	//position: absolute;
@@ -32,7 +32,7 @@
 		padding-left: 0;
 	}
 	span {
-		color: #E6577A;
+		color: black;
 	}
 	i {
 		color: #91B060;
@@ -53,11 +53,12 @@
 	display: flex;
 	justify-content: center;
 	align-content: center;
+  background-color: #f7f7f7;
+  text-align: center;
 }
 .customer-vitals-details {
 	padding: 0 85px;
     width: 50%;
-    border-right: solid 1px white;
     background-color: #f7f7f7;
     padding: 40px;
     border-top-left-radius: 5px;
@@ -84,6 +85,9 @@
 		font-weight: lighter;
 		font-size: 15px;
 	}
+  h4 {
+    color: #E6577A
+  }
 }
 .cancel-order-buttons {
 	display: flex;
@@ -95,5 +99,6 @@
 		width: 270px;
 	}
 }
-
-
+.small-font {
+  font-size: $font-size-confirmation;
+}

@@ -13,6 +13,10 @@ class Smoothie < ApplicationRecord
 
   scope :standard, -> { where(group_id: Group.find_by(name: 'Std'), size_id: 3) }
 
+  def slug
+    name.parameterize
+  end
+
   def self.fetch_bundle(customer)
     return standard if customer.standard?
     protein = customer.protein

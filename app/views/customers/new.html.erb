@@ -1,9 +1,6 @@
 <div class="our-smoothies-banner"></div>
 <div class="form-wrapper">
   <% if !current_user.standard %>
-    <div class="yoggie-form-link">
-      <%= link_to 'Prefer to choose from our Standard Yoggie flavours? Click here...', user_path(current_user, user: { standard: true }), method: :patch, remote: true %>
-    </div>
     <h3 class="text-center" style="padding-bottom: 20px;">In 7 questions, we'll create your nutritionally perfect smoothie! Go...</h3>
   <% else %>
     <div class="yoggie-form-link">
@@ -19,6 +16,7 @@
     <% if !current_user.standard %>
       <%= f.input :height, label: 'Height (cm)' %>
       <%= f.input :weight, label: 'Weight (kg)' %>
+      <%= f.input :meals_per_day, as: :select, collection: Customer::MEALS_PER_DAY.keys  %>
       <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys %>
       <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys %>
       <%= f.submit 'Get my results', class: "btn-yoggie-main-green text-center" %>
@@ -27,4 +25,4 @@
       <%= f.submit 'Submit', class: "btn-yoggie-main-green" %>
     <% end %>
   <% end %>
-</div> 
+</div>

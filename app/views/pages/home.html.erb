@@ -4,10 +4,9 @@
 	<div class="banner-content">
     <h1>Delicious <br>Smoothie Meals</h1>
 		<p>Selection of smoothie mix packs <br>delivered weekly to your door.</p>
-		<%= link_to "GET STARTED", new_customer_path, class: 'btn-yoggie-landing' %>
+		<%= link_to "GET STARTED",  choose_custom_path, class: 'btn-yoggie-landing' %>
   	</div>
 </div>
-
 <!-- Landing intro for standard/tailored Yoggies -->
 <div class="pick-plan-section section-padding">
 	<h2 class="pick-plan-title">Pick your plan...</h2>
@@ -23,7 +22,7 @@
 					<ul>✓ &nbsp; 100% balanced nutrition</ul>
 					<ul>✓ &nbsp; 100% natural (no powders!)</ul>
 				</p>
-				<%= link_to "CHOOSE", smoothies_path, class: 'btn-yoggie-main-clear' %>
+				<%= link_to "CHOOSE", choose_standard_path, class: 'btn-yoggie-main-clear' %>
 			</div>
 		</div>
 		<div class="yoggie-custom">
@@ -37,7 +36,7 @@
 					<ul>✓ &nbsp; lose weight, gain weight, boost health - you pick!</ul>
 					<ul>✓ &nbsp; 100% natural (no powders!)</ul>
 				</p>
-				<%= link_to "START QUIZ", new_customer_path, class: 'btn-yoggie-main-clear' %>
+				<%= link_to "START QUIZ", choose_custom_path, class: 'btn-yoggie-main-clear' %>
 			</div>
 		</div>
 	</div>
@@ -124,8 +123,8 @@
 				<p>No powders. No artificial sweeteners, colourings or flavourings. Just proper foods, blitzed.</p>
 			</div>
 		</div>
-		<%= link_to "CHOOSE MY YOGGIES", new_customer_path, class: 'btn-yoggie-main-clear' %>
-	<%= link_to "START CUSTOMISING", new_customer_path, class: 'btn-yoggie-main-clear' %>
+		<%= link_to "CHOOSE MY YOGGIES", choose_standard_path, class: 'btn-yoggie-main-clear' %>
+	<%= link_to "START CUSTOMISING", choose_custom_path, class: 'btn-yoggie-main-clear' %>
 	</div>
 </div>
 
@@ -148,9 +147,14 @@
 			<p>"My post gym Yoggie is my ritual. It basically gets me through my day."</p>
 			<span><p>– Tom M</p></span>
 		</div>
+
 	</div>
 </div>
-
+<div class="instagram-grid">
+  <% @popular.data.first(10).each do |popular| %>
+      <%= image_tag popular.images.low_resolution.url %>
+  <% end %>
+</div>
 
 
 

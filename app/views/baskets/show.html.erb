@@ -1,2 +1,5 @@
 <h1>Baskets#show</h1>
 <p>Find me in app/views/baskets/show.html.erb</p>
+<% @customer.basket.smoothies.each do |s|%>
+  <%= s.name %>
+<% end %>

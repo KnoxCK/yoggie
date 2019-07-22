@@ -18,6 +18,10 @@ class Basket < ApplicationRecord
     end
   end
 
+  def full?
+    smoothies.count == 5
+  end
+
   def active?
     status == 'active'
   end
