@@ -8,7 +8,7 @@
     <div class="customer-vitals-subscription text-center">
         <h4>My <u><%= @status %></u> Subscription</h4>
         <ul>
-          <% if @customer.basket.smoothies.any? %>
+          <% if @customer.basket && @customer.basket.smoothies %>
            <% @customer.basket.smoothies.group_by {|smoothie| smoothie.name}.each do |smoothie_array| %>
               <p><span><%= smoothie_array[0].titleize %> x <%= smoothie_array[1].count %> </span></p>
             <% end %>
