@@ -3,64 +3,63 @@
 <head>
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Comfortaa:300,400,700|Lato:300,400,400i,700">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
+  .banner {
+  background-image: url('http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516706706/Yoggie_background_dooaa5.png');
+  font-family: "Montserrat", "Helvetica", "sans-serif";
+  color: #393939;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  background-size: cover !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  // a {
+  //   word-wrap: break-word;
+  // }
+}
+.banner-content {
+  background-color: white;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 45px 42px 42px 42px;
+  border-radius: 7px;
+  width: 530px;
+  margin-left: 12vw;
+  margin-top: 52px;
+  align-content: center;
+  h1 {
+    font-size: 45px;
+    font-weight: lighter;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    line-height: 54px;
   }
-
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  p {
+    font-weight: lighter;
+    color: #393939;
+    margin-bottom: 36px;
+    margin-top: 29px;
+    font-size: 21px;
   }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
+  a {
+    font-weight: lighter;
   }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+}
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
+    <div class="dialog">
+    <div class="banner">
+      <div class="banner-content">
+        <h1>We're sorry, but something went wrong.</h1>
+        <p>If you are the application owner check the logs for more information.</p>
+      </div>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
