@@ -8,10 +8,11 @@
     <div class="customer-vitals-subscription text-center">
         <h4>My <u><%= @status %></u> Subscription</h4>
         <ul>
-
-         <% @customer.basket.smoothies.group_by {|smoothie| smoothie.name}.each do |smoothie_array| %>
-            <p><span><%= smoothie_array[0].titleize %> x <%= smoothie_array[1].count %> </span></p>
-          <% end %>
+          <% if @customer.basket.smoothies.any? %>
+           <% @customer.basket.smoothies.group_by {|smoothie| smoothie.name}.each do |smoothie_array| %>
+              <p><span><%= smoothie_array[0].titleize %> x <%= smoothie_array[1].count %> </span></p>
+            <% end %>
+        <% end %>
         </ul>
         <h4>Amend</h4>
         <%= link_to 'Change my Smoothies', smoothies_path(@customer, @customer.basket) %>
