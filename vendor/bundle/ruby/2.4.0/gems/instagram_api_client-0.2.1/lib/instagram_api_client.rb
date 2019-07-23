@@ -1,1 +1,0 @@
-require 'instagram_api'

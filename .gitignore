@@ -6,7 +6,7 @@ tmp/*
 .DS_Store
 public/assets
 .byebug_history
-
+vendor/bundle
 # Ignore application configuration
 config/application.yml
 config/secrets.yml
