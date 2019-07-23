@@ -37,6 +37,8 @@ class CustomersController < ApplicationController
       @basket = @customer.basket
       @status = determine_status
       @sub_status = correct_subscription?
+    else
+      @basket = Basket.create(customer: current_user.customer)
     end
   end
 
