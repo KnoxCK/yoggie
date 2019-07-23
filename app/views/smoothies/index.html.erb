@@ -1,6 +1,6 @@
 <%= render 'shared/flashes' %>
 
-<% if current_user.customer.basket.smoothies.count == 5 %>
+<% if user_signed_in? && current_user.customer.basket.smoothies.count == 5 %>
   <div class="banner-padding"></div>
 <% else %>
 <div class="our-smoothies-banner"></div>
