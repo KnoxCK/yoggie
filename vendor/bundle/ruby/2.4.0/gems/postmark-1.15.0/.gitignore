@@ -1,0 +1,9 @@
+*.gem
+.bundle
+.env
+Gemfile.lock
+pkg/*
+.rvmrc
+.idea
+bin/*
+*.swp
