@@ -1,66 +1,66 @@
-.slideRight{
-  animation-name: slideRight;
-  -webkit-animation-name: slideRight;
+// .slideRight{
+//   animation-name: slideRight;
+//   -webkit-animation-name: slideRight;
 
-  animation-duration: 0.5s;
-  -webkit-animation-duration: 0.5s;
+//   animation-duration: 0.5s;
+//   -webkit-animation-duration: 0.5s;
 
-  animation-timing-function: ease-in-out;
-  -webkit-animation-timing-function: ease-in-out;
+//   animation-timing-function: ease-in-out;
+//   -webkit-animation-timing-function: ease-in-out;
 
-  visibility: visible !important;
-}
+//   visibility: visible !important;
+// }
 
-@keyframes slideRight {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
+// @keyframes slideRight {
+//   0% {
+//     transform: translateY(-100%);
+//   }
+//   100% {
+//     transform: translateY(0%);
+//   }
+// }
 
-@-webkit-keyframes slideRight {
-  0% {
-    -webkit-transform: translateY(-100%);
-  }
-  100% {
-    -webkit-transform: translateY(0%);
-  }
-}
+// @-webkit-keyframes slideRight {
+//   0% {
+//     -webkit-transform: translateY(-100%);
+//   }
+//   100% {
+//     -webkit-transform: translateY(0%);
+//   }
+// }
 
-.hatch{
-  animation-name: hatch;
-  -webkit-animation-name: hatch;
+// .hatch{
+//   animation-name: hatch;
+//   -webkit-animation-name: hatch;
 
-  animation-duration: 0.3s;
-  -webkit-animation-duration: 0.3s;
+//   animation-duration: 0.4s;
+//   -webkit-animation-duration: 0.4s;
 
-  animation-timing-function: ease-in-out;
-  -webkit-animation-timing-function: ease-in-out;
+//   animation-timing-function: ease-in-out;
+//   -webkit-animation-timing-function: ease-in-out;
 
-  transform-origin: 50% 100%;
-  -ms-transform-origin: 50% 100%;
-  -webkit-transform-origin: 50% 100%;
+//   transform-origin: 100% 100%;
+//   -ms-transform-origin: 100% 100%;
+//   -webkit-transform-origin: 100% 100%;
 
-  visibility: visible !important;
-   overflow: scroll;
-}
+//   visibility: visible !important;
+//   overflow: scroll;
+// }
 
-@keyframes hatch {
-  0% {
-    transform: rotate(0deg) scaleY(0.6);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
+// @keyframes hatch {
+//   0% {
+//     transform: rotate(0deg) scaleY(0.6);
+//   }
+//   100% {
+//     transform: rotate(0deg);
+//   }
+// }
 
-@-webkit-keyframes hatch {
-  0% {
-    -webkit-transform: rotate(0deg) scaleY(0.6);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-  }
-}
+// @-webkit-keyframes hatch {
+//   0% {
+//     -webkit-transform: rotate(0deg) scaleY(0.6);
+//   }
+//   100% {
+//     -webkit-transform: rotate(0deg);
+//   }
+// }

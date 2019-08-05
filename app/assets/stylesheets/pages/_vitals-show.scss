@@ -5,23 +5,22 @@
 	padding: 90px 40px 0 40px;
 	background-color: white;
 	height: auto;
-	//position: absolute;
-    // top: 136px;
-    // right: 20px;
-    // left: 20px;
     min-height: 100%;
     margin: 0 40px;
 	h2 {
 		margin-bottom: 20;
+		color: #91B060;
+		
 	}
 	h3 {
-		color: #7C7C7D;
+		color: #343434;
 		font-size: 23px;
 		margin-top: 0;
+		opacity: 0.8;
 	}
 	h4 {
-		font-weight: normal;
 		color: #343434;
+		font-weight: normal;
 		padding-bottom: 15px;
 	}
 	p {
@@ -32,7 +31,8 @@
 		padding-left: 0;
 	}
 	span {
-		color: black;
+		color: #E6577A;
+		font-size: 23px;
 	}
 	i {
 		color: #91B060;
@@ -40,21 +40,26 @@
 		margin-right: 10px;
 	}
 	a {
-		color: #91B060;
-		font-weight: lighter;
-		font-size: 15px;
-		text-decoration: underline;
-	}
+ 		color: #343434;
+ 		text-decoration: none;
+ 		opacity: 0.8;
+ 		font-size: 12px;
+ 		letter-spacing: 0px;
+ 		font-weight: lighter;
+ 	}
+ 	a:hover {
+ 		color: #E6577A;
+ 		opacity: 1;
+ 	}
 	label {
 		color: white;
 	}
 }
 .customer-vitals {
 	display: flex;
-	justify-content: center;
-	align-content: center;
-  background-color: #f7f7f7;
-  text-align: center;
+	justify-content: left;
+	align-content: left;
+  	background-color: #f7f7f7;
 }
 .customer-vitals-details {
 	padding: 0 85px;
@@ -62,6 +67,7 @@
     background-color: #f7f7f7;
     padding: 40px;
     border-top-left-radius: 5px;
+    border-right: 1px solid #eeeeee;
 }
 .customer-vitals-nutrition {
 	padding: 0 85px;
@@ -74,10 +80,10 @@
 	background-color: #f7f7f7;
 	border-top: solid 1px white;
 	display: flex;
-	justify-content: center;
+	justify-content: left;
 	flex-direction: column;
-	align-content: center;
-	padding: 40px;
+	align-content: left;
+	padding: 20px;
 	border-bottom-left-radius: 5px;
 	border-top-right-radius: 5px;
 	p {
@@ -85,9 +91,6 @@
 		font-weight: lighter;
 		font-size: 15px;
 	}
-  h4 {
-    color: #E6577A
-  }
 }
 .cancel-order-buttons {
 	display: flex;
@@ -102,3 +105,4 @@
 .small-font {
   font-size: $font-size-confirmation;
 }
+
