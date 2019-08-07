@@ -10,7 +10,6 @@
 	h2 {
 		margin-bottom: 20;
 		color: $green;
-		
 	}
 	h3 {
 		font-size: 23px;
@@ -45,8 +44,9 @@
  		font-weight: lighter;
  	}
  	a:hover {
- 		color: $pink;
+ 		color: $green;
  		opacity: 1;
+ 		text-decoration: underline;
  	}
 	label {
 		color: white;
