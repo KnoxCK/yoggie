@@ -13,18 +13,18 @@
 	flex-direction: row;
 	align-items: center;
 	max-width: 1000px;
-	border: solid 2px #f4f4f4;
+	border: solid 2px $border;
 	h4 {
-		color: #91B060;
+		color: $green;
 		width: 150px;
 	}
 	p {
- 		color: #E6577A;
+ 		color: $pink;
  		font-weight: lighter;
  		margin-bottom: 0;
  	}
  	a {
- 		color: #91B060;
+ 		color: $green;
  	}
 }
 .faqs-sub-section {
@@ -36,10 +36,10 @@
 .faqs-right-column {
 	display: flex;
 	flex-direction: column;
-	border-left: solid 2px #f4f4f4;
+	border-left: solid 2px $lighter-grey;
 }
 .faqs-right-content {
-	border-bottom: solid 2px #f4f4f4;
+	border-bottom: solid 2px $lighter-grey;
 	display: flex;
 	flex-direction: row;
 	padding: 20px;

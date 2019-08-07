@@ -10,7 +10,7 @@
   z-index: 1000;
   position: fixed;
   width: 100%;
-  box-shadow: 1px 1px 1px #D9D9D9;
+  box-shadow: 1px 1px 1px $box-shadow;
 }
 .navbar-yoggie-brand-main img {
   height: 47px;
@@ -28,12 +28,12 @@
   }
   i {
     padding: 1px;
-    color: #97B564;
+    color: $green;
     margin-right: 3px;
   }
   i:hover {
     padding: 1px;
-    color: #FC0F42;
+    color: $red;
   }
   a:hover {
     text-decoration: none;
@@ -50,12 +50,12 @@
   }
   i {
     padding: 1px;
-    color: #97B564;
+    color: $green;
     margin-right: 3px;
   }
   i:hover {
     padding: 1px;
-    color: #FC0F42;
+    color: $red;
   }
   a:hover {
     text-decoration: none;

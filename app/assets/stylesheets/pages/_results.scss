@@ -1,7 +1,7 @@
 .results-wrapper {
 	padding: 20px 30px 20px 40px;
     margin: 3% 20%;
-	background-color: #F7F7F7;
+	background-color: $lighter-grey;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -12,8 +12,8 @@
 .results-yoggie {
 	margin: 10px;
 	border-radius: 5px;
-	background-color: #f0f0f0;
-	border: solid 1px #e1e1e1;
+	background-color: $lighter-grey;
+	border: solid 1px $border;
 	width: 288px;
 	display: flex;
     flex-direction: column;
@@ -49,12 +49,12 @@
 }
 .results-line {
 	width: 100%;
-	border-top: 1px solid #333333;
+	border-top: 1px solid $dark-grey;
 	margin-top: 40px;
 	margin-bottom: 20px;
 }
 .your-results {
-	color: #91B060;
+	color: $green;
 }
 .results-button {
 	display: flex;

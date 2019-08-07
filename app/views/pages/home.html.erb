@@ -7,8 +7,40 @@
 		<%= link_to "GET STARTED",  choose_custom_path, class: 'btn-yoggie-landing' %>
   	</div>
 </div>
-<!-- Landing intro for standard/tailored Yoggies -->
-<div class="pick-plan-section section-padding">
+<!-- How Yoggie works -->
+<div class="how-it-works-section text-center" id="how-it-works">
+		<h2>How it works</h2>
+		<div class="how-it-works">
+			<div class="how-it-works-icons">
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/laptop_pink_l1ltbu.png" %>
+				<div class="how-it-works-text">
+					<h4>You Choose</h4>
+					<p>Pick 5 yoggies (one for each day, Monday to Friday) from our range of delicious flavours</p>
+				</div>
+			</div>
+			<div class="how-it-works-icons">
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/lorry_pink_mgunna.png" %>
+				<div class="how-it-works-text">
+					<h4>We Deliver</h4>
+					<p>Each week we deliver your box of 5 yoggie packs to your doorstep or Safe Place. Frozen for tip top taste and max nutrients. Pop in freezer within 6 hours. Brrrr…</p>
+				</div>
+			</div>
+			<div class="how-it-works-icons how-it-works-making">
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/blender_pink_smwkpg.png" %>
+				<div class="how-it-works-text">
+					<h4>You Blend</h4>
+					<p>Empty yoggie pack into blender straight from freezer. Add water/milk/yoghurt or whatever you like! Blitz. Done.</p>
+				</div>
+
+		</div>
+	</div>
+	<%= link_to "GET STARTED", new_customer_path, class: 'btn-yoggie-main-clear' %>
+</div>
+<!-- Two boxes -->
+<div class="pick-plan-section">
+	<div class="border-fade">
+	<%= image_tag "http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516705807/Asset_5_oihd9x.png" %>
+	</div>
 	<h2 class="pick-plan-title">Pick your plan...</h2>
 	<div class="pick-plan">
 		<div class="yoggie-standard">
@@ -22,7 +54,7 @@
 					<ul>✓ &nbsp; 100% balanced nutrition</ul>
 					<ul>✓ &nbsp; 100% natural (no powders!)</ul>
 				</p>
-				<%= link_to "CHOOSE", choose_standard_path, class: 'btn-yoggie-main-clear' %>
+				<%= link_to "CHOOSE FROM OUR FLAVOURS", choose_standard_path, class: 'btn-yoggie-main-clear' %>
 			</div>
 		</div>
 		<div class="yoggie-custom">
@@ -36,52 +68,20 @@
 					<ul>✓ &nbsp; lose weight, gain weight, boost health - you pick!</ul>
 					<ul>✓ &nbsp; 100% natural (no powders!)</ul>
 				</p>
-				<%= link_to "START QUIZ", choose_custom_path, class: 'btn-yoggie-main-clear' %>
+				<%= link_to "CREATE MY TAILORED YOGGIE", choose_custom_path, class: 'btn-yoggie-main-clear' %>
 			</div>
 		</div>
 	</div>
-</div>
-
-<!-- How Yoggie works -->
-<div class="how-it-works-section text-center" id="how-it-works">
-	<div class="border-fade">
-	<%= image_tag "http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516705807/Asset_5_oihd9x.png" %>
-	</div>
-		<h2>How it works</h2>
-		<div class="how-it-works">
-			<div class="how-it-works-icons">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1556715195/laptop_vc4kaa.png" %>
-				<div class="how-it-works-text">
-					<h4>You Choose</h4>
-					<p>Pick 5 yoggies (one for each day, Monday to Friday) from our range of delicious flavours</p>
-				</div>
-			</div>
-			<div class="how-it-works-icons">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1556715195/lorry_hqaf2d.png" %>
-				<div class="how-it-works-text">
-					<h4>We Deliver</h4>
-					<p>Each week we deliver your box of 5 yoggie packs to your doorstep or Safe Place. Frozen for tip top taste and max nutrients. Pop in freezer within 6 hours. Brrrr…</p>
-				</div>
-			</div>
-			<div class="how-it-works-icons how-it-works-making">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1556714742/blender_hpingm.png" %>
-				<div class="how-it-works-text">
-					<h4>You Blend</h4>
-					<p>Empty yoggie pack into blender straight from freezer. Add water/milk/yoghurt or whatever you like! Blitz. Done.</p>
-				</div>
-
-		</div>
-	</div>
-	<%= link_to "GET STARTED", new_customer_path, class: 'btn-yoggie-main-clear' %>
 	<div class="border-fade">
 	<%= image_tag "http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516705803/Asset_4_ms4jfp.png" %>
+	</div>
 </div>
-</div>
+
 
 <!-- About Our Yoggies -->
 <div class="about-our-yoggies section-padding text-center" id="about-yoggies">
 	<h2>What is Yoggie?</h2>
-	<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1550156528/WhatIsYoggie_diagram_ylvies.png" %>
+	<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176720/WhatIsYoggie_diagram_green_mfwxzk.png" %>
 </div>
 
 
@@ -91,40 +91,40 @@
 		<h2>Benefits of Yoggie</h2>
 		<div class="benefits-row">
 			<div class="benefits-icons">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1550142080/CH-Thumb_vwtcor.png" %>
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176128/CH-Thumb_pink_nt8wqr.png" %>
 				<h4>Treat yourself. Every day.</h4>
 				<p>We want you to love your Yoggie. So we make sure that each one tastes gorgeous!</p>
 			</div>
 			<div class="benefits-icons">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1550142080/CH-Sun_zrjojv.png" %>
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176128/CH-Sun_pink_qlcne8.png" %>
 				<h4>Boost your health.</h4>
 				<p>Created by nutritionists to help get you looking, thinking and feeling great.</p>
 			</div>
 			<div class="benefits-icons">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1549965934/CH-Stopwatch_iqsith.png" %>
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176128/CH-Stopwatch_pink_pokrua.png" %>
 				<h4>Save time.</h4>
 				<p>Just blend for 30 seconds straight from the freezer. And you're ready to go.</p>
 			</div>
 		</div>
 		<div class="benefits-row">
 			<div class="benefits-icons">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1550142080/CH-Clipboard_k9rhxh.png" %>
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176128/CH-Clipboard_pink_bfqhdi.png" %>
 				<h4>100% complete nutrition.</h4>
 				<p>Each Yoggie smoothie is a complete meal with all the protein, carbs and fats you need.</p>
 			</div>
 			<div class="benefits-icons">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1550142080/CH-Walking_a4suxq.png" %>
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176128/CH-Walking_pink_ohlvvp.png" %>
 				<h4>Meal on-the-go.</h4>
 				<p>Blend at home or office. Drink whenever and wherever you like.</p>
 			</div>
 			<div class="benefits-icons">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1550142080/CH-Bananas_pzhcnx.png" %>
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176128/CH-Bananas_pink_a8fzub.png" %>
 				<h4>No nasties.</h4>
 				<p>No powders. No artificial sweeteners, colourings or flavourings. Just proper foods, blitzed.</p>
 			</div>
 		</div>
-		<%= link_to "CHOOSE MY YOGGIES", choose_standard_path, class: 'btn-yoggie-main-clear' %>
-	<%= link_to "START CUSTOMISING", choose_custom_path, class: 'btn-yoggie-main-clear' %>
+		<%= link_to "CHOOSE FROM OUR FLAVOURS", choose_standard_path, class: 'btn-yoggie-main-clear' %>&nbsp; &nbsp; 
+		<%= link_to "CREATE MY TAILORED YOGGIE", choose_custom_path, class: 'btn-yoggie-main-clear' %>
 	</div>
 </div>
 

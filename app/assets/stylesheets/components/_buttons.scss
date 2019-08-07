@@ -13,13 +13,13 @@
     border-radius: 8px;
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3);
     text-decoration: none;
-    color: #393939;
+    color: $dark-grey;
     background-color: white;
-    border: #91B060 1px solid;
+    border: $green 1px solid;
     letter-spacing: 1px;
 }
 .btn-yoggie-landing:hover {
-    background-color: #91B060;
+    background-color: $green;
     color: white;
     text-decoration: none;
 }
@@ -39,7 +39,7 @@
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3);
     text-decoration: none;
     color: white;
-    background-color: #91B060;
+    background-color: $green;
     letter-spacing: 1px;
     margin-top: 10px;
 }
@@ -67,10 +67,10 @@
     background-color: transparent;
     letter-spacing: 1px;
     margin-top: 10px;
-    border: #91B060 1px solid;
+    border: $green 1px solid;
 }
 .btn-yoggie-main-clear:hover {
-    background-color: #91B060;
+    background-color: $green;
     color: white;
     text-decoration: none;
 }
@@ -89,16 +89,16 @@
     border-radius: 8px;
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3);
     text-decoration: none;
-    color: #393939;
+    color: $dark-grey;
     background-color: white;
     letter-spacing: 1px;
-    border: #91B060 1px solid;
+    border: $green 1px solid;
     position: absolute;
     right: 87px;
 }
 .btn-navbar-scroll:hover {
     text-decoration: none;
-    background-color: #91B060;
+    background-color: $green;
     color: white;
 }
 .btn-yoggie-add {
@@ -116,14 +116,14 @@
     border-radius: 8px;
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3);
     text-decoration: none;
-    color: #393939;
+    color: $dark-grey;
     background-color: white;
-    border: #91B060 1px solid;
+    border: $green 1px solid;
     letter-spacing: 1px;
     height: 60px;
 }
 .btn-yoggie-add:hover {
-    background-color: #91B060;
+    background-color: $green;
     color: white;
     text-decoration: none;
 }
@@ -134,5 +134,5 @@
 }
 
 .stripe-button {
-  background-color: #E6577A;
+  background-color: $pink;
 }

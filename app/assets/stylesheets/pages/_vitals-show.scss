@@ -1,5 +1,5 @@
 .customer-vitals-wrapper {
-	background-color: #E6577A;
+	background-color: $pink;
 }
 .customer-vitals-box {
 	padding: 90px 40px 0 40px;
@@ -9,38 +9,35 @@
     margin: 0 40px;
 	h2 {
 		margin-bottom: 20;
-		color: #91B060;
+		color: $green;
 		
 	}
 	h3 {
-		color: #343434;
 		font-size: 23px;
 		margin-top: 0;
 		opacity: 0.8;
 	}
 	h4 {
-		color: #343434;
 		font-weight: normal;
 		padding-bottom: 15px;
 	}
 	p {
 		font-weight: lighter;
-		color: #343434;
 	}
 	ul  {
 		padding-left: 0;
 	}
 	span {
-		color: #E6577A;
+		color: $pink;
 		font-size: 23px;
 	}
 	i {
-		color: #91B060;
+		color: $green;
 		margin-left: 10px;
 		margin-right: 10px;
 	}
 	a {
- 		color: #343434;
+ 		color: $dark-grey;
  		text-decoration: none;
  		opacity: 0.8;
  		font-size: 12px;
@@ -48,7 +45,7 @@
  		font-weight: lighter;
  	}
  	a:hover {
- 		color: #E6577A;
+ 		color: $pink;
  		opacity: 1;
  	}
 	label {
@@ -59,25 +56,25 @@
 	display: flex;
 	justify-content: left;
 	align-content: left;
-  	background-color: #f7f7f7;
+  	background-color: $lighter-grey;
 }
 .customer-vitals-details {
 	padding: 0 85px;
     width: 50%;
-    background-color: #f7f7f7;
+    background-color: $lighter-grey;
     padding: 40px;
     border-top-left-radius: 5px;
-    border-right: 1px solid #eeeeee;
+    border-right: 1px solid $border;
 }
 .customer-vitals-nutrition {
 	padding: 0 85px;
     width: 50%;
-    background-color: #f7f7f7;
+    background-color: $lighter-grey;
    	padding: 40px;
    	border-top-right-radius: 5px;
 }
 .customer-vitals-subscription {
-	background-color: #f7f7f7;
+	background-color: $lighter-grey;
 	border-top: solid 1px white;
 	display: flex;
 	justify-content: left;
