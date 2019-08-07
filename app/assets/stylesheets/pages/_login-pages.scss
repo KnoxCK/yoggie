@@ -6,13 +6,13 @@
 	padding-top: 10px;
     font-weight: lighter;
     font-size: 14px;
-    border-top: 1px solid #333333;
+    border-top: 1px solid $dark-grey;
 	a {
 		text-decoration: none;
-		color: #333333;
+		color: $dark-grey;
 	}
 	a:hover {
-		color: #FC0F42;
+		color: $red;
 	}
 }
 abbr[title], abbr[data-original-title] {

@@ -6,9 +6,17 @@
 	margin-bottom: 15px;
 }
 .btn-default:hover {
-	background-color: #97B564;
+	background-color: $green;
 	color: white;
 }
-h2 {
+h1, h2, h3, h4 {
 	font-weight: lighter;
+	color: $dark-grey;
+}
+p {
+	font-weight: lighter;
+	color: $grey;
+}
+ul {
+	color: $grey;
 }

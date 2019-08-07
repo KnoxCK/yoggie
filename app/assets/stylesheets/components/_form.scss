@@ -1,7 +1,7 @@
 .form-wrapper {
   margin: 5% 30%;
   label {
-  	color: #E6577A;
+  	color: $pink;
   	font-weight: lighter;
   }
 }
@@ -10,7 +10,7 @@
 	padding-bottom: 10px;
 	a {
 	  text-align: center;
-	  color: #E6577A;
+	  color: $pink;
 	  font-size: 13px;
 	}
 	a:hover {

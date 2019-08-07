@@ -21,15 +21,15 @@
  		margin-bottom: 0;
  	}
  	span {
- 		color: #E6577A;
+ 		color: $pink;
  		font-weight: bold;
  	}
 }
 .standard-yoggie {
 	margin: 10px;
 	border-radius: 5px;
-	background-color: #f0f0f0;
-	border: solid 1px #e1e1e1;
+	background-color: $lighter-grey;
+	border: solid 1px $border;
 	width: 380px;
 	display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@
 		height: 95px;
 	}
 	p {
-		background-color: #E6577A;
+		background-color: $pink;
 		padding: 20px;
 	    position: absolute;
 	    top: 5px;
@@ -69,10 +69,10 @@
 	}
 }
 .active {
-  border: 5px solid #E6577A;
+  border: 5px solid $pink;
 }
 .standard-yoggie:hover {
-	background-color: #E6577A;
+	background-color: $pink;
     transition: background-color 0.8s ease;
 	p {
 		display: block;
@@ -89,5 +89,5 @@ input, button, select, textarea {
 	 background-color: white;
 	 border: none;
 	 font-size: 20px;
-	 color: #E6577A;
+	 color: $pink;
 }

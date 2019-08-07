@@ -1,5 +1,5 @@
 .footer {
-	background-color: #585458;
+	background-color: $dark-grey;
 	color: white;
 	display: flex;
 	justify-content: center;
@@ -20,7 +20,7 @@
 	text-decoration: none;
 	a:hover {
 		text-decoration: none;
-		color: #E6577A;
+		color: $pink;
 	}
 }
 .footer-logo img {
@@ -36,7 +36,7 @@
 	}
 	a:hover {
 		text-decoration: none;
-		color: #E6577A;
+		color: $pink;
 	}
 }
 @media only screen and (max-width: 1000px){

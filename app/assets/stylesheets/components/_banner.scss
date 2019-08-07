@@ -1,6 +1,6 @@
 .banner {
   background-image: url('http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516706706/Yoggie_background_dooaa5.png');
-  color: #393939;
+  color: $grey;
   text-align: center;
   height: 100vh;
   width: 100%;
@@ -30,7 +30,7 @@
   }
   p {
     font-weight: lighter;
-    color: #393939;
+    color: $dark-grey;
     margin-bottom: 36px;
     margin-top: 29px;
     font-size: 21px;
@@ -41,7 +41,6 @@
 }
 .our-smoothies-banner {
   background-image: url('http://res.cloudinary.com/dqxvcdy6w/image/upload/v1517226527/Yoggie-smoothies-banner_niwlmx.jpg');
-  color: #393939;
   text-align: center;
   height: 42vh;
   width: 100%;
@@ -52,7 +51,6 @@
 }
 .smoothie-banner {
   background-image: url('http://res.cloudinary.com/dqxvcdy6w/image/upload/v1517226527/Yoggie-smoothies-banner_niwlmx.jpg');
-  color: #393939;
   text-align: center;
   height: 22vh;
   width: 100%;

@@ -1,19 +1,6 @@
 .choose-smoothies-wrapper {
 	padding: 130px 5% 0 5%;
 }
-// .edit_basket {
-// 	display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//     input, select, textarea {
-//         margin-top: 10px;
-//     }
-//     p {
-//         color: #343434;
-//         font-weight: lighter;
-//         text-align: center;
-//     }
-// }
 .smoothie-quantity-image {
 	padding: 0 44px 25px 44px;
 	display: flex;
@@ -31,5 +18,5 @@
     margin-bottom: 40px;
 }
 .fa-arrow-left {
-    color: #E6577A;
+    color: $pink;
 }

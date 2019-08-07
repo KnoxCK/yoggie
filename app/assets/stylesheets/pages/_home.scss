@@ -1,77 +1,10 @@
-//PICK PLAN SECTION
-.pick-plan-title {
-	text-align: center;
-	margin-top: 60px;
-}
-.pick-plan {
-	display: flex;
-	justify-content: center;
-	margin: 0px 20px;
-	h2 {
-		margin-bottom: 15px;
-		margin-top: 30px;
-	}
-	p {
-		font-weight: lighter;
-		margin-bottom: 20px;
-	}
-	ul {
-		margin-top: 10px;
-		font-weight: lighter;
-		padding-left: 14px;
-	}
-	img {
-		width: 385px;
-		height: auto;
-		border-radius: 3px;
-		margin: 30px 30px 0 30px;
-	}
-}
-.yoggie-standard {
-	width: 500px;
-	margin: 30px;
-	background-color: #f1f1f1;
-	border-radius: 5px;
-}
-.yoggie-standard-text {
-	padding: 10px 30px 40px 40px;
-}
-.yoggie-standard:hover {
-	background-color: #E6577A;
-	color: white;
-    transition: background-color 0.8s ease;
-	.btn-yoggie-main-clear {
-		background-color: #91B060;
-		color: white;
-	}
-}
-.yoggie-custom {
-	width: 500px;
-	margin: 30px;
-	background-color: #f1f1f1;
-	border-radius: 5px;
-}
-.yoggie-custom-text {
-	padding: 10px 30px 40px 40px;
-}
-.yoggie-custom:hover {
-	background-color: #E6577A;
-	color: white;
-	.btn-yoggie-main-clear {
-		background-color: #91B060;
-		color: white;
-	}
-}
-
 //HOW IT WORKS SECTION
 .how-it-works-section {
+	margin-top: 70px;
+	margin-bottom: 40px;
 	position: relative;
-	background-color: #F7F7F7;
 	h4 {
 		margin-top: 30px;
-	}
-	p {
-		font-weight: lighter;
 	}
 	img {
 		width: auto;
@@ -95,8 +28,85 @@
 	width: 100%;
 }
 
-//ABOUT SECTION
+//PICK PLAN SECTION
+.pick-plan-section{
+	background-color: $lighter-grey;
+}
+.pick-plan-title {
+	text-align: center;
+	margin-top: 50px;
+}
+.pick-plan {
+	display: flex;
+	justify-content: center;
+	margin: 0px 20px;
+	padding-left: 50px;
+    padding-right: 50px;
+	h2 {
+		margin-bottom: 15px;
+		margin-top: 30px;
+	}
+	p {
+		font-weight: lighter;
+		margin-bottom: 20px;
+	}
+	ul {
+		margin-top: 10px;
+		font-weight: lighter;
+		padding-left: 14px;
+	}
+	img {
+		width: 385px;
+		height: auto;
+		border-radius: 3px;
+		margin: 30px 30px 0 30px;
+	}
+}
+.yoggie-standard {
+	width: 500px;
+	margin: 30px;
+	background-color: $light-grey;
+	border-radius: 5px;
+}
+.yoggie-standard-text {
+	padding: 10px 30px 40px 40px;
+}
+.yoggie-standard:hover {
+	background-color: $pink;
+    transition: background-color 0.8s ease;
+    h3, p, ul { 
+    	color: white;
+    }
+	.btn-yoggie-main-clear {
+		background-color: $green;
+		color: white;
+	}
+}
+.yoggie-custom {
+	width: 500px;
+	margin: 30px;
+	background-color: $light-grey;
+	border-radius: 5px;
+}
+.yoggie-custom-text {
+	padding: 10px 30px 40px 40px;
+}
+.yoggie-custom:hover {
+	background-color: $pink;
+	color: white;
+	transition: background-color 0.8s ease;
+	h3, p, ul { 
+    	color: white;
+    }
+	.btn-yoggie-main-clear {
+		background-color: $green;
+		color: white;
+	}
+}
+
+//WHAT IS YOGGIE SECTION
 .about-our-yoggies {
+	margin-top: 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -110,7 +120,7 @@
 }
 //YOGGIE BENEFITS SECTION
 .yoggie-benefits {
-	color: #393939;
+	color: $dark-grey;
 	text-align: left;
 	height: 840px;
 	width: 100%;
@@ -121,7 +131,7 @@
 	justify-content: center;
 }
 .yoggie-benefits-content {
-  background-color: #F7F7F7;
+  background-color: $light-grey;
   padding: 40px 60px;
   border-radius: 5px;
   margin: 2vw;
@@ -175,61 +185,14 @@
 	}
 }
 .testimonial-orange {
-	border: 2px dotted #F77449;
+	border: 2px dotted $orange;
 }
 .testimonial-blue {
-	border: 2px dotted #1DA8CB;
+	border: 2px dotted $blue;
 }
 .testimonial-red {
-	border: 2px dotted #FB0039;
+	border: 2px dotted $red;
 }
 .testimonial-green {
-	border: 2px dotted #0D6D5B;
+	border: 2px dotted $green;
 }
-@media only screen and (max-width: 1000px){
-	.pick-plan {
-	    flex-direction: column;
-	    align-items: center;
-	}
-	.pick-plan img {
-		width: 552px;
-	}
-	.yoggie-standard {
-    	width: 615px;
-    }
-	.yoggie-custom {
-    	width: 615px;
-    }
-	.yoggie-benefits {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	.yoggie-benefits-content {
-	  width: 90%;
-	  margin-left: 0;
-	  text-align: left;
-	  p {
-	  	margin-top: 40px;
-	  }
-	  ul {
-	  	padding-left: 14px;
-	  }
-	}
-	.testimonials {
-		flex-direction: column;
-		margin-top: 40px;
-	}
-	.testimonial {
-		display: flex;
-		justify-content: center;
-		width: 90%;
-		margin: 20px 0 0 0;
-	}
-}
-
-
-
-
-
-
