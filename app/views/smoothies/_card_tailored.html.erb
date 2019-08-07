@@ -48,7 +48,7 @@
         <% else %>
           <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
         <% end %>
-          <p class="hatch">
+          <p class="card-hover">
             <% smoothie.ingredients.each do |ingredient| %>
               ✓ &nbsp;<%= ingredient.name.titleize %></br>
             <% end %>
