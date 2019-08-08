@@ -7,38 +7,33 @@
 		padding-bottom: 30px;
 		padding-top: 30px;
 	}
+	h3 a {
+		color: $pink;
+	}
+	h3 a:hover {
+		color: $green;
+		text-decoration: none;
+	}
 }
 .faqs-section {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	max-width: 1000px;
+	width: 90vw;
 	border: solid 2px $border;
 	h4 {
-		color: $green;
-		width: 150px;
+		color: $dark-grey;
+		width: 20vw;
 	}
-	p {
- 		color: $pink;
- 		font-weight: lighter;
- 		margin-bottom: 0;
- 	}
  	a {
  		color: $green;
  	}
+ 	a:hover {
+ 		text-decoration: underline;
+ 	}
+ 	ul {
+ 		list-style-type: circle;
+ 		font-weight: lighter;
+ 	}
 }
-.faqs-sub-section {
-	padding: 5px;
-	h3 {
-		width: 260px;
-	}
-}
-.faqs-right-column {
-	display: flex;
-	flex-direction: column;
-	border-left: solid 2px $lighter-grey;
-}
-.faqs-right-content {
+.faqs-content {
 	border-bottom: solid 2px $lighter-grey;
 	display: flex;
 	flex-direction: row;
