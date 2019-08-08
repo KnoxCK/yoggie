@@ -1,6 +1,6 @@
 // Testimonial section
 $(document).on('click', '#faqs-first-heading', function(e) {
-    $('faqs-first-section').removeClass("hidden").toggle("slide");
+    $('.faqs-first-section').removeClass("hidden").toggle("slide");
   e.preventDefault();
 });
 
