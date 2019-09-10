@@ -1,5 +1,5 @@
 .banner {
-  background-image: url('http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516706706/Yoggie_background_dooaa5.png');
+  background-image: url('https://res.cloudinary.com/dehjqm9b4/image/upload/v1567689260/Yoggie_background_new_ucw9v8.png');
   color: $grey;
   text-align: center;
   height: 100vh;
@@ -15,13 +15,15 @@
 }
 .banner-content {
   background-color: white;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 45px 42px 42px 42px;
-  border-radius: 7px;
-  width: 530px;
-  margin-left: 12vw;
-  margin-top: 52px;
-  align-content: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 45px 42px 42px 42px;
+    border-radius: 7px;
+    width: auto;
+    margin-left: 2vw;
+    margin-top: 13vh;
+    align-content: center;
+    position: absolute;
+    bottom: 10vh;
   h1 {
     font-size: 45px;
     font-weight: lighter;
