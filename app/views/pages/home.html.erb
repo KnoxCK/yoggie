@@ -2,39 +2,10 @@
 <%= render 'shared/navbar' %>
 <div class="banner">
 	<div class="banner-content">
-    <h1>Delicious <br>Smoothie Meals</h1>
-		<p>5 complete smoothie mix<br> packs delivered weekly.</p>
+    <h1>Proper Smoothie Breakfast</h1>
+		<p>Just real ingredients. Nutritionally balanced.<br>We pack. You blitz.</p>
 		<%= link_to "GET STARTED",  choose_custom_path, class: 'btn-yoggie-landing' %>
   	</div>
-</div>
-<!-- How Yoggie works -->
-<div class="how-it-works-section text-center" id="how-it-works">
-		<h2>How it works</h2>
-		<div class="how-it-works">
-			<div class="how-it-works-icons">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/laptop_pink_l1ltbu.png" %>
-				<div class="how-it-works-text">
-					<h4>You Choose</h4>
-					<p>Pick 5 yoggies (one for each day, Monday to Friday) from our range</p>
-				</div>
-			</div>
-			<div class="how-it-works-icons">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/lorry_pink_mgunna.png" %>
-				<div class="how-it-works-text">
-					<h4>We Deliver</h4>
-					<p>Each week we deliver your box of 5 yoggie packs to your doorstep or Safe Place. Frozen for top taste and max nutrients. Pop in freezer within 6 hours. Brrrr…</p>
-				</div>
-			</div>
-			<div class="how-it-works-icons how-it-works-making">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/blender_pink_smwkpg.png" %>
-				<div class="how-it-works-text">
-					<h4>You Blend</h4>
-					<p>Empty yoggie pack into blender straight from freezer. Add water/milk/yoghurt or whatever you like! Blitz. Done.</p>
-				</div>
-
-		</div>
-	</div>
-	<%= link_to "GET STARTED", new_customer_path, class: 'btn-yoggie-main-clear' %>
 </div>
 <!-- Two boxes -->
 <div class="pick-plan-section">
@@ -43,20 +14,6 @@
 	</div>
 	<h2 class="pick-plan-title">Pick your plan...</h2>
 	<div class="pick-plan">
-		<div class="yoggie-standard">
-			<%= image_tag "http://res.cloudinary.com/dehjqm9b4/image/upload/v1530007690/Yoggie_standard_smoothie_agdbed.png" %>
-			<div class="yoggie-standard-text">
-				<h3>Yoggie</h3>
-				<p>Delicious smoothie ingredient mixes created by Nutritionists. Quicker, tastier alternative to breakfast (and super-good for you)! Box of 5 daily smoothies (Mon-Fri) delivered weekly to your doorstep. Blend straight from frozen for max taste!</p>
-				<p>
-					<ul>✓ amazing recipes</ul>
-					<ul>✓ complete meal, ready in <br>30 seconds</ul>
-					<ul>✓ 100% balanced nutrition</ul>
-					<ul>✓ 100% natural (no powders!)</ul>
-				</p>
-				<%= link_to "CHOOSE FROM OUR FLAVOURS", choose_standard_path, class: 'btn-yoggie-main-clear' %>
-			</div>
-		</div>
 		<div class="yoggie-custom">
 			<%= image_tag "http://res.cloudinary.com/dehjqm9b4/image/upload/v1530010895/Yoggie_tailored_smoothie_nzm9ds.png" %>
 			<div class="yoggie-custom-text">
@@ -68,7 +25,21 @@
 					<ul>✓ lose weight, gain weight, boost health - you pick!</ul>
 					<ul>✓ 100% natural (no powders!)</ul>
 				</p>
-				<%= link_to "CREATE MY TAILORED YOGGIE", choose_custom_path, class: 'btn-yoggie-main-clear' %>
+				<%= link_to "GET STARTED", choose_custom_path, class: 'btn-yoggie-main-clear' %>
+			</div>
+		</div>
+		<div class="yoggie-standard">
+			<%= image_tag "http://res.cloudinary.com/dehjqm9b4/image/upload/v1530007690/Yoggie_standard_smoothie_agdbed.png" %>
+			<div class="yoggie-standard-text">
+				<h3>Yoggie</h3>
+				<p>Delicious smoothie ingredient mixes created by Nutritionists. Quicker, tastier alternative to breakfast (and super-good for you)! Box of 5 daily smoothies (Mon-Fri) delivered weekly to your doorstep. Blend straight from frozen for max taste!</p>
+				<p>
+					<ul>✓ amazing recipes</ul>
+					<ul>✓ balanced breakfast, ready in <br>30 seconds</ul>
+					<ul>✓ 100% balanced nutrition</ul>
+					<ul>✓ 100% natural (no powders!)</ul>
+				</p>
+				<%= link_to "CHOOSE YOURS", choose_standard_path, class: 'btn-yoggie-main-clear' %>
 			</div>
 		</div>
 	</div>
@@ -77,14 +48,83 @@
 	</div>
 </div>
 
-
-<!-- About Our Yoggies (diagram) -->
-<div class="about-our-yoggies section-padding text-center" id="about-yoggies">
+<!-- What is Yoggie -->
+<div class="about-yoggie section-padding text-center" id="about-yoggies">
+	<div class="what-is-yoggie">
+		<div class="about-left">
+			<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1568112129/What_is_yoggie_wo0ecw.png" %>
+		</div>
+		<div class="about-right about-content">
+			<h3>What is Yoggie?</h3>
+			<h4>Gorgeously tasty, daily smoothie breakfasts customised to your body and bursting with nutrients to make you happier & healthier.</h4><br>
+			<p>Struggle to get your 5-a-day? Yoggie is naturally chock full of superfoods, vitamins, minerals & phytonutrients to provide your daily nutrient hit, boosting body and brain.
+			<br></br>Do you rush in the morning? We measure out the smoothie ingredients (frozen at source for max goodness) into your Yoggie pack. You just blend straight from freezer with water in 30 seconds.
+			</p>
+			<%= link_to "CHOOSE YOURS", choose_standard_path, class: 'btn-yoggie-main-clear' %>
+		</div>
+	</div>
+	<div class="what-is-yoggie">
+		<div class="about-left about-content">
+			<h3>Why will it help me?</h3>
+			<h4>Your yoggie smoothie is nutritionally tailored to you. </h4><br>
+			<p>Your Perfect Breakfast is unique to you. That’s why Yoggie was created by nutritionists (initially for ourselves). 
+			<br></br>
+			Before we fill your smoothie ingredient pack we tweak the recipe to match your body & goals.
+			<br></br>
+			This way you know your smoothie breakfast gives you just the right calories and perfect balance of protein, fats and carbs… for you. Helping you stay on it and smash your goals throughout the day.
+			</p>
+			<div class="action-button">
+			<%= link_to "GET STARTED", choose_custom_path, class: 'btn-yoggie-main-clear' %>
+			</div>
+		</div>
+		<div class="about-right">
+			<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1568112129/Why_will_it_help_sw7fgt.png" %>
+		</div>
+	</div>
+	<div class="what-is-yoggie">
+		<div class="about-left">
+			<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1568112129/whats_in_it_fmbrwo.png" %>
+		</div>
+		<div class="about-right about-content">
+			<h3>What’s in it?</h3>
+			<h4>Everything you need. And more.</h4><br>
+			<p>Each yoggie smoothie recipe pack contains between 8 and 27 nutrient-dense whole-foods, frozen the moment they are picked till the moment you blend them ensuring you get 100% of the goodness.
+			<br></br>Fruits give flavour and valuable nutrients. Veg boosts phytonutrients without extra calories. Our organic natural protein balls strengthen your bones and muscles. Nuts/avocado taste great and add monounsaturated fats (great for hormones). Seeds for crunch with omega 3 & 6 for brain function.Grains improve texture & give minerals & fibre keeping you fuller, longer. Oh and we chuck in superfood pellets. Because we want you to be awesome.
+			</p>
+			<%= link_to "CHOOSE YOURS", choose_standard_path, class: 'btn-yoggie-main-clear' %>
+		</div>
+	</div>
+</div>
+<!-- DIAGRAM <div class="about-our-yoggies section-padding text-center" id="about-yoggies">
 	<h2>What is Yoggie?</h2>
 	<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565252829/WhatIsYoggie_diagram_green2_llxoca.png" %>
+</div> -->
+
+<!-- What our customers say -->
+<div class="testimonials-section">
+	<h2>What Our Customers Say...</h2>
+	<div class="testimonials">
+		<div class="testimonial testimonial-orange">
+			<p>"I look forward to my breakfast smoothie every morning!"</p>
+			<span><p>– Nikki P</p></span>
+		</div>
+		<div class="testimonial testimonial-blue">
+			<p>"ADORE my smoothies!! I have one for lunch each day. Plus I know it’s healthy so no guilt!!!"</p><span><p>– Cara P</p></span>
+		</div>
+		<div class="testimonial testimonial-red">
+			<p>"These are life-changing. Thank you so much guys."</p>
+			<span><p>– John G</p></span>
+		</div>
+		<div class="testimonial testimonial-green">
+			<p>"My post gym Yoggie is my ritual. It basically gets me through my day."</p>
+			<span><p>– Tom M</p></span>
+		</div>
+	</div>
+	<div class="action-button text-center">
+		<%= link_to "GET STARTED", choose_custom_path, class: 'btn-yoggie-main-clear' %>
+	</div>
+	<br></br>
 </div>
-
-
 <!-- What's in your weekly Yoggie box -->
 <div class="yoggie-benefits">
 	<div class="yoggie-benefits-content">
@@ -123,35 +163,38 @@
 				<p>No powders. No artificial sweeteners, colourings or flavourings. Just proper foods, blitzed.</p>
 			</div>
 		</div>
-		<%= link_to "CHOOSE FROM OUR FLAVOURS", choose_standard_path, class: 'btn-yoggie-main-clear' %>&nbsp; &nbsp; 
-		<%= link_to "CREATE MY TAILORED YOGGIE", choose_custom_path, class: 'btn-yoggie-main-clear' %>
+		<%= link_to "GET STARTED", choose_custom_path, class: 'btn-yoggie-main-clear' %>&nbsp; &nbsp;
 	</div>
 </div>
 
-<!-- What our customers say -->
-<div class="testimonials-section section-padding">
-	<h2>What Our Customers Say...</h2>
-	<div class="testimonials">
-		<div class="testimonial testimonial-orange">
-			<p>"I look forward to my breakfast smoothie every morning!"</p>
-			<span><p>– Nikki P</p></span>
-		</div>
-		<div class="testimonial testimonial-blue">
-			<p>"ADORE my smoothies!! I have one for lunch each day. Plus I know it’s healthy so no guilt!!!"</p><span><p>– Cara P</p></span>
-		</div>
-		<div class="testimonial testimonial-red">
-			<p>"These are life-changing. Thank you so much guys."</p>
-			<span><p>– John G</p></span>
-		</div>
-		<div class="testimonial testimonial-green">
-			<p>"My post gym Yoggie is my ritual. It basically gets me through my day."</p>
-			<span><p>– Tom M</p></span>
+<!-- How Yoggie works -->
+<div class="how-it-works-section text-center" id="how-it-works">
+		<h2>How it works</h2>
+		<div class="how-it-works">
+			<div class="how-it-works-icons">
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/laptop_pink_l1ltbu.png" %>
+				<div class="how-it-works-text">
+					<h4>You Choose</h4>
+					<p>Pick 5 yoggies (one for each day, Monday to Friday) from our range</p>
+				</div>
+			</div>
+			<div class="how-it-works-icons">
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/lorry_pink_mgunna.png" %>
+				<div class="how-it-works-text">
+					<h4>We Deliver</h4>
+					<p>Each week we deliver your box of 5 yoggie packs to your doorstep or Safe Place. Frozen for top taste and max nutrients. Pop in freezer within 6 hours. Brrrr…</p>
+				</div>
+			</div>
+			<div class="how-it-works-icons how-it-works-making">
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/blender_pink_smwkpg.png" %>
+				<div class="how-it-works-text">
+					<h4>You Blend</h4>
+					<p>Empty yoggie pack into blender straight from freezer. Add water/milk/yoghurt or whatever you like! Blitz. Done.</p>
+				</div>
+
 		</div>
 	</div>
-	<div class="action-button text-center">
-		<%= link_to "GET STARTED", choose_custom_path, class: 'btn-yoggie-main-clear' %>
-	</div>
-	<br></br>
+	<%= link_to "GET STARTED", new_customer_path, class: 'btn-yoggie-main-clear' %>
 </div>
 <div class="instagram-grid">
   <!-- <#% @popular.data.first(10).each do |popular| %> -->

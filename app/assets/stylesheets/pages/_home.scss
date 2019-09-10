@@ -1,33 +1,3 @@
-//HOW IT WORKS SECTION
-.how-it-works-section {
-	margin-top: 70px;
-	margin-bottom: 40px;
-	position: relative;
-	h4 {
-		margin-top: 30px;
-	}
-	img {
-		width: auto;
-	    height: 62px;
-	    border-radius: 10px;
-	}
-}
-.how-it-works {
-	display: flex;
-	justify-content: center;
-	padding: 0 50px;
-}
-.how-it-works-icons {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 400px;
-	margin: 30px;
-}
-.border-fade img {
-	width: 100%;
-}
-
 //PICK PLAN SECTION
 .pick-plan-section{
 	background-color: $lighter-grey;
@@ -105,55 +75,46 @@
 	}
 }
 
-//WHAT IS YOGGIE SECTION
-.about-our-yoggies {
-	margin-top: 20px;
+// OLD ABOUT 
+// .about-our-yoggies {
+// 	margin-top: 20px;
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: center;
+// 	align-content: center;
+// 	align-items: center;
+// 	img {
+// 		width: 80%;
+// 		height: auto;
+// 		margin-bottom: 50px;
+// 	}
+// }
+
+
+// ABOUT YOGGIE SECTION
+.about-yoggie {
 	display: flex;
+	justify-content: center;
 	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	img {
-		width: 80%;
-		height: auto;
-		margin-bottom: 50px;
-	}
-}
-//YOGGIE BENEFITS SECTION
-.yoggie-benefits {
-	color: $dark-grey;
 	text-align: left;
-	height: 840px;
-	width: 100%;
-	background-size: cover !important;
-	position: relative;
-	display: flex;
 	align-items: center;
-	justify-content: center;
-}
-.yoggie-benefits-content {
-  background-color: $lighter-grey;
-  padding: 40px 60px;
-  border-radius: 5px;
-  margin: 2vw;
-  text-align: center;
-  width: 90%;
-  p {
-  	margin-top: 10px;
-  	font-weight: lighter;
-  }
-}
-.benefits-row {
-	display: flex;
-	justify-content: center;
-}
-.benefits-icons {
-	padding: 15px;
-	width: auto;
-	img {
-		margin: 20px 0;
-		height: 62px;
+	h4 {
+		color: $grey;
+		font-size: 20px;
 	}
+}
+.what-is-yoggie {
+	display: flex;
+	margin: 20px;
+	img {
+		width: 50vw;
+		max-width: 600px;
+		margin: 0 20px;
+	}
+}
+.about-content {
+	margin: 10px 20px;
+	max-width: 600px;
 }
 
 
@@ -196,4 +157,72 @@
 }
 .testimonial-green {
 	border: 2px dotted $green;
+}
+
+
+//YOGGIE BENEFITS SECTION
+.yoggie-benefits {
+	color: $dark-grey;
+	text-align: left;
+	height: 840px;
+	width: 100%;
+	background-size: cover !important;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.yoggie-benefits-content {
+  background-color: $lighter-grey;
+  padding: 40px 60px;
+  border-radius: 5px;
+  margin: 2vw;
+  text-align: center;
+  width: 90%;
+  p {
+  	margin-top: 10px;
+  	font-weight: lighter;
+  }
+}
+.benefits-row {
+	display: flex;
+	justify-content: center;
+}
+.benefits-icons {
+	padding: 15px;
+	width: auto;
+	img {
+		margin: 20px 0;
+		height: 62px;
+	}
+}
+
+//HOW IT WORKS SECTION
+.how-it-works-section {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	position: relative;
+	h4 {
+		margin-top: 30px;
+	}
+	img {
+		width: auto;
+	    height: 62px;
+	    border-radius: 10px;
+	}
+}
+.how-it-works {
+	display: flex;
+	justify-content: center;
+	padding: 0 50px;
+}
+.how-it-works-icons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 400px;
+	margin: 30px;
+}
+.border-fade img {
+	width: 100%;
 }
