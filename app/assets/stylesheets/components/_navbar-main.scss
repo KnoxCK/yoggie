@@ -17,29 +17,71 @@
   margin-top: 5px;
   margin-left: 17px;
 }
+/* Top login logout links */
+.navbar-yoggie-top-nav {
+  background: $green;
+  height: 33px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1001;
+  width: 100vw;
+  max-width: 100%;
+  //box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  i {
+    padding: 1px;
+    color: $green;
+    margin-right: 3px;
+  }
+}
+.top-nav-links {
+  display: flex;
+  flex-end: initial;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding-top: 5px;
+  padding-right: 45px;
+  a { 
+    color: white;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 0.25px;
+    font-size: 14px;  
+    padding-right: 10px;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $pink;
+  }
+}
+.top-nav-line {
+  border-left: white solid 1px;
+  padding: 0 5px;
+}
 .navbar-yoggie-social {
-  position: absolute;
-  right: 52px;
-  margin-top: 2px;
   text-decoration: none;
+  padding-left: 10px;
   p {
     text-decoration: none;
     font-weight: lighter;
   }
   i {
     padding: 1px;
-    color: $green;
-    margin-right: 3px;
+    color: $white;
+    font-size: 16px;
   }
   i:hover {
     padding: 1px;
-    color: $red;
+    color: $pink;
+  }
+  a {
+    padding-right: 0;
   }
   a:hover {
     text-decoration: none;
   }
 }
-.navbar-yoggie-login-main {
+.navbar-yoggie-login-scroll {
   position: absolute;
   right: 20px;
   margin-top: 2px;
@@ -55,11 +97,14 @@
   }
   i:hover {
     padding: 1px;
-    color: $red;
+    color: $pink;
   }
   a:hover {
     text-decoration: none;
   }
+}
+.icon-pink {
+  color: $pink !important;
 }
 
 

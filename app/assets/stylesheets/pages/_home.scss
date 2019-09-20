@@ -37,12 +37,18 @@
 	margin-left: 20px;
     border: solid #E6577A 4px;
     border-radius: 80px;
-    padding: 17px 0;
-    width: 77px;
+    padding: 0px 0;
+    width: 87px;
     text-align: center;
     position: absolute;
-    top: 298px;
-    right: 26px;
+    top: 305px;
+    right: 19px;
+ 	h4 {
+ 		margin-bottom: 0;
+ 	}
+    p {
+    	font-size: 13px !important;
+    }
 }
 .yoggie-standard {
 	width: 500px;
@@ -64,11 +70,14 @@
 		background-color: $green;
 		color: white;
 	}
+	.landing-price {
+	    border: solid white 4px;
+	}
 }
 .yoggie-standard-text h3 img {
-	 width: 84px !important;
-	 height: auto; 
-	 margin: 0px 10px 0px -20px;
+	width: 51px !important;
+    height: auto;
+    margin: 0px 6px 16px -20px;
 }
 .yoggie-custom {
 	width: 500px;

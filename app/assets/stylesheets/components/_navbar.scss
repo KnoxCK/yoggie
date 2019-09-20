@@ -1,44 +1,4 @@
-/* Top login logout links */
-.navbar-yoggie-top-nav {
-  background: $green;
-  height: 30px;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: 1001;
-  width: 100vw;
-  max-width: 100%;
-  //box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  i {
-    padding: 1px;
-    color: $green;
-    margin-right: 3px;
-  }
-}
-.top-nav-links {
-  display: flex;
-  flex-end: initial;
-  justify-content: flex-end;
-  flex-direction: row;
-  padding-top: 5px;
-  padding-right: 45px;
-  a { 
-    color: white;
-    text-decoration: none;
-    font-weight: lighter;
-    letter-spacing: 0.25px;
-    font-size: 14px;  
-    padding-right: 10px;
-  }
-  a:hover {
-    text-decoration: none;
-    color: $pink;
-  }
-}
-.top-nav-line {
-  border-left: white solid 1px;
-  padding: 0 5px;
-}
+
 /* Main navbar */
 .navbar-yoggie {
   //box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -65,17 +25,22 @@
   width: 35px;
   border-radius: 50%;
 }
-.navbar-yoggie-social {
+.navbar-yoggie-login-main {
   position: absolute;
-  right: 50px;
+  right: 20px;
   margin-top: 2px;
+  text-decoration: none;
+  p {
+    text-decoration: none;
+    font-weight: lighter;
+  }
   i {
     padding: 1px;
     color: $green;
     margin-right: 3px;
   }
   i:hover {
-    text-decoration: none;
+    padding: 1px;
     color: $red;
   }
   a:hover {
@@ -101,7 +66,7 @@
   letter-spacing: 0.5px;
 }
 .navbar-yoggie-link:hover {
-  color: $red;
+  color: $pink;
   text-decoration: none;
 }
 
@@ -171,33 +136,13 @@
   }
   i:hover {
     padding: 1px;
-    color: $red;
+    color: $pink;
   }
   a:hover {
     text-decoration: none;
   }
 }
-.navbar-yoggie-login-scroll {
-  position: absolute;
-  right: 20px;
-  margin-top: 2px;
-  text-decoration: none;
-  p {
-    text-decoration: none;
-    font-weight: lighter;
-  }
-  i {
-    padding: 1px;
-    color: $green;
-    margin-right: 3px;
-  }
-  i:hover {
-    padding: 1px;
-    color: $red;
-  }
-  a:hover {
-    text-decoration: none;
-  }
+.fa-user {
+  color: $pink;
 }
-
 

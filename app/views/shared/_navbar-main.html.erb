@@ -16,16 +16,25 @@
   <% if current_user %>
     <% if current_user.customer %>
       <%= link_to customer_path(current_user.customer) do %>
-        <i class="fa fa-user"></i>
+        <i class="fa fa-user icon-pink"></i>
       <%end%>
     <% end %>
     <%= link_to destroy_user_session_path, method: :delete  do %>
-      <i class="fa fa-sign-out"></i>
+      <i class="fa fa-sign-out icon-pink"></i>
     <%end%>
   <% else %>
     <%= link_to new_user_session_path do %>
-      <i class="fa fa-user"></i>
+      <i class="fa fa-user icon-pink"></i>
     <%end%>
+  <% end %>
+  <%= link_to "https://www.facebook.com/yoggie", target: "_blank" do %>
+    <i class="fa fa-facebook"></i>
+  <% end %>
+  <%= link_to "https://twitter.com/yoggie", target: "_blank" do %>
+    <i class="fa fa-twitter"></i>
+  <% end %>
+  <%= link_to "https://www.instagram.com/yoggie/", target: "_blank" do %>
+    <i class="fa fa-instagram"></i>
   <% end %>
 </div>
 
