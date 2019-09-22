@@ -1,0 +1,21 @@
+
+<div class="articles_banner">
+</div>
+<div class="article-wrapper">
+  <div class="article ">
+    <% if !@article.published %>
+      <span class="label label-primary">NOT PUBLISHED</span>
+    <% end %>
+    <h3>
+      <%= @article.title %>
+    </h3>
+      <div class="article-date"><h6><%= @article.date&.strftime("#{@article.date.day.ordinalize} %B %Y")&.upcase %></h6></div>
+      <p><%= @article.content.html_safe %></p>
+  </div>
+  <div class="article-button">
+      <% if current_user && current_user.admin? %>
+        <%= link_to "edit", edit_article_path(@article), class: "landing-btn-red" %>
+      <% end %>
+  </div>
+</div>
+

@@ -26,7 +26,8 @@
         <%= link_to 'Change my address', edit_customer_address_path(@customer) %>
     </div>
     <br>
-		<div class="customer-vitals">
+    <% if !@customer.standard? %>
+		  <div class="customer-vitals">
 			<div class="customer-vitals-details">
 				<h4>My Vitals:</h4>
         <p>Name: <span><%= @customer.first_name %></span></p>
@@ -54,7 +55,8 @@
   					<%= link_to 'Change to standard smoothies', update_subscription_path(@customer, standard: true) if !@customer.standard? %>
   				<% end %>
   			</div>
-		</div>
+		  </div>
+    <% end %>
     <% end %>
 	</div>
 </div>

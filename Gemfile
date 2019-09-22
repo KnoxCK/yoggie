@@ -27,6 +27,8 @@ gem 'carrierwave', '~> 1.0'
 gem 'cloudinary'
 gem 'instagram_api_client'
 gem 'listen', '~> 3.1.5'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'paperclip'
 
 group :development, :test do
   gem 'pry-byebug'

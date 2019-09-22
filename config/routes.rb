@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  mount Ckeditor::Engine => '/ckeditor'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
@@ -19,8 +19,10 @@ Rails.application.routes.draw do
   get 'customers/:id/dashboard_edit', to: "customers#dashboard_edit", as: :dashboard_edit
   patch 'customers/:id/dashboard_update', to: "customers#dashboard_update", as: :dashboard_update
   get 'customers/:id/update_status', to: "customers#update_status", as: :update_status
+  get 'blog', to: 'articles#index'
 # basket - customers/:customer_id/baskets/:basket_id
 
+  resources :articles, only: [:create, :new, :edit, :update]
   resources :users do
     get :postcode_checker, on: :member
     patch :postcode_result, on: :member
@@ -38,6 +40,8 @@ Rails.application.routes.draw do
   resources :smoothies
 
   resources :newsletter_subscribers, only: [:create, :new]
+
+   get 'articles/:slug', to: "articles#show", as: :article_page
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -27,7 +27,7 @@
       <% smoothies.each do |smoothie| %>
 
       <div class="standard-yoggie">
-      <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1538941091/Yoggie_EtonMess_pwdxyi.png" %>
+      <%= cl_image_tag smoothie.image %>
         <div class="standard-yoggie-content <%= "active" if BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count >= 1 %>">
           <%= link_to smoothie_path(smoothie.slug) do %>
             <h3><%= smoothie.name.titleize %><br></br></h3>

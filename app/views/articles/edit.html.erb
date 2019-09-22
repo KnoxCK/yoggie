@@ -1,0 +1,21 @@
+<%= render 'shared/navbar' %>
+<div class="articles_banner">
+</div>
+<div class="banner-padding"></div>
+<div class="article-wrapper">
+  <div class="text-center">
+    <h1><%= @article.title %></h1>
+  </div>
+  <div class="article-edit">
+    <%= simple_form_for @article do |f| %>
+      <%= f.input :title %>
+      <%= f.input :date %>
+      <%= f.input :description %>
+      <%= f.input :cover_image %>
+      <%= f.input :content, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } }
+         %>
+      <%= f.input :published %>
+      <div class="btn-yoggie-main-clear"><%= f.button :submit %></div>
+    <% end %>
+</div>
+</div>

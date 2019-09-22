@@ -1,0 +1,21 @@
+<div class="our-smoothies-banner"></div>
+<div class="our-smoothies-intro section-padding">
+  <div class="banner-padding"></div>
+  <div class="article-wrapper">
+    <div class="padded">
+      <div class="header text-center"><h1>Post an article</h1>
+      </div>
+      <%= simple_form_for @article do |f|%>
+        <%= f.input :title %>
+        <%= f.input :date %>
+        <%= f.input :description %>
+        <%= f.input :content, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } }
+       %>
+        <%= f.input :cover_image %>
+        <%= f.input :cover_image_cache, as: :hidden %>
+        <%= f.input :published %>
+        <div class="text-center"><%= f.button :submit %></div>
+      <% end %>
+    </div></div>
+</div>
+
