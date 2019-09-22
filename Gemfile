@@ -29,11 +29,11 @@ gem 'instagram_api_client'
 gem 'listen', '~> 3.1.5'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'paperclip'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'dotenv-rails'
   gem 'letter_opener'
   gem 'web-console', '>= 3.3.0'
   gem 'spring'

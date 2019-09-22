@@ -37,11 +37,12 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
   end
 
+  get 'articles/:slug', to: "articles#show", as: :article_page
+
   resources :smoothies
 
   resources :newsletter_subscribers, only: [:create, :new]
 
-   get 'articles/:slug', to: "articles#show", as: :article_page
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

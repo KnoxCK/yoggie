@@ -1,21 +1,23 @@
 
-<div class="articles_banner">
-</div>
-<div class="article-wrapper">
-  <div class="article ">
-    <% if !@article.published %>
-      <span class="label label-primary">NOT PUBLISHED</span>
-    <% end %>
-    <h3>
-      <%= @article.title %>
-    </h3>
-      <div class="article-date"><h6><%= @article.date&.strftime("#{@article.date.day.ordinalize} %B %Y")&.upcase %></h6></div>
-      <p><%= @article.content.html_safe %></p>
-  </div>
-  <div class="article-button">
-      <% if current_user && current_user.admin? %>
-        <%= link_to "edit", edit_article_path(@article), class: "landing-btn-red" %>
+<div class="our-smoothies-banner"></div>
+<div class="our-smoothies-intro section-padding">
+  <div class="banner-padding"></div>
+  <div class="article-wrapper">
+    <div class="article ">
+      <% if !@article.published %>
+        <span class="label label-primary">NOT PUBLISHED</span>
       <% end %>
+      <h3>
+        <%= @article.title %>
+      </h3>
+        <div class="article-date"><h6><%= @article.date&.strftime("#{@article.date.day.ordinalize} %B %Y")&.upcase %></h6></div>
+        <p><%= @article.content.html_safe %></p>
+    </div>
+    <div class="article-button">
+        <% if current_user && current_user.admin? %>
+          <%= link_to "EDIT", edit_article_path(@article), class: "btn-yoggie-main-clear" %>
+          <div class="banner-padding"></div>
+        <% end %>
+    </div>
   </div>
 </div>
-
