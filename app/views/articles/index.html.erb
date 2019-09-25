@@ -11,7 +11,7 @@
     </div>
     <div class="article-cards-grid">
       <%@articles.each do |article| %>
-        <% if article.published? %>
+        <% if article.published?%>
           <div class="article-cards">
             <%= link_to cl_image_tag(article.cover_image, width: 300, height: 220, crop: :fill), article_page_path(article.slug)  %>
             <div class="article-date"><h6><%= article.date.strftime("#{article.date.day.ordinalize} %B %Y").upcase %></h6></div>
