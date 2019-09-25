@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
   end
 
-  get 'articles/:slug', to: "articles#show", as: :article_page
+  get 'blog/:slug', to: "articles#show", as: :article_page
 
   resources :smoothies
 
