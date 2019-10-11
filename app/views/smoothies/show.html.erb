@@ -36,29 +36,107 @@
           <p><%= @smoothie.ingredient_description %></p>
         </div>
       </div>
-<!--
+
       <div class="standard-yoggie-nutrition-bottom">
-        <h4>Macro &nbsp; | &nbsp; Nutrition &nbsp; | &nbsp; Ingredients:</h4>
-        <div class="macro">
-          <div class="nutrition-bottom-left">
-            <p>
-              <ul>✓ &nbsp; Turbo Tasty</ul>
-              <ul>✓ &nbsp; Real organic whole foods</ul>
-              <ul>✓ &nbsp; Nutritionist Approved</ul>
-              <ul>✓ &nbsp; Ready in 20 seconds</ul>
-            </p>
+        <div class="js-tabs-container">
+          <ul>
+            <li class="js-tab tab--active" data-tab="macro">Macro</li>
+            <li class="js-tab" data-tab="nutrition">Nutrition</li>
+            <li class="js-tab" data-tab="ingredients">Ingredients</li>
+          </ul>
+          <div class="js-tab-content tab-content--active" data-tab="macro">
+            <div>
+              <p>your smoothie has...</p>
+              <div>
+                294 kcal per yoggie
+              </div>
+
+              <ul>
+                <li>
+                  <div>22%</div>
+                  <div>carbs</div>
+                  <div>34g</div> <!-- if customer -->
+                </li>
+                <li>
+                  <div>22%</div>
+                  <div>protein</div>
+                  <div>34g</div> <!-- if customer -->
+                </li>
+                <li>
+                  <div>22%</div>
+                  <div>protein</div>
+                  <div>fat</div> <!-- if customer -->
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="nutrition-bottom-right">
-            <p>
-              <ul>✓ &nbsp; Turbo Tasty</ul>
-              <ul>✓ &nbsp; Real organic whole foods</ul>
-              <ul>✓ &nbsp; Nutritionist Approved</ul>
-              <ul>✓ &nbsp; Ready in 20 seconds</ul>
-            </p>
+          <div class="js-tab-content" data-tab="nutrition">
+            <div>
+              <table id="customers">
+                <tbody>
+                  <tr>
+                    <th>Typical values</th>
+                    <th>per 100g</th>
+                    <th>per yoggie pack</th>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">Energy</td>
+                    <td><%= @smoothie.nutri_info.energy_kJ %> kJ</td>
+                    <td><%= @smoothie.nutri_info.energy_kJ %> kJ</td>
+                  </tr>
+                  <tr>
+                    <td><%= @smoothie.nutri_info.energy_kcal %> kCal</td>
+                    <td><%= @smoothie.nutri_info.energy_kcal %> kCal</td>
+                  </tr>
+                  <tr>
+                    <td>Fat</td>
+                    <td><%= @smoothie.nutri_info.fat_g %> g</td>
+                    <td><%= @smoothie.nutri_info.fat_g %> g</td>
+                  </tr>
+                  <tr>
+                    <td>of which saturates</td>
+                    <td><%= @smoothie.nutri_info.fat_saturates_g %> g</td>
+                    <td><%= @smoothie.nutri_info.fat_saturates_g %> g</td>
+                  </tr>
+                  <tr>
+                    <td>Carbohydrate</td>
+                    <td><%= @smoothie.nutri_info.carbs_g %> g</td>
+                    <td><%= @smoothie.nutri_info.carbs_g %> g</td>
+                  </tr>
+                  <tr>
+                    <td>of which sugars</td>
+                    <td><%= @smoothie.nutri_info.carbs_sugars_g %> g</td>
+                    <td><%= @smoothie.nutri_info.carbs_sugars_g %> g</td>
+                  </tr>
+                  <tr>
+                    <td>Fibre</td>
+                    <td><%= @smoothie.nutri_info.fibre_g %> g</td>
+                    <td><%= @smoothie.nutri_info.fibre_g %> g</td>
+                  </tr>
+                  <tr>
+                    <td>Protein</td>
+                    <td><%= @smoothie.nutri_info.protein_g %> g</td>
+                    <td><%= @smoothie.nutri_info.protein_g %> g</td>
+                  </tr>
+                  <tr>
+                    <td>Salt</td>
+                    <td><%= @smoothie.nutri_info.salt_g %> g</td>
+                    <td><%= @smoothie.nutri_info.salt_g %> g</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="js-tab-content" data-tab="ingredients">
+            <ul>
+              <% @smoothie.smoothie_ingredients.where(large: false).each do |small_ingredient| %>
+                <li><%= small_ingredient.ingredient.name.titleize %></li>
+              <% end %>
+            </ul>
           </div>
         </div>
       </div>
--->
+
       <br>
     </div>
   </div>

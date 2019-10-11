@@ -1,0 +1,15 @@
+.js-tabs-container {
+  .js-tab {
+    &.tab--active {
+      color: purple;
+    }
+  }
+
+  .js-tab-content {
+    display: none;
+
+    &.tab-content--active {
+      display: block;
+    }
+  }
+}
