@@ -50,7 +50,7 @@ CSV.foreach(filepath, {col_sep: ';'}) do |row|
   if ingredient_image_strings.include?(row[5])
     ingredient_images_count += 1
     if Rails.env.production?
-      i.remote_photo_url = Rails.root.join('seed_assets', 'ingredient_images_oct_11', row[5]).to_s
+      i.remote_image_url = Rails.root.join('seed_assets', 'ingredient_images_oct_11', row[5]).to_s
     else
       i.image = row[5]
     end
@@ -95,7 +95,7 @@ Size.all.each do |size|
     if true && smoothie_image_strings.include?(row[46])
       smoothie_images_count += 1
       if Rails.env.production?
-        smoothie.remote_photo_url = remote_photo_url = Rails.root.join('seed_assets', 'smoothie_images_oct_11', row[46]).to_s
+        smoothie.remote_image_url = Rails.root.join('seed_assets', 'smoothie_images_oct_11', row[46]).to_s
       else
         smoothie.image = row[46]
       end
