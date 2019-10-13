@@ -99,22 +99,16 @@ class Customer < ApplicationRecord
    user.standard ? true : false
   end
 
-  def calculate_tailored_nutri_info(smoothie)
-    original_nutrition = smoothie.nutri_info.slice(
-      :energy_kJ,
-      :energy_kcal,
-      :fat_g,
-      :fat_saturates_g,
-      :carbs_g,
-      :carbs_sugars_g,
-      :fibre_g,
-      :protein_g,
-      :salt_g)
+  def calculate_tailored_stat(smoothie, stat_symbol)
+    # stat symbol can be any value in NutriInfo for the Smoothie
+    original_stat = smoothie.nutri_info[stat_symbol]
 
-    multiplication_factor = (calories_per_shake / original_nutrition[:energy_kcal])
+    multiplication_factor = (calories_per_shake / smoothie.nutri_info[:energy_kcal])
 
-    # Get hash of tailored values
-    Hash[original_nutrition.map{|k,v| [k.to_sym, (v * multiplication_factor).round(1)] }]
+    tailored_stat = (original_stat * multiplication_factor).round(1)
+
+    # convert to integer if zero value at decimal places
+    tailored_stat % 1 == 0 ? tailored_stat.to_i : tailored_stat
   end
 
   private

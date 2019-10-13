@@ -113,9 +113,9 @@ Size.all.each do |size|
       fibre_g: row[19].to_f,
       protein_g: row[20].to_f,
       salt_g: row[21].to_f,
-      protein_percentage: row[48].to_i,
-      carbs_percentage: row[49].to_i,
-      fat_percentage: row[50].to_i)
+      protein_percentage: row[49].to_i,
+      carbs_percentage: row[50].to_i,
+      fat_percentage: row[51].to_i)
 
     # Create ingredients for each smoothie
     unless row[22].nil?

@@ -45,36 +45,60 @@
             <li class="js-tab" data-tab="ingredients"><h4>Ingredients</h4></li>
           </ul>
           <div class="js-tab-content tab-content--active yoggie-single-tab-content" data-tab="macro">
-            <div>
-              <p>your smoothie has...</p>
-              <div>
-                294 kcal per yoggie
-              </div>
+            <div class="yoggie-macro-tab">
+              <% if current_user.try(:customer) %>
+                <p>your smoothie has...</p>
+              <% end %>
 
-              <ul>
-                <li>
-                  <div>22%</div>
-                  <div>carbs</div>
-                  <div>34g</div> <!-- if customer -->
-                </li>
-                <li>
-                  <div>22%</div>
-                  <div>protein</div>
-                  <div>34g</div> <!-- if customer -->
-                </li>
-                <li>
-                  <div>22%</div>
-                  <div>protein</div>
-                  <div>fat</div> <!-- if customer -->
-                </li>
-              </ul>
+              <div class="macro-main">
+
+                  <div class="macro-info-left">
+                    <% if current_user.try(:customer) %>
+                      <div class="info-focus"><%= current_user.customer.calories_per_shake %></div>
+                      <div>kcal per yoggie</div>
+                    <% else %>
+                      <div class="info-focus"><%= @smoothie.superfood.titleize %></div>
+                      <div>Superfood</div>
+                    <% end %>
+                  </div>
+
+                <ul class="macro-info-list">
+                  <li class="green-border">
+                    <div class="percentage"><%= @smoothie.nutri_info.protein_percentage %>%</div>
+                    <div class="nutri">Protein</div>
+                      <div class="grams">
+                        <% if current_user.try(:customer) %>
+                          <%= current_user.customer.calculate_tailored_stat(@smoothie, :protein_g) %>g
+                        <% end %>
+                      </div>
+                  </li>
+                  <li class="yellow-border">
+                    <div class="percentage"><%= @smoothie.nutri_info.carbs_percentage %>%</div>
+                    <div class="nutri">Carbs</div>
+                      <div class="grams">
+                        <% if current_user.try(:customer) %>
+                          <%= current_user.customer.calculate_tailored_stat(@smoothie, :carbs_g) %>g
+                        <% end %>
+                      </div>
+                  </li>
+                  <li class="orange-border">
+                    <div class="percentage"><%= @smoothie.nutri_info.fat_percentage %>%</div>
+                    <div class="nutri">Fats</div>
+                      <div class="grams">
+                        <% if current_user.try(:customer) %>
+                          <%= current_user.customer.calculate_tailored_stat(@smoothie, :fat_g) %>g
+                        <% end %>
+                      </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="js-tab-content yoggie-single-tab-content" data-tab="nutrition">
-            <div>
+            <div class="nutrition-table-container">
               <table id="customers">
                 <tbody>
-                  <tr>
+                  <tr class="no-bottom-border">
                     <th>Typical values</th>
                     <th>per 100g</th>
                     <% if current_user.try(:customer) %>
@@ -82,65 +106,73 @@
                     <% end %>
                   </tr>
                   <tr>
-                    <td rowspan="2">Energy</td>
+                    <th>&nbsp;</th>
+                    <th class="th-small-font"><i>frozen as supplied</i></th>
+                    <% if current_user.try(:customer) %>
+                      <th>&nbsp;</th>
+                    <% end %>
+                  </tr>
+                  <tr class="no-bottom-border">
+                    <td>Energy</td>
                     <td><%= @smoothie.nutri_info.energy_kJ %> kJ</td>
                     <% if current_user.try(:customer) %>
-                      <td><%= @smoothie.nutri_info.energy_kJ %> kJ</td>
+                      <td><%= current_user.customer.calculate_tailored_stat(@smoothie, :energy_kJ) %> kJ</td>
                     <% end %>
                   </tr>
                   <tr>
+                    <td>&nbsp;</td>
                     <td><%= @smoothie.nutri_info.energy_kcal %> kCal</td>
                     <% if current_user.try(:customer) %>
-                      <td><%= @smoothie.nutri_info.energy_kcal %> kCal</td>
+                      <td><%= current_user.customer.calculate_tailored_stat(@smoothie, :energy_kcal) %> kCal</td>
                     <% end %>
                   </tr>
-                  <tr>
+                  <tr class="no-bottom-border">
                     <td>Fat</td>
                     <td><%= @smoothie.nutri_info.fat_g %> g</td>
                     <% if current_user.try(:customer) %>
-                      <td><%= @smoothie.nutri_info.fat_g %> g</td>
+                      <td><%= current_user.customer.calculate_tailored_stat(@smoothie, :fat_g) %> g</td>
                     <% end %>
                   </tr>
                   <tr>
-                    <td>of which saturates</td>
+                    <td class="td-small-font-indent">of which saturates</td>
                     <td><%= @smoothie.nutri_info.fat_saturates_g %> g</td>
                     <% if current_user.try(:customer) %>
-                      <td><%= @smoothie.nutri_info.fat_saturates_g %> g</td>
+                      <td><%= current_user.customer.calculate_tailored_stat(@smoothie, :fat_saturates_g) %> g</td>
                     <% end %>
                   </tr>
-                  <tr>
+                  <tr class="no-bottom-border">
                     <td>Carbohydrate</td>
                     <td><%= @smoothie.nutri_info.carbs_g %> g</td>
                     <% if current_user.try(:customer) %>
-                      <td><%= @smoothie.nutri_info.carbs_g %> g</td>
+                      <td><%= current_user.customer.calculate_tailored_stat(@smoothie, :carbs_g) %> g</td>
                     <% end %>
                   </tr>
                   <tr>
-                    <td>of which sugars</td>
+                    <td class="td-small-font-indent">of which sugars</td>
                     <td><%= @smoothie.nutri_info.carbs_sugars_g %> g</td>
                     <% if current_user.try(:customer) %>
-                      <td><%= @smoothie.nutri_info.carbs_sugars_g %> g</td>
+                      <td><%= current_user.customer.calculate_tailored_stat(@smoothie, :carbs_sugars_g) %> g</td>
                     <% end %>
                   </tr>
                   <tr>
                     <td>Fibre</td>
                     <td><%= @smoothie.nutri_info.fibre_g %> g</td>
                     <% if current_user.try(:customer) %>
-                      <td><%= @smoothie.nutri_info.fibre_g %> g</td>
+                      <td><%= current_user.customer.calculate_tailored_stat(@smoothie, :fibre_g) %> g</td>
                     <% end %>
                   </tr>
                   <tr>
                     <td>Protein</td>
                     <td><%= @smoothie.nutri_info.protein_g %> g</td>
                     <% if current_user.try(:customer) %>
-                      <td><%= @smoothie.nutri_info.protein_g %> g</td>
+                      <td><%= current_user.customer.calculate_tailored_stat(@smoothie, :protein_g) %> g</td>
                     <% end %>
                   </tr>
                   <tr>
                     <td>Salt</td>
                     <td><%= @smoothie.nutri_info.salt_g %> g</td>
                     <% if current_user.try(:customer) %>
-                      <td><%= @smoothie.nutri_info.salt_g %> g</td>
+                      <td><%= current_user.customer.calculate_tailored_stat(@smoothie, :salt_g) %> g</td>
                     <% end %>
                   </tr>
                 </tbody>
@@ -148,17 +180,19 @@
             </div>
           </div>
           <div class="js-tab-content yoggie-single-tab-content" data-tab="ingredients">
-            <ul>
-              <% @smoothie.smoothie_ingredients.where(large: false).each do |small_ingredient| %>
-                <li>
-                  <!-- CHANGE BEFORE PUSHING -->
+            <div>
+              <ul>
+                <% @smoothie.smoothie_ingredients.where(large: false).each do |small_ingredient| %>
+                  <li>
+                    <!-- CHANGE BEFORE PUSHING -->
 
-                  <%= cl_image_tag(Ingredient.second.image, width: 50, height: 50, crop: :fit) %>
+                    <%= cl_image_tag(Ingredient.second.image, width: 50, height: 50, crop: :fit, class: 'ingredient-img-small') %>
 
-                  <%= small_ingredient.ingredient.name.titleize %>
-                </li>
-              <% end %>
-            </ul>
+                    <%= small_ingredient.ingredient.name.titleize %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
