@@ -290,5 +290,5 @@ Size.all.each do |size|
 end
 
 puts "================="
-puts "smoothie images: #{smoothie_images_count} created vs #{smoothie_image_strings.count} exist"
-puts "ingredient images: #{ingredient_images_count} created vs #{ingredient_image_strings.count} exist"
+puts "smoothie images: #{smoothie_images_count}"
+puts "ingredient images: #{ingredient_images_count}"
