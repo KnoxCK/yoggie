@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190922121000) do
+ActiveRecord::Schema.define(version: 20191011114825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,8 +134,11 @@ ActiveRecord::Schema.define(version: 20190922121000) do
     t.float    "fibre_g"
     t.float    "protein_g"
     t.float    "salt_g"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "protein_percentage"
+    t.integer  "carbs_percentage"
+    t.integer  "fat_percentage"
     t.index ["smoothie_id"], name: "index_nutri_infos_on_smoothie_id", using: :btree
   end
 

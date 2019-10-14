@@ -99,6 +99,18 @@ class Customer < ApplicationRecord
    user.standard ? true : false
   end
 
+  def calculate_tailored_stat(smoothie, stat_symbol)
+    # stat symbol can be any value in NutriInfo for the Smoothie
+    original_stat = smoothie.nutri_info[stat_symbol]
+
+    multiplication_factor = (calories_per_shake / smoothie.nutri_info[:energy_kcal])
+
+    tailored_stat = (original_stat * multiplication_factor).round(1)
+
+    # convert to integer if zero value at decimal places
+    tailored_stat % 1 == 0 ? tailored_stat.to_i : tailored_stat
+  end
+
   private
 
   def should_generate_new_friendly_id?

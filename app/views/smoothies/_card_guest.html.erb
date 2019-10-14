@@ -8,7 +8,7 @@
           <%= link_to 'UPDATE BOX', new_user_session_path, class: "btn-yoggie-main-green"%>
           <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
         <p class="card-hover">
-          <% smoothie.ingredients.each do |ingredient| %>
+          <% smoothie.ingredients.uniq.each do |ingredient| %>
             ✓ &nbsp;<%= ingredient.name.titleize %></br>
           <% end %>
         </p>
