@@ -33,9 +33,11 @@ Size.find_or_create_by(name: 'v', kcal: 700)
 # get available ingredient and smoothie image strings
 ingredient_image_strings = Dir.entries(Rails.root.join('seed_assets', 'ingredient_images_oct_11'))
 smoothie_image_strings = Dir.entries(Rails.root.join('seed_assets', 'smoothie_images_oct_11'))
+badge_image_strings = Dir.entries(Rails.root.join('seed_assets', 'badge_images_oct_11'))
 
 smoothie_images_count = 0
 ingredient_images_count = 0
+badge_images_count = 0
 
 # To be determined = delete first column and no superfood
 filepath = 'seed_assets/smoothies_data_oct_11/Ingredients-Table.csv'
@@ -67,7 +69,17 @@ end
 filepath = 'seed_assets/smoothies_data_oct_11/Badges-Table.csv'
 CSV.foreach(filepath, {col_sep: ';'}) do |row|
   puts "#{row}"
-  Badge.create!(name: row[0].downcase.tr(' ', '_'), image: row[1])
+  b = Badge.new(name: row[0].downcase.tr(' ', '_'))
+
+  if badge_image_strings.include?(row[1])
+    badge_images_count += 1
+    if Rails.env.production?
+      b.remote_image_url = Rails.root.join('seed_assets', 'badge_images_oct_11', row[1]).to_s
+    else
+      b.image = row[1]
+    end
+  end
+  b.save!
 end
 
 filepath = 'seed_assets/smoothies_data_oct_11/Smoothies-Table.csv'
@@ -292,3 +304,4 @@ end
 puts "================="
 puts "smoothie images: #{smoothie_images_count}"
 puts "ingredient images: #{ingredient_images_count}"
+puts "badge images: #{badge_images_count}"
