@@ -23,6 +23,13 @@ class SmoothiesController < ApplicationController
     @basket = BasketSmoothie.new
     @badges = @smoothie.badges
 
+    small_smooth_ingred = @smoothie.smoothie_ingredients.where(large: false)
+    @small_ingredients = small_smooth_ingred.map do |small_smoothie_ingredient|
+      small_smoothie_ingredient.ingredient
+    end
+
+    @small_ingredients = @small_ingredients.uniq
+
     # @smoothie = Smoothie.find(params[:id])
   end
 

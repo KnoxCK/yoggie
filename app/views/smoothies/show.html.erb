@@ -182,11 +182,11 @@
           <div class="js-tab-content yoggie-single-tab-content" data-tab="ingredients">
             <div>
               <ul>
-                <% @smoothie.smoothie_ingredients.where(large: false).each do |small_smoothie_ingredient| %>
+                <% @small_ingredients.each do |small_ingredient| %>
                   <li>
-                    <%= cl_image_tag(small_smoothie_ingredient.ingredient.image, width: 50, height: 50, crop: :fit, class: 'ingredient-img-small') %>
+                    <%= cl_image_tag(small_ingredient.image, width: 50, height: 50, crop: :fit, class: 'ingredient-img-small') %>
 
-                    <%= small_smoothie_ingredient.ingredient.name.titleize %>
+                    <%= small_ingredient.name.titleize %>
                   </li>
                 <% end %>
               </ul>
