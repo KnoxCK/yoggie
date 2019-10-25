@@ -33,8 +33,25 @@
 		margin: 30px 30px 0 30px;
 	}
 }
-.landing-price {
+.landing-price-bare {
 	margin-left: 20px;
+    border: solid #E6577A 4px;
+    border-radius: 80px;
+    padding: 0px 0;
+    width: 87px;
+    text-align: center;
+    position: absolute;
+    top: 305px;
+    right: 19px;
+ 	h4 {
+ 		margin-bottom: 0;
+ 	}
+    p {
+    	font-size: 13px !important;
+    }
+}
+.landing-price {
+	margin-left: 0px;
     border: solid #E6577A 4px;
     border-radius: 80px;
     padding: 0px 0;
@@ -63,14 +80,14 @@
 .yoggie-standard:hover {
 	background-color: $pink;
     transition: background-color 0.8s ease;
-    h3, p, ul { 
+    h4, p, ul { 
     	color: white;
     }
 	.btn-yoggie-main-clear {
 		background-color: $green;
 		color: white;
 	}
-	.landing-price {
+	.landing-price-bare {
 	    border: solid white 4px;
 	}
 }
@@ -84,20 +101,23 @@
 	margin: 30px;
 	background-color: $light-grey;
 	border-radius: 5px;
+	position: relative;
 }
 .yoggie-custom-text {
 	padding: 10px 30px 40px 40px;
 }
 .yoggie-custom:hover {
 	background-color: $pink;
-	color: white;
-	transition: background-color 0.8s ease;
-	h3, p, ul { 
+    transition: background-color 0.8s ease;
+    h4, p, ul { 
     	color: white;
     }
 	.btn-yoggie-main-clear {
 		background-color: $green;
 		color: white;
+	}
+	.landing-price {
+	    border: solid white 4px;
 	}
 }
 
