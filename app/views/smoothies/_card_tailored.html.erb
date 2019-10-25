@@ -27,6 +27,7 @@
       <% smoothies.each do |smoothie| %>
 
       <div class="standard-yoggie">
+      
       <%= cl_image_tag smoothie.image %>
         <div class="standard-yoggie-content <%= "active" if BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count >= 1 %>">
           <%= link_to smoothie_path(smoothie.slug) do %>

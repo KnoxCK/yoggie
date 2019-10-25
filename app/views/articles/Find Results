@@ -1,0 +1,3223 @@
+Searching 4666 files for "landing-price"
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_home.scss:
+   34  	}
+   35  }
+   36: .landing-price-bare {
+   37  	margin-left: 20px;
+   38      border: solid #E6577A 4px;
+   ..
+   51      }
+   52  }
+   53: .landing-price {
+   54  	margin-left: 0px;
+   55      border: solid #E6577A 4px;
+   ..
+   88  		color: white;
+   89  	}
+   90: 	.landing-price-bare {
+   91  	    border: solid white 4px;
+   92  	}
+   ..
+  117  		color: white;
+  118  	}
+  119: 	.landing-price {
+  120  	    border: solid white 4px;
+  121  	}
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/home.html.erb:
+   26  				</p>
+   27  				<%= link_to "GET STARTED", choose_custom_path, class: 'btn-yoggie-main-clear' %>
+   28: 				<div class="landing-price"> 
+   29  					<h4>£39 </h4><p>per week</p>
+   30  				</div>
+   ..
+   42  				</p>
+   43  				<%= link_to "CHOOSE YOURS", choose_standard_path, class: 'btn-yoggie-main-clear' %>
+   44: 				<div class="landing-price-bare"> 
+   45  					<h4>£39 </h4><p>per week</p>
+   46  				</div>
+
+6 matches across 2 files
+
+
+Searching 4691 files for "sign up"
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/registrations/new.html.erb:
+    1  <div class="login-pages">
+    2:   <h2>Sign up</h2>
+    3    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    4      <%= f.error_notification %>
+    .
+   13  
+   14      <div class="form-actions">
+   15:       <%= f.button :submit, "Sign up" %>
+   16      </div>
+   17    <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/shared/_links.html.erb:
+    5  
+    6  	<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    7: 	  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+    8  	<% end -%>
+    9  
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/terms.html.erb:
+   52  
+   53  	<h4>5. Our recurring delivery service</h4>
+   54: 	<p><strong>5.1.</strong> We offer a recurring delivery service and when you sign up to order Smoothies you are signing up for a rolling weekly contract which can be cancelled in accordance with paragraph 8 below.<br></br>
+   55  	<strong>5.2.</strong> Skipping deliveries: If you are going away for a while or just don't fancy the Smoothies for a week or two, you can skip up to 6 weeks in advance on the Website. Do remember that you can cancel at any time and if before midnight on a Thursday for the next week's order (see paragraph 8 below).<br></br>
+   56  	<strong>5.3.</strong> Meal selection: It is your obligation to select which Smoothies you would like for the next order. If you fail to make a selection, we will select the Smoothies for you. If we cannot provide you with the Smoothies you have ordered we will try our best to contact you in order for you to select an alternative Smoothie. If we cannot get hold of you, we reserve the right to substitute your meal choice for an alternative or not to deliver to you.
+
+/Users/clarissaknox/code/projects/yoggie/app/views/shared/_navbar.html.erb:
+   20          <%= link_to 'Log In', new_user_session_path %>
+   21          <div class="top-nav-line"></div>
+   22:         <%= link_to 'Sign Up', new_user_registration_path %>
+   23        <% end %>
+   24        <div class="navbar-yoggie-social">
+
+/Users/clarissaknox/code/projects/yoggie/config/initializers/devise.rb:
+   87    # By default, Devise cleans up the CSRF token on authentication to
+   88    # avoid CSRF token fixation attacks. This means that, when using AJAX
+   89:   # requests for sign in and sign up, you need to get a new CSRF token
+   90    # from the server. You can disable this option at your own risk.
+   91    # config.clean_up_csrf_token_on_authentication = true
+
+/Users/clarissaknox/code/projects/yoggie/config/locales/devise.en.yml:
+   15        not_found_in_database: "Invalid %{authentication_keys} or password."
+   16        timeout: "Your session expired. Please sign in again to continue."
+   17:       unauthenticated: "You need to sign in or sign up before continuing."
+   18        unconfirmed: "You have to confirm your email address before continuing."
+   19      mailer:
+
+/Users/clarissaknox/code/projects/yoggie/log/development.log:
+    <binary>
+
+22 matches across 7 files
+
+
+Searching 4691 files for "login-pges"
+
+0 matches
+
+Searching 4696 files for "button"
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/components/_buttons.scss:
+  134  }
+  135  
+  136: .stripe-button {
+  137    background-color: $pink;
+  138  }
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/components/_index.scss:
+    4  @import "navbar-main";
+    5  @import "banner";
+    6: @import "buttons";
+    7  @import "general";
+    8  @import "form";
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/config/_bootstrap_variables.scss:
+   18  $brand-warning:   $orange;
+   19  
+   20: // Buttons & inputs' radius
+   21  $border-radius-base:  2px;
+   22  $border-radius-large: 2px;
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_articles.scss:
+    8    margin-top: 60px;
+    9  }
+   10: .article-button {
+   11    margin-bottom: 20px;
+   12  }
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_results.scss:
+   57  	color: $green;
+   58  }
+   59: .results-button {
+   60  	display: flex;
+   61  	justify-content: center;
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_smoothies.scss:
+   94  }
+   95  
+   96: input, button, select, textarea {
+   97  	 background-color: white;
+   98  	 border: none;
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_vitals-show.scss:
+   90  	}
+   91  }
+   92: .cancel-order-buttons {
+   93  	display: flex;
+   94  	justify-content: center;
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/edit.html.erb:
+   15             %>
+   16          <%= f.input :published %>
+   17:         <div class="text-center"><%= f.button :submit %></div>
+   18        <% end %></div>
+   19    </div>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/index.html.erb:
+    4        <h3>YOGGIE BLOG</h3>
+    5          <hr>
+    6:         <div class="button">
+    7            <% if current_user && current_user.admin? %>
+    8              <%= link_to "CREATE NEW POST", new_article_path, class: "btn-yoggie-main-clear" %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/new.html.erb:
+   15          <%= f.input :cover_image_cache, as: :hidden %>
+   16          <%= f.input :published %>
+   17:         <div class="text-center"><%= f.button :submit %></div>
+   18        <% end %>
+   19      </div></div>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/show.html.erb:
+   14          <p><%= @article.content.html_safe %></p>
+   15      </div>
+   16:     <div class="article-button">
+   17          <% if current_user && current_user.admin? %>
+   18            <%= link_to "EDIT", edit_article_path(@article), class: "btn-yoggie-main-clear" %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/baskets/new.html.erb:
+   41                <%= f.hidden_field :tailored, value: true if @customer.tailored? %>
+   42                <%= select_tag "quantity", options_for_select([0, 1, 2, 3, 4, 5], BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count) %>
+   43:             <%= f.submit 'Add My Smoothies', class: "btn-yoggie-main-green results-button"  %>
+   44            <% end %>
+   45          <% else %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/customers/dashboard_edit.html.erb:
+   17      <%= f.input :activity_level, as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys, required: true %>
+   18      <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys, required: true %>
+   19:     <div class="results-button">
+   20        <%= f.submit 'Get my results', class: "btn-yoggie-main-green text-center" %>
+   21        <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/customers/edit.html.erb:
+   17      <%= f.input :activity_level, label:'On a weekday I eat this many meals', as: :select, collection: Customer::ACTIVITY_LEVEL_MULTIPLIERS.keys, required: true %>
+   18      <%= f.input :goal, as: :select, collection: Customer::GOAL_MULTIPLIERS.keys, required: true %>
+   19:     <div class="results-button">
+   20        <%= f.submit 'Get my results', class: "btn-yoggie-main-green text-center" %>
+   21        <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/confirmations/new.html.erb:
+   10  
+   11    <div class="form-actions">
+   12:     <%= f.button :submit, "Resend confirmation instructions" %>
+   13    </div>
+   14  <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/passwords/edit.html.erb:
+   13  
+   14    <div class="form-actions">
+   15:     <%= f.button :submit, "Change my password" %>
+   16    </div>
+   17  <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/passwords/new.html.erb:
+   10  
+   11  	  <div class="form-actions">
+   12: 	    <%= f.button :submit, "Send me reset password instructions" %>
+   13  	  </div>
+   14  	<% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/registrations/edit.html.erb:
+   17  
+   18    <div class="form-actions">
+   19:     <%= f.button :submit, "Update" %>
+   20    </div>
+   21  <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/registrations/new.html.erb:
+   13  
+   14      <div class="form-actions">
+   15:       <%= f.button :submit, "Sign up" %>
+   16      </div>
+   17    <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/sessions/new.html.erb:
+   10  
+   11  	  <div class="form-actions">
+   12: 	    <%= f.button :submit, "Log in" %>
+   13  	  </div>
+   14  	<% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/unlocks/new.html.erb:
+   10  
+   11    <div class="form-actions">
+   12:     <%= f.button :submit, "Resend unlock instructions" %>
+   13    </div>
+   14  <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/home.html.erb:
+   78  			This way you know your smoothie breakfast gives you just the right calories and perfect balance of protein, fats and carbs… for you. Helping you stay on it and smash your goals throughout the day.
+   79  			</p></br>
+   80: 			<div class="action-button">
+   81  			<%= link_to "GET STARTED", choose_custom_path, class: 'btn-yoggie-main-clear' %>
+   82  			</div>
+   ..
+  125  		</div>
+  126  	</div>
+  127: 	<div class="action-button text-center">
+  128  		<%= link_to "GET STARTED", choose_custom_path, class: 'btn-yoggie-main-clear' %>
+  129  	</div>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/payments/new.html.erb:
+   29    <p></p>
+   30    <%= form_tag customer_payments_path(@customer) do %>
+   31:     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+   32        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+   33        data-description="Weekly subscription"
+   ..
+   44  
+   45  const terms = document.getElementById("terms");
+   46: const stripe = document.getElementsByClassName("stripe-button-el");
+   47  stripe[0].disabled=true
+   48  
+
+/Users/clarissaknox/code/projects/yoggie/app/views/shared/_flashes.html.erb:
+    1  <% if notice %>
+    2    <div class="alert alert-info alert-dismissible" role="alert">
+    3:     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    4      <%= notice.html_safe %>
+    5    </div>
+    .
+    7  <% if alert %>
+    8    <div class="alert alert-warning alert-dismissible" role="alert">
+    9:     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+   10      <%= alert.html_safe %>
+   11    </div>
+
+/Users/clarissaknox/code/projects/yoggie/config/initializers/simple_form.rb:
+   59    config.default_wrapper = :default
+   60  
+   61:   # Define the way to render check boxes / radio buttons with labels.
+   62    # Defaults to :nested for bootstrap config.
+   63    #   inline: input + label
+   ..
+   65    config.boolean_style = :nested
+   66  
+   67:   # Default class for buttons
+   68:   config.button_class = 'btn'
+   69  
+   70    # Method used to tidy up errors. Specify any Rails Array method.
+
+/Users/clarissaknox/code/projects/yoggie/config/initializers/simple_form_bootstrap.rb:
+    2  SimpleForm.setup do |config|
+    3    config.error_notification_class = 'alert alert-danger'
+    4:   config.button_class = 'btn btn-default'
+    5    config.boolean_label_class = nil
+    6  
+    .
+  141    # Check the Bootstrap docs (http://getbootstrap.com)
+  142    # to learn about the different styles for forms and inputs,
+  143:   # buttons and other elements.
+  144    config.default_wrapper = :vertical_form
+  145    config.wrapper_mappings = {
+  146      check_boxes: :vertical_radio_and_checkboxes,
+  147:     radio_buttons: :vertical_radio_and_checkboxes,
+  148      file: :vertical_file_input,
+  149      boolean: :vertical_boolean,
+
+/Users/clarissaknox/code/projects/yoggie/lib/templates/erb/scaffold/_form.html.erb:
+    9  
+   10    <div class="form-actions">
+   11:     <%%= f.button :submit %>
+   12    </div>
+   13  <%% end %>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/1N/1NBNJAm7bBVn8tcDVjsow70kq8omlNZlyHhlksnMB3U.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/8z/8ZXtgtrLA6pEDbW1XijpecJCii23rozTJmmXOCGXaK0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/9i/9IR2o-IRmeiE1bUW1rT4xBt_9IsAzp73jiSsLDU1Ag0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/FZ/fZ4yRavjFfRyp7aylnfHmGGlQgjRxRDoq1M66K0JSGc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ja/JaogfB87lOkkdEcRs09p_MMy7puuYAa7mLkunvRDTlM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Kx/Kx-akl3OKf62_wrXUGsc0LOKBBCeItFpjdI2CFdT5iM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sQ/SqGCHwvxdQrelgb0l3D2DVQMOQLaKqutk5UWAXbHOJo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/u9/U9RV4-jxzb18pPfQ8C7rWiloAiEaIM94gL5GruK3Meg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/U_/U_nSYwxzbKltHnR4yJBsbzWhX1UC_AE55-gma93E9Yw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/V_/V_N30KYl2ipARKdPv7HgYnMUECiSouFWwV-dL_hHRpk.cache:
+    <binary>
+
+60 matches across 37 files
+
+
+Searching 4696 files for "f.button"
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/edit.html.erb:
+   15             %>
+   16          <%= f.input :published %>
+   17:         <div class="text-center"><%= f.button :submit %></div>
+   18        <% end %></div>
+   19    </div>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/new.html.erb:
+   15          <%= f.input :cover_image_cache, as: :hidden %>
+   16          <%= f.input :published %>
+   17:         <div class="text-center"><%= f.button :submit %></div>
+   18        <% end %>
+   19      </div></div>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/confirmations/new.html.erb:
+   10  
+   11    <div class="form-actions">
+   12:     <%= f.button :submit, "Resend confirmation instructions" %>
+   13    </div>
+   14  <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/passwords/edit.html.erb:
+   13  
+   14    <div class="form-actions">
+   15:     <%= f.button :submit, "Change my password" %>
+   16    </div>
+   17  <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/passwords/new.html.erb:
+   10  
+   11  	  <div class="form-actions">
+   12: 	    <%= f.button :submit, "Send me reset password instructions" %>
+   13  	  </div>
+   14  	<% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/registrations/edit.html.erb:
+   17  
+   18    <div class="form-actions">
+   19:     <%= f.button :submit, "Update" %>
+   20    </div>
+   21  <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/registrations/new.html.erb:
+   13  
+   14      <div class="form-actions">
+   15:       <%= f.button :submit, "SIGN UP", class: "btn-yoggie-main-green results-button" %>
+   16      </div>
+   17    <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/sessions/new.html.erb:
+   10  
+   11  	  <div class="form-actions">
+   12: 	    <%= f.button :submit, "Log in" %>
+   13  	  </div>
+   14  	<% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/unlocks/new.html.erb:
+   10  
+   11    <div class="form-actions">
+   12:     <%= f.button :submit, "Resend unlock instructions" %>
+   13    </div>
+   14  <% end %>
+
+/Users/clarissaknox/code/projects/yoggie/lib/templates/erb/scaffold/_form.html.erb:
+    9  
+   10    <div class="form-actions">
+   11:     <%%= f.button :submit %>
+   12    </div>
+   13  <%% end %>
+
+10 matches across 10 files
+
+
+Searching 4696 files for "log in"
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/sessions/new.html.erb:
+    1  <div class="login-pages">
+    2: 	<h2>Log in</h2>
+    3  
+    4  	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    .
+   10  
+   11  	  <div class="form-actions">
+   12: 	    <%= f.button :submit, "Log in" %>
+   13  	  </div>
+   14  	<% end %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/shared/_links.html.erb:
+    1  <div class="signup-links">
+    2  	<%- if controller_name != 'sessions' %>
+    3: 	  <%= link_to "Log in", new_session_path(resource_name) %><br />
+    4  	<% end -%>
+    5  
+
+/Users/clarissaknox/code/projects/yoggie/app/views/shared/_navbar.html.erb:
+   18          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+   19        <% else %>
+   20:         <%= link_to 'Log In', new_user_session_path %>
+   21          <div class="top-nav-line"></div>
+   22          <%= link_to 'Sign Up', new_user_registration_path %>
+
+/Users/clarissaknox/code/projects/yoggie/log/development.log:
+    <binary>
+
+133 matches across 4 files
+
+
+Searching 4696 files for "pink your yoggies"
+
+
+
+Searching 4696 files for "pink your yoggies"
+
+0 matches
+
+Searching 4696 files for "pick your yoggies"
+
+/Users/clarissaknox/code/projects/yoggie/app/views/smoothies/index.html.erb:
+    8  <div class="our-smoothies-intro section-padding text-center">
+    9  	<br>
+   10: 	<h2>Pick Your Yoggies</h2>
+   11  	<p>Choose your <span>5</span> smoothies for the week</p>
+   12  	<br>
+
+1 match in 1 file
+
+
+Searching 4696 files for "our-smoothies-intro"
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_smoothies.scss:
+   13    }
+   14  }
+   15: .our-smoothies-intro {
+   16   	padding-left: 15%;
+   17   	padding-right: 15%;
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/edit.html.erb:
+    1  <div class="our-smoothies-banner"></div>
+    2: <div class="our-smoothies-intro section-padding">
+    3    <div class="banner-padding"></div>
+    4    <div class="article-wrapper">
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/new.html.erb:
+    1  <div class="our-smoothies-banner"></div>
+    2: <div class="our-smoothies-intro section-padding">
+    3    <div class="banner-padding"></div>
+    4    <div class="article-wrapper">
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/show.html.erb:
+    1  
+    2  <div class="our-smoothies-banner"></div>
+    3: <div class="our-smoothies-intro section-padding">
+    4    <div class="banner-padding"></div>
+    5    <div class="article-wrapper">
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/smoothies.html.erb:
+    2  
+    3  <!-- <div class="our-smoothies-banner"></div>
+    4: <div class="our-smoothies-intro section-padding text-center">
+    5  	<h2>Our Yoggies</h2>
+    6  	<br>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/smoothies/index.html.erb:
+    6  <div class="our-smoothies-banner"></div>
+    7  <% end %>
+    8: <div class="our-smoothies-intro section-padding text-center">
+    9  	<br>
+   10  	<h2>Pick Your Yoggies</h2>
+
+6 matches across 6 files
+
+
+Searching 4696 files for "our-smoothies-intro"
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_smoothies.scss:
+   13    }
+   14  }
+   15: .our-smoothies-intro {
+   16   	padding-left: 15%;
+   17   	padding-right: 15%;
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/edit.html.erb:
+    1  <div class="our-smoothies-banner"></div>
+    2: <div class="our-smoothies-intro section-padding">
+    3    <div class="banner-padding"></div>
+    4    <div class="article-wrapper">
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/new.html.erb:
+    1  <div class="our-smoothies-banner"></div>
+    2: <div class="our-smoothies-intro section-padding">
+    3    <div class="banner-padding"></div>
+    4    <div class="article-wrapper">
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/show.html.erb:
+    1  
+    2  <div class="our-smoothies-banner"></div>
+    3: <div class="our-smoothies-intro section-padding">
+    4    <div class="banner-padding"></div>
+    5    <div class="article-wrapper">
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/smoothies.html.erb:
+    2  
+    3  <!-- <div class="our-smoothies-banner"></div>
+    4: <div class="our-smoothies-intro section-padding text-center">
+    5  	<h2>Our Yoggies</h2>
+    6  	<br>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/smoothies/index.html.erb:
+    6  <div class="our-smoothies-banner"></div>
+    7  <% end %>
+    8: <div class="our-smoothies-intro section-padding text-center">
+    9  	<br>
+   10  	<h2>Pick Your Yoggies</h2>
+
+6 matches across 6 files
+
+
+Searching 4696 files for "blog"
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_articles.scss:
+    5    }
+    6  }
+    7: .yoggie-blog-header {
+    8    margin-top: 60px;
+    9  }
+
+/Users/clarissaknox/code/projects/yoggie/app/controllers/articles_controller.rb:
+    8    def show
+    9      @article = Article.all.find {|a| a.slug == params[:slug]}
+   10:     redirect_to blog_path if @article.nil? || (!@article.published && current_user.nil?)
+   11    end
+   12  
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/index.html.erb:
+    1  <div class="our-smoothies-banner"></div>
+    2    <div class="wrapper">
+    3:     <div class="yoggie-blog-header text-center">
+    4:       <h3>YOGGIE BLOG</h3>
+    5          <hr>
+    6          <div class="button">
+
+/Users/clarissaknox/code/projects/yoggie/app/views/shared/_footer.html.erb:
+    7  		<%= link_to "About Us", root_path(:anchor => "about-yoggies") %>
+    8  		<%= link_to "Contact Us", contact_path %>
+    9: 		<%= link_to "Blog", blog_path %>
+   10  	</div>
+   11  	<div class="footer-column footer-center">
+
+/Users/clarissaknox/code/projects/yoggie/config/routes.rb:
+   20    patch 'customers/:id/dashboard_update', to: "customers#dashboard_update", as: :dashboard_update
+   21    get 'customers/:id/update_status', to: "customers#update_status", as: :update_status
+   22:   get 'blog', to: 'articles#index'
+   23  # basket - customers/:customer_id/baskets/:basket_id
+   24  
+   ..
+   38    end
+   39  
+   40:   get 'blog/:slug', to: "articles#show", as: :article_page
+   41  
+   42    resources :smoothies
+
+/Users/clarissaknox/code/projects/yoggie/log/development.log:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/5w/5WHpLFAXHL79rxh4NHs8hTpppznAMqBzb3zpxn1i0gs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_d/_Dwl7ODt_kv5NUj_AUUO5GElSE5Ne4uCqwdlplIQzME.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/FI/FiqM_VsyHCZQ0QN6q3JB7MEAUDVVnLRBjqD31ALFXCs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Y4/Y4Bqd9GhZPH64jf_Ns_OXpX15wZdDLLkK69ZRk6Fj9I.cache:
+    <binary>
+
+25 matches across 10 files
+
+
+Searching 4696 files for "h2"
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/components/_general.scss:
+   10  	color: white;
+   11  }
+   12: h1, h2, h3, h4 {
+   13  	font-weight: lighter;
+   14  	color: $dark-grey;
+   ..
+   22  }
+   23  .login-pages {
+   24: 	h2 {
+   25  		color: $pink;
+   26  	}
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_faqs.scss:
+    4      flex-direction: column;
+    5      align-items: center;
+    6: 	h2 {
+    7  		padding-bottom: 30px;
+    8  		padding-top: 30px;
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_home.scss:
+   13  	padding-left: 50px;
+   14      padding-right: 50px;
+   15: 	h2 {
+   16  		margin-bottom: 15px;
+   17  		margin-top: 30px;
+   ..
+  168  .testimonials-section {
+  169  	padding-top: 50px;
+  170: 	h2 {
+  171  		text-align: center;
+  172  	}
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_privacyterms.scss:
+    1  .privacy-terms {
+    2  	margin-bottom: 40px;
+    3: 	h2 {
+    4  		text-align: center;
+    5  	}
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_vitals-show.scss:
+    8      min-height: 100%;
+    9      margin: 0 40px;
+   10: 	h2 {
+   11  		margin-bottom: 20;
+   12  		color: $green;
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/index.html.erb:
+    2    <div class="wrapper">
+    3      <div class="yoggie-blog-header text-center">
+    4:       <h2>YOGGIE BLOG</h2>
+    5          <hr>
+    6          <div class="button">
+
+/Users/clarissaknox/code/projects/yoggie/app/views/baskets/edit.html.erb:
+    1  <div class="choose-smoothies-wrapper">
+    2:   <h2 class="text-center">Choose Your Smoothies</h2>
+    3    <% if @message %>
+    4      <p class="text-center", style="color:#91B060;"><%= @message %></p>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/baskets/my_nutrition.erb:
+    1  <div class="customer-vitals-wrapper">
+    2    <div class="customer-vitals-box">
+    3:     <h2>My <u><%= @status %></u> Subscription</h2>
+    4      <hr>
+    5      <div class="customer-vitals-subscription">
+
+/Users/clarissaknox/code/projects/yoggie/app/views/customers/show.html.erb:
+    2  <div class="customer-vitals-wrapper">
+    3  	<div class="customer-vitals-box">
+    4: 		<h2>My Dashboard</h2>
+    5  		<h3><%= @customer.first_name %> <%= @customer.last_name %></h3>
+    6        <hr>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/confirmations/new.html.erb:
+    1: <h2>Resend confirmation instructions</h2>
+    2  
+    3  <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/passwords/edit.html.erb:
+    1: <h2>Change your password</h2>
+    2  
+    3  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/passwords/new.html.erb:
+    1  <div class="login-pages">
+    2: 	<h2>Forgot your password?</h2>
+    3  
+    4  	<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/registrations/edit.html.erb:
+    1: <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    2  
+    3  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/registrations/new.html.erb:
+    1  <div class="login-pages">
+    2:   <h2>Sign up</h2>
+    3    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    4      <%= f.error_notification %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/sessions/new.html.erb:
+    1  <div class="login-pages">
+    2: 	<h2>Log in</h2>
+    3  
+    4  	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/devise/unlocks/new.html.erb:
+    1: <h2>Resend unlock instructions</h2>
+    2  
+    3  <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/newsletter_subscribers/new.html.erb:
+    1  <div class="postcode-wrapper text-center">
+    2:   <h2>Join our mailing list!</h2>
+    3    <%= simple_form_for @newsletter do |f| %>
+    4      Would you like to join our mailing list?<br>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/contact.html.erb:
+    2  <div class="contact section-padding text-center">
+    3  	<div class="contact-section">
+    4: 		<h2>Fancy A Chat?</h2>
+    5  		<p>Drop us a line. We man phones and email from 9 to 5 weekdays.<br></br>
+    6  		Or check out our <%= link_to "FAQs.", "http://yoggie.herokuapp.com/faqs" %> We update them all the time.</p>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/faqs.html.erb:
+    1  <div class="our-smoothies-banner"></div>
+    2  <div class="faqs section-padding text-center">
+    3: 	<h2>Frequently Asked Questions</h2>
+    4  
+    5  	<!-- FIRST SECTION -->
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/home.html.erb:
+   13  	<%= image_tag "http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516705807/Asset_5_oihd9x.png" %>
+   14  	</div>
+   15: 	<h2 class="pick-plan-title">Pick your plan...</h2>
+   16  	<div class="pick-plan">
+   17  		<div class="yoggie-custom">
+   ..
+  101  </div>
+  102  <!-- DIAGRAM <div class="about-our-yoggies section-padding text-center" id="about-yoggies">
+  103: 	<h2>What is Yoggie?</h2>
+  104  	<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565252829/WhatIsYoggie_diagram_green2_llxoca.png" %>
+  105  </div> -->
+  ...
+  107  <!-- What our customers say -->
+  108  <div class="testimonials-section">
+  109: 	<h2>What Our Customers Say...</h2>
+  110  	<div class="testimonials">
+  111  		<div class="testimonial testimonial-orange">
+  ...
+  133  <div class="yoggie-benefits">
+  134  	<div class="yoggie-benefits-content">
+  135: 		<h2>Benefits of Yoggie</h2>
+  136  		<div class="benefits-row">
+  137  			<div class="benefits-icons">
+  ...
+  174  <!-- How Yoggie works -->
+  175  <div class="how-it-works-section text-center" id="how-it-works">
+  176: 		<h2>How it works</h2>
+  177  		<div class="how-it-works">
+  178  			<div class="how-it-works-icons">
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/newsletter.html.erb:
+    1  <div class="postcode-wrapper text-center">
+    2:   <h2>Join our mailing list!</h2>
+    3    <%= simple_form_for @newsletter do |f| %>
+    4      Would you like to join our mailing list?<br>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/privacy.html.erb:
+    2  <div class="privacy-terms section-padding privacy-text">
+    3  	<br>
+    4: 	<h2>Yoggie Privacy Policy</h2>
+    5  	<br>
+    6  	<h4>Description</h4>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/smoothie.html.erb:
+    4  	<div class="smoothie">
+    5  		<div class="standard-yoggie-main section-padding">
+    6: 			<h2>Peachy Mangos</h2>
+    7  			<div class="standard-yoggie-main-content">
+    8  				<%= image_tag "http://res.cloudinary.com/dqxvcdy6w/image/upload/v1517227077/Peachy_Mangos_zpkava.png" %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/smoothies.html.erb:
+    3  <!-- <div class="our-smoothies-banner"></div>
+    4  <div class="our-smoothies-intro section-padding text-center">
+    5: 	<h2>Our Yoggies</h2>
+    6  	<br>
+    7  	<p>Choose 5 smoothies from the below list, one for each working day, and we’ll take care of the rest!</p>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/terms.html.erb:
+    2  <div class="privacy-terms section-padding">
+    3  	<br>
+    4: 	<h2>Terms & Conditions</h2>
+    5  	<br>
+    6  	<h4>1. Definitions</h4>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/smoothies/index.html.erb:
+    8  <div class="our-smoothies-intro section-padding text-center">
+    9  	<br>
+   10: 	<h2>Pick Your Yoggies</h2>
+   11  	<p>Choose your <span>5</span> smoothies for the week</p>
+   12  	<br>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/smoothies/show.html.erb:
+    6          <i class="fa fa-arrow-left"> </i> <%= link_to 'Back to all Yoggies', 'javascript:history.back()' %>
+    7        </div>
+    8:       <h2><%= @smoothie.name.titleize %></h2>
+    9        <div class="standard-yoggie-main-content">
+   10          <%= cl_image_tag @smoothie.image, width: 300 %>
+
+/Users/clarissaknox/code/projects/yoggie/app/views/users/postcode_checker.html.erb:
+    1  <div class="postcode-wrapper">
+    2: 	<h2>Enter your postcode</h2>
+    3  	To see if we deliver to you!
+    4  	<div class="postcode-div">
+
+/Users/clarissaknox/code/projects/yoggie/app/views/users/postcode_result.html.erb:
+    1  <div class="postcode-wrapper text-center">
+    2: 	<h2>Sorry we don't deliver to you.</h2>
+    3  	<p>But please keep in touch and we will let you know when we do.</p><br>
+    4  	<%= simple_form_for @user do |f| %>
+
+/Users/clarissaknox/code/projects/yoggie/log/development.log:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/-I/-i4sufb_DiofjFaUmnKByVesaLWzb7d5NqJRcD5lrCg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/-J/-JutgcVDyy_n2Ml3BwlcvZ1Q5icYVW4KooFYN5hHs98.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/-m/-m6QWB0LYjnCH4FObxbud6rZDOGz5kL-ZmtkfYU9o3U.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/-s/-sumW0T-sXErli7QVudaXjCD7c3IQmTxjv8s1JawEik.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/-U/-u_xI3wAIWdg79k32ZOM0uGMTkUpOs6WunmxoHix884.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/-U/-uadPtywE0ZtKst8pzLmU94Rf0EmZjM5kdbzo3CaSHk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/-V/-v6uYxmE2e6vwcbS3Rz65RuXSNyH9SyWSg5mJXQ6iIo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/0-/0-ql9kAgSJ0ibv7MwacJ8RAmw5mDbsP5u-XnbqwjKGg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/04/048OrdhBxev6d5JbzCN_Keg-r-n5H0UkI0PNGpUPatQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/06/06LHjG1DZ6pKr8jQPIJ6TuqgPucEqrDr0sltylPy1TE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/09/09W1PJITpqw2ue4UxadH1P9KCVnJXkI0XlhSxV0be6w.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/0B/0bel6hO0U9sipyfvAgcfwbTDoRUBEkLjCJx1BKU7EGw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/0e/0Ehcun-az-fIYMZbaNalOW5XRsUiAktOAEReOAxXs18.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/0o/0OM9aENyPELfNPQa50G-E_eCK5coVu5ybJLKdMiIr4o.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/0Q/0qys2BONA7aSoLbCHEvtXRntIjNStvaFKyw8l4yZV6I.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/0S/0SGrhAEYOqkmk9Y1Ks5hx1ForjZxWtkwnzLbke5U62w.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/0U/0UNg6gWDttzrJD-fyDr1QKqnwxb1RZor6v9cXzd5-YE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/0x/0XaNRsfwLJHueHnCAt1b6MMzv9UUEXPxxw0Kpwc57cQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/0x/0xY3Sc0vymY75TOj0-TOZokKtvsSc87bUxTJ7kLerWk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/19/19Heaxpv0NU0REs1Sk0SgFuMgt3-HHTmxtKhhpqy6ik.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/1B/1blcju9aoygqXLUvK4jxXlOZSrGpfoCJfvbMXeyQqZM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/1B/1buYqYYpWMus5aC8R7PsEHjcboa2tFU7kuZLC8-Lgdg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/1C/1cUeJc7Sh9M-enqbfFE2tc2k7ZddM3h3bJmiRxXwNjg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/1e/1Eji50x7nbozyrYeXBMCjgRQA-wydMHLfL-qiJl6m8g.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/1e/1Er7dkutrJUarIaXFeySwY2ktvleflSAh9ekidA7tRs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/1i/1ih4PEYCx3yADNwGa4tdhpv29Wvh8jFirmlMCNTOCHA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/1M/1MhpmeNkEENPTod9nVC7F7mb_Vy6i3ycUMzyKinH7g8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/1S/1sAU-dGZ1cR_r-rYd2dpHG2KrQHod2BnOD3zGnlqL90.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/1V/1VVTZ0u1DAPk5urWuCn6p4T7mWfKUARF7Iwze8FBu8g.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/1y/1YXZdCo3-n192V96zfyfeTQAs5Bt6nJe2ZzxAJ8Q8xQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/26/26Lr96zmKRtbpEMHojUIb8rIp4UDZyFSQSDymfcfnfg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/29/29dboA-Nj6oDMCTmatTlRsmpIOZUDMFlnSzsHTqSy28.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/2f/2FHLqMvRTJc6bEFyzT_8Q0GTavvNqKWthfUTGqBomhk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/2G/2GTnjnff2SU9JkZN7XeAJlAAddGjvQNZSDhLgofCYss.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/2l/2L2c_xcr5Cm28Uc0Ld6xxtjHDljLO07N0g66Yc2qL78.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/2O/2Ow_eLrooH6itxpL5vXyEiVmxs9VIurBLSy23Nccb1E.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/2s/2sVgXs62aCBapr0seMxfsKgCNdANJ9meqYQF457_mCc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/3c/3c5e7yZt84HwgLRZcb-dthpkoOCMw1pVX3wVtA16NxI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/3e/3e7QEBQXZZsUHXnQcmIEmkpR1g4R4ipVAwouihECjTM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/3e/3evI5MdWYFsAoea2nNCnquSr4joLwB4wIdKWX5_up4k.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/3H/3HQLFhrc2GMut50Hlxe2aVuPPGhn3y0dV2EFZ7jN4dg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/3Q/3q7MYjkfYi6DVLKGwLhQhLJJqrym7g-k-IZXRMBqRxc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/3Q/3QU7GxaEdg-0a2OFSeaMwWZ8qKtu33LChPYdisSoNco.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/3T/3Tkgo3KEJxSVqAHNYwmlQfkryGGcGQWOVgIGwP8NtZw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/3Y/3YVCj_vMSrAk1H7E2hBhPGVnqfV4VNHnBdwo-pADwMM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/4-/4-2me7Mtfl1tZtVqV71P6BMSata22IV8vhQ-RqaMUFM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/4-/4-FYVAd51Ky2nDP1M2FbA_oylBZwPTbYfMBrMcXELMU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/4c/4C5p0FKgVxYKqluS3L4bpmuaW0dPoZ9fIN_0uUfhjl0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/4F/4fybyhHULzpjiod9e0rDtdQDFKFdKeiUszdOX5KPz2M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/4H/4HXOLxPgp1iFz4DQDEQmilVweBBDjRlpJA4A7NJWDMw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/4J/4J-3sekiQMovjvrLuyvWwKmXE5LBRy6e9oBQvyajFrQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/4k/4KMTOwJRF5VR-D779sz9omGlvq1_vWsd-oHSzMPdBrg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/4s/4sROlM2oLHevK_XjVKJIE1GZCF_z7phWcfa6Z4xaPZY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/4u/4u4l3kFkjrIBLOdjWW-BZACn0S6KvS2hRN54hvmlSEc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/4W/4weeCQdUzg_azNKbKpumtzoD387zsN4iIjBs7ide4Hw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/4x/4XkQvlJYiJnzoBlpkp6D8eparj0RtYy-sgf4t4pueoE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/56/56xHguJOvZt0fot26w2fXvOvWOCAWsO1P0RIFvvG8AU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/5e/5EHQKwSrP4UjaQ4ol8wc5cMtMipuJ2t6DVnaNcwf2y4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/5i/5IC9Y7RAVStldXKdlQE18rUY9sCxbuglEpp3dWs0IEY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/5i/5iwTCY7mzvUws2PDDJlQ1BhZuN_JoQbpNU4jyWLCSyE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/5m/5mLEgZVpBt_AUigw-t-flhijcUcbBS59NQQ-NvuePWw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/5n/5NIohFmtIr9PyzIIqxGHBa-Xih-mtC1d5o7IzZvyUvY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/5O/5oTBoBHqaP74_dpbaTLvoG5MSHNSmBZexqkGqQxWkOc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/5R/5raBMSyBWYspZAOKq6ypjOgWG0jinKwZD4LyeYO-E9U.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/5U/5UcOjefrNFr-lGGochWeaucNNAhLHuB6PxeE15p274c.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/5w/5WaSG4yqV4A3i1KGmvDsZzTNLD9fcKhdMNWTT9oejMY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/5x/5xVC_0OJc5prm72WG-QqrsNzQ7C4MpIKM5l9DkfDOWY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/60/60menZZXZ89XcXvysB0z8i9nP9PWmWdLGKJenb6WB7A.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/64/64Bcjte2hwNPZiPLskkoogiZ1sO_CtlTOSjiKfWrIyg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/69/69hKWmg9KQhFVw9WtxSIOz12Zb6lJYB6WY0Yi-Wlmlo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/6b/6bU9DLHxtBRrNFMayLDwdMmaf13eHPtqNcjMgMq8InU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/6i/6i6Td7aigU62cEZGI1LF1CKUqg9KVmjqyqc9JFR7kLA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/6L/6LHA051rDeeGxU6VcFswP0pv-GIwHJ5Ir1x0kNk92Ps.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/6P/6PYmUl0SIt1Uz4T0ZCXl5kCC3QOpePh129ad6LxGEZY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/6P/6pynmrG1cTYGmtrgw4pYlMy4NQEszDHtTLX5CYpnfe0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/6q/6qvejshaCP9HVe1l8B9Pw68WcCsgL_auRP-oUFyDI_M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/6s/6S0VmAm7TwWauRD5XjWorPalc5HV6cSklX7T1rdHXp0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/6X/6xP8SpWYrJOiCy0kwXhVArfj6Ke1Ka7HePJEJ_0RIa0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/6Y/6yRxwmbJrl6G7tEQv9i2fmxZDx3LkDRyRwYsf6LGFD8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/77/77pYIfmZ0sfRJtNWWJeK--y6kpQ_sX47m__t6SMJ7aU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/79/79Rj8IhsHoLfkREGCDPBpExFkStJplT2kDcr5_GHHLg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7A/7a9BmglZxTlCiOylskFCduyUD2TN6Frm7mNiJ8tHcOg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7f/7F-7URQ1oemrj5jweGvUmYROih6raNPMYoX78RmEPzc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7f/7f75qPYsAUZqi-uMDcwPHy5QLTAZ8f8N4wRMM9hFRmA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7f/7fBkO1YoIVQx_9CtplHPcUcySPTLWyVe9HZuqvXAvbc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7f/7fKSojok1hao-CcoiI9D2fHPwdEWJYaPM7EYQaaLzbo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7h/7hbrpCjiBtzHWEkn-mprHguJ6UENLfA3O09SF-pK1NU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7i/7IuRRy1_6DKOLjME9ez99j4f1uwTz1lYypkeT_J9LLw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7J/7JRfqGvChYQxgAbje0nn9xUChgSNcXFs0b7pRaYltK0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7k/7kAMVzeWlB5M3g9_JrcrhU6ii9E5woR6bsetBbRzrn0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7O/7oI8Ip6gdkLlJiTsKUO76DbEKvdH1ZuCyYj5Zwm9cAM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7w/7WLqvUDQ0NPADcvlOH5BylF_7oYdd9ZvpUNlN6tdFUc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7x/7x_idTC8Z2TNtDZn6vbKJ-nA41_O29DTzBHp7OAnfY8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/7Y/7y4HDrpYNg1fCrSZ7geBsFvO12doiEw6LUql6OEoTdY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/8f/8F3xSO7KDWLEv-1SImFVkAWgHykc21v_WEzYy42Zrzg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/8J/8JtQLpn0oI-qls2VvyShcj_wRqUq28TCGGAW74DtYFg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/8n/8nIrktxM7dgnPypbHhlGGWFpvoAtR-fWE27F7_VShmo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/8S/8sE5pjjKndt9DAYC1rm6KvZxiqFdsimgbrVZuEBsaDE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/8S/8Su6eoBc3eYFyyyAs6hqtzoq1BUfD1HACdUDncv4ycY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/8T/8tDOnKghmShXThVpaBrzieWxKbKXUnbFpVMwKpdZk8c.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/8T/8ttmVLw_3qfjmS552m0RmYlZI_NVsFCfE6Ko8xTqCiI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/8w/8WJE0sT_qTVfO-gdFmgfHW740ifOO-TqowWyTAPKhug.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/8X/8XfGnZsmA56bzFnXl3_KhIzuTZ3hwTMYU4Rv93f_OBI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/93/93UyRHZR6QDUW4brCQxSd0buU2DgTQwhUqtrY0ydTx8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/96/96HmLpzubRK0qQACxQhrDem2QbJM0kJqJf91cDzkEq8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/99/99fUoziDZbwRe_8YGo0d3QNpUSrLS5csWfAzk-euz8A.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/9a/9aMpMPmOGueU6REkJGeCTZWXmw6BbduypHrDWoDM1rQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/9J/9j99UFskXmAjCO_oH_UwymZP_SxSjBfzN__4chPI5x0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/9L/9LmN-JaWA1OelYVs61niKnFwJn5SrBw3xfoE2cG2ITs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/9r/9rpr-iea9JKOu_UcsjyYyQDuT62rQymdy5FuhEwdDWA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/9S/9sCYpm8pHvdRdvNqKnukhvM6lURX0ksarq3r92RHzwo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/9v/9vqF-GZmR-uvLZbrI6ZyGw-bdVRuucuSFz-mMHWx2-Q.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_-/_-Ue3t2U7C6_aLGIYBWI5s4nDbd3km4rVs1qHc3ldDE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_3/_3_KLC_iQNw019CTG3xhL-isZxIxOm1YLChxy80DLow.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_5/_5EggncR-rN7Q1e4HTfYRrFHdAO8dY8SJ5ZREpziH_A.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_9/_9BLZi89h9bNMNRBl5DGg_Fksp0a3AURzU-YrnzsQN0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/__/__IgPQDwhEI_-2itJeCiO5OgBlTZ0_BYwlY8rVJWQfA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_h/_h8xuxZPmpDDUU-1bhnI-o2L1z-I36w2MTHa3FVq7l8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_h/_hlDDnvm1bFsWBXZXsKnl0qUs01IYREQpThxIDosEQI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_I/_I6PuiM7DD0AROYRCn5_98SWRs1rwWz8MtJ-z8_vy8w.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_I/_IC_hR9nboFE91DvPvALjyN3a4-GBYm31WEnGljvZrQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_M/_MpQuvaValMIa7tzMrST-g_XNk9cj6XFOqieX34MuFs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_P/_pzgYwLE79L86Wm8KHEILq0o_5bQNk4-xifibnTdLEY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_r/_rpDTHzBtdEkqWvLdA5PsAqEvv6BeyujxIC2YQSCpvg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_w/_wbHHp_1voTASCBEb-6LAAW4pS25SwYFeQWwDOMNb-I.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_w/_wvmrWiYFaSxfdzvQOtUMB7acEFesU1ZW5ZI6Pau11o.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_X/_xI2vLs-NOvf80xZKWes2pRJMxVrO5vvXm1f0kBkWCk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/_Z/_z6nCIFAZE3oDQE4Q-xSmwyeoY7DUjBHoz-dFHdCIWw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/A3/A3Jf67XYvzj5_ztfChORJGtwDwHA1QBqg2IMgK-MoqY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/A6/A6ciD1Ac06GoLpFV7CjE5RrEaM2wq5RpWZuXaz88vfs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/A6/A6yo_pxIlB65ClgHxqQo-oXDJeopZfuWrQLi26tb5R0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/A7/a7WLeE52Ke5Dwm2QwOEbeZ62Gc1SpWw9EV010cjpx34.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/A8/A8IqdH33cSxrq6c6S2X6f0WQ5hAJsDHHsuNMExvEZZ8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/a9/A9De_oNUgpDRsraf_L9FcKN0i7pg6rak01HuRz_TQGQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/a9/a9f0GeVeFuN5UXvudjG-Upj4kvSsf56-_StAj9pKL4M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/a_/A_gUcvQhAIoxGo0yj1lxd1c25a8hp1psr9VuBofAcEU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/aa/aaPuQG6YLAiItJ2s8lljMzn6u_FKizCW_ofkTW_mo7o.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/aC/aCO6hw4MJpbGVeWcWBuRiWI8j0xJoTkyPoqC_XFOYyQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ad/adOGpB4jBCWgGRaLK-x1ObJFZZE6UnHyvOrriUnruCw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ad/ADzkIJsJe2YZiLcWbTeFCU47CVGHzRO4Neg76oarXZo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ae/Aeygx_7tN72YFC9C0uGTOsFkGN86_XTxjuF1Z83DW_s.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/aF/aFeMx9t1HSBTPquoMq7Ec7AhXb-OnaAW_EETtkhieMQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/aI/AiPz6xCgSQ-l1XU8kpCgzJ6z9Yxxcxi5KAU34sdrw5Q.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/aI/aIX0hgRM3Uf1fKngw0XrDLRrFpuQmfuDgSqSidB-SVg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/aI/AIz5k3fR5uGbSHITNRCoD9tTiGHShWH7iEbUYa4W8Cg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/aJ/Aj-OWZt6OI1HSdKX8oZVt1paeoWpaLOhuAzarR0oKjM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/aL/aLhwXHCK_2SEyR00QZXCSVlfSde1i_h74ttl36cI-3U.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/aL/aLpUlsS2rg5_ctDFM8PDxFOA_oWYsLT7syNO0k3HnEQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/AM/aM1Th6oJux07dePf3yFGFPBfcKlIgloYxV6JFCSBqK0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/AP/Ap13FVXGEGCNTC-NEEKGY0KdGp5x7b9oObFhBVaRi3A.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/AP/aP6nWePFckaiohdnWjBW4-cSq4OnBsXbExH4b2yxuJk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/AP/aPrCwNlaTtbLV7CSKYa1ILLzT-h_u3mKkXFDm3eLsR0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/aq/AQVoWvR3eTXiZ5kZPUt5mYoTf1uCbBpd2xdwowxK61M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/aq/aqzFQnJHMYRA817ZxCPO6_cmDyqNakbOfN6Gmw6DwoE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/av/AVMmM2iQehEV2MWDjiW6Typok5H1ti9uZxwqZWPy_dk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Aw/awdRI-MSBvhNqMrH6nFyp1OGQx1sfQQeDtM2CYXuTZU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Aw/aWoWQApcKBH37Z31aAyx4doSM-IfQY6pXKVEvBPvBXI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/aY/AyXp1zQ-sbVigUu1G38vTmTPCbfTb__zPzPtkf2AE3s.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/az/AZGzxSZnjPC4PfyRv1MH11xNVRYKsmTkrvvTP6qYbpU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/az/AZh7HAEG642pY9qaLGJWLrcZoa9fBLFNznq7b1fSsJ8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/az/azNAjowRIXuIBFdop4-D4syFLQsL0XvAXcleLlnNAos.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/az/aZugy7YGlB1cvHYRrCVtBy83_bMwt3N63r12hOxFwJA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/b-/B-cNWEoqWE--m_vQN209jSeOs4MQZ61AW4vs-UhQHew.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/B0/B0dDHvT15bnjeq41KBdZ-eeGtEel8nG_A7mSmqpawYc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/B3/B38wbEVAr-Zp8hAuxMp6IrNhhoFgzAbu0opkNLKLUH8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Bb/BBtRgZV78TvNRPTWr-h4nNJ-UK4eeXHzdTI0u6s3GxM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/be/BeOINu2kz7UghjMll9j_AbB8WBsXA90ei8uY6nAFb0M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/be/BeWVj9ew6mInJi4sWUW9YoPj4KVY__QeH2qGOB3LbRY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/bg/BgekKiB95LDKCxNghV4nSo3j3aPBlC_AEUNl0eBh5ys.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Bh/BH4F6Zi3O6NExLK7ELmLfym2zUNmz_pt7Q-tp1Ej2Xo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Bh/bhgTYHlcmR1jkH3e8c1plPmjd1aBp6EINlmZKabTvPI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/BJ/bj0JQHimzrkTQ8rnXMUGK3mJvIJi2xiBkmOFrTwllWw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/BK/BkOXUTsHPQsjq8MDp5gTgamiMnfGYOknuGDBBXU-3HE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Bn/bN23dTr1mwJclKwQEPznl9vvwa4IucHBVFQ7gpKEopU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Bn/BNOyIs0BhZMJ9vZR_cRVO90NJxmazyTbDlnC6qPn_jg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/bO/Boa_5iUeyVaFksJ0ne4OYOuc9ZyGmAmj3WaIhws0ers.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/bO/boG5pj-X-3SA30f-T-G8Deb9Jxiqq9_ZoEkj-AAorUY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/BR/bR2D_agnJm4moWSl3CTUw3K4rPThfq5qmHkKvkMtP04.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/BR/bRSRCXLci5R2-GwO9IcDE-Hj20pQXQPb5IOb8hoFTk0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/BR/BrUL1rhNaMKMfi3POTA3iWkBPf4W58LNZvPFpjLQeV0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/bs/BsKVP52hx54Zp-H2g7tnXSq5xx_FOEOzKkCz4CIlt_U.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/bT/bT_AK7fSEXNySWV1sBYxs8xnGBqWjFV-11dXEqfsMpU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/bT/BtVDCJm4FCI-sMBc1K7fJTp9KipVx_Wec6ZnS8lPVtc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/bV/BvpHpe8UkWMJp21rd8j540aApHcKuFsjHZeKMNQi3O4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/BW/bwE6qaqVh1PIj1XIWO13FNEm7y9U0M8sU9_WNQnLdPA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/BW/BWHxPZEK_pAUi_IEanlZPdkqPhi8csfEoHPhKMnE0Wg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/c-/C-eCWHsRgU5UIHB4SwQPxjKrKKpEEGGucfTYFRrQYw8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/c1/C195c5oJmkLs8PGwoqeFEmykxhXlDccmF2t4OA9X2GU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/c3/c3gIibcacQlIgdQlfnv96XRFCQm2jmX-mDmyNLa2HUY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/C5/C57OkNigbZNZO5nXOh4RKZ5Mo-8gQsHhAcpfcvikELY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/c7/c73MBap7JQPmpH8zvvvXEkMxjjbKgBISj9Fd3Rsj6SQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/C8/C8FcQEpRM9eBPLpyYoFuP3PebNhkzQPx9KqHCpNgMu4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/C9/c9jQ5Nr1NYIwd7tAzAdg6K9m8OqDE8DMaL8Y0RDvbHo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/C9/C9jwp8YzSd7mi6KHKBAgNYcUepkdcfirVt_rkSUivds.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/C9/C9T8KzJS2JD4_AHFnEmBXzY3umJ4j5j1yqmivUwhIwI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ca/CABZGQJI5J8t4bBujWBfn1zOdknda2bhlfezmIEIUKo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/cC/CCPEV4_4C4bSPqIPIGo6gmHJtpV5RIg3jXHizpQY3qw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/CF/cf0hbTb2-9RICXFaPacxkUr57NxG3Yu1YZJfomZy1mc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/CF/cfkl9RFYymm_z5GbOuRMgC7kb4cx0S9mUluQdfKZouQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ch/CHuDlNtlrPpLgB69PTinBuNrlV_mI2FhEex3XgJ0gFg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/CI/cIDgPBKrPi5t8Jg4u4bI534pDPj0ghYQeouWvCv0ugA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/CL/ClruI5iZAI3c9D41E2jNMMRE5ZE5y-YQpkUxFO6cFXE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/cp/cPOm8jj4HZ5QvKXtCCHGfB3253Av4v2u3nVyuErKzi0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/cQ/CQ96aBE0VeP7KrKjWAAjh-ddXL9A8av7FLPgbcRYvkA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/cQ/CQPfs5gZiIUqG_5QykOLPFMIHdxkCuoY9Ph3mJ45BxA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/cs/cSGroFCPfkmyqLO95GH_Kc7PNAI4-z9wx5yWJY1E-Q0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/cs/csK_UM_WeF5uwmNPKhJHw7I-OGVNeWjjc1orTqaR5RE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Cu/cuKNJFIwMzHM4GUP_Z0ZaaoA5xcpB57kfv_LoycKRUI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Cv/CV4MfYcPj8f6dLlWnAwIQtwZlyDHBC0XnhiAM9Lu8Vc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/CW/cwVEzEtKrimgwGgz0xxNA1ERAe3TJeogKxikbWYOB_c.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Cx/cx39-BfY3zFbimiQlXZ05_k1D25Ax6s49ah9eVKjU8Q.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Cy/CY-TVe9XDRN0MYCFlO5xbgswK-ZqlcULqCm6K0PFXk8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Cy/cYsEHJP-Up8gd_DXRDQtjHYtv7nMXcbyJv2percLMOU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/D3/d3uYHqXYWvUxU7gPHuw8xc171j6j2xRS5kZ7MiNYbfU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/D_/d_nYl2nO7eUzi5aFNnCGTbj8RVzN5p-Rhb5oMLf5RRo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Db/DB78O0zSh4-CcqxTCGQXVdvbqdJRsPC_XzvuHKB5hW4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dD/dd700gPsJH7HzD7fE1mGpDi8y8y6TurkYDOAqFUWhdc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/DF/DfaxHnuN31qSpSQtpeDZZUTtNAgl3OzzjQjdATXw0QY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/DF/dfQB7PR3ZniayD4z6NY0fqre7xBZXP4pMCukfYM75r4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Dh/Dhg7o15thrMpXhNyDmxKlcSqkO4uVX7R0WwVrO3cAGo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Dh/DHnARP4U8fTh18-5d3D_GVAThARrE9I5d98SiznoJCw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/di/dIQOi7ebeKdyCzv_blaqxZq2IQy0YppsE2zVSQ0AjGs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dj/dJ4lwJrWqcmDARpfM5IWuhtovri6RqXv4GJYFl-nuvU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dk/dKFX_8FPOcHNElPbpl2e36I4herTEU377P1TF9SvKeg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dk/dkM1Ct6No5rip3uCxhyHBxt3P0arkAdHzCN3yjmukX0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Dl/dL0dOfnHS_HecngH6feSMdNAwmADyyToI6inPng-Zww.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Dl/DlEf3Pmu57hFtqyI_xfxvxG8bfS5ebIRAjaMkz1WSGA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dp/DPvmFzxc6aHGUVqcH7NaUJFhpJ3Ao86Qnd3sSudp3Wc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dp/dpWe3v0ndOLr1XxRB36m-oNsnR5Mw5Z43ZEBqnwPCP0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dQ/dq1WwNidO-JUReNStheDtegGzEnzmCJmwYDD3lDc5W4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ds/Dsb8mW7RtK9lNK8iltFJL_8oqisKoRQ4vgX9HuIOlWY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dT/dThWrQZZUgw4Z8wKqDUb9P25ku8p0irSFw0zAgZrvo8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dT/dTwgotBKNQAulDVDoV5cPzNAs9qb4fo__per6Wrc-So.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dU/DUcwmFOSgjq7SiQZF3EP-1EaGFhHk9XxeHegjWYuJ1E.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/DV/dVEz_oEDC7_5nTICbD3HGGVLJ5_pk2aqfNfbTPZTIyc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dW/DwD-R0CdTr8c9W9W7zYPZFID4Lk69sdupiVxLNLuqEQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dW/dWIUiVu9ny0XhXZA9D-X19Krwa6Ff9Xp722MFUunNKo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dX/dXDJaqnD9ie7T6StWoH5dyfTe6IopmHkh02jSDxCJx4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dX/DxKJ1oQMxIu-kr0io_t6ndTIsKQvpgacrUOI1UcGiEg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dX/DXNVZCshld96RHBF-lndXY72c-Gg_UherhrYbLAnen0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/DY/dyU_dHg7K5_5sHEaBoCXxttGPn2lYZ_Nt1cAd6IEDWs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dZ/dzc81C6RY26yjU-S3tocWC0_GQkGVQKUkrP0rR6a_ns.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dZ/dZVOQrK8bmtbvUFgUrSBIkFZCDBK1Q-0_rSVA-z5oO0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dZ/dZwDX_XuhpWWqL4orRWXNq7GphWM6sfGcBpziaYsHx4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/dZ/dzX1Xj5l6gzhqCOF6oKG478rxhU6ZcRwnTuS3PiSVzI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/e7/e7fN_IvABZxxTL3X_wRJQfA4omV923VGQpRdr-t-NI4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/e_/E_DA2lSlkI6KHGFFxt1ZYw8SuBk_xkSHIyvJlT03QDY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/EA/EaeeAfmD3-cfNyj1e1t2NDuIutuv3w8n7HzRGi5U0x4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/EB/eBPA0mpovAwVPg86hlMlJNgkOQpAwwFJKmpapgw5D-k.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/EB/EBrqDZu3OS97_SJhfOJTJI6RpVckZo0TifLnXeZaAls.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/eC/ecv7lM-YU3H3TQ10gcuRbWxaB9a6R_PzYXcZDR3RxA0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ee/eE9_n7BJ0D_h9Veks0hg-Ik3-EsGnpL_rTEL0LmUtHw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ee/eeKpkwu6EpBq7LY27V54VzQY4Av6hkAnRof0N2LHbBY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ee/EEX2vAoF1Za4KgfQR_jZJt6IGNJIO-2wypQvLfqLqcY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ef/EFPJHew-Y4k6GaGjG-NyygqBPGXNhJLyWdGMbqOTjBU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ef/efryVU0jY9kkwgJqGR0GUZxnaasDosmjqx0rqJlMlJM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/eg/EG6SDkoRUehWpp9zBg6Li1YO4iJedVNK5pR_PpHAdsY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/eg/egN7RCrTUrVQU2pIDZtBAfM_dLIyDbAZ8a4MdIlwXa4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/EH/eHiaQvJeoT8GR6icX6Q3p-9ZZsIHaBCUFDs1KG8OGQ4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/eJ/eJx5vsII37mhJAiCQMFpafU55oW6ZpYesfQO4imB8nA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ek/ekpuKIZOcrYi5eIa8VDih7jFCCUKqG0u6iY0P37YYdk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/er/ER2GfBcD8I9TZj8CDSAfIFced3E6d_ZjR5_5WeriJnE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/er/erhYVNKkCX7GWwAPY3x4hkkaBjcaXsNZRosG8QUcOjc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ES/esL-7U-dzcg0xPNfslSnifirfAVRT4dHRvjaZXNdHmc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ET/etKWMZb7cJ0BxwOdGNC1yilTYdb7RAV2l8WXpf8S1fs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ET/EtqKgZgHA3wL_hVUanTw9z-vqphubFzCtY6kq-Bh3ro.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/eU/eUD9gE9n40Xr2I9PjheF5-Q2IONuS3VLH6MpY-n7VIY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ev/evJcE2WoB-b9-OkpzB1KMMjlykbwDkXl01UPwTYQqxo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ev/eVmHxxbV9m8Itfu5J5OAki6lPbraOf3scYlbuo8yHGo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ew/EWwtKNfcHqhyicivJbZdgdyaWGQXpgGEHmeq4VtuAHs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ez/ezHNyZB50CNpnm2GPtcpcRW4aGeLQj96S2j-wtg9lgk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/F5/f5j5Il8yCEv0568cmwoXMytGzZlt7_TEKiNZOdao7Z0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/f6/F6ODrQ2SsM-gsnATzdpcWN7WYIzuv0I8gfboajXh09I.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/F8/F8UYzD23eeInHsgL-Ixq76xC2EKUayYHwD1VrYoHke0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/F_/F_GJ_QPpN80cJuXi2LIUqiusiMi313MQbSe2h8uo5Z8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/FA/fASpJJbT8O02va6qmRCvBhpLyjKXP-JsQSFl1eW5pTw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Fb/FbD3lQTSSRnJuNE4xeDzN7Alm92_DRcRY-paoWOkmlQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/FC/fCOPFR6Kmf6_MII7muFZf1vv4gBb2nEIYHgw21cy1_I.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/fd/fdlj23OtoTnlPPcCvHw7Wz44tKlwKqnOLVzL_7QblW8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/FF/fFjjh0irOHkaaP0KC4DiHKffj5spw2E2BmiOMUWdxXo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/FI/fIxvdu0_RfgqchVbd2FdRVY2UnIDKaB2Cpio1Bfu0KM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/fj/FjGNimUfnQD-dIRxdYq3i3Kt27_0mS2FNHoKyx3bbuQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/fM/FmKRXEH8dAX1suT5lI1pkOvL7gfnNSCMct7rxAg3sOs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/fM/fMW4y5YEfzG55bAbiY9lcAJ_SkbW4p7aPoAudUnnisw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Fn/fNvgjskrwzksKX7D9GvkEC7nBzH04QV6sQjzX9odg-w.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Fp/fpUzupwOgCnqCIkDbfbvcbxXhi929Ky8CBo5tgKU3wE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/fr/frftfKBTYtE6Nk5l7tLkBkKGJkcuaWkrwJP2lXOmmbQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/fT/FTRtRG9LUheV8BdilmMhMCuBrHqd-YCtqRBdCXl6nVI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Fw/FwoZIutfV02B3spH3O-acu1GBbUxMhFAyd02j-Mwt3c.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/G3/g3R7oXJz44dULoLypZSXOh3NL_1AD6ipikO944tRAMM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/g5/G5CpKxQycjYZffrYWUi9cf-KH_njoS8MkAFx_q1BLek.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/g6/G60Mp0fJhT-FstcMNNz38QOnBXEAUv-RFNj5N1Ik9As.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/g6/G6P43v8vCYUn4DvcHAvqShBHmC-kUNy6fhrjV5-qX-s.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/g7/g75qbKhrkle_VOvK7oIl7TwFvDzJ23ySG5EeqKB2YtY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ga/ganqDSEMe6eya_qcsvyfohMjfYyk2jfFzsTHNhyDRao.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/gb/gb-zFeKWk3J3miFHkgvXEup20yYpDCGNdbLNhEliBP4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/GC/gCT6CrVDr2v9aPJO_VthDkdQbQoH_OuwrUuJ11oPc-Y.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ge/gEjSWqk9z1nsvdWu-puw3o_ZcNJFvo5IPpyUFs8IYRs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ge/GEynqwmps6sd_DaTlAWDYYHnlVwUMjuRv61Eb3Df3Ww.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/gF/GfIdtaLC-E4OhxyQBJw7Kgxzyxt4Wz28FXOkjVwXQW4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/gg/GgFIKN4jmXi1FXxs8uJW1-xOGzi9IZ83Pncjd5yqjyY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/gn/GnPoSlaC6JSZIvMhYtmejOrt-RWY0H1apv8Z52SJvjw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/gn/GNSZMuftvp3LcZZW9xrC2jVnNOm5G2UyODR3oPSYHKw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/go/goKC9KzZEUN6brGHH0IAhGpXDYjILB0pMNDdFsfHX0g.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/go/gOQAWDVTW2C-D2kij-FpRlZvLRHFZNnfDBg7dWv0KfQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/gq/GQ0EJA4WlYHeGJxAHnJzO9HNbbc8lgYXFsF80G7IOqA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/gq/GQ1aaDeaGZPmtgsP2sGxtqd5GiX4Ct5L_J_IhgYVsMA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/GR/GRWexpoCTDYCmDXgQpzxtg5ayBcczN9k5A-pLZmtcaY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Gs/gSycaQYRrN6yW4dSyyvOXcd-IsL1eQSz1sL7J7A3Wxw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Gt/GT4c-QxVLn7yHBOQIhu2J1OJwh8yQbjmkUZ0L0SFS1k.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Gt/gTBwJs1FBt5debMQbu5x3O_FY4yFxPziyU1jKwvVis0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/gW/gw1ED9Z_WfOM6R1H54cvOY81gPBv9xV30w_HyAuuVrc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/gW/gwAWk-oAAz8cFqZExVEwx1x3TKN29vOQFFXkfnjf6Wo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/gY/GYX5AdkjElQIGpGATMOMmRrmEA2zM_PPrDDdu9zKhnc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/GZ/GZIlwcDh2-HM6cE-f5Yx0LgH0fKQqIuLRMTxYHwrdts.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/GZ/GZiSkKzpki9_HqnV7HZc9jBMKrVI4eiolsiczuBavMo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/H5/H5eqrGo106iBBMpmXgXib09KkwZPBURwraenmbewyzw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/h_/H_0f-y8YZcYGLoGP4AT2MNC5hqXMOQH0-hjGh8e3UYY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/hb/HBFf1NEPOO-sXPg21MLkOWt3DsHUJr1dTZ_uCkfPtFg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/HD/hDEYwWcseaMNi2ut3GVeL4TekzpARIhGWsWb8htE1to.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/HD/HdObgdmkWm9eF0mm-02UcfOhlBfoKGEPRXjzFtUoqu0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/hE/he-5zoM7MDjMSJJsqsj5DvRIc2-rrJqcReX-R4EXOg0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/hE/HEgYL1zAzsZbIJmnsS2z_r_DVTfWMyLuU4jouEmVoII.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/hf/hf1qwbpjkM-MJVqekrDJTwAoHpxW2dM6s5EFFXjDOFg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/hg/Hgv5KpjVT_AJ25N2LrWXqmKlJqjzhurKd6IUmhgmWRY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/HH/hhvAo2TiMmmaKye3gyUxrPsk_RfzM34D8wIzphIQtpk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/hK/hKlDJzGb4yFY2djtjGOzvtDL2j2IzCJ3MocFOw7Boe0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/HM/hmkDH56-hrWFhzNCaszxzsY3oi5eptZHHzMtfHr9Wvg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/hn/hNISwTTAs_zvyiYUgYWbAnIghMfKI-J_QNCQDIw95Zo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/HO/HOwJgPVrhc_Av2IUa3iWfCHiwKWDd-ykzy1Fg8OrTe4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/HO/HOy1Hmxd-NSjAuS17rnJ9k2-CL6kXXnyNeLAsR_awHM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/hq/hqFFfHeFYcmgm38stjvYRjWh5H2UFZFyyC0BLPNA4yQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/hq/hqKcZRU48tlMCA5syFb-Sx0e54rUMl7ZJ_VS3psPp_s.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ht/htoia_S2tHk_9SkByPKdleCjQLtafi_xnGTPYeFQnJQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Hu/hUWOEqK6NLJWTuaiiAEt4QwQcXRhaxYnYMwRRgCubFY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/hz/hzAa0HpIMjIjXVlLiWHR17FK5QB9HHaqgmC4cekkW4k.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/hz/HzsOY2bcriDa1wGi0EHN-1lAVbtqeg1in1CpKM1suHs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/hz/hzsum9qlEYiW7vVDR-0uKe5dcYZoOVtSzMHobvbe9d8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/I3/i3mWtzI6mju86kZD3eRUzXRQEeWEBq69yV05BxR42z0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/i8/i8dI8yoqrBc6RoAiYjkaNVYJA1e1xUVDh8YEbv_c_Ic.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/iA/IAvlQ8G-SR7FtdlS3KHCHTTyBqmFiL2BCb4dn2tCgY8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/IB/iBPfGNVN_3YaCExNWnJJDuXMTEuYrfs942xWLBMJ7O8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/IC/IcCjn8ramvwDYZU0wBy1YNf-1P9a6R8wRPTJFVN9Zp8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/IC/iCUkxMXxgdHFDaOAhPAGt0-71XELxtvQUl53PzkN6q4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/if/IFRPmBPoIwLNf7WbSC99dEt8reln-6B37dS9qA-G874.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/IH/IH_BOQguOHgG_gGv-d6vPWyMe2XFYS57FzsOnswEm_w.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/IH/IHD9kkBu0rjB_mjEeTKB9ASr24G-6GBvgmaP9l95lLc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ii/ii3bTv4MCy_N5F1yzdBc-g3q1iJ44mv4ALDNwdrRm7s.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Il/IlM2hGVPCPJxca2FL_lBbKBOLh_QDRa8U6bVPbocvmc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/iP/IPltkzEdmZ1PVvh74BC2GL6vdtwu9-5MAt2zCBva2VU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/iP/ipo3pSSwLad2PR3w_dXvw_gAWKY5QjGrI54NY79VDp8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/iQ/IQSy130VoNfNsC6Mprttzl7Qrx-_4Eee6w0eHQLJ9HA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ir/IrMEWysz7FK73ESHncqWJe5lxYx9WOS2CAK1FrCUk6g.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Iv/Ivkjyty9VZz3_bxr97-1tjR0Wcs7nLxvQNJiGkLE3y8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Iv/IvSIEqWv9hrAElI0YRZ6Sy3LDUcdcbDEVAtCIJ2oXX0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/iw/iw2tFRDvdKAWDNgaRZYu4cL1SeOiC4AAk0IgOmNfkeA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/iz/iZ0kc0alT9jbt8pxQxxk3spMlQ5HxkYMiYL8Hjk4nns.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/iz/izKAxGX9XjnuvQsxgJRUNO6-80CkW0kx8b8sxsS4y4Q.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/j4/J4e2Pbu0rslCc7ya8Qhkv1RyAoyuq5i9108S3WHbIJI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/J7/j7K0CUgIcdmdr0pJuE7z_Dv34sAMJUA8fw8jIXJQiHU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/J_/j_Qi6uNIhywbLhaY4y5JnGK3z2ROWZtEb0BnCLJ9dyI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ja/jAkOQhfiJTFjXXhyJ0DhBGELaYDGuO1Nua7RcBxfaqE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/jb/JBsJmzy1Hj2C_CN0_4-TzxaLhR7V44Rj8roWX2Ah2o8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/JC/JClzCfUvxyQLBgDZo8PPdnvLiA3K26paontD5UEcu50.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/JD/JDJvztwbbfFtOFalMCnncaFvizF6zXVTh__aN38wEDo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/jE/jEJuhuRSfbKNJyqPh4h0XSmooLVkJ15tuRkzD3HfVgc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Jg/JGbb4SaW9S9L60XrM9LL-PYLP3mqzCk-l0vQb6lfweo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/jH/JHazW3vlwCThcqlUyX7LYe9FPDMVjYLmCZ6WSLC9bqM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/jH/JHn3VRTF5YJTZsTA9xDYd9XHiigXACGlD5c4Y5_ehhg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Jj/jJ0qGIji0VoQ6yxJky6pvFMZ2kL7ItZg-kQWIi5OdPo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Jj/jJOHjMnXj1tMbLYxeCB1RukDNQUgoQeVHqJ-5jzsKs0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/jM/jmxoLRYd0-IP67TROpS0i7aPo60Buk78Rg-zBCzbRSs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Jn/Jn9mLR0ajbUyzMzA5LRc6WDzYH_LLd1reJ_BJL_WwPY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/jO/Jo7rbmFwM3JOVj0noUogPiWuDbqWsJ0sLqZGwj8RDX4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/jq/JQ6SKvjUoFXL_SFsTy9Rg2Q8IozU5xlTJdcSvC6M6Z4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/jq/JqvqnMuNzUpKXoD9UhOfGuw7aqvgzqxIfJLa781_ZwM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/jT/JTLX3zeo9sjOHN9dbxSRqvZT6_810rWumYcc0vQI-PM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/jT/jTY673wx0N0xb_zK3PgY_OLAsoZ6fY1vUSbn2sThGGo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/jU/juX2lK7y2Za88sT_KBoOG0GEDMXTD0S5sWfHATIR7Qo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Jw/jWnHHzF5I2XRbdwbHOlxJsOP61ADC9gpHucdpkk44FA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/jx/JXLM40OerHUlXGNstWA4A4CaemZvbq9BSPTi9YfpOo8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/k0/k0TdLcHwr1we3F0WNjQZ-18_zuQpp6r0GLyladhYPaA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/k2/k2unt3K_C7dhfSLcKFBu3HKgKRu2AhoKFieJ2ErGU1g.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/K3/k3CwBItdPrwMUOB3uK8ZeMJQegK63g_eYpT7mClORx0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/K3/K3OhxqqsioNjnfjNcI6PrgDFEu2JirMwQKZhW9K_wNI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/kF/kf84ERnIIc_zRr7Fo-Ni2ilAJQTpSTK2j26mVTuZd_g.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/KG/kgb9d4fWM9WtrmJh_Qh3lNolHUT5eZ0dDL5fqlgwiho.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/KG/Kge3O183Byl_Yi7pABe0gn10GsR8a9afBNW3CQBkYwM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/KG/kGZ7BYSP2WXCQt0geogJg8b7C-towBhKrUmk31SgyK8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ki/kI3rXOZphKTKzjP3056ROxjnPK8b8HOBtHLILX2x9KE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/kJ/KjfzzGv6Y44pLxgtonv8MFxV8HqWaTKVsgjKWZVV-5Q.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Kk/kKPG-dzj4Dm50Ai1jukLPD2iEH2gsRmTxjsCq4E-3gA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/kn/kn8SveM6XS-Fsin54zm-gkMHKX1H--9WX_igxiO8X1k.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/kn/knCJwwI7BghTwb01gZWFwmxSXT9X0612GC61UAI5XU4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Kp/kp36W6WHEXriZfLATb5ZJWfZI38LWea71aGCmpCIIxU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Kp/kpP3eCajko04gM7DrhEEijawWzTODxH8taYRr-jCTHE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ku/ku0kWKg9wuZPvTs54XLX2wjb_jtikebmVYlF3XnBcoA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Kv/KVco8G10gRXkIW1_4pMiBZzPcCdEtbbZwFa-wHz0_C4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/kw/kWytJZ2tawYxNjzpuNXbxCTkB2IcPTQyjr7tYGj3B3I.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/KY/kY_IiKncnJecgQ5RM-qe4da1Ya395XrP9oH-RiQvQo8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/KY/kYicrWwaAll3mcZgb6pUUKn7Spcc_WHmrIlJvFhLjWo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/KZ/kz4l043MLE-Np6x7FSGHXsmL8fGeETlFDg7vah5lZho.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/L4/L4E_Lk6HbIgemlnzlMoO2Vn9gPmE7z4hConViATIrts.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/l7/L76VSnAk1MnqNf_0XSQ1HOeRdX-DD4wIJYmIxWcWG0k.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/L_/l_yW95nyo8RQQPzNa7FMEBOQrrJRpgMN2ZWNMe5_kr4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ld/ldhaybR3WfCsl22RaLoObepiUMrcyIVNn7teQ_o-3KI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/LF/lFLpG9g1aKFHp4vir79qSqvryimy9s5d3hGBcpV2sfM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Lg/LgctuqM6O3oW6g7JPsDttdsHMsZib2zWjjaBmbBDoBo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Lg/LGNDtCFlPV14TKIK5A67Y3kWVYWISOOonitdCXMlHwo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/LJ/LJe8-K2Yb1-om9Mrkej9BHn4bQbnE6MEYbTHVp_H5Aw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Lm/LmiPs7HnxqwSAHzQ6nNLYrrjNf-6gzlEdH_mZCY1k2U.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/LN/LnAq9KmAjpKGE8be0-JljJ8oFaMxZ40aNNizNRKUaQs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/LN/LnyqMTC_OJXY7wjUpkc9hMnv4ce_7eF7TztPiaStV-M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ls/lsBr6v10KcAGnhK0af7hfGBS7PD63FPfpVmHtck-m30.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/LT/ltoZgGVWiZvM1IH2FaBYOVnT2d66tqAr8VBIZeuSf9o.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/lu/LuvStE9-CUKRvUUMTuif89Y3xCwgoN_ek6mcSvGBkac.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/m3/m3QNioUyKrwxThyqdNiWl-5dgl1LP-jr0Bj2311h8xY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/M8/M8F-GeCB_iaNmgBOKFgnOJDXiv9x-HO0SgJMzNzLpzY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/M8/m8Gm7qcXWWa7E-d3PoNkfppiLp1xXFz1skA_9AHd2xA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Mb/MB-xnavDGmYowMasCfTcm13hld_8r1N_I1iz52eJ6wU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Mb/MBqfBn9zhTrhIeyimQsCJ5Hg117Wq2S2yp9QT3J8w1k.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/mD/MdUPkvW3OqkQ85Asr9KwEKyQKtkSgFREhtGsqn5Yp_s.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/MG/MG_T1_MniQX4fTSfaWcL7jK77yhfW5WCH-UsnqWy0Uo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/MH/MhpMoXmDwZ8Pwx1E0DfeslcdZg6F-5f5jCg-WXv19Fk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/MH/MhuPdFBO5NImg_vQLVg0VQCGRhpauG2z97u7dY7Wk3k.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/MI/miKqRfYWnErw3vxkbAUFdprkh4XWAVLfhGoV0lG2FVc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/mM/Mmb03jc4UcRkdpBJ1oKDpoiOXjViPqNrR3Xjglw0Hfc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/mn/MnHJa_lrtynQyhD8N7UM6c9z2vpsmyEa5otgWpDYcwY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/mn/MnjpYKNyv72WwgvCYfL908sfVm2r0znH8KQZrG3yAIw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/mn/mnLlzKIhOXbbKE99xuc9VpzD7qUBbgzj3GIpr528OD4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/mp/mPel2NT46Np7Hp3dxMDf5wqBAemM9ktSIQ9nFrObn1w.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/mp/mPnayi1lfVisCnOdRpHuxvfvwuW5jxrE84J1Y_ikGis.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/mS/MsgZuXaDOJ9l7dGV4PLAbuY2DBIiwFwM3I90rB_DeRI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/MU/mUiFpcIDND8ADzWWxnNWEMHIimM9YXdlxXiHrjSOm-I.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/mw/Mwtp6-lTMjEMDRhPtBSHJfEWzklXB0VmVu2nFqmjYuY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/mX/mx3v6sTNq7XjZ0CgcNQIEglKO6JlIWJgdR2NgWtTERM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/mY/myJxivdMtiUBR7J1dyUjojh11jYSNO2ZLrsqB4r5lYQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/n1/N1nDfjNtcltvpx0rcQ31vVjCudCmTfB1gOsKuztiR58.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/n6/N6mWomYIpYr-iKzXdtT2Z9ejJYgTG-NXEX2NIwCbf0c.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/n7/n7BdBcbulBI5EBEiIJxZrGmaenZTwcTYu9bDREckXYo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/nf/nf3LaENNGpYhuQXC-Qzfq7NuRwKSTxn0nL0IkYgGMcI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Nk/NkezGt3R8ngE5H8Us0bkYPrmfgCOyYeY0liKtn4783k.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/nl/nLc1ft5BoyCmBGmv4Hfg9kCPXSprnQNXtQd5sXnwJDQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/nl/NLXUMGsmggu8ikR7WX67_xsv3T9h5ytCZ_1pA9TaWUw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Np/NplP31jQt6XJvwVl7WmvRUjQZwOn3F9mgW1OTesmyUI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Np/nPsemV7By459zcQikjQQ-jRpl_nJbZ_x-N_Mh4kjx7Y.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Nr/nR00NlSajVYTFEw8R9Rg5cA1os2G_7jnTtta-4CNFak.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/nT/NtcJlyYUVTr4r8J6WZ3EuKv9k7Ktd3L9iF2Tb0n4Dqg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/nT/ntQA6qKjWxRulILLvFUV5gv-VQEuLbrFWl_nfw9iplI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/NU/NUUeUb8-UH0zyWYZgGhmiQjPjpbQng2Y8Lz2pmcLTmA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/nv/NVyJEfi_bItfBh96vklWuqEiuGQ14KVx0rAlA8EZKqY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Nw/nWR9st1fX7OJoJnCfriGxleC8OyrxQiSbxVW1JcvHws.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Nw/nwrjThazwBUEbsSx67pUSFZnmlbsJnm1Eqqr8gNX5rI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/nX/NxEbDvcMezc4bX9eyIC8-vvQq2HpTZBZo0FYCvcPyUc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/nX/nXq_yzkjKikPOjqP_aqkzirnrxu1BQpKPbSU95aiouU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Nz/nZZX96DVIxCuouhtXOnVoOPCxe_acll9XhrcLfRl908.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/o0/O0laB2xtn5Ru3vnw4Jv7ZrAtnsJPocFgchTMHyVJrns.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/o0/O0YGfW_SZO4F7IneN8jAJiaVXdSOVn7HgkrB2jpEWjI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/o5/o5vLxyaX-riuk7zNspBDKpucqavTkjA-2uzaEz1F1GA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/o6/o6y2N6hKB0k9KkE5u-HpBkKZPWmujdzrqN4ChAXwngg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/o7/o7NMLRYEe1oePKca_7pYOzBOTnggtp2jsQveSzOovR4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/O9/o9DjbSlFvXwzHIFWXJyNWieGXtMB2x1WTRkl2OCgdP0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Oa/OAKZ3PMwvYD4X_fzXaGwRBql3uzG0huXiMoeQBEO5zc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Oa/oAPPc5p2JJdqloTkE75bttXmZ--9DF6z3r1o3z5nZ24.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/oB/ob5goXFhbh9AyaSyMBbAkplJfVhn9mTTa_-KWV3VIMQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/oB/OBupnF85Y5MlTO-97ZAlKNzRHmbmthvgKZ7iUFleUsM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/OF/oFJRgqvwjbw4z9oIHJbHmjpQWl9PxnrHIohRaZgdOjo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/oG/og9koGu2XCJ-U_Zxx-GSgDJIBaea6T2-4fcw7ltf1bg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/oh/oH-ngJJ9iJFixBqfyzI_20uZjfGvY0hRNu7ivFB_K04.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/oh/Oh85zHhqK5nhsz9NQrKtZUbghpER9kQjGqaFukQuxOE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/oh/OHCy7Ojjv4urF724MpHHH2NlRHWVWk9fuSGv-fvayJk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/oh/OHf6olKj9WzUwr3UGx7VI7jRh_R433ErGjFmgeDg0kU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/oj/oJlXtJVIL0FHBvLSZToF1dI3l3tSF3BaDmibPzEnMjM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/OK/oKkLHoz073_6lnFD2RyLczTpidYHoY8fT5Xfpp6YqJo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/OK/Okzdy8MtnpKXWtdptRcrr7p7VU6-QZncUvWtygHQ6CE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ol/OlA-yN8uFVCbAIbxtWd_-2jamJKGAbR6_11G5idN0oQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ol/olgxCTrSWecFNL8jlDuW5yuKsAe83k-J_hHKhRgnqqs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Om/omaoNQPfQc7ne5Gl8CEdRjYBv8uppp4ctDxKnrR_SRw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Om/omRMobqAK6xuiXozb3WYtEWe7xQo8emtZ6CvSlsY68Y.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Om/oMTRw3qnE1vZoaI9FtZ6_oKPef8ysEyFY6W-4dho2Ag.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/OO/OOI6I1_PVjHADVgz72VX1NgcxfEY5BR0amFbJj1wKoE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/OO/oop3Vl2EMxUdDAn8G3b4_0IPcfs6joJNIty5bSX_sDg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/oP/Op8-HaeEW2dRivE59j0TKUzaI5XDWNwFc_EchGqiwoA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/OQ/oqinSvYxb8yk1ZFPoxgQBXoBhfgJYGLIypSwICDHDdA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/OQ/oqyslnCteNz4EDkax4vbWoMBd8BJTKSuRShn2R8jz7Q.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/or/ORtBs_UA0nCXQsV5wugqpfwvCYL1OYcLiukEndxN1aM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/os/os1On1R_1zJzd--Vd6WecKux5J5PQeijhJ1qa0KNKMQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ot/otm3C3VZhLun_xx-JRPfyX5ufiD6QuplMb2K9P4s4uo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ot/oTutYM2JUx0UCobmX5cOYi_0FkWp5uhM2Ul1GOQdWXU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ov/OvH2sXzd_YziqxhTGaJKNOhzAQm7LNaOpArdai8RlTw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/P-/p-nQHmHrF7NaadfwTNysVfb75c5mkJol4THP4e2s8N4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/p3/P31E8-loTgpDsS3-NThI98govuqU8djKVO0qD1KOABU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/p3/p3Ihd8qZqzfZa5pgCb7zT5hIaap-E-CUKkjvRFOU8CI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/p7/P7PDG0PGgp67KHmX2z3ladceA7lwDgRCK_FKy-wO_Cc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Pa/paGC1GJ-HRm7q5_jfbGmKow9DkNSlTH4LBU4se_Kx_U.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Pb/PbwesE5dMlrOlKOuaboGhB36lc9g0tKtdP-V74WFKbE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/pF/pF5x6yHM2Qno0YlXQc2GM5ZBonpqk1o7liz89pn-1Rg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/PG/pG0fXh_6jVsRTctDGgD93yWY2q0n9Yvyu56COes7-2I.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ph/phrgLVWXsb70UH_D79r3D2dqOkFNFUeZOhRzVSXBWrc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Pi/PIORt46VX7HnlLP7sRK_jFuilOZIPzn6_kvigU3fZcg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Pi/piyj-LCXZdbENANaKh0Wqp6RjW8fuiBR06AQ-e_lHXk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Pj/PJtoF0OU3ID2YqsRb26G2G1431FidMDKBes5X9ZRqGA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/PM/pm_fraPvmHv5EHpeA_RJsD8ie1Qkb4_KYCFidBoPqQI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/PM/PmAej3ywgyMaX6_jqYPpa7JJJ0Lwvzo4wJlC2cXVssk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/PM/pMjp84r91om1Iw8FazYJfwduhQ5CMjfkzgZ1QRS_g7c.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/pn/pnmg0VY5m_mpcZ4Z_LgG8hf6RM5RU0_GqFVDKjvhGZ8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/pO/pozJvkEfkcZEBu0qO8Vj4hpF9JJVhxXDAGreRdfRyBQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/PR/Pr7r3Dh_tqeEmJYkb4f3AsCDUKIMvvmuNFDH37hPhKs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/PT/pt5F4iXOkMjoEl_DkFt1oNG-OiQFU_i42-AiaQujlg8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/PT/PtVMjo7zLKW-ZUeVtW4v-2fA2lboNIzzSN_tEOGF04c.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/pU/pursJPJWCUuAAFNjyQVocqDQsR-CY12wa3a986CTsTI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Pv/pVf6C7HQBgBj_-h_Y7hDDJSv7gtR9C1zTxEsH66VrpE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/pW/pWb9_Md5hgjZvB2D2DzML7xZQUSEbLvscnqQudgxFE8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/q6/q6RwEQN-S2dU_MmBmyebEtx9_-aDfv9QyptOAMyMqwg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/QD/qd-hh8jxQ9cLdfUO8EsNLmJe9BHnhrm_-NB3PUIPLH8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/qF/qFSgrYV8QAUT71q3Fl3cN28E3plFLsFtVJLwieoHo8Y.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/qg/qGlTjDso-cTdEq92O06paSAWt6wWXmwbU9E-HkDKwW4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Qh/QhgT12eL_w_RsoDjfAwR0umbtZ76fJ6hKtzAnD675nY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Qh/QHztyTjzUeYPJVS5I8ubEReAt5Mq2XdaDH9yVGUMic0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Qj/qJx4PJxnAhuEGMWNWn_5Ya8HtAl5ij04itoatdCB1UM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Qk/QKYfc0HvP8mtRIFAwfgIcv905ky52BLsuRopEXSG9Ns.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/qL/QlR32Alu8K5zNJt7zxIfPNprYhjBYJkFVsA-XDjzi0A.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Qo/qOA25X8fP6CjlT3Zfc2bv8bLfVB1cduMnCL_Vi4QsAw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Qo/qOyvaLGyjvtRMyZ0RlvmsQUUbf525b1E31apj4m0FkU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/qR/QrRLH_SHxau7XMJMOBnvk9D2EEEX2TJOdNqoQUIekFc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/qR/qrWesB1uivMATw8G7IYHKyIlnZ6iw2ITufBkAEmPaX8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Qt/qTUQ7p0OKN1lYHdeu43AtYYvRqO_yWJrVbKUQzYDdAI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/QU/Qu_h1F1W_vRYEDichnspd8yooGn8xA0W4NoYAwedZO8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/QU/qUF-mvJkJ6A-DhAl_m1r10d0Ka5zCXkQ1tB7dq2Ao_A.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/QU/quwB1s242XNz_N4mAVIhG_mR7GdmjqOJwRbc0SuM8xE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Qw/qwuMW6iEwZciCWn2h4lgF_emx2lRl9FPZA37vyfxdHg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/qX/qx6cbphKUNuFWAb4yPEuQNQCTxUSNqG8Tv1WzrFThQY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/qY/QYRRrkYTym2ET1oENAwuHSifijmPXR2g-0lFY7urLcM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/r-/R-rsgjlSBlIhaZx1ylrf4HKazHtRgwrQBy3GSufuRu8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/r-/r-W0_eeYon07YdX21g-_0XvVzhI9nTpsbWt73jYLZDU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/R0/r06-f0ke6Oqlnme_FnjxNCNmOicFb4nsEYE3cpU1-cc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/R3/r3Vxp2eIw5sFWJN09hIDE8KSPuunYGao7fQDP6DOaJE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ra/RaR9qK_bTjF18Hkgo9SEx8FKV1YzhhPa86ZLDyrNriI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Rb/rBszYNN8Yk9wWXto2mDGJUflTMJWQta7V5qGDURxAnk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Rb/RbudD5Q5Dwa-dta9ygiPmx2t_7diNsz4qI84tTtU9lo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/RD/rD2-o6-02_pN-IoXggJS5r6GsHIkxSgYohhY-p5Vz3U.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/rF/Rf7BbAbUia7xqRj0wcX6fGMZivr213CdC02w8LJX8fw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ri/rIliC_X3xEToJhH5QoCcUtT1vGzW1JTmSRjDN03fuWE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/RN/rNAKrpYRvcRDyyQ50n8My25PxIDdqzOavTCIXoPQkMw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/RP/rPjd6d5JA2Ff-2XNF7BoJZ1bVH8BvO9rwwuVKXLvLRk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/RP/RpQZzx2Ev-60luV8yKDqhJaAJrwJ775-rMwciGog86c.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/RQ/rQIG70zHF2Wbwpcp-N5Cv5QNkvneMuujhrw5gdBJPmA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/RQ/rqNuMcvMWBUJVZfVU0BrZhIclfE6K1wr7AwNtK7_AHM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Rs/RSb3E3eRdOzxo1MZAceEI2TUJ5yDl-dVOnZA9hb5DB0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/rT/RtqQ3kEQBs2SrsfvxcrkrCrcOBAblzAtYlRxXI3u-N0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/rw/Rw4ddIIHMgTuGKQxQkioEXQsyIsNT58UrZz62t4o5r8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/rw/rWayHdgLvGum0hk4KFK8Anj4rQzsP7ugraEMzzjK41c.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Rz/rzgeOK9z8aMPk8xQlqFTmlqLV_N_VgUOEt7iUddxPuA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/S1/s1a8_df2gBZwMx5HTeTNf-tPE23khw4vwA2kubPK4oE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/S2/S2kky7S235eFgurmoAGZ8aQF5JOQsRq9XljEPOWk1_g.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/s3/s3RKV1uCjScDRMgm5eiSywsL_0gxoPtO45rDtMDBMhs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/s3/S3uiTRruH9wpGOCm-n01euocTq-wXl0EPthlRP3AqzM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/s4/S4aTEj4slS3F1w8Eq6JobsohHIGi8guRL9ZuxQYimLE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/s6/S6lvTQWQWTmv3jbihEFp-jZF-qCPl5OEnmHI7sn6Ekw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sB/sBaHasbWKhlJsqr6By0PsZ_Ufi_tN-CFUQ3-OfNy3cQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sB/SbiWv9NTlqVujY0fV_BHUZOAJiz756bksXFCU2RpoNw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sD/sD0Xme7f46eUA_gdp3rhXte_GCLolAaRrZ4cNtgbmR8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sD/SDPh3FVVes5IDCxcedOMx_8rEbzB6wArKtjTItS9c1A.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sE/semhjLzu-eljor5zb0VYR1U1NM-hJoazkz7MgVugQjk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sG/sgLscd85fSggPOSIVEmb-Ofr6PIYsvOpqgRXZsiSVow.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sG/SGQoU1_ooQXKy_Y8SGWkeA4JSsVo4N62UA_6RkhtoSk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Sh/SHiswUROwEKG8aGhFeEAzhELQsmrlXggOFCNAa1d8Vc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sI/SiDPbPaDZ5L388oPuWNHv7SpC6E_OJLFUDiq82nzr3w.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sJ/SJpoKDLYGh_z9kH09MjUxRg3G_hBmfP3ZFbDN0tTsOQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sl/sl_fBC9qlaoOu8knNOb5OXG6Q5Z-RLhf9ph0R3VPoXg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sl/SLQi0EWcuDdDWn1bxhc_mPjwhJy0C0Jao2a9PMH1Loc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sn/SnObb6ijcCfZ7McxBEMBBG88mFR4mSk6TrbCjYkc1OY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/SO/sOjVsDaKgXBZXm-6rp3oNyzhdgX7QSxLMODmU0F2944.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sp/spyWDdf5FWaNGKKtEeSGf_wRciipGzorWQjhfNKGH6I.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ss/ssWgLYTgazpNHbpz2n0B6qI-vX1Eju4d0-8mIFFqcLY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/st/sTJYjuqyjiJ1vVQm-yBFiF5eNqcBVbpTeRoaM0Uvdvg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/st/STPqZK9yOv3ChpaLmmmflepsti_O8G4zbp8IuQVp1xo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sU/SUlQSD7rKrVE0eDaucOYCMOMq8Sj59iOcz74ExWhMhs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sv/svhdLA6sQN44BLi_OuG-diBCzGzjLJlb-anz38tx93M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sw/SWZLleFIoiqB6e36rplU7YXe4atTmtFzAJJnNdgTdlA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/sy/SyqxVcI90_ov_tTf098vjnnWwYqXPlVHGpxbXI7kMgY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/SZ/szLb8Mr7daKpwr6L6AFMgHhY5bNRteTkjJ_XmpaUd9w.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/SZ/sztuBOFHWaJ4x_VWIuTcb9WKT0MiU4gzDDuM19_U9k4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/SZ/sZwdvAsab5rk66gyZJsot8Gm8FoIH7AA9O9ES0eblzA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/T-/t-2BD3U0s5hAvpZVCLxeTlKrl0z5jyQAZUL_QJedhpQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/T-/T-B8VQottl_mViihuqbXn6rCXPFxzb2f60nuJhxBU7M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/t0/t07devQR0Nds0m8-L-gZZNmAE_NK0CMZkhd29lp2bXw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/t1/T1YlKAG4igj_kGoImH8Hqx1lB9j3F7ag7-6LoYvxTZQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/T3/T3K4noWZJkpPczA1xlSs6mO-7BVQ7l4X5sLBNKxAgN4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/T4/t4Aruijl3nCI8QxbgcR0G_7FedtdsQZoe7eOeGKXuss.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/t5/t5mcRsp9RDbuHCI8OWpP74beqCC5R1n-0FL9ORLi_j0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/t6/T6YSTdurmmlp-f_ksHlzl6U6tuhsW4vHUxL7O1GFKiM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/T8/T8YVVg7YBs_8xjXsS0Kgd05Tf9U5JQwYEjCRsDM68JA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/TA/taZrY8TtS6Rd8oE5FOrJlHdUjjaaD2DIheaftcJS6QY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/TD/Tdrr1-Sjjsh2iDI0V1OEUvSdb4BiGqNd-tWo5vU_Rh4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/TE/TEHJtKCl0EEF68A6mHLx3W1cRpf2CzLSqjyldz1xZvk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Tf/Tf40ew-UDl4RhO2P7cpprKNuj0cHaNpdr3kBZ-TV65k.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Tf/TFRLCbJltFWS4la1jtxS976nV8nsDO09-0aKd0d23H8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ti/tIsIP6fFgh6gZyiUm6JFszWp5pinDLSwzTnro5ogtcQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Tj/tJbY5LP2sXbSOSHikuvdANcp4Q-s19xkh27nco6hmdk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/tK/Tk4zYjx-UbvlO-4jurMUiCfVenqzaW9E2n8gRZ5xEFg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/tK/tKXU4CFwZpFctCs0cBHIKD2nQs9Kf8m5ohimf_Vqvv8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/TL/TlH_cuJKfoOwtLv5mBp7qyDSv6dqrJmEJYEeK7uFoyk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/tM/tmCyeKLTTgMIg2I7uQC5J30G4IzSdZ04tjrdwi9GE1Q.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/tN/tN6PMU8x3yeEMzkDmRdfVgBfGgihC0VCO2yB6mQewfE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/tp/Tp1_rJMN7YVx7PeVoDpTVsLisJDucQRfnbj7Eu_3tzc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/TR/TRx7ksM0wB88nqGVhcbGJEut2Pyq4ZXTF2F_5CRoGbI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/TU/tUsxHgvmVyQD8vJjMid7TL5xVJTrPNbJpSEGhIaIfGI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Tw/tW7Wy0-0jbrPF9CHWuM2ik-MIWZRLmaf-qIg2ygAUtw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ty/TyMrHkAqiNO3ASbxGnnSNZUiB1tq9BJU4nbhW_d9F5c.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/tZ/TZHIyslXh9yKGFDU8MD878As6zbjmSk8vIwAqZpeihI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/tZ/tzvRSKoS7WsZnMr3w04eCYHvaSoxD4GFya73bwJzTKk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/U1/u1uG75Dalt-zigt4d6ytnKwaj6j9_cI1jjD29OITJhM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/U2/U2-XNxoNor_O7_IKIcqg5bmHHHEwV3oji-cJCy_aaSc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/U2/U2OmlzTk3IPfwH8XuRw5BX-5lkq6njiCPz9kIVQxo10.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/U3/u3nx8esoK5Pa3qn-9CruJZoXVPizuB-CdCenBglCp6M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/U8/u83FVxvmZeB-VVvDJ1ZD-wO4XqQe4dF5fIsQgw-6vxk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/UA/ua_CODI7_s0UssvYhmAH2Q2aao05XlU4lyk492gP4hM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ub/ubRx34K0c_mAvCRzuxCc9eg-MPn2zVpsbazpcb8O11o.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/uc/uC5lF8VaEEBkQdrf3gQXKZ7mP2C-wzdwh52TMmuBwzw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ud/Ud9xztf2NCowmR5WQwAvbY7kaOYPd9khhyU7EueyGnc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ud/UDG-_xZ_CMVgkf-5k99_YNwuF_XQ-KNEnX2u1PEk6Dw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/uh/uHpwXDmJfdpRz66ON4rMD63rEZF5kXUtqvNhFk7GAS4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/UJ/ujF3HjszS4cFEk7v2ealau5jB0EP-yMiJJdcTVOs33M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/UJ/UJGyZb_dHKF5Tm6owuX4ZTovhXdv_1qZ8grpM6bnsXM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/UK/uK0lITuC_jvLrI7sqllo-bxMsFBIUdcUP2W6eauthJ8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/UK/uKJISuOoYRRfNJNv4v3EXZiKti4OV91uQ6Oq-SYcfiM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ul/ulyeNkvmB-fddFij1SxhE57byaIqQs_BeQhi6CCQ3is.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/un/UnaAunqkppmYdfcNS_LXor-BCX77BSYRya81HxfXdO8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/uo/UodSwHOreeOp3KMvcgz0d46r3yfP7Jmz5M0D8vbLFjo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/uo/uoo7dCD0z0J9NV82eC5NqE6zaclVbKU8TAmieLy2Rgk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Up/uPKUNjk__OBuihBybHpRguu-YGjI_30nJfBGNpWFguU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/uR/UraG5JG03gGMdMxxB_VWcwhoQvPry6S_eY5B8J9qYag.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/uW/uW1hNbx-lC0XWWiVxwybdoQUFbFbwtXwK1hiP8Ea6M4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/uW/UwusxZCh30cYOkwEOgY4jlZTpJ2CLulZ7btXN-9Xvzo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/uY/Uy2KovT_-9h8jIzXYbNAEXS9G6BtJ3qvr8Ol2oGYtAg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/uY/uY9PgrQYoygmIaN27tJssXwzm8HtTtiFZzarue_qPe8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Uz/UzNSB9rwNeJrGvmS7vsZFbN8Ln-6XKwg50mCdr8AMdo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/v2/V2hgdJAZNcOl2-DXtY6UrNQflkFXPSecdMXXKlSf_lc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/v2/V2vl4j9nN2qBKq9iLhELux0CKc-f62XVtjt8t-PzHJg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/V3/v3CmPViGEiOLjwIumvVXLbc8g6v6gaSFwUvQp8c4Axw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/v6/v6cCioBV1OslIN7mEACxdgT2cdkiG82vkOKGZ2PNKLc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/V8/V8Lw4pEwNkEbBEz8mT1UJ_Cm46FxNezVHjp3zbFwzd4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/v9/V9j50IK1SrP_X2dFSOYONCFbEWW12TfajMebp_Zi2XU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/VA/vA2pVnxJoql62j5RVyLgef69heCXBzE9Vgs0RnUunG4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/VA/vAZuSZ7nn3_8s4eWz2_isp5NapBpLgwuviMMKNDr5Ro.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ve/VEB1qDTRfW2jdNBMnm6UfqWlR-Nc8JaMW3HlQEOhixI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/vI/viXCfAF5UGBYQSEQa_57oU8Dj5IawNScL3Vkc0FVDcc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/VJ/VJojK00nu1uTwAsILNyKIfIzULy8JsXTGr2JW22V0Zw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/VL/VL7AOoYX_FAD9ryyNB6XXXI2csJoiJCmzkVWRaf9HLs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/VL/vlebniB7FZcpVL4Hs4SO4ha3ywVm3w1qqXpMKleL21Q.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/VN/VnwrRAHgxH20Bg--mKWeIJiqwUafkJpnI0PoS1h3i1A.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/vp/vpqGHB9akgrYIUPFiAmtmjHJ0qPi9cnn-YNofJUgxfM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/VQ/vQmafygf0T1Si78Qmc5WrB1OZLXHwpjyVa3sWesyCYE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/VQ/vQu1vhXFyZYVxhKbFU0zeJ5aze_liaM8uuzzB30zhBY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/vR/VRx66JsJIoxzirqHy5w9uYa1qnFzheyrOtzd48fOy1Y.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/vS/vSFV91J5XoM2QFs_1RC7hQngHDcl-aeYHjE8gucok_A.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/VW/vw8Sd3vzUTwBV0g-2cER7ttkxcAIQmzaydVlrmpmqh0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/VW/vwNhQqTEq2Kt5uviZJas0ByFWj5ncNF2C5uUw9dAztw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/vZ/vZ2wb1F3FeTea4WV3PorB3iKED2mJm6PYRJGRf_49KY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/vZ/Vzc0SYLW84XKXg4pfUJFOc2fgMpDzwUr0upBQEmVgbY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/vZ/vZoUwPnkbJswh9h2AB7pnZg-dH6fjQQgH4Mp9j9-umQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/vZ/VzUbdzOEy6Vq4YnX4wwNndg2Xs6rzTT1CxVZTOK83r4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/w0/w0DeXQ36zplBW2uCD4odQhF53CBpjK6ajqqLiQJ48e4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/W1/w1QAVtyRXRQPVt0hGySEeqkbAVLGozS9MKhBPyShZMA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wd/wdUK1EwgBbWIi72ZYU-sWaWUYIEdYkt8JpX-thRQDSc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wd/wdyF8_ClqDUhqdofxpEopwgomh4796iv3Wsac3Yez5M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/we/we3vdazTWZoxMnLCGYS8fjDQsSZpkwrFOEJ306uC6qc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/we/WegdRAeTXo3CEGOJsNBF3hwjVOrMMBmTXqyAlfD0xkw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/WG/WGzRydCeZOBDBrvd-msz3XDAEbta4GzFZlHQ63Wrqv4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wI/Wi2bW7hHzECxbJSWlks_v8ZTYmu-2134tsSppA6qSso.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Wk/WKlAVYCu9pK756yXSWTdTsqEezNK4_sakunFc1yCTUM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Wk/WkRAhe0lkNAnVsE2AgcxE17ki-PXz0pV2J9KtJIv5Lo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wl/wLz_VxXff6KKDWXQRld5xcr3SXWsOAFj6qk32DSRZAc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wm/wmDUWkNF28vl3qhsfJf5ELm7J20tmWLUKMwOBWA8Oms.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wm/WmJK-pNthICKKkJwyg0qgk_jUAxfxkPW6auSXUFRUCk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wm/WMXymBrrMtyuH3-D17qA94ouAmmb7r5QGZrb-SxtiEs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wN/WnL1H97a8Qid9dMBgemIicJ-8DkN-wJH5Lrpt4TWTBQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wP/WpqcF5upIwmcyFOs9a2b1yXT9L0Ty73k2yy4Ad3ipEk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wR/WR1uazMgzsZs2KorVUbO4CDXk3D86Hd_P20QA5PII0M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wR/WR7kP3xgC8gxXsFbLKQxns10aHM-E6lInjORS_S9nWo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wR/wRadTFnZou1uayIR8sraUdvMNO29EU5_Pbrlgz0KWZQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wR/wrsB1lF3y4NTM8oOhk12e37k8ny6KIRt9cZitgfwRKk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wS/WSVbOs4UJi1NlbtFWntKb8_hiMyMnr-mG2KWInstrxY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/wv/Wvk218W4h3MPTaJb0KSn3ZAS12CSSNbcOxhXXAWeJF8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ww/ww74YtuoG9ICzDmrqECOMnZs2BBsxuAQcMQwPnh3jiw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Ww/wWKNVHw8Jx6aMVXEcimXOasSY4vNAx3a-poMl7MjtGU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/WZ/wzJtIfrSdDDX752tuYmM_JkRmSHU4RYUJZun2uvfofg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/X0/x09VPJIPpjT2veE2s-oetR-reycx4EiuUw2d5RCVS0w.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/X3/x3Lh06IbOQfTxFG0g7lWDwCYfCaVw_XbvygflA7Yjnk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/X3/X3URUea5XSAmWWcSrutXPvjYvvDt85gXaZNgM9kE_Ys.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/X5/X58Bv3BCqvjsMXUHwXVnRSvmeu40kR_40kjUpbFHslM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/X5/X5xlGiQ6RIyFzp_S83ct5vWq1L13NDyXs_1VL1U2qBY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/x9/x9jrmM4SX3oBc1AaCJD7xLHW7TNUDsNxJBkmG1KZtpw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/x_/X_wn24CQKtERDjxOCu3kLWUrgz8k5ud8sfEmKUgu5vE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Xb/xb35wWIdEmsYm3xQZFK2O7JPX1qIslRLrsRtJ5Thzxw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Xb/xBNZTL4uafsaOtin_qVxiyISG603cLZy6AEFFYRk8pU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Xb/XBqe1Pe6zqpR4sj0DutgTKNhXDo1LuadypT6ffE6Drw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xc/xC4z1h3Jafo1uPsrlGZ9eTqsB4-siQZmPfJM4wx4mgM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xE/xEN2gtA5BzYPRsIQV7LUcwU1fz7ImvWgZ7ZBCIXIFHY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xE/xeRCWmE2_itg3x__n-1rQW8uR1EVtwWjDj7nf0VfiNs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xG/xGNAL-eCat4QIynyoEkhge5aadxSbMzXhAXtd98xIZs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xj/XjFug81w07P5kfqobrrnDTiQpBrBBD47uax2G1KV4ec.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xj/Xjt9fnG5lGdq6N0GluQK_EtAlnu9ZI_-t41Sh5CyY0Y.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xk/xKqtVmQBGAKsMv8AgwI80LxXHu6ammsW34vEIFHvx0k.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Xl/XlOzFRH-BWUq3yyUl5kcg8MVg6yBE_zPxLKbietfqRw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/XM/xMfGDp9HK8vE1rqtj3DtmNMpb68SgkjJXlOUIPJMsWA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/XM/XmKO78-e67Ko-VCF7-vEWm3APR9QQKexLqepP_Cdi4U.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/XM/XMMfybMHYbC08Zfcc6jU_JqOI84lOoMcT1s-WzfD4nw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xp/xpqdXKmB2_brI74xo8e3R3KsQScD_SnK_gcvOo_TxaE.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Xq/XQHeDGnTlN1gbDPeX_8CD4gpjWJaGVNerj-rLurDUuI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xV/Xv7dM-JOc8S41U8Hv0dY6SbFtO9bABJkhXzWm0tHNXQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xV/Xv_AWuN85lLtupZ7KwvGxb0AYH-B3sMGeNaq-sEQSFY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xV/xVlWn_MaaE8AO-HCc1QCkf8FaPEGxVzdCatMUTkE2LY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/XX/xXFkPiKAQJswMt_r-CfgQ3WmrthwHzGQyl8fWXXvhFA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/XX/XxN2Tyem8qnqUZyfNnwRG9mz_V50xoczCjPcjdC4iD4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/XX/xXYvf194zZe5JKrpvJSN246pYrOHwigzFsrPyWz03eo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/XY/XYy4oX8cty0jjvEWXhiAyX5Y-cgseiiU8zGA1mqqAWY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xZ/xzAFW4f9qLYwZ1BCjmiD17d7S6Dkb6U6B8CnowVGqRU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xZ/XzgWaUW-Dmw5bYoPN6mn82Coa3wiSRp9-7Np7XCGhlg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/xZ/xzKuLX8wfHWidkUz6CoZPA5J05h1fA1l7lpoPoAfJq8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Y1/Y1f6ASmz-KK3_Nw-gUorfTnBjoj6J90bF-2TWX8W6s8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/y2/y2Y3-IhBI5S1nuFXRy1sEH_jSzPweflchrQzB5h8Pvw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Y6/y6JI0IclQkDzeMxVkDIJbrUcU87P3tXw6Bbj4OFFC7E.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YA/Ya8OJiTVrSKBwRpGuYHuPrfJa1WGMyDFfEdje2pXEtA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YA/YAHAdiQWAydNU7PR_ZLH8CXoEsOhDZAgFdZgNMeJx14.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YA/yAN8gK5ts5e7IKulpCMzWAFPr-AOfj3-4LYuQu6o9nI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YD/yDD_4IewaQPfQbmpl9UOcG5Q57Rpqef9WYCJxVqO7_Q.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Yg/yGas_yRKQRxD71SXIAPmL5J8_XFZzLelzO5sEt1IfX0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/yH/yh3TlMDZHDecStoGP2CY7CLBfmTDODPnTJtsWkgUEFo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YJ/Yj0tgkARk-i5h3r-jhC6Y199XQQ4KrzqcjHGNKTF948.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YJ/yJdem_hSOGlBX7q6J46hSCitPruKLEjIvyno-E8Xpec.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YJ/yjOsjrBXCEUrSRvx_kb5OoqpdNVIWmQajRJH_NEJbik.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YL/yll11AJHEHpZmHLidr7MFpEZouXC1bsp6W-mUMeKCPU.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YL/yloiSeU8dfQjOqpijEERG9UKva_dCcccf_0x6y7ysOk.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/yM/ymLyPAmsLK3bqoFzT3qF3sN4TOqc9s2SVJd-abAA4l4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/yp/yPLe8Ud2vTgD5g1YaOU8oYwv7WV1zOTBsQ_xVB-auvQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/yp/yPsTpugNCzGAeYxzrPI9ZH0EPRR4tb_KXrVsisGEgu4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YQ/YQLcYpdehbbhFYtccs_4EIjS4hUaX0t_QdTJzYCUQLw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YQ/yqTxoNKDVK0XeYvCqd9RmCsu5cnesNTvk44wGeorAsg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Yr/yrTBU283oOYAinZG_3mXOKcXw0xLvz5QeLOx6KDCP7M.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ys/YskHghbzx6d-58jYAwSFTTMdFKybxT7ZMuzFbuk85f8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YU/YUmwpj0QqziiWveMAiWdwMb3VzTdq17fHMIrU1g9r-4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/YU/YuzfNt9tr4f6XKryAz2RxESFXbayQfPbDqapXXtOyec.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/yX/yxdKXNIhDf6Ha4MlsEqKqFCkFw3wMMXLb3x9vyj4YSY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/z1/Z1FJ6mabGnyAmuu9bLqx0rNBWSVgZxN5r0xDInvVrL4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/z_/Z_ggKjCSuyejOV9qlG-YtXKtsxpVyWwEnclB_bjO0D4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/z_/Z_MaSR42z4vYHyf1_Xe3bo63qmTgjSexZFP00idhSOY.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/za/ZAJEH1AU9JzE6B_kmfhFVkkoy2Dl1T1tT7ZWSzWDttA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ZB/ZbdDF0oxiz490Att9Z9sPhS7MGf8EpfDsiyg9_85GkI.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ZB/zBSY5kPayry1Rp-avFGHPOxQE2j-4RB7ra8aTvxas6E.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/zc/ZcEu1yBCG5BxD97LjPyJPT3iqO6QigWfnHRa0iY9rMs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/zG/zGZTJhjhF04YohkMxm0ruohHm68CDS5rU7ge7xfmaC0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/zh/zhI-qgcs9WpBm8v0uGB229Yz8KdUwzymO5LflT-ZcCg.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/zI/ZigMKy2qcjBIdD6fRqWL8HfgfI_LNkK5t-zpr3Z8rM0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ZJ/Zj_DRMWT7cBpdKgV-QZ72_emyOs6I95zxcWcKJ1Xfy0.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ZJ/ZJHazWWXWKJcYnfhBnagOOTTEFd_MM9oXxRjujaHGjM.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ZJ/zjmxwuftD3htGjctAXw08Pp72vXU8x3TptFiAQQjgE4.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/zk/ZkkTuuTzR4ip6ctsiPiSJSu-QrfUenNL9WKtARBLD9Q.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/zM/zmoOBHXCcOKAUL6gv-fVTtMvDYb83waiGkh_nR8KGKw.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/zM/zmyNHXBD1Fq7e15VM3JpXw01VKi4OuVJGEX655kjncs.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Zp/ZPRaCUwIgM5-m6O2EJXBGbsVWsxbkvLFsKXAoGLXEHo.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Zp/zpT9biVdEi0D8l--pykZAzR0r51vc_R3MbXVyL5509I.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ZS/zStYPeYtUZBsCOpdA0D86osvVbNUX9vlKm_8COw4gng.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ZT/Zt0MjXcFx9HiSOAslhzvEsa2nR6wmN-Dno0pHlGqjjA.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ZT/ZtiIgQcFgEd9OHc7kvyfmpVZZpVq9nXXcEpHkJz4Wd8.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/ZT/zTT2DlJa9t39I3yzjHUM6eSdpJEKNlDj4DcktfN4X9k.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/zW/Zwolb0lF23c0tTgMc3yQE59a3YSheFk3GljUf6EvwSc.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Zx/ZxC8QFFB51J9hkjdSRR2Ut4XXkrE8iVdRSB2ke5viUQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Zx/ZXftSg-060SGZYtTMgkE97JHLdRXMwWWU2YEPye-xBQ.cache:
+    <binary>
+
+/Users/clarissaknox/code/projects/yoggie/tmp/cache/assets/sprockets/v3.0/Zx/zXUPlFzM__yykfIDStin8ZpL1VrUTglXcVaZV6XW5IE.cache:
+    <binary>
+
+1639 matches across 801 files
+
+
+Searching 4696 files for "yoggie blog header"
+
+0 matches
+
+Searching 4696 files for "yoggie-blog-header"
+
+/Users/clarissaknox/code/projects/yoggie/app/assets/stylesheets/pages/_articles.scss:
+    5    }
+    6  }
+    7: .yoggie-blog-header {
+    8    margin-top: 60px;
+    9  }
+
+/Users/clarissaknox/code/projects/yoggie/app/views/articles/index.html.erb:
+    1  <div class="our-smoothies-banner"></div>
+    2    <div class="wrapper">
+    3:     <div class="yoggie-blog-header text-center">
+    4        <h2>YOGGIE BLOG</h2>
+    5          <hr>
+
+2 matches across 2 files
+
+
+Searching 4696 files for "smoothie-banner"
+
+/Users/clarissaknox/code/projects/yoggie/app/views/pages/smoothie.html.erb:
+    1  <%= render 'shared/navbar-main' %>
+    2: <!-- <div class="smoothie-banner"></div> -->
+    3  <!-- old page <div class="smoothie-wrapper">
+    4  	<div class="smoothie">
+
+/Users/clarissaknox/code/projects/yoggie/app/views/smoothies/show.html.erb:
+    1: <!-- <div class="smoothie-banner"></div> -->
+    2  <div class="smoothie-wrapper">
+    3    <div class="smoothie">
+
+2 matches across 2 files

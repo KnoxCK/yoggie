@@ -37,8 +37,15 @@
     position: relative;
 	img {
 		padding: 25px 20px;
-    height: 400px
+        height: 400px
 	}
+}
+.bare-general {
+    width: 97px;
+    height: auto !important;
+    position: absolute;
+    left: -14px;
+    top: -13px;
 }
 .standard-yoggie-content {
 	background-color: white;
