@@ -13,8 +13,9 @@
             <% end %>
         <% end %>
         </ul>
-        <%= link_to 'Change my Yoggies', smoothies_path(@customer, @customer.basket) %>
-        <%= link_to "Pay for my Yoggies", edit_customer_path(current_user.customer) if @customer&.basket.status == 'pending' && @basket.smoothies.count == 5  %>
+        <div class="change-my-yoggies">
+        <%= link_to 'CHANGE MY YOGGIES', smoothies_path(@customer, @customer.basket), class: "btn-yoggie-main-clear" %></div><br>
+        <%= link_to "Pay for my Yoggies",edit_customer_path(current_user.customer) if @customer&.basket.status == 'pending' && @basket.smoothies.count == 5  %>
         <% if @customer&.basket.active? %>
           <% unless @sub_status %>
             <p>Your subscription needs updating: <%= link_to 'Click here to update', new_customer_payment_path(@customer) %></p>

@@ -1,32 +1,31 @@
-<div class="blog-banner"></div>
-  <div class="wrapper">
-    <div class="yoggie-blog-header text-center">
-      <h2>Yoggie Blog</h2>
-        <hr>
-        <div class="button">
-          <% if current_user && current_user.admin? %>
-            <%= link_to "CREATE NEW POST", new_article_path, class: "btn-yoggie-main-clear" %>
-          <% end %>
-        </div>
-    </div>
-    <div class="article-cards-grid">
-      <%@articles.each do |article| %>
-        <% if article.published?%>
-          <div class="article-cards">
-            <%= link_to cl_image_tag(article.cover_image, width: 300, height: 220, crop: :fill), article_page_path(article.slug)  %>
-            <div class="article-date"><h6><%= article.date.strftime("#{article.date.day.ordinalize} %B %Y").upcase %></h6></div>
-              <h4><%= article.title %></h4>
-              <p><%= article.description %></p>
-            </div>
-     <% elsif !article.published? && (current_user && current_user.admin?) %>
+<div class="wrapper">
+  <div class="yoggie-blog-header text-center">
+    <h2>Yoggie Blog</h2>
+      <hr>
+      <div class="button">
+        <% if current_user && current_user.admin? %>
+          <%= link_to "CREATE NEW POST", new_article_path, class: "btn-yoggie-main-clear" %>
+        <% end %>
+      </div>
+  </div>
+  <div class="article-cards-grid">
+    <%@articles.each do |article| %>
+      <% if article.published?%>
         <div class="article-cards">
-          <span class="unpublished label label-primary">NOT PUBLISHED</span>
           <%= link_to cl_image_tag(article.cover_image, width: 300, height: 220, crop: :fill), article_page_path(article.slug)  %>
-          <div class="article-date"><h6><%= article.date&.strftime("#{article.date.day.ordinalize} %B %Y")&.upcase %></h6></div>
-          <h4><%= article.title %></h4>
-          <p><%= article.description %></p>
-        </div>
-      <% end %>
+          <div class="article-date"><h6><%= article.date.strftime("#{article.date.day.ordinalize} %B %Y").upcase %></h6></div>
+            <h4><%= article.title %></h4>
+            <p><%= article.description %></p>
+          </div>
+   <% elsif !article.published? && (current_user && current_user.admin?) %>
+      <div class="article-cards">
+        <span class="unpublished label label-primary">NOT PUBLISHED</span>
+        <%= link_to cl_image_tag(article.cover_image, width: 300, height: 220, crop: :fill), article_page_path(article.slug)  %>
+        <div class="article-date"><h6><%= article.date&.strftime("#{article.date.day.ordinalize} %B %Y")&.upcase %></h6></div>
+        <h4><%= article.title %></h4>
+        <p><%= article.description %></p>
+      </div>
     <% end %>
-    <div class="banner-padding"></div></div>
+  <% end %>
+  <div class="banner-padding"></div></div>
 </div>
