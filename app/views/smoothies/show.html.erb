@@ -28,13 +28,13 @@
           <div>
             <ul>
                   <% @small_ingredients.each do |small_ingredient| %>
-                    <li>
+                    <ul>
                       <%= cl_image_tag(small_ingredient.image, width: 50, height: 50, crop: :fit, class: 'ingredient-img-small') %>
                       <%= small_ingredient.name.titleize %>
-                    </li>
+                    </ul>
                   <% end %>
                 </ul>
-             </div>
+             </div> 
         </div>
         <div class="standard-yoggie-nutrition-right">
           <h4>why it's delicious:</h4>
