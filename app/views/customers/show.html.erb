@@ -5,7 +5,7 @@
 		<h3><%= @customer.first_name %> <%= @customer.last_name %></h3>
       <hr>
       <div class="customer-vitals-subscription">
-        <h4>My <strong><%= @status %></strong> Subscription:</h4>
+        <h4>In my next <strong><%= @status %></strong> box:</h4>
         <ul>
           <% if @customer.basket && @customer.basket.smoothies %>
            <% @customer.basket.smoothies.group_by {|smoothie| smoothie.name}.each do |smoothie_array| %>
@@ -29,7 +29,7 @@
     <% if !@customer.standard? %>
 		  <div class="customer-vitals">
 			<div class="customer-vitals-details">
-				<h4>My Vitals:</h4>
+				<h4>My Info:</h4>
         <p>Name: <span><%= @customer.first_name %></span></p>
 				<p>Age: <span><%= @customer.age %></span></p>
 				<p>Gender: <span><%= @customer.gender %></span></p>
@@ -38,11 +38,11 @@
 				<p>Meals per day: <span><%= @customer.meals_per_day %></span></p>
 				<p>Activity Level: <span><%= @customer.activity_level %></span></p>
 				<p>Goal: <span><%= @customer.goal %></span></p>
-				<%= link_to 'Change my vitals', dashboard_edit_path(@customer) %>
+				<%= link_to 'Change my details', dashboard_edit_path(@customer) %>
 			</div>
       <% if @customer.basket && !@customer.standard? %>
   			<div class="customer-vitals-nutrition">
-  				<h4>My Nutrition Results:</h4>
+  				<h4>My Numbers:</h4>
   				<p>My BMR: <span><%= @customer.bmr %></span></p>
   				<p>Total Daily Energy Expenditure: <span><%= @customer.tdee %></span></p>
   				<p>Daily Target Caloric Intake: <span><%= @customer.daily_calorie_goal %></span></p>

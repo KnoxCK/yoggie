@@ -79,13 +79,13 @@
 .active {
   border: 5px solid $pink;
 }
-.standard-yoggie:hover {
-	background-color: $pink;
-    transition: background-color 0.8s ease;
-	p {
-		display: block;
-	}
-}
+// .standard-yoggie:hover {
+// 	background-color: $pink;
+//     transition: background-color 0.8s ease;
+// 	p {
+// 		display: block;
+// 	}
+// }
 
 @media only screen and (max-width: 1500px) {
 	.our-smoothies {

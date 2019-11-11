@@ -24,15 +24,20 @@
     <div class="nutrition-border section-padding">
       <div class="standard-yoggie-nutrition-top">
         <div class="standard-yoggie-nutrition-topleft">
-          <h4>Includes:</h4>
-          <p>
-            <% @smoothie.ingredients.uniq.each do |i| %>
-              <ul>✓ &nbsp; <%= i.name.titleize %></ul>
-            <% end %>
-          </p>
+          <h4>in the mix:</h4>
+          <div>
+            <ul>
+                  <% @small_ingredients.each do |small_ingredient| %>
+                    <li>
+                      <%= cl_image_tag(small_ingredient.image, width: 50, height: 50, crop: :fit, class: 'ingredient-img-small') %>
+                      <%= small_ingredient.name.titleize %>
+                    </li>
+                  <% end %>
+                </ul>
+             </div>
         </div>
         <div class="standard-yoggie-nutrition-right">
-          <h4>Why It's Delicious:</h4>
+          <h4>why it's delicious:</h4>
           <p><%= @smoothie.ingredient_description %></p>
         </div>
       </div>
@@ -40,9 +45,9 @@
       <div class="standard-yoggie-nutrition-bottom">
         <div class="js-tabs-container yoggie-single-tabs-container">
           <ul class="yoggie-single-tabs-list">
-            <li class="js-tab tab--active" data-tab="macro"><h4>Macro</h4></li>
-            <li class="js-tab" data-tab="nutrition"><h4>Nutrition</h4></li>
-            <li class="js-tab" data-tab="ingredients"><h4>Ingredients</h4></li>
+            <li class="js-tab tab--active" data-tab="macro"><h4>macros</h4></li>
+            <li class="js-tab" data-tab="nutrition"><h4>nutrition</h4></li>
+            <li class="js-tab" data-tab="ingredients"><h4>ingredients</h4></li>
           </ul>
           <div class="js-tab-content tab-content--active yoggie-single-tab-content" data-tab="macro">
             <div class="yoggie-macro-tab">
@@ -55,10 +60,10 @@
                   <div class="macro-info-left">
                     <% if current_user.try(:customer) %>
                       <div class="info-focus"><%= current_user.customer.calories_per_shake %></div>
-                      <div>kCal per yoggie</div>
+                      <div>kcal per yoggie</div>
                     <% else %>
                       <div class="info-focus"><%= @smoothie.nutri_info.energy_kcal %></div>
-                      <div>kCal per 100g</div>
+                      <div>kcal per 100g</div>
                     <% end %>
                   </div>
 
@@ -181,15 +186,11 @@
           </div>
           <div class="js-tab-content yoggie-single-tab-content" data-tab="ingredients">
             <div>
-              <ul>
-                <% @small_ingredients.each do |small_ingredient| %>
-                  <li>
-                    <%= cl_image_tag(small_ingredient.image, width: 50, height: 50, crop: :fit, class: 'ingredient-img-small') %>
-
-                    <%= small_ingredient.name.titleize %>
-                  </li>
+              <p>
+                <% @smoothie.ingredients.uniq.each do |i| %>
+                  <ul>✓ &nbsp; <%= i.name.titleize %></ul>
                 <% end %>
-              </ul>
+              </p>
             </div>
           </div>
         </div>

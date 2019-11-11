@@ -51,7 +51,35 @@
 	<%= image_tag "http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516705803/Asset_4_ms4jfp.png" %>
 	</div>
 </div>
+<!-- How Yoggie works -->
+<div class="how-it-works-section text-center" id="how-it-works">
+		<h2>How it works</h2>
+		<div class="how-it-works">
+			<div class="how-it-works-icons">
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/laptop_pink_l1ltbu.png" %>
+				<div class="how-it-works-text">
+					<h4>You Choose</h4>
+					<p>Pick 5 yoggies (one for each day, Monday to Friday) from our range</p>
+				</div>
+			</div>
+			<div class="how-it-works-icons">
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/lorry_pink_mgunna.png" %>
+				<div class="how-it-works-text">
+					<h4>We Deliver</h4>
+					<p>Each week we deliver your box of 5 yoggie packs to your doorstep or Safe Place. Frozen for top taste and max nutrients. Pop in freezer within 6 hours. Brrrr…</p>
+				</div>
+			</div>
+			<div class="how-it-works-icons how-it-works-making">
+				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/blender_pink_smwkpg.png" %>
+				<div class="how-it-works-text">
+					<h4>You Blend</h4>
+					<p>Empty yoggie pack into blender straight from freezer. Add water/milk/yoghurt or whatever you like! Blitz. Done.</p>
+				</div>
 
+		</div>
+	</div>
+	<%= link_to "GET STARTED", new_customer_path, class: 'btn-yoggie-main-clear' %>
+</div>
 <!-- What is Yoggie -->
 <div class="about-yoggie section-padding text-center" id="about-yoggies">
 	<div class="what-is-yoggie">
@@ -104,32 +132,7 @@
 	<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565252829/WhatIsYoggie_diagram_green2_llxoca.png" %>
 </div> -->
 
-<!-- What our customers say -->
-<div class="testimonials-section">
-	<h2>What Our Customers Say...</h2>
-	<div class="testimonials">
-		<div class="testimonial testimonial-orange">
-			<p>"I look forward to my breakfast smoothie every morning!"</p>
-			<span><p>– Nikki P</p></span>
-		</div>
-		<div class="testimonial testimonial-blue">
-			<p>"ADORE my smoothies!! I have one for lunch each day. Plus I know it’s healthy so no guilt!!!"</p><span><p>– Cara P</p></span>
-		</div>
-		<div class="testimonial testimonial-red">
-			<p>"These are life-changing. Thank you so much guys."</p>
-			<span><p>– John G</p></span>
-		</div>
-		<div class="testimonial testimonial-green">
-			<p>"Delicious. Saves 10 mins each morning too."</p>
-			<span><p>– Tom M</p></span>
-		</div>
-	</div>
-	<div class="action-button text-center">
-		<%= link_to "GET STARTED", choose_custom_path, class: 'btn-yoggie-main-clear' %>
-	</div>
-	<br></br>
-</div>
-<!-- What's in your weekly Yoggie box -->
+<!-- Benefits of Yoggie -->
 <div class="yoggie-benefits">
 	<div class="yoggie-benefits-content">
 		<h2>Benefits of Yoggie</h2>
@@ -171,35 +174,33 @@
 	</div>
 </div>
 
-<!-- How Yoggie works -->
-<div class="how-it-works-section text-center" id="how-it-works">
-		<h2>How it works</h2>
-		<div class="how-it-works">
-			<div class="how-it-works-icons">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/laptop_pink_l1ltbu.png" %>
-				<div class="how-it-works-text">
-					<h4>You Choose</h4>
-					<p>Pick 5 yoggies (one for each day, Monday to Friday) from our range</p>
-				</div>
-			</div>
-			<div class="how-it-works-icons">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/lorry_pink_mgunna.png" %>
-				<div class="how-it-works-text">
-					<h4>We Deliver</h4>
-					<p>Each week we deliver your box of 5 yoggie packs to your doorstep or Safe Place. Frozen for top taste and max nutrients. Pop in freezer within 6 hours. Brrrr…</p>
-				</div>
-			</div>
-			<div class="how-it-works-icons how-it-works-making">
-				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/blender_pink_smwkpg.png" %>
-				<div class="how-it-works-text">
-					<h4>You Blend</h4>
-					<p>Empty yoggie pack into blender straight from freezer. Add water/milk/yoghurt or whatever you like! Blitz. Done.</p>
-				</div>
-
+<!-- What our customers say -->
+<div class="testimonials-section">
+	<h2>What Our Customers Say...</h2>
+	<div class="testimonials">
+		<div class="testimonial testimonial-orange">
+			<p>"I look forward to my breakfast smoothie every morning!"</p>
+			<span><p>– Nikki P</p></span>
+		</div>
+		<div class="testimonial testimonial-blue">
+			<p>"ADORE my smoothies!! I have one for lunch each day. Plus I know it’s healthy so no guilt!!!"</p><span><p>– Cara P</p></span>
+		</div>
+		<div class="testimonial testimonial-red">
+			<p>"These are life-changing. Thank you so much guys."</p>
+			<span><p>– John G</p></span>
+		</div>
+		<div class="testimonial testimonial-green">
+			<p>"Delicious. Saves 10 mins each morning too."</p>
+			<span><p>– Tom M</p></span>
 		</div>
 	</div>
-	<%= link_to "GET STARTED", new_customer_path, class: 'btn-yoggie-main-clear' %>
+	<div class="action-button text-center">
+		<%= link_to "GET STARTED", choose_custom_path, class: 'btn-yoggie-main-clear' %>
+	</div>
+	<br></br>
 </div>
+
+
 <div class="instagram-grid">
   <!-- <#% @popular.data.first(10).each do |popular| %> -->
       <!-- <#%= image_tag popular.images.low_resolution.url %> -->
