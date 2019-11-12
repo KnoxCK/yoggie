@@ -1,8 +1,8 @@
 <div class="results-wrapper">
   <% unless current_user.customer.standard? %>
-    <h3 class="text-center">Your Nutrition</h3>
+    <h4 class="text-center">Your perfect breakfast looks like this:</h4>
     <div class="results-content">
-      <h5>Based on your data we have calculated the following:</h5>
+      <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1573558060/Macro_graphic_mfqchc.png", class: "results-graphic" %>
       <p><span>Your BMR: </span><span class="your-results"><%= current_user.customer.bmr %></span></p>
       <p><span>Your Total Daily Energy Expenditure: </span><span class="your-results"><%=current_user.customer.tdee %></span></p>
       <p><span>Daily Target Caloric Intake: </span><span class="your-results"><%= current_user.customer.daily_calorie_goal %> CAL</span></p>
@@ -13,26 +13,19 @@
     </div>
     <div class="results-line"></div>
     <% end %>
-</div>
-
-  <div class="results-content">
-    <h3 class="text-center">Choose Your Flavours</h3>
-    <h5>Please select a total of <span style="color: $pink;">5</span> smoothies from the list below:</h5>
+    <p class="results-text text-center">Pick your week’s <span>5</span> smoothie breakfasts below. We'll tweak each recipe to match the above. No worries, no fuss.</p>
     <% if @message %>
       <p style="color: red;"><%= @message %></p>
     <% end %>
-  </div>
-
+</div>
     <div class="our-smoothies">
       <% smoothies.each do |smoothie| %>
-
-      <div class="standard-yoggie">
+      <%= link_to smoothie_path(smoothie.slug) do %>
+      <div class="standard-yoggie <%= "active" if BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count >= 1 %>">    
       
       <%= cl_image_tag smoothie.image %>
-        <div class="standard-yoggie-content <%= "active" if BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count >= 1 %>">
-          <%= link_to smoothie_path(smoothie.slug) do %>
+        <div class="standard-yoggie-content">
             <h3><%= smoothie.name.titleize %><br></br></h3>
-          <% end %>
           <% if current_user %>
             <%#= link_to "ADD TO BOX", new_customer_basket_path(current_user.customer), class: 'btn-yoggie-main-clear' %>
             <%= form_for [current_user.customer, current_user.customer.basket], :url => url_for(:controller => 'baskets', :action => 'add_to_basket') do |f| %>
@@ -42,12 +35,11 @@
               <%= f.hidden_field :tailored, value: true if current_user.customer.tailored? %>
               <%= select_tag "quantity", options_for_select([0, 1, 2, 3, 4, 5], BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count) %>
             <div class="flex">
-              <%= f.submit 'UPDATE BOX', class: "btn-yoggie-main-green"  %>
-              <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
+              <%= f.submit 'UPDATE BOX', class: "btn-yoggie-main-green text-center"  %>
             </div>
           <% end %>
         <% else %>
-          <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
+        <%= link_to "VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear text-center' %>
         <% end %>
           <p class="card-hover">
             <% smoothie.ingredients.uniq.each do |ingredient| %>
@@ -57,7 +49,7 @@
         </div>
       </div>
       <% end %>
-
+<% end %>
     </div>
   </div>
 

@@ -74,9 +74,9 @@ class BasketsController < ApplicationController
         end
       end
       if @basket.smoothies.count >= 5
-        @message = "You have a total of 5 smoothies."
+        @message = "Box full (5/5)!"
       else
-        @message = "Smoothies added, you need another #{5 - @basket.smoothies.length}."
+        @message = "#{@basket.smoothies.length}/5 in your box"
       end
 
       redirect_to smoothies_path, notice: @message

@@ -1,14 +1,14 @@
 <%= render 'shared/flashes' %>
-
+<div class="banner-padding"></div>
 <% if user_signed_in? && current_user.customer.basket.smoothies.count == 5 %>
   <div class="banner-padding"></div>
 <% else %>
-<div class="our-smoothies-banner"></div>
+<!-- <div class="our-smoothies-banner"></div> -->
+<div class="banner-padding"></div>
 <% end %>
 <div class="our-smoothies-intro section-padding text-center">
-	<br>
+	<br></br>
 	<h2>Pick Your Yoggies</h2>
-	<p>Choose your <span>5</span> smoothies for the week</p>
 	<br>
 </div>
 <div class="text-center">
@@ -32,7 +32,7 @@
    <% if !current_user.customer.standard? %>
     <% if current_user.customer.basket.status == 'pending' && current_user.customer.basket.smoothies.count == 5 %>
         <div class="text-center">
-          <%= link_to "PAY FOR CUSTOM YOGGIES", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green text-center' %>
+          <%= link_to "CHECKOUT", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green text-center' %>
         </div>
      <% end %>
      <div class="our-smoothies">

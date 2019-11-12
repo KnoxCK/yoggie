@@ -47,6 +47,12 @@
 		text-decoration: none;
 	}
 }
+.results-graphic {
+	position: relative;
+	width: 400px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
 .results-line {
 	width: 100%;
 	border-top: 1px solid $dark-grey;
@@ -55,6 +61,12 @@
 }
 .your-results {
 	color: $green;
+}
+.results-text {
+	span {
+		color: $pink;
+		font-weight: bold;
+	}
 }
 .results-button {
 	display: flex;

@@ -71,8 +71,8 @@
 }
 .btn-yoggie-main-clear:hover {
     background-color: $green;
-    color: white;
-    text-decoration: none;
+    color: white !important;
+    text-decoration: none !important;
 }
 .btn-navbar-scroll {
     display: inline-block;

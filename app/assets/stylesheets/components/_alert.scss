@@ -10,6 +10,9 @@
 }
 .alert-info {
   background: $pink;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 }
 .alert-warning {
   background: $pink;
