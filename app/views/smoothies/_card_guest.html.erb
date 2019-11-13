@@ -3,7 +3,7 @@
   <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1568376288/Bare_hbplfq.png", class: 'bare-general' %>
   <%= cl_image_tag smoothie.image %>
   <div class="standard-yoggie-content ">
-          <h3><%= smoothie.name.titleize %><br></br></h3>
+          <h3><%= smoothie.name.titleize %><br></br></h3><% end %>
         <%= link_to 'UPDATE BOX', new_user_session_path, class: "btn-yoggie-main-green text-center"%>
       <p class="card-hover">
         <% smoothie.ingredients.uniq.each do |ingredient| %>
@@ -12,4 +12,3 @@
       </p>
   </div>
 </div>
-<% end %>

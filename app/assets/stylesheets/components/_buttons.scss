@@ -59,13 +59,13 @@
     background-image: none;
     white-space: nowrap;
     padding: 15px 25px;
-    font-size: 16px;
+    font-size: 12px !important;
     border-radius: 8px;
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3);
     text-decoration: none;
-    color: black;
+    color: black !important;
     background-color: transparent;
-    letter-spacing: 1px;
+    letter-spacing: 1px !important;
     margin-top: 10px;
     border: $green 1px solid;
 }
@@ -126,6 +126,19 @@
     background-color: $green;
     color: white;
     text-decoration: none;
+}
+.btn-width {
+    width: 200px;
+}
+.cancel-order-buttons {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    a {
+        text-decoration: none;
+        margin: 10px;
+        width: 270px;
+    }
 }
 @media only screen and (max-width: 1000px){
     .btn-yoggie-main-white {

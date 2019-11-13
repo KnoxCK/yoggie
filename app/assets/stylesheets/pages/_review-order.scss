@@ -19,6 +19,7 @@
 	}
 	p {
 		font-weight: lighter;
+		text-align: center;
 	}
 	a {
 		color: $green;
@@ -40,4 +41,7 @@
   span {
     padding-right: 8px;
   }
+}
+.safe-place-text title {
+	text-align:left !important;
 }

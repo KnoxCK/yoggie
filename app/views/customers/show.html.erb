@@ -1,65 +1,105 @@
 <%= render 'shared/flashes' %>
 <div class="customer-vitals-wrapper">
+
 	<div class="customer-vitals-box">
 		<h2>My Dashboard</h2>
 		<h3><%= @customer.first_name %> <%= @customer.last_name %></h3>
       <hr>
-      <div class="customer-vitals-subscription">
-        <h4>In my next <strong><%= @status %></strong> box:</h4>
-        <ul>
-          <% if @customer.basket && @customer.basket.smoothies %>
-           <% @customer.basket.smoothies.group_by {|smoothie| smoothie.name}.each do |smoothie_array| %>
-              <p><span><%= smoothie_array[1].count %> x <%= smoothie_array[0].titleize %></span></p>
-            <% end %>
-        <% end %>
-        </ul>
-        <div class="change-my-yoggies">
-        <%= link_to 'CHANGE MY YOGGIES', smoothies_path(@customer, @customer.basket), class: "btn-yoggie-main-clear" %></div><br>
-        <%= link_to "Pay for my Yoggies",edit_customer_path(current_user.customer) if @customer&.basket.status == 'pending' && @basket.smoothies.count == 5  %>
-        <% if @customer&.basket.active? %>
-          <% unless @sub_status %>
-            <p>Your subscription needs updating: <%= link_to 'Click here to update', new_customer_payment_path(@customer) %></p>
-          <% end %>
-          <%= link_to 'Cancel My Subscription', cancel_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
-          <%= link_to 'Pause My Subscription', pause_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
-          <%= link_to 'My nutrition section', my_nutrition_path(@customer.basket) %>
-        <% end %>
-        <%= link_to 'Change my address', edit_customer_address_path(@customer) %>
-    </div>
-    <br>
-    <% if !@customer.standard? %>
-		  <div class="customer-vitals">
-			<div class="customer-vitals-details">
-				<h4>My info:</h4>
+      <% if !@customer.standard? %>
+      <div class="customer-vitals">
+      <div class="customer-vitals-details">
+        <h4>My info:</h4>
         <p>Name: <span><%= @customer.first_name %></span></p>
-				<p>Age: <span><%= @customer.age %></span></p>
-				<p>Gender: <span><%= @customer.gender %></span></p>
-				<p>Height: <span><%= @customer.height %></span></p>
-				<p>Weight: <span><%= @customer.weight %></span></p>
-				<p>Meals per day: <span><%= @customer.meals_per_day %></span></p>
-				<p>Activity Level: <span><%= @customer.activity_level %></span></p>
-				<p>Goal: <span><%= @customer.goal %></span></p>
-				<%= link_to 'Change my info', dashboard_edit_path(@customer) %>
-			</div>
+        <p>Age: <span><%= @customer.age %></span></p>
+        <p>I am a: <span><%= @customer.gender %></span></p>
+        <p>My height is: <span><%= @customer.height %></span></p>
+        <p>I weigh: <span><%= @customer.weight %></span></p>
+        <p>I typically eat: <span><%= @customer.meals_per_day %></span></p>
+        <p>Activity Level: <span><%= @customer.activity_level %></span></p>
+        <p>My goal is to: <span><%= @customer.goal %></span></p>
+        <%= link_to 'Change my info', dashboard_edit_path(@customer) %>
+      </div>
+
       <% if @customer.basket && !@customer.standard? %>
-  			<div class="customer-vitals-nutrition">
-  				<h4>My numbers:</h4>
+        <div class="customer-vitals-nutrition">
+          <h4>My numbers:</h4>
           <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1573558060/Macro_graphic_mfqchc.png", class: "results-graphic" %>
           <br></br>
-  				<p>My BMR: <span><%= @customer.bmr %></span></p>
-  				<p>Total Daily Energy Expenditure: <span><%= @customer.tdee %></span></p>
-  				<p>Daily Target Caloric Intake: <span><%= @customer.daily_calorie_goal %></span></p>
-  				<p>Calories per Smoothie: <span><%= @customer.calories_per_shake %></span></p>
-  				<p>Percentage Protein: <span><%= @customer.protein %></span></p>
-  				<p>Percentage Fat: <span><%= @customer.fat %></span></p>
-  				<p>Percentage Carbohydrate: <span><%= @customer.carbs %></span></p>
-  				<% if @customer&.basket.active? %>
-  					<%= link_to 'Change to tailored smoothies', update_subscription_path(@customer, standard: false) if @customer.standard? %>
-  					<%= link_to 'Change to standard smoothies', update_subscription_path(@customer, standard: true) if !@customer.standard? %>
-  				<% end %>
-  			</div>
-		  </div>
+
+          <p>My BMR: <span><%= @customer.bmr %></span></p>
+          <p>Total Daily Energy Expenditure: <span><%= @customer.tdee %></span></p>
+          <p>Daily Target Caloric Intake: <span><%= @customer.daily_calorie_goal %></span></p>
+          <p>Calories per Smoothie: <span><%= @customer.calories_per_shake %></span></p>
+          <p>Percentage Protein: <span><%= @customer.protein %></span></p>
+          <p>Percentage Fat: <span><%= @customer.fat %></span></p>
+          <p>Percentage Carbohydrate: <span><%= @customer.carbs %></span></p>
+          <% if @customer&.basket.active? %>
+            <%= link_to 'Change to tailored smoothies', update_subscription_path(@customer, standard: false) if @customer.standard? %>
+            <%= link_to 'Change to standard smoothies', update_subscription_path(@customer, standard: true) if !@customer.standard? %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
-    <% end %>
+    <% end %></br>
+      <div class="customer-vitals-subscription">
+        <br>
+        <h3>My Account</h3>
+        <h4 id="details-click" class="my-account-title"><%= link_to "Details:" %></h4>
+        <div class="details" style="display: none;"> 
+          <ul>
+            <p>Name: <span><%= @customer.first_name %></span></p>
+            <p>I am a: <span><%= @customer.gender %></span></p>
+            <p>Email: <span><%= @customer.user.email %></span></p>
+            <p>Address 1: <span><%= @customer.address.address_line_one %></span></p>
+            <p>Address 2: <span><%= @customer.address.address_line_two %></span></p>
+            <p>Postcode: <span><%= @customer.address.postcode %></span></p>
+            <p>Delivery Instructions: <span>Safe Place:<%= @customer.address.delivery_instructions %></span></p>
+            <div class="change-my-yoggies">
+            <%= link_to 'Change my address', edit_customer_address_path(@customer) %>
+            </div>  
+          </ul><br>
+        </div>
+
+        <h4 id="next-box-click" class="my-account-title"><%= link_to "In my next box:" %></h4>
+        <div class="next-box" style="display: none;"> 
+          <p>I have a weekly <strong><%= @status %></strong> subscription of...</p>
+          <ul>
+            <% if @customer.basket && @customer.basket.smoothies %>
+             <% @customer.basket.smoothies.group_by {|smoothie| smoothie.name}.each do |smoothie_array| %>
+                <p><span><%= smoothie_array[1].count %> x <%= smoothie_array[0].titleize %><span></p>
+              <% end %>
+          <% end %>
+          </ul>
+          <p>Postcode: <span><%= @customer.address.postcode %></span></p>
+          <div class="change-my-yoggies">
+            <%= link_to 'CHANGE MY YOGGIES', smoothies_path(@customer, @customer.basket), class: "btn-yoggie-main-clear" %>
+          </div><br>
+          <%= link_to "Pay for my Yoggies",edit_customer_path(current_user.customer) if @customer&.basket.status == 'pending' && @basket.smoothies.count == 5  %>
+          <% if @customer&.basket.active? %>
+            <% unless @sub_status %>
+              <p>Your subscription needs updating: <%= link_to 'Click here to update', new_customer_payment_path(@customer) %></p>
+            <% end %>
+            <%= link_to 'Cancel My Subscription', cancel_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
+            <%= link_to 'My nutrition section', my_nutrition_path(@customer.basket) %>
+          <% end %><br>
+        <br>
+        </div>
+
+        <h4 id="delivery-click" class="my-account-title"><%= link_to "Delivery:" %></h4>
+        <div class="delivery" style="display: none;">
+          <p>Delivery day: <span>Tuesday</span></p>
+          <p>Delivery time: <span>0300 - 0600</span></p>
+          <br>
+        </div>
+
+        <h4 id="order2-click" class="my-account-title"><%= link_to "Order:" %></h4>
+        <div class="order2" style="display: none;">
+          <p>Plan: <span><%= @status %></span></p>
+          <p>Next delivery: <span>19th November 2019 </span></p>
+          <div class="change-my-yoggies">
+            <%= link_to 'Pause My Subscription', pause_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
+          </div>
+        </div>
+    <br>
 	</div>
 </div>

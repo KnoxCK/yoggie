@@ -6,7 +6,7 @@
       <div class="standard-yoggie-content">
     <% end %>
        <%= link_to smoothie_path(smoothie.slug) do %>
-            <h3><%= smoothie.name.titleize %><br></br></h3>
+       <h3><%= smoothie.name.titleize %><br></br></h3>
       <% end %>
       <% if current_user %>
         <%#= link_to "ADD TO BOX", new_customer_basket_path(current_user.customer), class: 'btn-yoggie-main-clear' %>
