@@ -95,6 +95,25 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 20px 20px 0 50px;
+
+  .large-ingredients {
+    display: flex;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 15px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
 .standard-yoggie-nutrition-right {
 	width: 50%;
@@ -165,10 +184,6 @@
 
 .yoggie-single-tab-content {
   padding: 15px;
-
-  .ingredient-img-small {
-    padding: 0;
-  }
 }
 
 .yoggie-macro-tab {
