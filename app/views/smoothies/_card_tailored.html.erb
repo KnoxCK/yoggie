@@ -10,6 +10,7 @@
       <p><span>Percentage of Protein: </span><span class="your-results"><%= current_user.customer.protein %></span></p>
       <p><span>Percentage of Fat: </span><span class="your-results"><%= current_user.customer.fat %></span></p>
       <p><span>Percentage of Carbohydrate: </span><span class="your-results"><%= current_user.customer.carbs %></span></p>
+      <%= link_to "Change my numbers", edit_customer_path(current_user.customer), class: "yoggie-standard-link" %>
     </div>
     <div class="results-line"></div>
     <% end %>
@@ -21,8 +22,8 @@
     <div class="our-smoothies">
       <% smoothies.each do |smoothie| %>
       <%= link_to smoothie_path(smoothie.slug) do %>
-      <div class="standard-yoggie <%= "active" if BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count >= 1 %>">    
-      
+      <div class="standard-yoggie <%= "active" if BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count >= 1 %>">
+
       <%= cl_image_tag smoothie.image %>
         <div class="standard-yoggie-content">
             <h3><%= smoothie.name.titleize %><br></br></h3><% end %>

@@ -28,3 +28,16 @@ ul {
 ul.no-style {
   list-style-type: none;
 }
+.yoggie-standard-link {
+  color: $green !important;
+  text-decoration: none;
+  opacity: 0.8;
+  letter-spacing: 0px;
+  font-weight: lighter;
+
+  &:hover {
+    color: $green;
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
