@@ -231,13 +231,38 @@
             </div>
           </div>
           <div class="js-tab-content yoggie-single-tab-content" data-tab="ingredients">
-            <div>
-              <h4>your smoothie contains...</h4>
-              <p>
-                <% @smoothie.ingredients.uniq.each do |i| %>
-                  <%= i.name.titleize %>,
-                <% end %>
-              </p>
+            <div class="ingredients-tab-content">
+              <div class="row">
+                <div class="col-xs-6">
+                  <h4>Smoothie contains</h4>
+                  <p>
+                    <%= @smoothie.ingredients.uniq.map{|i| i.name.titleize}.join(", ") %>
+                  </p>
+                  <br>
+                  <h4>Ingredients contain</h4>
+                  <% @special_ingredients.each do |special_ingredient| %>
+                    <p>
+                      <strong>
+                        <%= special_ingredient.name.titleize %>
+                      </strong>
+                    </p>
+                    <p style="word-wrap: break-word;">
+                      <%= special_ingredient.contents %>
+                    </p>
+                  <% end %>
+                </div>
+                <div class="col-xs-6">
+                  <h4>Allergens</h4>
+                  <p>
+                    <strong>
+                      For allergens see ingredients with symbol &#10013; and/or in bold text
+                    </strong>
+                  </p>
+                  <p>
+                    In addition to the above, due to the environment within our packaging facility, our packs may contain low levels of the following allergens: Cereals containing gluten; Crustaceans; Eggs; Fish; Peanuts; Soya; Milk; Nuts: almonds, hazelnuts, walnuts, cashews, pecan nuts, brazil nuts, pistachio nuts, macadamia nuts; Celery; Sesame; Sulphur dioxide and Sulphites; Lupin; Molluscs; Mustard.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
