@@ -45,23 +45,24 @@
         <br>
         <h3>My Account</h3>
         <h4 id="details-click" class="my-account-title"><%= link_to "Details:" %></h4>
-        <div class="details" style="display: none;"> 
+        <div class="details" style="display: none;">
           <ul>
             <p>Name: <span><%= @customer.first_name %></span></p>
             <p>I am a: <span><%= @customer.gender %></span></p>
             <p>Email: <span><%= @customer.user.email %></span></p>
-            <p>Address 1: <span><%= @customer.address.address_line_one %></span></p>
-            <p>Address 2: <span><%= @customer.address.address_line_two %></span></p>
-            <p>Postcode: <span><%= @customer.address.postcode %></span></p>
-            <p>Delivery Instructions: <span>Safe Place:<%= @customer.address.delivery_instructions %></span></p>
+            <p>Address 1: <span><%= @customer.address&.address_line_one %></span></p>
+            <p>Address 2: <span><%= @customer.address&.address_line_two %></span></p>
+            <p>Address 3: <span><%= @customer.address&.address_line_three %></span></p>
+            <p>Postcode: <span><%= @customer.address&.postcode %></span></p>
+            <p>Delivery Instructions: <span>Safe Place:<%= @customer.address&.delivery_instructions %></span></p>
             <div class="change-my-yoggies">
             <%= link_to 'Change my address', edit_customer_address_path(@customer) %>
-            </div>  
+            </div>
           </ul><br>
         </div>
 
         <h4 id="next-box-click" class="my-account-title"><%= link_to "In my next box:" %></h4>
-        <div class="next-box" style="display: none;"> 
+        <div class="next-box" style="display: none;">
           <p>I have a weekly <strong><%= @status %></strong> subscription of...</p>
           <ul>
             <% if @customer.basket && @customer.basket.smoothies %>
@@ -70,7 +71,7 @@
               <% end %>
           <% end %>
           </ul>
-          <p>Postcode: <span><%= @customer.address.postcode %></span></p>
+          <p>Postcode: <span><%= @customer.address&.postcode %></span></p>
           <div class="change-my-yoggies">
             <%= link_to 'CHANGE MY YOGGIES', smoothies_path(@customer, @customer.basket), class: "btn-yoggie-main-clear" %>
           </div><br>
