@@ -95,12 +95,33 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 20px 20px 0 50px;
+
+  .large-ingredients {
+    display: flex;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 15px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
 .standard-yoggie-nutrition-right {
 	width: 50%;
 }
 .standard-yoggie-nutrition-bottom {
-	padding-top: 20px;
+	padding-top: 30px;
+  width: 100%;
+
 	h4 {
 		text-align: center;
 	}
@@ -130,18 +151,18 @@
   .yoggie-single-tabs-list {
     display: flex;
     padding: 0 15px;
-
+    justify-content: center;
 
     li {
       padding: 0 15px;
       cursor: pointer;
-      border-bottom: solid 0.5px $border;
+      border-bottom: solid 0.5px $dark-grey;
 
       &.tab--active {
         border-bottom: none;
-        border-left: solid 0.5px $border;
-        border-right: solid 0.5px $border;
-        border-top: solid 0.5px $border;
+        border-left: solid 0.5px $dark-grey;
+        border-right: solid 0.5px $dark-grey;
+        border-top: solid 0.5px $dark-grey;
         border-radius: 10px 10px 0 0;
       }
 
@@ -152,16 +173,17 @@
       &:hover > * {
         color: $pink !important;
       }
+
+      &.filler-tab {
+        width: 100%;
+        border-bottom: solid 0.5px $dark-grey;
+      }
     }
   }
 }
 
 .yoggie-single-tab-content {
   padding: 15px;
-
-  .ingredient-img-small {
-    padding: 0;
-  }
 }
 
 .yoggie-macro-tab {
@@ -209,33 +231,81 @@
 
         .percentage {
           font-size: 11px;
-          padding-left: 15px;
+          height: 30px;
+          width: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           font-weight: 500;
+          color: white;
+          border-radius: 15px;
+          position: relative;
+          left: 15px;
+          z-index: 3;
         }
 
         .nutri {
-          padding: 0 30px;
+          width: 140px;
+          text-align: center;
+          z-index: 2;
+          background-color: white;
         }
 
         .grams {
           font-size: 11px;
-          padding-right: 15px;
           font-weight: 500;
+          height: 30px;
+          width: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 15px;
+          position: relative;
+          right: 15px;
+          z-index: 3;
+
+          &.half-circle {
+            z-index: 1 !important;
+          }
         }
 
         &.green-border {
-          border: 2px solid #00AB1A;
-          border-radius: 15px;
+          .percentage {
+            background-color: #00AB1A;
+          }
+          .nutri {
+            border-top: 2px solid #00AB1A;
+            border-bottom: 2px solid #00AB1A;
+          }
+          .grams {
+            border: 2px solid #00AB1A;
+          }
         }
 
         &.yellow-border {
-          border: 2px solid #DBD228;
-          border-radius: 15px;
+          .percentage {
+            background-color: #DBD228;
+          }
+          .nutri {
+            border-top: 2px solid #DBD228;
+            border-bottom: 2px solid #DBD228;
+          }
+          .grams {
+            border: 2px solid #DBD228;
+          }
         }
 
         &.orange-border {
-          border: 2px solid #FE7836;
-          border-radius: 15px;
+          .percentage {
+            background-color: #FE7836;
+          }
+          .nutri {
+            border-top: 2px solid #FE7836;
+            border-bottom: 2px solid #FE7836;
+          }
+          .grams {
+            border: 2px solid #FE7836;
+          }
         }
       }
     }
@@ -274,5 +344,15 @@
       font-size: 11px;
       padding-left: 15px;
     }
+  }
+}
+
+.ingredients-tab-content {
+  h4 {
+    margin-bottom: 0;
+    text-align: left;
+  }
+  p {
+    margin-bottom: 10px;
   }
 }

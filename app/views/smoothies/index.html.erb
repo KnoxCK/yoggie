@@ -8,7 +8,11 @@
 <% end %>
 <div class="our-smoothies-intro section-padding text-center">
 	<br></br>
-	<h2>Pick Your Yoggies</h2>
+  <% if current_user&.customer&.first_name&.present? %>
+    <h2><%= current_user.customer.first_name %>'s Yoggies</h2>
+  <% else %>
+	  <h2>Choose Your Yoggies</h2>
+  <% end %>
 	<br>
 </div>
 <div class="text-center">
