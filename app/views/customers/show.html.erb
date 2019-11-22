@@ -14,10 +14,10 @@
         <p>I am a: <span><%= @customer.gender %></span></p>
         <p>My height is: <span><%= @customer.height %></span></p>
         <p>I weigh: <span><%= @customer.weight %></span></p>
-        <p>I typically eat: <span><%= @customer.meals_per_day %></span></p>
+        <p>I typically eat: <span><%= @customer.meals_per_day %> meals per day</span></p>
         <p>Activity Level: <span><%= @customer.activity_level %></span></p>
         <p>My goal is to: <span><%= @customer.goal %></span></p>
-        <%= link_to 'Change my info', dashboard_edit_path(@customer) %>
+        <%= link_to 'Change or add info', dashboard_edit_path(@customer) %>
       </div>
 
       <% if @customer.basket && !@customer.standard? %>
@@ -83,7 +83,7 @@
 
         <h4 id="next-box-click" class="my-account-title"><%= link_to "In my next box:" %></h4>
         <div class="next-box" style="display: none;">
-          <p>I have a weekly <strong><%= @status %></strong> subscription of...</p>
+          <p>I have a weekly subscription of...</p>
           <ul>
             <% if @customer.basket && @customer.basket.smoothies %>
              <% @customer.basket.smoothies.group_by {|smoothie| smoothie.name}.each do |smoothie_array| %>
@@ -91,7 +91,6 @@
               <% end %>
           <% end %>
           </ul>
-          <p>Postcode: <span><%= @customer.address&.postcode %></span></p>
           <div class="change-my-yoggies">
             <%= link_to 'CHANGE MY YOGGIES', smoothies_path(@customer, @customer.basket), class: "btn-yoggie-main-clear" %>
           </div><br>

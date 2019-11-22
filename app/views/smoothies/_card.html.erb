@@ -1,5 +1,6 @@
   <div class="standard-yoggie <%= "active" if BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count >= 1 %>">
     <%= link_to smoothie_path(smoothie.slug) do %>
+    <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1568376288/Bare_hbplfq.png", class: 'bare-general' %>
     <%= cl_image_tag smoothie.image %>
     <% if user_signed_in? %>
     <div class="standard-yoggie-content">
