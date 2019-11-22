@@ -96,7 +96,7 @@
         <h4 id="order2-click" class="my-account-title"><%= link_to "Order:" %></h4>
         <div class="order2" style="display: none;">
           <p>Plan: <span><%= @status %></span></p>
-          <p>Next delivery: <span>19th November 2019 </span></p>
+          <p>Next delivery: <span><%= @next_delivery_date_string %></span></p>
           <div class="change-my-yoggies">
             <%= link_to 'Pause My Subscription', pause_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
           </div>

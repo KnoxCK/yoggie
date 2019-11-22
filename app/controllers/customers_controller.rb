@@ -40,6 +40,10 @@ class CustomersController < ApplicationController
     else
       @basket = Basket.create(customer: current_user.customer)
     end
+
+    date = Date.today
+    date += 1 + ((1-date.wday) % 7)
+    @next_delivery_date_string = "#{date.day.ordinalize} #{date.strftime("%B, %Y")}"
   end
 
 
