@@ -27,10 +27,10 @@
     <div class="our-smoothies">
       <% @smoothies.each do |smoothie| %>
         <%= link_to smoothie_path(smoothie) do %>
-      <div class="standard-yoggie">
-        <div class="standard-yoggie-content <%= "active" if BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count >= 1 %>">
+      <div class="standard-yoggie <%= "active" if BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count >= 1 %>">
+        <div class="standard-yoggie-content">
           <h3><%= smoothie.name.titleize %><br></br></h3>
-          <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>
+          <!-- <%= link_to " VIEW YOGGIE", smoothie_path(smoothie.slug), class: 'btn-yoggie-main-clear' %>-->
           <% if current_user %>
             <%#= link_to "ADD TO BOX", new_customer_basket_path(current_user.customer), class: 'btn-yoggie-main-clear' %>
             <%= form_for [current_user.customer, current_user.customer.basket], :url => url_for(:controller => 'baskets', :action => 'add_to_basket') do |f| %>

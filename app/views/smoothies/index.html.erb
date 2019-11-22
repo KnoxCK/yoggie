@@ -20,9 +20,9 @@
     <% if current_user.customer.standard? %>
       <% if current_user.customer.basket.status == 'pending' && current_user.customer.basket.smoothies.count == 5 %>
       <% if  current_user.customer.first_name.nil?%>
-        <%= link_to "PAY FOR STANDARD YOGGIES", edit_customer_path(current_user.customer), class: 'btn-yoggie-main-green' %>
+        <%= link_to "PAY FOR STANDARD YOGGIES", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green' %>
       <% else %>
-       <%= link_to "PAY FOR STANDARD YOGGIES", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green' %>
+        <%= link_to "PAY FOR STANDARD YOGGIES", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green' %>
       <% end %>
 
       <% end %>
