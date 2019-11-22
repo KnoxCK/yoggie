@@ -95,17 +95,16 @@
                 <h4>your smoothie has...</h4>
               <% end %>
 
-              <div class="macro-main">
-
-                  <div class="macro-info-left">
-                    <% if current_user.try(:customer) %>
-                      <div class="info-focus"><%= current_user.customer.calories_per_shake %></div>
-                      <div>kcal per yoggie</div>
-                    <% else %>
-                      <div class="info-focus"><%= @smoothie.nutri_info.energy_kcal %></div>
-                      <div>kcal per 100g</div>
-                    <% end %>
-                  </div>
+              <div class="macro-main center">
+                <div class="macro-info-left">
+                  <% if current_user.try(:customer) %>
+                    <div class="info-focus"><%= current_user.customer.calories_per_shake %></div>
+                    <div>kcal per yoggie</div>
+                  <% else %>
+                    <div class="info-focus"><%= @smoothie.nutri_info.energy_kcal %></div>
+                    <div>kcal per 100g</div>
+                  <% end %>
+                </div>
 
                 <ul class="macro-info-list">
                   <li class="green-border">

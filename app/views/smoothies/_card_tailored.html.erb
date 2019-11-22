@@ -2,14 +2,36 @@
   <% unless current_user.customer.standard? %>
     <h4 class="text-center">Your perfect breakfast looks like this:</h4>
     <div class="results-content">
-      <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1573558060/Macro_graphic_mfqchc.png", class: "results-graphic" %><br>
+      <!--  -->
+      <div class="macro-main left">
+        <div class="macro-info-left">
+          <div class="info-focus"><%= current_user.customer.calories_per_shake %></div>
+          <div>kcal per yoggie</div>
+        </div>
+
+        <ul class="macro-info-list">
+          <li class="green-border">
+            <div class="percentage"><%= current_user.customer.protein %>%</div>
+            <div class="nutri">Protein</div>
+            <div class="grams half-circle"></div>
+          </li>
+          <li class="yellow-border">
+            <div class="percentage"><%= current_user.customer.carbs %>%</div>
+            <div class="nutri">Carbs</div>
+            <div class="grams half-circle"></div>
+          </li>
+          <li class="orange-border">
+            <div class="percentage"><%= current_user.customer.fat %>%</div>
+            <div class="nutri">Fats</div>
+            <div class="grams half-circle"></div>
+          </li>
+        </ul>
+      </div>
+      <!--  -->
+      <br>
       <p><span>Your BMR: </span><span class="your-results"><%= current_user.customer.bmr %></span></p>
       <p><span>Your Total Daily Energy Expenditure: </span><span class="your-results"><%=current_user.customer.tdee %></span></p>
       <p><span>Daily Target Caloric Intake: </span><span class="your-results"><%= current_user.customer.daily_calorie_goal %> CAL</span></p>
-      <p><span>Calories per Smoothie: </span><span class="your-results"><%= current_user.customer.calories_per_shake %> CAL</span></p>
-      <p><span>Percentage of Protein: </span><span class="your-results"><%= current_user.customer.protein %></span></p>
-      <p><span>Percentage of Fat: </span><span class="your-results"><%= current_user.customer.fat %></span></p>
-      <p><span>Percentage of Carbohydrate: </span><span class="your-results"><%= current_user.customer.carbs %></span></p>
       <%= link_to "Change my numbers", edit_customer_path(current_user.customer), class: "yoggie-standard-link" %>
     </div>
     <div class="results-line"></div>

@@ -23,16 +23,36 @@
       <% if @customer.basket && !@customer.standard? %>
         <div class="customer-vitals-nutrition">
           <h4>My numbers:</h4>
-          <%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1573558060/Macro_graphic_mfqchc.png", class: "results-graphic" %>
-          <br></br>
+          <!--  -->
+          <div class="macro-main left">
+            <div class="macro-info-left">
+              <div class="info-focus"><%= @customer.calories_per_shake %></div>
+              <div>kcal per yoggie</div>
+            </div>
 
+            <ul class="macro-info-list">
+              <li class="green-border">
+                <div class="percentage"><%= @customer.protein %>%</div>
+                <div class="nutri">Protein</div>
+                <div class="grams half-circle"></div>
+              </li>
+              <li class="yellow-border">
+                <div class="percentage"><%= @customer.carbs %>%</div>
+                <div class="nutri">Carbs</div>
+                <div class="grams half-circle"></div>
+              </li>
+              <li class="orange-border">
+                <div class="percentage"><%= @customer.fat %>%</div>
+                <div class="nutri">Fats</div>
+                <div class="grams half-circle"></div>
+              </li>
+            </ul>
+          </div>
+          <!--  -->
+          <br>
           <p>My BMR: <span><%= @customer.bmr %></span></p>
           <p>Total Daily Energy Expenditure: <span><%= @customer.tdee %></span></p>
           <p>Daily Target Caloric Intake: <span><%= @customer.daily_calorie_goal %></span></p>
-          <p>Calories per Smoothie: <span><%= @customer.calories_per_shake %></span></p>
-          <p>Percentage Protein: <span><%= @customer.protein %></span></p>
-          <p>Percentage Fat: <span><%= @customer.fat %></span></p>
-          <p>Percentage Carbohydrate: <span><%= @customer.carbs %></span></p>
           <% if @customer&.basket.active? %>
             <%= link_to 'Change to tailored smoothies', update_subscription_path(@customer, standard: false) if @customer.standard? %>
             <%= link_to 'Change to standard smoothies', update_subscription_path(@customer, standard: true) if !@customer.standard? %>
