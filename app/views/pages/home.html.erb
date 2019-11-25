@@ -25,7 +25,7 @@
 					<ul>✓ frozen at source to blender for 100% nutrients</ul>
 				</p>
 				<%= link_to "GET STARTED", choose_custom_path, class: 'btn-yoggie-main-clear' %>
-				<div class="landing-price"> 
+				<div class="landing-price">
 					<h4>£49 </h4><p>per week</p>
 				</div>
 			</div>
@@ -41,10 +41,11 @@
 					<ul>✓ 100% natural (no powders!)</ul>
 				</p>
 				<%= link_to "CHOOSE YOURS", choose_standard_path, class: 'btn-yoggie-main-clear' %>
-				<div class="landing-price-bare"> 
+				<div class="landing-price-bare">
 					<h4>£39 </h4><p>per week</p>
 				</div>
 			</div>
+      <div id="how-it-works"></div>
 		</div>
 	</div>
 	<div class="border-fade">
@@ -52,7 +53,7 @@
 	</div>
 </div>
 <!-- How Yoggie works -->
-<div class="how-it-works-section text-center" id="how-it-works">
+<div class="how-it-works-section text-center" >
 		<h2>How it works</h2>
 		<div class="how-it-works">
 			<div class="how-it-works-icons">
@@ -71,17 +72,19 @@
 			</div>
 			<div class="how-it-works-icons how-it-works-making">
 				<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1565176255/blender_pink_smwkpg.png" %>
-				<div class="how-it-works-text">
+				<div class="how-it-works-text" >
 					<h4>You Blend</h4>
 					<p>Empty yoggie pack into blender straight from freezer. Add water/milk/yoghurt or whatever you like! Blitz. Done.</p>
 				</div>
 
 		</div>
 	</div>
-	<%= link_to "GET STARTED", new_customer_path, class: 'btn-yoggie-main-clear' %>
+  <div id="about"></div>
+	<%= link_to "GET STARTED", new_customer_path, class: 'btn-yoggie-main-clear'  %>
 </div>
+
 <!-- What is Yoggie -->
-<div class="about-yoggie section-padding text-center" id="about-yoggies">
+<div class="about-yoggie  section-padding text-center" >
 	<div class="what-is-yoggie">
 		<div class="about-left">
 			<%= image_tag "https://res.cloudinary.com/dehjqm9b4/image/upload/v1568112129/What_is_yoggie_wo0ecw.png" %>
@@ -207,7 +210,25 @@
   <!-- <#% end %> -->
 </div>
 
+<!-- <script>
+  document.getElementById("how-it-worksl").
+  addEventListener("mouseover", function(event) {
+    event.preventDefault();
 
+    $('html, body').animate({
+        scrollTop: $("#how-it-works").offset().top
+    }, 2000);
+});
+
+
+   document.getElementById("about-yoggies").addEventListener("mouseover", function(event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $("#about").offset().top
+    }, 2000);
+});
+</script> -->
 
 
 
