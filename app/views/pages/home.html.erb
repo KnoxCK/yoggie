@@ -8,7 +8,7 @@
   	</div>
 </div>
 <!-- Two boxes -->
-<div class="pick-plan-section">
+<div class="1-plan-section" id="pick-plan-section">
 	<div class="border-fade">
 	<%= image_tag "http://res.cloudinary.com/dqxvcdy6w/image/upload/v1516705807/Asset_5_oihd9x.png" %>
 	</div>
@@ -244,6 +244,29 @@
     }, 2000);
   });
 
+  document.getElementById("how-it-worksl").addEventListener("mouseover", function(event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $("#how-it-works").offset().top
+    }, 2000);
+  });
+
+   document.getElementById("pick-plan-section1").addEventListener("mouseover", function(event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $("#pick-plan-section").offset().top
+    }, 2000);
+});
+
+document.getElementById("pick-plan-section2").addEventListener("mouseover", function(event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $("#pick-plan-section").offset().top
+    }, 2000);
+});
 </script>
 
 
