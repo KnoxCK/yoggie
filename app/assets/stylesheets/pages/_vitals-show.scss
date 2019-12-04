@@ -80,7 +80,7 @@
 	justify-content: left;
 	flex-direction: column;
 	align-content: left;
-	padding: 20px;
+	padding: 40px;
 	border-bottom-left-radius: 5px;
 	border-top-right-radius: 5px;
 	p {
@@ -95,9 +95,9 @@
 .my-account-title {
 	padding-bottom: 0;
 	a {
-		color: #343434;
-		font-size: 23px;
-		font-weight: bold;
+		color: #6F6F6F;
+		font-size: 18px;
+		text-decoration: underline;
 	}
 }
 

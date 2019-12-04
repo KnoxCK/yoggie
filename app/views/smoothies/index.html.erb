@@ -9,9 +9,9 @@
 <div class="our-smoothies-intro section-padding text-center">
 	<br></br>
   <% if current_user&.customer&.first_name&.present? %>
-    <h2><%= current_user.customer.first_name %>'s Yoggies</h2>
+    <h2><%= current_user.customer.first_name %>'s Bare Yoggies</h2>
   <% else %>
-	  <h2>Choose Your Yoggies</h2>
+	  <h2>Choose Your Bare Yoggies</h2>
   <% end %>
 	<br>
 </div>
@@ -20,9 +20,9 @@
     <% if current_user.customer.standard? %>
       <% if current_user.customer.basket.status == 'pending' && current_user.customer.basket.smoothies.count == 5 %>
       <% if  current_user.customer.first_name.nil?%>
-        <%= link_to "PAY FOR STANDARD YOGGIES", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green' %>
+        <%= link_to "CHECKOUT", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green' %>
       <% else %>
-        <%= link_to "PAY FOR STANDARD YOGGIES", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green' %>
+        <%= link_to "CHECKOUT", new_customer_address_path(current_user.customer), class: 'btn-yoggie-main-green' %>
       <% end %>
 
       <% end %>

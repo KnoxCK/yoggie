@@ -8,7 +8,7 @@
       <%= f.input :email, required: true, autofocus: true %>
       <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
       <%= f.input :password_confirmation, required: true %>
-      <%= f.input :accepted_terms, required: true, label: 'I accept the Terms and Privacy' %>
+      <%= f.input :accepted_terms, required: true, label: 'I accept the below' %>
         <%= link_to "Terms and Conditions", terms_path %><br><%= link_to "Privacy Policy", privacy_path %>
     </div>
     <div class="form-actions">

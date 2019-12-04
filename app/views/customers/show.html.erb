@@ -8,21 +8,21 @@
       <% if !@customer.standard? %>
       <div class="customer-vitals">
       <div class="customer-vitals-details">
-        <h4>My info:</h4>
+        <h4>My info</h4>
         <p>Name: <span><%= @customer.first_name %></span></p>
         <p>Age: <span><%= @customer.age %></span></p>
         <p>I am a: <span><%= @customer.gender %></span></p>
-        <p>My height is: <span><%= @customer.height %></span></p>
-        <p>I weigh: <span><%= @customer.weight %></span></p>
+        <p>My height is: <span><%= @customer.height %>cm</span></p>
+        <p>I weigh: <span><%= @customer.weight %>kg</span></p>
         <p>I typically eat: <span><%= @customer.meals_per_day %> meals per day</span></p>
-        <p>Activity Level: <span><%= @customer.activity_level %></span></p>
+        <p>Activity level: <span><%= @customer.activity_level %></span></p>
         <p>My goal is to: <span><%= @customer.goal %></span></p>
         <%= link_to 'Change or add info', dashboard_edit_path(@customer) %>
       </div>
 
       <% if @customer.basket && !@customer.standard? %>
         <div class="customer-vitals-nutrition">
-          <h4>My numbers:</h4>
+          <h4>My numbers</h4>
           <!--  -->
           <div class="macro-main left">
             <div class="macro-info-left">
@@ -50,7 +50,7 @@
           </div>
           <!--  -->
           <br>
-          <p>My BMR: <span><%= @customer.bmr %></span></p>
+          <p>My BMR <span><%= @customer.bmr %></span></p>
           <p>Total Daily Energy Expenditure: <span><%= @customer.tdee %></span></p>
           <p>Daily Target Caloric Intake: <span><%= @customer.daily_calorie_goal %></span></p>
           <% if @customer&.basket.active? %>
@@ -63,8 +63,8 @@
     <% end %></br>
       <div class="customer-vitals-subscription">
         <br>
-        <h3>My Account</h3>
-        <h4 id="details-click" class="my-account-title"><%= link_to "Details:" %></h4>
+        <h4>My account</h4>
+        <p id="details-click" class="my-account-title"><%= link_to "Details:" %></p>
         <div class="details" style="display: none;">
           <ul>
             <p>Name: <span><%= @customer.first_name %></span></p>

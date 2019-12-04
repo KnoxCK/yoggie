@@ -1,6 +1,6 @@
 <div class="review-order-wrapper">
   <h3>Review Your Order</h3>
-    <h4>Your <%= @customer.user.standard ? "standard" : "tailored" %> yoggies</h4>
+    <h4>Your <%= @customer.user.standard ? "bare" : "" %> yoggies</h4>
     <% @customer.basket.smoothies.group_by {|smoothie| smoothie.name}.each do |smoothie_array| %>
       <p><span> <%= smoothie_array[1].count %>  x   <%= smoothie_array[0].titleize %></span></p>
     <% end %>
@@ -10,7 +10,7 @@
   <h4>Weekly subscription </h4>
   <p>£<%= @fee /100 %></p>
   <br>
-  <h4>Deliver to:</h4>
+  <h4>Deliver to</h4>
   <p><%= @customer.first_name %> <%= @customer.last_name %></p>
   <p><%= @customer.address.address_line_one %></p>
   <p><%= @customer.address.address_line_two %></p>
@@ -18,15 +18,15 @@
   <%= link_to 'Change my address', edit_customer_address_path(@customer, @customer.address) %>
   <br>
   <h4>Delivery details</h4>
-  <p>Email is:<br><%= @customer.user.email %></p>
-  <p>Safe place:<br><%= @customer.address.delivery_instructions %> <span><i class="fa fa-info" data-toggle="tooltip" data-placement="top" title="We will leave your frozen box in your Safe Place between 3am and 6am in the morning. Don't forget to put your packs in the freezer!"></i></span></p>
-  <p>Delivery day: <br>Tuesday</p>
+  <p><strong>Email is:</strong><br><%= @customer.user.email %></p>
+  <p><strong>Safe place: </strong><span><i class="fa fa-info" data-toggle="tooltip" data-placement="top" title="We will leave your frozen box in your Safe Place between 3am and 6am in the morning. Don't forget to put your packs in the freezer!"></i></span><br><%= @customer.address.delivery_instructions %></p>
+  <p><strong>Delivery day:</strong> <br>Tuesday</p>
   <br>
   <h4>Other</h4>
     <div class="order-details">
-    <p>Box price: £<%= @fee / 100 %></p>
-    <p>Price per yoggie: £<%= @fee / 500.0 %>0</p>
-    <p>Delivery: Free</p>
+    <p><strong>Box price:</strong> £<%= @fee / 100 %></p>
+    <p><strong>Price per yoggie:</strong> £<%= @fee / 500.0 %>0</p>
+    <p><strong>Delivery:</strong> Free</p>
   </div>
   <p class="text-center small-font"><input type="checkbox" id="terms"> I agree to the <%= link_to "Privacy Policy", privacy_path %> and <%= link_to "Terms & Conditions", terms_path %>. I know I’m signing up to recurring deliveries which I can cancel any time. </p>
   <p></p>
@@ -42,6 +42,7 @@
     <% end %>
     <br>
 </div>
+<br></br>
 <script>
 
 
