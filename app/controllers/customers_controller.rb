@@ -60,6 +60,7 @@ class CustomersController < ApplicationController
         redirect_to smoothies_path
       end
     elsif @customer.basket && @customer.basket.full?
+      @customer.calculate_stats if !@customer.standard?
       redirect_to new_customer_payment_path(@customer)
     elsif !@customer.standard?
       @customer.calculate_stats
