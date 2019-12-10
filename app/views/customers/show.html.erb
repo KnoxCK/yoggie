@@ -5,7 +5,7 @@
 		<h2>My Dashboard</h2>
 		<h3><%= @customer.first_name %> <%= @customer.last_name %></h3>
       <hr>
-      <% if !@customer.standard? %>
+      <% if ! @customer.standard? %>
       <div class="customer-vitals">
       <div class="customer-vitals-details">
         <h4>My info:</h4>

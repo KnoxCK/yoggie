@@ -2,7 +2,6 @@ class SmoothiesController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-
     @smoothies = Smoothie.standard
     if user_signed_in? && current_user.customer.basket.nil?
       @basket = Basket.create(customer: current_user.customer)
@@ -11,7 +10,7 @@ class SmoothiesController < ApplicationController
       if current_user.customer.protein.nil?
         redirect_to edit_customer_path(current_user.customer)
       else
-      @smoothies = Smoothie.fetch_bundle(current_user.customer)
+        @smoothies = Smoothie.fetch_bundle(current_user.customer)
       end
     else
     end
