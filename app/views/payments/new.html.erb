@@ -5,6 +5,7 @@
       <p><span> <%= smoothie_array[1].count %>  x   <%= smoothie_array[0].titleize %></span></p>
     <% end %>
     <!--<p>Total of <%= @customer.basket.smoothies.count %> smoothies </p>-->
+    <%= link_to 'Change my order', smoothies_path(@customer, @customer.basket) %>
   </ul>
   <br>
   <h4>Weekly subscription </h4>
