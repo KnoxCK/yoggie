@@ -3,7 +3,7 @@
 * ------------------------------------- */
 
 .alert {
-  padding-top: 85px;
+  padding-top: 28px;
   margin: 0;
   text-align: center;
   color: white;
@@ -12,7 +12,7 @@
   background: $pink;
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 10000;
 }
 .alert-warning {
   background: $pink;
