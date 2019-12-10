@@ -150,20 +150,39 @@
 
   .yoggie-single-tabs-list {
     display: flex;
-    padding: 0 15px;
     justify-content: center;
 
     li {
       padding: 0 15px;
       cursor: pointer;
-      border-bottom: solid 0.5px $dark-grey;
+      border-radius: 10px 10px 0 0;
+      border-top: solid 2px $grey;
+      // border-bottom: solid 2px $grey;
+
+      &.macro-tab {
+        border-left: solid 2px $grey;
+        border-right: solid 1px $grey;
+      }
+
+      &.nutrition-tab {
+        border-left: solid 1px $grey;
+        border-right: solid 1px $grey;
+      }
+
+      &.ingredients-tab {
+        border-left: solid 1px $grey;
+        border-right: solid 2px $grey;
+      }
 
       &.tab--active {
         border-bottom: none;
-        border-left: solid 0.5px $dark-grey;
-        border-right: solid 0.5px $dark-grey;
-        border-top: solid 0.5px $dark-grey;
-        border-radius: 10px 10px 0 0;
+        background: white;
+        z-index: 10;
+        position: relative;
+        margin-top: -2px;
+        top: 2px;
+        bottom: 0px;
+        height: 65px;
       }
 
       &.tab--active > * {
@@ -176,7 +195,7 @@
 
       &.filler-tab {
         width: 100%;
-        border-bottom: solid 0.5px $dark-grey;
+        border: none;
       }
     }
   }
@@ -184,6 +203,11 @@
 
 .yoggie-single-tab-content {
   padding: 15px;
+
+  &.tab-content--active {
+    border: solid 2px $grey;
+    border-radius: 10px;
+  }
 }
 
 .macro-main {
