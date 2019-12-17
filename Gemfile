@@ -34,7 +34,7 @@ gem 'dotenv-rails'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'letter_opener'
+  gem 'letter_opener_web', '~> 1.0'
   gem 'web-console', '>= 3.3.0'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
