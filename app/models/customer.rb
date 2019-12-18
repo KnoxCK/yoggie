@@ -111,6 +111,51 @@ class Customer < ApplicationRecord
     tailored_stat % 1 == 0 ? tailored_stat.to_i : tailored_stat
   end
 
+  def generate_order_csv
+    date = Date.today
+    date += 1 + ((1-date.wday) % 7)
+    next_delivery_date_string = "#{date.day.ordinalize} #{date.strftime("%B, %Y")}"
+
+    smoothie_group = basket&.smoothies&.first&.group&.name
+    smoothie_size = basket&.smoothies&.first&.size&.name
+
+    CSV.generate do |csv|
+       csv << ["CUSTOMER DETAILS", ""]
+       csv << ["CustomerRef", slug]
+       csv << ["FirstName", first_name]
+       csv << ["LastName", last_name]
+       csv << ["AddressLine1", address&.address_line_one]
+       csv << ["AddressLine2", address&.address_line_two]
+       csv << ["AddressLine3", address&.address_line_three]
+       csv << ["Postcode", address&.postcode]
+       csv << ["SafePlace", address&.delivery_instructions]
+       csv << ["MACROS", ""]
+       csv << ["kCal", calories_per_shake]
+       csv << ["protein", protein]
+       csv << ["carbs", carbs]
+       csv << ["fats", fat]
+       csv << ["CUSTOMISATION QUESTIONS", ""]
+       csv << ["Sex", gender]
+       csv << ["Weight_kg", weight]
+       csv << ["Height_cm", height]
+       csv << ["Age", age]
+       csv << ["ActivityLevel", activity_level]
+       csv << ["Goal", goal]
+       csv << ["MealsPerDay", meals_per_day]
+       csv << ["ORDER DETAILS", ""]
+       csv << ["OrderRef", basket&.stripe_sub_id]
+       csv << ["OrderDate", "#{Date.today.day.ordinalize} #{Date.today.strftime("%B, %Y")}"]
+       csv << ["DeliveryDate", next_delivery_date_string]
+       csv << ["Group", smoothie_group]
+       csv << ["Size", smoothie_size]
+       csv << ["Smoothie1", basket&.smoothies[0]&.name&.titleize]
+       csv << ["Smoothie2", basket&.smoothies[1]&.name&.titleize]
+       csv << ["Smoothie3", basket&.smoothies[2]&.name&.titleize]
+       csv << ["Smoothie4", basket&.smoothies[3]&.name&.titleize]
+       csv << ["Smoothie5", basket&.smoothies[4]&.name&.titleize]
+    end
+  end
+
   private
 
   def should_generate_new_friendly_id?

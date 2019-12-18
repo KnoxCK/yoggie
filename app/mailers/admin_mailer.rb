@@ -3,7 +3,11 @@ class AdminMailer < ApplicationMailer
   layout 'mailer'
 
   def new_order(customer)
+    # would be helpful to do this in a background job
     @customer = customer
+    csv = @customer.generate_order_csv
+
+    attachments["new_order_#{@customer&.basket&.stripe_sub_id}.csv"] = {mime_type: 'text/csv', content: csv}
     mail(
       to: 'charlie@yoggie.com',
       subject: 'New Order!')
