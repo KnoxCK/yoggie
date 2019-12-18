@@ -34,7 +34,7 @@ class PaymentsController < ApplicationController
     end
 
     @customer.basket.update(status: 'active', stripe_sub_id: subscription.id)
-    # CustomerMailer.order_confirmation(@customer).deliver_now
+    CustomerMailer.order_confirmation(@customer).deliver_now
     flash[:notice] = "Thank you, your payment was successful."
     redirect_to customer_path(@customer)
 
