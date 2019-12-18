@@ -28,9 +28,9 @@ class PaymentsController < ApplicationController
 
     if @customer.basket.status == 'active'
       cancel_previous_subscription
-      AdminMailer.subscription_change(@customer).deliver_now
+      # AdminMailer.subscription_change(@customer).deliver_now
     else
-      AdminMailer.new_order(@customer).deliver_now
+      # AdminMailer.new_order(@customer).deliver_now
     end
 
     @customer.basket.update(status: 'active', stripe_sub_id: subscription.id)
