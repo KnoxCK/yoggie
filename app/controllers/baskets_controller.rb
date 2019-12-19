@@ -94,7 +94,8 @@ class BasketsController < ApplicationController
     subscription = Stripe::Subscription.retrieve(@basket.stripe_sub_id)
     subscription.delete
     @basket.update(status: 'cancelled')
-    AdminMailer.cancellation(@customer).deliver
+    AdminMailer.cancellation(@customer).deliver_now
+    CustomerMailer.order_cancelled(@customer).deliver_now
     redirect_to customer_path(@basket.customer), notice: 'Your subscription has been cancelled'
   end
 
@@ -103,7 +104,8 @@ class BasketsController < ApplicationController
     subscription = Stripe::Subscription.retrieve(@basket.stripe_sub_id)
     subscription.delete
     @basket.update(status: 'pending')
-    AdminMailer.subscription_paused(@customer).deliver
+    AdminMailer.subscription_paused(@customer).deliver_now
+    CustomerMailer.order_paused(@customer).deliver_now
     redirect_to customer_path(@basket.customer), notice: 'Your subscription has been paused'
   end
 
@@ -129,13 +131,14 @@ class BasketsController < ApplicationController
     total == 5
   end
 
-  def send_change_notification
-    AdminMailer.smoothie_change(@basket).deliver
+  def send_change_notifications
+    AdminMailer.smoothie_change(@basket).deliver_now
+    CustomerMailer.order_change(@customer).deliver_now
   end
 
   def after_basket_path(prev_status)
     if @basket.stripe_sub_id && correct_subscription?
-      send_change_notification unless prev_status == @basket.tailored?
+      send_change_notifications unless prev_status == @basket.tailored?
       redirect_to customer_path(@customer)
     elsif @customer.address.nil?
       redirect_to new_customer_address_path

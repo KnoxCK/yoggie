@@ -39,7 +39,7 @@ class AdminMailer < ApplicationMailer
     @customer = customer
     mail(
       to: 'info@yoggie.co.uk',
-      subject: 'Changed Subscription')
+      subject: 'Paused Subscription')
   end
 
   def subscription_change(customer)

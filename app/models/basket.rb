@@ -29,4 +29,10 @@ class Basket < ApplicationRecord
   def cancelled?
     status == 'cancelled'
   end
+
+  def next_delivery_date_string
+    date = Date.today
+    date += 1 + ((1-date.wday) % 7)
+    next_delivery_date_string = "#{date.day.ordinalize} #{date.strftime("%B, %Y")}"
+  end
 end

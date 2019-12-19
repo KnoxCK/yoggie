@@ -42,9 +42,7 @@ class CustomersController < ApplicationController
       @basket = Basket.create(customer: current_user.customer)
     end
 
-    date = Date.today
-    date += 1 + ((1-date.wday) % 7)
-    @next_delivery_date_string = "#{date.day.ordinalize} #{date.strftime("%B, %Y")}"
+    @next_delivery_date_string = @basket.next_delivery_date_string
   end
 
 
@@ -88,6 +86,7 @@ class CustomersController < ApplicationController
 
   def dashboard_update
     if @customer.update(customer_params)
+      @customer.calculate_stats if !@customer.standard?
       redirect_to customer_path(@customer)
     else
       render :edit

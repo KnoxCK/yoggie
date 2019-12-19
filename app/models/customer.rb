@@ -31,7 +31,8 @@ class Customer < ApplicationRecord
   GENDER = ['Guy', 'Girl'].freeze
 
   def full_name
-    "#{first_name} #{last_name}"
+    arr = [first_name, last_name].reject { |n| n.blank? }
+    arr.join(' ')
   end
 
   def calculate_stats
@@ -112,10 +113,6 @@ class Customer < ApplicationRecord
   end
 
   def generate_order_csv
-    date = Date.today
-    date += 1 + ((1-date.wday) % 7)
-    next_delivery_date_string = "#{date.day.ordinalize} #{date.strftime("%B, %Y")}"
-
     smoothie_group = basket&.smoothies&.first&.group&.name
     smoothie_size = basket&.smoothies&.first&.size&.name
 
@@ -145,7 +142,8 @@ class Customer < ApplicationRecord
        csv << ["ORDER DETAILS", ""]
        csv << ["OrderRef", basket&.stripe_sub_id]
        csv << ["OrderDate", "#{Date.today.day.ordinalize} #{Date.today.strftime("%B, %Y")}"]
-       csv << ["DeliveryDate", next_delivery_date_string]
+       csv << ["DeliveryDate", basket&.next_delivery_date_string]
+       csv << ["OrderType", "#{standard? ? 'STANDARD' : 'TAILORED'}"]
        csv << ["Group", smoothie_group]
        csv << ["Size", smoothie_size]
        csv << ["Smoothie1", basket&.smoothies[0]&.name&.titleize]

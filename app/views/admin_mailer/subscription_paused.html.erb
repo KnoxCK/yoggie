@@ -1,21 +1,47 @@
 <p>The below subscription has been paused:</p>
 
-Customer Details:
-<br/>
-<p>Name: <%= @customer.full_name %></p>
-<p>Email: <%= @customer.user.email %></p>
-<p>Reference: <%= @customer.slug %></p>
+<br>
+<strong>Customer Details:</strong>
+<p>Customer Reference: <%= @customer.slug %></p>
+<p>First Name: <%= @customer.first_name %></p>
+<p>Last Name: <%= @customer.last_name %></p>
+<br>
 
-Smoothies:
-<ul>
-  <% @customer.basket.smoothies.each do |smoothie| %>
-    <p><%= smoothie.name.titleize %> - Size: <%= smoothie.size.name %></p>
-  <% end %>
-</ul>
+<strong>Address:</strong>
+<p>Address Line 1: <%= @customer.address&.address_line_one %></p>
+<p>Address Line 2: <%= @customer.address&.address_line_two %></p>
+<p>Address Line 3: <%= @customer.address&.address_line_three %></p>
+<p>Postcode: <%= @customer.address&.postcode %></p>
+<p>Safe Place: <%= @customer.address&.delivery_instructions %></p>
+<br>
 
-Address:
-<p><%= @customer.address&.address_line_one %></p>
-<p><%= @customer.address&.address_line_two %></p>
-<p><%= @customer.address&.address_line_three %></p>
-<p><%= @customer.address&.postcode %></p>
-<p>Safe Place: <br><i>We will deliver your Yoggie box between 3am and 6am. Where can we safely leave it? Be specific.</i><%= @customer.address&.delivery_instructions %></p>
+<strong>Order Details:</strong>
+<p>Order Referernce: <%= @customer.basket&.stripe_sub_id %></p>
+<p>Order Date: <%= "#{Date.today.day.ordinalize} #{Date.today.strftime("%B, %Y")}" %></p>
+<p>Delivery Date: <%= @customer&.basket&.next_delivery_date_string %></p>
+<p>Order Type: <%= "#{@customer.standard? ? 'STANDARD' : 'TAILORED'}" %></p>
+<p>Group: <%= @customer.basket&.smoothies&.first&.group&.name %></p>
+<p>Size: <%= @customer.basket&.smoothies&.first&.size&.name %></p>
+<p>Smoothie 1: <%= @customer.basket&.smoothies[0]&.name&.titleize %></p>
+<p>Smoothie 2: <%= @customer.basket&.smoothies[1]&.name&.titleize %></p>
+<p>Smoothie 3: <%= @customer.basket&.smoothies[2]&.name&.titleize %></p>
+<p>Smoothie 4: <%= @customer.basket&.smoothies[3]&.name&.titleize %></p>
+<p>Smoothie 5: <%= @customer.basket&.smoothies[4]&.name&.titleize %></p>
+<br>
+
+<strong>Macros:</strong>
+<p>kCal: <%= @customer.calories_per_shake %></p>
+<p>protein: <%= @customer.protein %></p>
+<p>carbs: <%= @customer.carbs %></p>
+<p>fats: <%= @customer.fat %></p>
+<br>
+
+<strong>Customisation Questions:</strong>
+<p>Sex: <%= @customer.gender %></p>
+<p>Weight_kg: <%= @customer.weight %></p>
+<p>Height_cm: <%= @customer.height %></p>
+<p>Age: <%= @customer.age %></p>
+<p>Activity Level: <%= @customer.activity_level %></p>
+<p>Goal: <%= @customer.goal %></p>
+<p>Meals Per Day: <%= @customer.meals_per_day %></p>
+<br>
