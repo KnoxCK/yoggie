@@ -71,17 +71,35 @@ class CustomersController < ApplicationController
 
 
   def update_subscription
-    # basket = @customer.basket
-    # if basket
-    #   BasketSmoothie.where(basket_id: basket.id).destroy_all
-    #   basket.update(status: 'pending')
-    # end
+    basket = @customer.basket
 
     if @customer.user.standard
       @customer.user.update(standard: params[:standard])
+      # Change to tailored
+      if basket
+        # reset smoothies to proper group and size
+        smoothie_names = basket.smoothies.pluck(:name)
+        basket.smoothies.destroy_all
+        smoothie_names.each do |smoothie_name|
+          standard_smoothie = Smoothie.fetch_bundle(@customer).find_by(name: smoothie_name)
+          basket.smoothies << standard_smoothie if standard_smoothie
+        end
+      end
+      AdminMailer.subscription_change(@customer).deliver_now if @customer.basket.active?
       redirect_to edit_customer_path(@customer)
     else
       @customer.user.update(standard: params[:standard])
+      # Change to standard
+      if basket
+        # reset smoothies to standard
+        smoothie_names = basket.smoothies.pluck(:name)
+        basket.smoothies.destroy_all
+        smoothie_names.each do |smoothie_name|
+          standard_smoothie = Smoothie.standard.find_by(name: smoothie_name)
+          basket.smoothies << standard_smoothie if standard_smoothie
+        end
+      end
+      AdminMailer.subscription_change(@customer).deliver_now if @customer.basket.active?
       redirect_to smoothies_path(@customer)
     end
   end
@@ -109,10 +127,13 @@ class CustomersController < ApplicationController
 
 
   def choose_standard
-
     if user_signed_in?
       current_user.standard = true
+      @original_user_updated_at = current_user.updated_at
       current_user.save
+
+      change_subscription_and_reset_smoothies
+
       redirect_to smoothies_path
     else
       session[:standard] = true
@@ -124,7 +145,11 @@ class CustomersController < ApplicationController
   def choose_custom
     if user_signed_in?
       current_user.standard = false
+      @original_user_updated_at = current_user.updated_at
       current_user.save
+
+      change_subscription_and_reset_smoothies
+
       redirect_to smoothies_path
     else
       session[:standard] = false
@@ -162,5 +187,31 @@ class CustomersController < ApplicationController
     params.require(:customer).permit(:first_name, :last_name, :weight, :height,
                                      :activity_level, :goal, :age, :gender,
                                      :newsletter, :email, :phone, :meals_per_day)
+  end
+
+  def change_subscription_and_reset_smoothies
+    customer = current_user.customer
+    basket = customer&.basket
+    if current_user.standard?
+      bundled_smoothies = Smoothie.standard
+    else
+      bundled_smoothies = Smoothie.fetch_bundle(customer)
+    end
+
+    original_basket_smoothies_ids = basket&.smoothies&.pluck(:id)
+    if basket
+      # reset smoothies to proper group and size
+      smoothie_names = basket.smoothies.pluck(:name)
+      basket.smoothies.destroy_all
+      smoothie_names.each do |smoothie_name|
+        standard_smoothie = bundled_smoothies.find_by(name: smoothie_name)
+        basket.smoothies << standard_smoothie if standard_smoothie
+      end
+
+      if customer.basket.active? && @original_user_updated_at != current_user.updated_at && original_basket_smoothies_ids.sort != basket.smoothies.pluck(:id).sort
+        AdminMailer.subscription_change(customer).deliver_now
+        CustomerMailer.order_change(customer).deliver_now
+      end
+    end
   end
 end
