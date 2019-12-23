@@ -60,26 +60,29 @@ class BasketsController < ApplicationController
     # if @basket.smoothies.count >= 5
     #   after_basket_path(@basket.tailored)
     # else
-      @smoothie = Smoothie.find(params[:smoothie_id])
-      @quantity = params[:quantity].to_i
-      BasketSmoothie.where(smoothie: @smoothie, basket: @basket).destroy_all
-      available = 5 - @basket.smoothies.count
-      if available > @quantity
-        @quantity.times do
-          @basket_smoothie = BasketSmoothie.create(smoothie: @smoothie, basket: @basket)
-        end
-      else
-        available.times do
-          @basket_smoothie = BasketSmoothie.create(smoothie: @smoothie, basket: @basket)
-        end
-      end
-      if @basket.smoothies.count >= 5
-        @message = "Box full (5/5)!"
-      else
-        @message = "#{@basket.smoothies.length}/5 in your box"
-      end
 
-      redirect_to smoothies_path, notice: @message
+    @smoothie = Smoothie.find(params[:smoothie_id])
+    @quantity = params[:quantity].to_i
+    BasketSmoothie.where(smoothie: @smoothie, basket: @basket).destroy_all
+    available = 5 - @basket.smoothies.count
+    if available > @quantity
+      @quantity.times do
+        @basket_smoothie = BasketSmoothie.create(smoothie: @smoothie, basket: @basket)
+      end
+    else
+      available.times do
+        @basket_smoothie = BasketSmoothie.create(smoothie: @smoothie, basket: @basket)
+      end
+    end
+    if @basket.smoothies.count >= 5
+      @message = "Box full (5/5)!"
+      # Send smoothie/basket change emails
+      send_change_notifications if @basket.active?
+    else
+      @message = "#{@basket.smoothies.length}/5 in your box"
+    end
+
+    redirect_to smoothies_path, notice: @message
   end
 
 

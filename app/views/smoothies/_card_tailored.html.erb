@@ -57,7 +57,7 @@
               <%= hidden_field_tag 'smoothie_id', smoothie.id %>
               <%= f.hidden_field :tailored, value: false if current_user.customer.standard? %>
               <%= f.hidden_field :tailored, value: true if current_user.customer.tailored? %>
-              <%= select_tag "quantity", options_for_select([0, 1, 2, 3, 4, 5], BasketSmoothie.where(smoothie: smoothie, basket: current_user.customer.basket).count) %>
+              <%= select_tag "quantity", options_for_select([0, 1, 2, 3, 4, 5], BasketSmoothie.joins(:smoothie).where(smoothies: {name: smoothie.name}, basket: current_user.customer.basket).size) %>
             <div class="flex">
               <%= f.submit 'UPDATE BOX', class: "btn-yoggie-main-green text-center"  %>
             </div>

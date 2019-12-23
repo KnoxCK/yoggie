@@ -11,8 +11,8 @@ class AddressesController < ApplicationController
       address_updated_at = @customer.address.updated_at
       @customer.address.update(address_params)
 
-      if @customer.address.updated_at != address_updated_at
-        # Send order changed emails if attributes changed
+      if @customer.basket&.active? && @customer.address.updated_at != address_updated_at
+        # Send address changed emails if attributes changed
         AdminMailer.address_change(@customer).deliver_now
         CustomerMailer.address_change(@customer).deliver_now
       end

@@ -71,6 +71,12 @@ class CustomersController < ApplicationController
 
 
   def update_subscription
+    # basket = @customer.basket
+    # if basket
+    #   BasketSmoothie.where(basket_id: basket.id).destroy_all
+    #   basket.update(status: 'pending')
+    # end
+
     if @customer.user.standard
       @customer.user.update(standard: params[:standard])
       redirect_to edit_customer_path(@customer)
@@ -85,8 +91,16 @@ class CustomersController < ApplicationController
 
 
   def dashboard_update
+    original_customer_updated_at = @customer.updated_at
+
     if @customer.update(customer_params)
       @customer.calculate_stats if !@customer.standard?
+
+      if @customer.basket&.active? && @customer.updated_at != original_customer_updated_at
+        # Send order changed emails if attributes changed
+        AdminMailer.subscription_change(@customer).deliver_now
+      end
+
       redirect_to customer_path(@customer)
     else
       render :edit
