@@ -10,8 +10,10 @@ Smoothies:
 </ul>
 
 Address:
-<p><%= @customer.address.address_line_one %></p>
-<p><%= @customer.address.address_line_two %></p>
-<p><%= @customer.address.address_line_three %></p>
-<p><%= @customer.address.postcode %></p>
-<p>Safe Place: <br><i>We will deliver your Yoggie box between 3am and 6am. Where can we safely leave it? Be specific.</i><%= @customer.address.delivery_instructions %></p>
+<p><%= @customer.address&.address_line_one %></p>
+<p><%= @customer.address&.address_line_two %></p>
+<p><%= @customer.address&.address_line_three %></p>
+<p><%= @customer.address&.postcode %></p>
+<p>Safe Place: <%= @customer.address&.delivery_instructions %></p>
+<br>
+<p>We will deliver your Yoggie box between 3am and 6am on morning of <%= @customer.basket&.next_delivery_date_string(year: false) %>. Need to make changes? Let us know on [email]/[phone no] by <%= @customer.basket&.two_days_before_delivery_date_string(year: false) %></p>
