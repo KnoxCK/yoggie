@@ -8,7 +8,15 @@ class AddressesController < ApplicationController
   def update
 
     if @customer.address.check_postcode(address_params[:postcode])
+      address_updated_at = @customer.address.updated_at
       @customer.address.update(address_params)
+
+      if @customer.address.updated_at != address_updated_at
+        # Send order changed emails if attributes changed
+        AdminMailer.address_change(@customer).deliver_now
+        CustomerMailer.address_change(@customer).deliver_now
+      end
+
       redirect_to new_customer_payment_path
     else
       @message = 'We do not deliver to this postcode'

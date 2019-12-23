@@ -16,6 +16,13 @@ class CustomerMailer < ApplicationMailer
       subject: 'Order successfully changed')
   end
 
+  def address_change(customer)
+    @customer = customer
+    mail(
+      to: @customer.user.email,
+      subject: 'Address successfully changed')
+  end
+
   def order_paused(customer)
     @customer = customer
     mail(

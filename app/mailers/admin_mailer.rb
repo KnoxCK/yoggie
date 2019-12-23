@@ -14,13 +14,20 @@ class AdminMailer < ApplicationMailer
       subject: 'New Order!')
   end
 
-  def smoothie_change(basket)
+  def smoothie_change(customer)
     #charlie@yoggie.com
-    @basket = basket
-    @customer = basket.customer
+    @customer = customer
     csv = @customer.generate_order_csv
 
     attachments["smoothie_change_#{@customer&.basket&.stripe_sub_id}.csv"] = {mime_type: 'text/csv', content: csv}
+    mail(
+      to: 'info@yoggie.co.uk',
+      subject: 'Smoothie Change')
+  end
+
+  def address_change(customer)
+    #charlie@yoggie.com
+    @customer = customer
     mail(
       to: 'info@yoggie.co.uk',
       subject: 'Smoothie Change')

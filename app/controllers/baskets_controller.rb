@@ -132,7 +132,7 @@ class BasketsController < ApplicationController
   end
 
   def send_change_notifications
-    AdminMailer.smoothie_change(@basket).deliver_now
+    AdminMailer.smoothie_change(@customer).deliver_now
     CustomerMailer.order_change(@customer).deliver_now
   end
 
