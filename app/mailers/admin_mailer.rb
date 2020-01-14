@@ -10,7 +10,7 @@ class AdminMailer < ApplicationMailer
 
     attachments["new_order_#{@customer&.basket&.stripe_sub_id}.csv"] = {mime_type: 'text/csv', content: csv}
     mail(
-      to: 'info@yoggie.co.uk',
+      to: 'admin@yoggie.co.uk',
       subject: 'New Order!')
   end
 
@@ -21,7 +21,7 @@ class AdminMailer < ApplicationMailer
 
     attachments["smoothie_change_#{@customer&.basket&.stripe_sub_id}.csv"] = {mime_type: 'text/csv', content: csv}
     mail(
-      to: 'info@yoggie.co.uk',
+      to: 'admin@yoggie.co.uk',
       subject: 'Smoothie Change')
   end
 
@@ -29,7 +29,7 @@ class AdminMailer < ApplicationMailer
     #charlie@yoggie.com
     @customer = customer
     mail(
-      to: 'info@yoggie.co.uk',
+      to: 'admin@yoggie.co.uk',
       subject: 'Smoothie Change')
   end
 
@@ -37,7 +37,7 @@ class AdminMailer < ApplicationMailer
     #cancel@yoggie.com
     @customer = customer
     mail(
-      to: 'info@yoggie.co.uk',
+      to: 'admin@yoggie.co.uk',
       subject: 'Cancelled Subscription')
   end
 
@@ -45,7 +45,7 @@ class AdminMailer < ApplicationMailer
     #cancel@yoggie.com
     @customer = customer
     mail(
-      to: 'info@yoggie.co.uk',
+      to: 'admin@yoggie.co.uk',
       subject: 'Paused Subscription')
   end
 
@@ -56,7 +56,7 @@ class AdminMailer < ApplicationMailer
 
     attachments["subscription_change_#{@customer&.basket&.stripe_sub_id}.csv"] = {mime_type: 'text/csv', content: csv}
     mail(
-      to: 'info@yoggie.co.uk',
+      to: 'admin@yoggie.co.uk',
       subject: 'Changed Subscription')
   end
 end

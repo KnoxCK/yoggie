@@ -17,6 +17,7 @@ class AddressesController < ApplicationController
         CustomerMailer.address_change(@customer).deliver_now
       end
 
+      update_customer_last_name
       redirect_to new_customer_payment_path
     else
       @message = 'We do not deliver to this postcode'
@@ -29,6 +30,7 @@ class AddressesController < ApplicationController
     @address.customer_id = @customer.id
     if @address.check_postcode(address_params[:postcode])
       @address.save
+      update_customer_last_name
       redirect_to new_customer_payment_path
     else
       @message = 'We do not deliver to this postcode'
@@ -44,6 +46,13 @@ class AddressesController < ApplicationController
 
   def set_customer
     @customer = Customer.friendly.find(params[:customer_id])
+  end
+
+  def update_customer_last_name
+    last_name = params[:address][:last_name]
+    return unless last_name.present? && last_name != @customer.last_name
+
+    @customer.update(last_name: last_name)
   end
 
   def address_params

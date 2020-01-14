@@ -16,4 +16,4 @@ Address:
 <p><%= @customer.address&.postcode %></p>
 <p>Safe Place: <%= @customer.address&.delivery_instructions %></p>
 <br>
-<p>We will deliver your Yoggie box between 3am and 6am on morning of <%= @customer.basket&.next_delivery_date_string(year: false) %>. Need to make changes? Let us know on [email]/[phone no] by <%= @customer.basket&.two_days_before_delivery_date_string(year: false) %></p>
+<p>We will deliver your Yoggie box between 3am and 6am on morning of <%= @customer.basket&.next_delivery_date_string(year: false) %>. Need to make changes? Let us know on hello@yoggie.co.uk/020 3627 3852 by <%= @customer.basket&.two_days_before_delivery_date_string(year: false) %></p>
