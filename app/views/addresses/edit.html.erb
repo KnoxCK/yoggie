@@ -2,6 +2,7 @@
   <h3>Change your address</h3>
   <p class="text-center"><%= @message %></p>
   <%= simple_form_for [@customer, @customer.address || Address.new] do |f| %>
+    <%= f.input :last_name, input_html: {value: @customer.last_name}, required: true %>
     <%= f.input :address_line_one, input_html: {value: @customer.address&.address_line_one }, required: true %>
     <%= f.input :address_line_two, input_html: {value: @customer.address&.address_line_two } %>
     <%= f.input :address_line_three, input_html: {value: @customer.address&.address_line_three } %>

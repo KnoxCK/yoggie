@@ -15,6 +15,7 @@
   <p><%= @customer.first_name %> <%= @customer.last_name %></p>
   <p><%= @customer.address.address_line_one %></p>
   <p><%= @customer.address.address_line_two %></p>
+  <p><%= @customer.address.address_line_three %></p>
   <p><%= UKPostcode.parse(@customer.address.postcode) %></p>
   <%= link_to 'Change my address', edit_customer_address_path(@customer, @customer.address) %>
   <br>

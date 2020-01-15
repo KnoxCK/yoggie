@@ -8,7 +8,16 @@ class AddressesController < ApplicationController
   def update
 
     if @customer.address.check_postcode(address_params[:postcode])
+      address_updated_at = @customer.address.updated_at
       @customer.address.update(address_params)
+
+      if @customer.basket&.active? && @customer.address.updated_at != address_updated_at
+        # Send address changed emails if attributes changed
+        AdminMailer.address_change(@customer).deliver_now
+        CustomerMailer.address_change(@customer).deliver_now
+      end
+
+      update_customer_last_name
       redirect_to new_customer_payment_path
     else
       @message = 'We do not deliver to this postcode'
@@ -21,6 +30,7 @@ class AddressesController < ApplicationController
     @address.customer_id = @customer.id
     if @address.check_postcode(address_params[:postcode])
       @address.save
+      update_customer_last_name
       redirect_to new_customer_payment_path
     else
       @message = 'We do not deliver to this postcode'
@@ -36,6 +46,13 @@ class AddressesController < ApplicationController
 
   def set_customer
     @customer = Customer.friendly.find(params[:customer_id])
+  end
+
+  def update_customer_last_name
+    last_name = params[:address][:last_name]
+    return unless last_name.present? && last_name != @customer.last_name
+
+    @customer.update(last_name: last_name)
   end
 
   def address_params

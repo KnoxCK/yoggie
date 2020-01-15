@@ -1,13 +1,6 @@
 <p>Hi <%= @customer.full_name %>,</p>
 
-<p>Congratulations on your <%= @customer.user.standard? ? 'bare yoggie' : 'yoggie' %> order!</p>
-
-Smoothies:
-<ul>
-  <% @customer.basket.smoothies.each_with_index do |smoothie, index| %>
-    <p><%= index + 1 %>. <%= smoothie.name.titleize %></p>
-  <% end %>
-</ul>
+<p>Your address has been successfully changed. Your current address is as follows.</p>
 
 Address:
 <p><%= @customer.address&.address_line_one %></p>
