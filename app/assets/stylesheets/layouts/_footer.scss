@@ -41,14 +41,21 @@
 }
 @media only screen and (max-width: 1000px){
 	.footer {
-		flex-wrap: wrap;
 		justify-content: left;
 	}
 	.footer-logo img {
 	    width: 207px;
 	    margin-top: 15px;
 	    margin-right: -4px;
-	    margin-left: 45px;
 	    margin-bottom: 20px;
 	}
 }
+@media only screen and (max-width: 966px){
+	.footer {
+		flex-direction: column;
+		a {
+			padding-left: 0;
+		}
+	}
+}
+

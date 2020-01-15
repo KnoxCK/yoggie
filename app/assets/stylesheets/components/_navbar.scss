@@ -25,11 +25,12 @@
   width: 35px;
   border-radius: 50%;
 }
-.navbar-yoggie-login-main {
+.navbar-yoggie-login-scroll {
   position: absolute;
   right: 20px;
   margin-top: 2px;
   text-decoration: none;
+  display: flex;
   p {
     text-decoration: none;
     font-weight: lighter;
@@ -46,6 +47,9 @@
   a:hover {
     text-decoration: none;
   }
+}
+.icon-pink {
+  color: $pink !important;
 }
 
 /* Basic navbar item */
@@ -68,6 +72,9 @@
 .navbar-yoggie-link:hover {
   color: $pink;
   text-decoration: none;
+}
+.navbar-yoggie-social {
+      margin-left: 7px;
 }
 
 /* Dropdown menu */
@@ -144,5 +151,15 @@
 }
 .fa-user {
   color: $pink;
+}
+.dropdown {
+  position: absolute;
+  right: 30px;
+  color: $green;
+  top: 62px;
+}
+.dropdown-scroll {
+    right: 86px;
+    top: 25px;
 }
 

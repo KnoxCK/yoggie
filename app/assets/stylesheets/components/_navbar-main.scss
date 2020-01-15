@@ -40,7 +40,7 @@
   justify-content: flex-end;
   flex-direction: row;
   padding-top: 5px;
-  padding-right: 45px;
+  padding-right: 26px;
   a { 
     color: white;
     text-decoration: none;
@@ -58,34 +58,12 @@
   border-left: white solid 1px;
   padding: 0 5px;
 }
-.navbar-yoggie-social {
-  text-decoration: none;
-  padding-left: 10px;
-  p {
-    text-decoration: none;
-    font-weight: lighter;
-  }
-  i {
-    padding: 1px;
-    color: $white;
-    font-size: 16px;
-  }
-  i:hover {
-    padding: 1px;
-    color: $pink;
-  }
-  a {
-    padding-right: 0;
-  }
-  a:hover {
-    text-decoration: none;
-  }
-}
-.navbar-yoggie-login-scroll {
+.navbar-yoggie-login-main {
   position: absolute;
   right: 20px;
   margin-top: 2px;
   text-decoration: none;
+  display: flex;
   p {
     text-decoration: none;
     font-weight: lighter;
@@ -103,8 +81,13 @@
     text-decoration: none;
   }
 }
-.icon-pink {
-  color: $pink !important;
+.dropdown-main {
+    right: 86px;
+    top: 25px;
 }
-
+@media only screen and (max-width: 992px){
+  .navbar-yoggie-social a {
+    display: none;
+  }
+}
 

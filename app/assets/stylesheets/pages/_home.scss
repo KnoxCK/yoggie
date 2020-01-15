@@ -133,20 +133,36 @@
 	}
 }
 
-// OLD ABOUT 
-// .about-our-yoggies {
-// 	margin-top: 20px;
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: center;
-// 	align-content: center;
-// 	align-items: center;
-// 	img {
-// 		width: 80%;
-// 		height: auto;
-// 		margin-bottom: 50px;
-// 	}
-// }
+
+//HOW IT WORKS SECTION
+.how-it-works-section {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	position: relative;
+	h4 {
+		margin-top: 30px;
+	}
+	img {
+		width: auto;
+	    height: 62px;
+	    border-radius: 10px;
+	}
+}
+.how-it-works {
+	display: flex;
+	justify-content: center;
+	padding: 0 50px;
+}
+.how-it-works-icons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 400px;
+	margin: 30px;
+}
+.border-fade img {
+	width: 100%;
+}
 
 
 // ABOUT YOGGIE SECTION
@@ -173,6 +189,44 @@
 .about-content {
 	margin: 10px 20px;
 	max-width: 600px;
+}
+
+
+//YOGGIE BENEFITS SECTION
+.yoggie-benefits {
+	color: $dark-grey;
+	text-align: left;
+	height: 840px;
+	width: 100%;
+	background-size: cover !important;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.yoggie-benefits-content {
+  background-color: $lighter-grey;
+  padding: 40px 60px;
+  border-radius: 5px;
+  margin: 2vw;
+  text-align: center;
+  width: 90%;
+  p {
+  	margin-top: 10px;
+  	font-weight: lighter;
+  }
+}
+.benefits-row {
+	display: flex;
+	justify-content: center;
+}
+.benefits-icons {
+	padding: 15px;
+	width: auto;
+	img {
+		margin: 20px 0;
+		height: 62px;
+	}
 }
 
 
@@ -217,70 +271,115 @@
 	border: 2px dotted $green;
 }
 
+//RESPONSIVE
 
-//YOGGIE BENEFITS SECTION
-.yoggie-benefits {
-	color: $dark-grey;
-	text-align: left;
-	height: 840px;
-	width: 100%;
-	background-size: cover !important;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.yoggie-benefits-content {
-  background-color: $lighter-grey;
-  padding: 40px 60px;
-  border-radius: 5px;
-  margin: 2vw;
-  text-align: center;
-  width: 90%;
-  p {
-  	margin-top: 10px;
-  	font-weight: lighter;
-  }
-}
-.benefits-row {
-	display: flex;
-	justify-content: center;
-}
-.benefits-icons {
-	padding: 15px;
-	width: auto;
-	img {
-		margin: 20px 0;
-		height: 62px;
+@media only screen and (max-width: 1043px){ 
+	.pick-plan {
+		margin: 40px 0 0 0;
+		padding-left: 0;
+	    padding-right: 0;
+	}
+	.yoggie-standard {
+		margin: 5px;
+		width: 90vw;
+	}
+	.yoggie-custom {
+		margin: 5px;
+		width: 90vw;
+	}
+	.landing-price {
+		top: 30px;
+		right: 30px;
+	}
+	.landing-price-bare {
+		top: 30px;
+		right: 30px;
 	}
 }
-
-//HOW IT WORKS SECTION
-.how-it-works-section {
-	margin-top: 20px;
-	margin-bottom: 40px;
-	position: relative;
-	h4 {
-		margin-top: 30px;
+@media only screen and (max-width: 1084px){
+	.pick-plan {
+		flex-wrap: wrap;
 	}
-	img {
+	.how-it-works {
+		flex-direction: column;
+	    align-items: center;
+	    padding: 0;
+	}
+	.how-it-works-icons {
 		width: auto;
-	    height: 62px;
-	    border-radius: 10px;
+	}
+	.what-is-yoggie {
+		flex-direction: column;
+		img {
+			width: auto;
+			max-width: 90vw;
+			margin: 0;
+		}
+	}
+	.what-is-yoggie-second {
+		flex-direction: column-reverse;
+	}
+	.yoggie-benefits {
+		height: auto;
+	}
+	.benefits-row {
+		flex-direction: column;
+	}
+	.testimonials {
+		flex-direction: column;
+		margin-bottom: 10px;
+	}
+	.testimonial {
+		margin-bottom: 0;
+		width: 90vw;
+		height: auto;
+		display: flex;
+	    flex-direction: column;
+	    align-items: center;
 	}
 }
-.how-it-works {
-	display: flex;
-	justify-content: center;
-	padding: 0 50px;
+@media only screen and (max-width: 590px){
+	.pick-plan img {
+		width: 70vw;
+	}
+	.price-btn {
+		display: flex;
+	}
+	.landing-price {
+		position: relative;
+		top: -6px;
+    	left: 20px;
+	}
+	.landing-price-bare {
+		position: relative;
+		top: -6px;
+    	left: 20px;
+	}
 }
-.how-it-works-icons {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 400px;
-	margin: 30px;
+@media only screen and (max-width: 386px){
+	.price-btn {
+		flex-direction: column-reverse;
+	}
+	.landing-price {
+		position: relative;
+		top: -6px;
+    	left: 0px;
+    	margin-left: 0;
+	}
+	.landing-price-bare {
+		position: relative;
+		top: -6px;
+    	left: 0px;
+    	margin-left: 0;
+	}
+	.testimonials-section h2 {
+		padding: 10px;
+	}
+	.pick-plan-title {
+		padding: 15px;
+	}
 }
-.border-fade img {
-	width: 100%;
-}
+
+
+
+

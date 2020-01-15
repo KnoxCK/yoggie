@@ -62,24 +62,35 @@
   display: flex;
   align-items: center;
 }
-@media only screen and (max-width: 1000px){
-  .banner {
-    justify-content: center;
-    height: 62vh;
-  }
-  .banner-content {
-    margin-left: 0;
-    padding: 45px 42px 42px 42px;
-    width: 86%;
-    height: 86%;
-    margin: 0;
-    margin-top: 165px;
-  }
-
-}
-
 .banner-padding {
   padding-bottom: 50px;
 }
-
+@media only screen and (max-width: 1043px){
+  .banner {
+    justify-content: center;
+    height: 100vh;
+    background-position: right;
+  }
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 990px){
+  .banner-content {
+    margin-left: 0;
+    width: 90%;
+    height: 75vh;
+    margin-top: 40px;
+    top: 15vh;
+  }
+}
+@media only screen and (max-width: 335px){
+    .banner-content {
+        padding: 25px 0px 25px 0px;
+    }
+}
 

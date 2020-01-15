@@ -27,20 +27,22 @@
       <i class="fa fa-user icon-pink"></i>
     <%end%>
   <% end %>
-  <%= link_to "https://www.facebook.com/YoggieSmoothies", target: "_blank" do %>
-    <i class="fa fa-facebook"></i>
-  <% end %>
-  <%= link_to "https://twitter.com/YoggieSmoothies", target: "_blank" do %>
-    <i class="fa fa-twitter"></i>
-  <% end %>
-  <%= link_to "https://www.instagram.com/yoggiesmoothies/", target: "_blank" do %>
-    <i class="fa fa-instagram"></i>
-  <% end %>
+  <div class="navbar-yoggie-social">
+    <%= link_to "https://www.facebook.com/YoggieSmoothies", target: "_blank" do %>
+      <i class="fa fa-facebook"></i>
+    <% end %>
+    <%= link_to "https://twitter.com/YoggieSmoothies", target: "_blank" do %>
+      <i class="fa fa-twitter"></i>
+    <% end %>
+    <%= link_to "https://www.instagram.com/yoggiesmoothies/", target: "_blank" do %>
+      <i class="fa fa-instagram"></i>
+    <% end %>
+  </div>
 </div>
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-yoggie-item hidden-md hidden-lg">
-    <div class="dropdown">
+    <div class="dropdown dropdown-main">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-yoggie-dropdown-menu">
         <li><%= link_to "Home", root_path %></li>
