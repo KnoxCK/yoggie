@@ -100,4 +100,29 @@
 		text-decoration: underline;
 	}
 }
+@media only screen and (max-width: 1000px) {
+	.customer-vitals {
+		flex-direction: column;
+	}
+	.customer-vitals-details {
+		width: 100%;
+		border-right: 0;
+		border-bottom: 1px solid #E1E1E1;
+	}
+	.customer-vitals-nutrition {
+		width: 100%;
+	}
+
+}
+@media only screen and (max-width: 600px) {
+	.customer-vitals-box {
+		margin: 0;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.customer-vitals-box {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
 

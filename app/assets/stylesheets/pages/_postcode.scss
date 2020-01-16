@@ -12,3 +12,8 @@
 .postcode-div {
 	margin-top: 30px;
 }
+@media only screen and (max-width: 800px) {
+    .postcode-wrapper {
+    	margin: 0;
+    }
+}

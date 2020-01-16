@@ -99,5 +99,14 @@
 .article-cards-grid img {
   object-fit: cover;
 }
-
+@media only screen and (max-width: 600px) {
+  .articles-intro {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+  .article img {
+    height: auto;
+    width: 90vw;
+  }
+}
 
