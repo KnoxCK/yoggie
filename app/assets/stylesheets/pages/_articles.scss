@@ -104,9 +104,18 @@
       padding-left: 15px;
       padding-right: 15px;
   }
-  .article img {
+  .article-wrapper img {
     height: auto;
-    width: 90vw;
+    width: 90%;
   }
+  .article-cards {
+    width: auto;
+    margin: 0;
+  }
+  .article-cards-grid img {
+    height: auto;
+    width: 90%;
+  }
+
 }
 
