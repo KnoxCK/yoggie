@@ -90,7 +90,7 @@
 
 @media only screen and (max-width: 1500px) {
 	.our-smoothies {
-		padding: 0 5%;
+		padding: 20px 5%;
 	}
 }
 @media only screen and (max-width: 473px) {
@@ -108,10 +108,16 @@
 		margin-bottom: 30px;
 	}
 	.our-smoothies {
-		padding: 0;
+		padding: 20px 0;
 	}
 	.standard-yoggie {
 		width: 90vw;
+	}
+	.standard-yoggie-content {
+		height: auto;
+	}
+	.standard-yoggie-content h3 {
+		margin-bottom: 0;
 	}
 }
 

@@ -45,3 +45,9 @@
 .safe-place-text title {
 	text-align:left !important;
 }
+@media only screen and (max-width: 850px) {
+	.review-order-wrapper {
+    	padding: 120px 10px;
+        margin: 0;
+    }
+}

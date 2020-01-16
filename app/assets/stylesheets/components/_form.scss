@@ -21,3 +21,8 @@
 .form-control {
 	font-weight: lighter;
 }
+@media only screen and (max-width: 780px) {
+	.form-wrapper {
+    	margin: 5% 20px;
+    }
+}

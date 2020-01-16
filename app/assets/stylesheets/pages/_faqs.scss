@@ -47,3 +47,14 @@
 	text-align: left;
 	padding: 30px 10px;
 }
+@media only screen and (max-width: 560px) {
+	.faqs-content {
+		flex-direction: column;
+	}
+	.faqs-section h4 {
+		width: auto;
+	}
+}
+
+
+
