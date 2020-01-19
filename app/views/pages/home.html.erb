@@ -216,55 +216,6 @@
 
 <!-- Hover -->
 
-<!-- <script>
-  document.getElementById("how-it-worksl").addEventListener("click", function(event) {
-    event.preventDefault();
-
-    $('html, body').animate({
-        scrollTop: $("#how-it-works").offset().top
-    }, 2000);
-  });
-
-
-  document.getElementById("about-yoggies").addEventListener("click", function(event) {
-    event.preventDefault();
-
-    $('html, body').animate({
-        scrollTop: $("#about").offset().top
-    }, 2000);
-  });
-
-  document.getElementById("how-it-works1").addEventListener("click", function(event) {
-    event.preventDefault();
-
-    $('html, body').animate({
-        scrollTop: $("#how-it-works").offset().top
-    }, 2000);
-});
-
-  document.getElementById("about-yoggies1").addEventListener("click", function(event) {
-    event.preventDefault();
-
-    $('html, body').animate({
-        scrollTop: $("#about").offset().top
-    }, 2000);
-  });
-
-  document.getElementById("how-it-worksl").addEventListener("click", function(event) {
-    event.preventDefault();
-
-    $('html, body').animate({
-        scrollTop: $("#how-it-works").offset().top
-    }, 2000);
-  });
-
-</script>
- -->
-
-
-
-<!-- Hover -->
-
 
 <script>
   <!--
@@ -274,7 +225,7 @@
        page.stop();
    });
 
-   $("html, body").animate({ scrollTop: $("#how-it-works").offset().top }, 'slow', function(){
+   $("html, body").animate({ scrollTop: $("#how-it-works").offset().top }, 2000, function(){
        $("html, body").off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
    });
 
@@ -287,75 +238,39 @@ document.getElementById("about-yoggies").addEventListener("click", function(even
        page.stop();
    });
 
-   $("html, body").animate({ scrollTop: $("#about").offset().top }, 'slow', function(){
+   $("html, body").animate({ scrollTop: $("#about").offset().top }, 2000, function(){
        $("html, body").off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
    });
 
    return false;
 });
-// document.getElementById("how-it-worksl").addEventListener("click", function(event) {
-//     event.preventDefault();
 
-//     $('html, body').animate({
-//         scrollTop: $("#how-it-works").offset().top
-//     }, 2000);
+document.getElementById("how-it-works1").addEventListener("click", function(event) {
 
+   $("html, body").on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function(){
+       page.stop();
+   });
 
-//   document.getElementById("about-yoggies").addEventListener("click", function(event) {
-//     event.preventDefault();
+   $("html, body").animate({ scrollTop: $("#how-it-works").offset().top }, 2000, function(){
+       $("html, body").off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
+   });
 
-//     $('html, body').animate({
-//         scrollTop: $("#about").offset().top
-//     }, 2000);
-//   });
+   return false;
+});
 
-//   document.getElementById("how-it-works1").addEventListener("click", function(event) {
-//     event.preventDefault();
+document.getElementById("about-yoggies1").addEventListener("click", function(event) {
 
-//     $('html, body').animate({
-//         scrollTop: $("#how-it-works").offset().top
-//     }, 2000);
-// });
+   $("html, body").on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function(){
+       page.stop();
+   });
 
-//   document.getElementById("about-yoggies1").addEventListener("click", function(event) {
-//     event.preventDefault();
+   $("html, body").animate({ scrollTop: $("#about").offset().top }, 2000, function(){
+       $("html, body").off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
+   });
 
-//     $('html, body').animate({
-//         scrollTop: $("#about").offset().top
-//     }, 2000);
-//   });
-
-//   document.getElementById("how-it-worksl").addEventListener("click", function(event) {
-//     event.preventDefault();
-
-//     $('html, body').animate({
-//         scrollTop: $("#how-it-works").offset().top
-//     }, 2000);
-//   });
-
-  // --------------
-
-//   var page = $("html, body");
-
-// $( "section" ).click(function(e) {
-
-//    $("html, body").on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function(){
-//        page.stop();
-//    });
-
-//    $("html, body").animate({ scrollTop: $(this).position().top }, 'slow', function(){
-//        $("html, body").off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
-//    });
-
-//    return false;
-// });
-
+   return false;
+});
 </script>
-
-
-
-
-
 
 
 
