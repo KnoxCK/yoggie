@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   patch 'customers/:id/dashboard_update', to: "customers#dashboard_update", as: :dashboard_update
   get 'customers/:id/update_status', to: "customers#update_status", as: :update_status
   get 'blog', to: 'articles#index'
+  get 'about', to: 'pages#about'
 # basket - customers/:customer_id/baskets/:basket_id
 
   resources :articles, only: [:create, :new, :edit, :update]

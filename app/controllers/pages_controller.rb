@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :smoothies, :smoothie, :contact, :privacy, :terms, :faqs]
+  skip_before_action :authenticate_user!, only: [:home, :smoothies, :smoothie, :about, :contact, :privacy, :terms, :faqs]
 
   def home
     # @popular = InstagramApi.user.recent_media
@@ -9,6 +9,9 @@ class PagesController < ApplicationController
   end
 
   def smoothie
+  end
+
+  def about
   end
 
   def contact
