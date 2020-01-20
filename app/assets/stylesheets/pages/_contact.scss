@@ -23,3 +23,25 @@
  		text-decoration: underline;
  	}
 }
+.about-content {
+	margin: 10px 20px;
+	max-width: 600px;
+}
+.about-section {
+	max-width: 1000px;
+	p {
+		text-align: left;
+	}
+	img {
+		width: 300px;
+		float: left;
+		margin: 0 10px 10px 10px;
+	}
+}
+@media only screen and (max-width: 340px){
+	.about-section {
+		p {
+			max-width: 300px;
+		}
+	}
+}

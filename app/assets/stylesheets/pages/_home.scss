@@ -169,7 +169,6 @@
 .what-is-yoggie {
 	display: flex;
 	justify-content: center;
-
 	text-align: left;
 	align-items: center;
 	h4 {
@@ -190,7 +189,17 @@
 	margin: 10px 20px;
 	max-width: 600px;
 }
-
+.about-section {
+	max-width: 1100px;
+	p {
+		text-align: left;
+	}
+	img {
+		width: 300px;
+		float: left;
+		margin: 0 10px 10px 10px;
+	}
+}
 
 //YOGGIE BENEFITS SECTION
 .yoggie-benefits {
@@ -357,7 +366,7 @@
     	left: 20px;
 	}
 	.section-padding {
-		padding: 0;
+		padding: 10px;
 	}
 }
 @media only screen and (max-width: 386px){
