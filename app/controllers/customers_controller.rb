@@ -133,7 +133,7 @@ class CustomersController < ApplicationController
       current_user.save
 
       change_subscription_and_reset_smoothies
-
+      flash[:notice] = "Successfully changed plan to standard"
       redirect_to smoothies_path
     else
       session[:standard] = true
@@ -149,7 +149,7 @@ class CustomersController < ApplicationController
       current_user.save
 
       change_subscription_and_reset_smoothies
-
+      flash[:notice] = "Successfully changed plan to tailored"
       redirect_to smoothies_path
     else
       session[:standard] = false
