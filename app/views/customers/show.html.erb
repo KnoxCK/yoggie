@@ -119,6 +119,13 @@
           <div class="change-my-yoggies">
             <%= link_to 'Pause My Subscription', pause_subscription_customer_basket_path(@customer, @customer.basket), method: :patch if @basket.active? %>
           </div>
+          <% unless @customer&.basket&.status == 'cancelled' %>
+            <% if @customer.tailored? %>
+              <%= link_to 'Change my plan to standard', choose_standard_path %>
+            <% elsif @customer.standard? %>
+              <%= link_to 'Change my plan to tailored', choose_custom_path %>
+            <% end %>
+          <% end %>
         </div>
     <br>
 	</div>

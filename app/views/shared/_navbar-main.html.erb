@@ -7,10 +7,12 @@
   <div class="main-nav hidden-xs hidden-sm">
     <%= link_to "How Yoggie Works", root_path(:anchor => "how-it-works"), class: "navbar-yoggie-link" %>
     <%= link_to "What is Yoggie?", root_path(:anchor => "about-yoggies"), class: "navbar-yoggie-link"  %>
-    <%= link_to "Our Yoggies", choose_standard_path, class: "navbar-yoggie-link"  %>
+    <%= link_to "Our Yoggies",  smoothies_path, class: "navbar-yoggie-link"  %>
   </div>
 
-  <%= link_to "CREATE MY TAILORED YOGGIE", choose_custom_path, class: 'btn-navbar-scroll' %>
+  <% unless current_user&.customer&.basket %>
+    <%= link_to "CREATE MY TAILORED YOGGIE", choose_custom_path, class: 'btn-navbar-scroll' %>
+  <% end %>
 
 <div class="navbar-yoggie-login-main">
   <% if current_user %>
