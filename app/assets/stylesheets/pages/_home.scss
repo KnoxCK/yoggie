@@ -166,10 +166,10 @@
 
 
 // ABOUT YOGGIE SECTION
-.about-yoggie {
+.what-is-yoggie {
 	display: flex;
 	justify-content: center;
-	flex-direction: column;
+
 	text-align: left;
 	align-items: center;
 	h4 {
@@ -310,6 +310,7 @@
 	}
 	.what-is-yoggie {
 		flex-direction: column;
+		padding: 0;
 		img {
 			width: auto;
 			max-width: 90vw;
@@ -354,6 +355,9 @@
 		position: relative;
 		top: -6px;
     	left: 20px;
+	}
+	.section-padding {
+		padding: 0;
 	}
 }
 @media only screen and (max-width: 386px){

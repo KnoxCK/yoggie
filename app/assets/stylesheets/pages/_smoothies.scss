@@ -90,7 +90,34 @@
 
 @media only screen and (max-width: 1500px) {
 	.our-smoothies {
-		padding: 0 5%;
+		padding: 20px 5%;
+	}
+}
+@media only screen and (max-width: 473px) {
+	.results-wrapper {
+		margin: 20px 0 !important;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.macro-main {
+		display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	}
+	.macro-info-left {
+		margin-bottom: 30px;
+	}
+	.our-smoothies {
+		padding: 20px 0;
+	}
+	.standard-yoggie {
+		width: 90vw;
+	}
+	.standard-yoggie-content {
+		height: auto;
+	}
+	.standard-yoggie-content h3 {
+		margin-bottom: 0;
 	}
 }
 

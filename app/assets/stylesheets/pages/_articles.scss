@@ -10,33 +10,28 @@
 .article-button {
   margin-bottom: 20px;
 }
-
 .article {
   margin: 40px 0;
   h6{
     margin-bottom: 30px;
   }
 }
-
 .article-cards {
   padding: 5px;
   margin:10px;
   width: 307px;
   position: relative;
 }
-
 .unpublished {
   position: absolute;
   top: 10px;
   left: 10px;
 }
-
 .article-date h6 {
   color: #F7CBCB;
   font-family: $body-font;
   font-size: 13px;
 }
-
 .article-cards-grid {
   display: grid;
   margin: 30px;
@@ -99,5 +94,25 @@
 .article-cards-grid img {
   object-fit: cover;
 }
-
+@media only screen and (max-width: 600px) {
+  .article p {
+    overflow-wrap: break-word;
+  }
+  .articles-intro {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+  .articles-intro img {
+    height: auto !important;
+    width: 90% !important;
+  }
+  .article-cards {
+    width: 90%;
+    margin: 0;
+  }
+  .article-cards-grid img {
+    height: auto;
+    width: 90%;
+  }
+}
 
