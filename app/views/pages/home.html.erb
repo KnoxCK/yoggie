@@ -220,12 +220,12 @@
 <script>
   <!--
   document.getElementById("how-it-worksl").addEventListener("click", function(event) {
-
+    event.preventDefault();
    $("html, body").on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function(){
         $("html, body").stop();
    });
 
-   $("html, body").animate({ scrollTop: $("#how-it-works").offset().top }, 2000, function(){
+   $("html, body").animate({ scrollTop: $("#how-it-works").offset().top }, 1000, function(){
        $("html, body").off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
    });
 
@@ -233,12 +233,12 @@
 });
 
 document.getElementById("about-yoggies").addEventListener("click", function(event) {
-
+    event.preventDefault();
    $("html, body").on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function(){
        $("html, body").stop();
    });
 
-   $("html, body").animate({ scrollTop: $("#about").offset().top }, 2000, function(){
+   $("html, body").animate({ scrollTop: $("#about").offset().top }, 1000, function(){
        $("html, body").off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
    });
 
@@ -246,12 +246,12 @@ document.getElementById("about-yoggies").addEventListener("click", function(even
 });
 
 document.getElementById("how-it-works1").addEventListener("click", function(event) {
-
+    event.preventDefault();
    $("html, body").on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function(){
        $("html, body").stop();
    });
 
-   $("html, body").animate({ scrollTop: $("#how-it-works").offset().top }, 2000, function(){
+   $("html, body").animate({ scrollTop: $("#how-it-works").offset().top }, 1000, function(){
        $("html, body").off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
    });
 
@@ -259,12 +259,12 @@ document.getElementById("how-it-works1").addEventListener("click", function(even
 });
 
 document.getElementById("about-yoggies1").addEventListener("click", function(event) {
-
+    event.preventDefault();
    $("html, body").on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function(){
        $("html, body").stop();
    });
 
-   $("html, body").animate({ scrollTop: $("#about").offset().top }, 2000, function(){
+   $("html, body").animate({ scrollTop: $("#about").offset().top }, 1000, function(){
        $("html, body").off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
    });
 
