@@ -2,7 +2,7 @@
 
 <p>Your order has been successfully changed. Your new order information is as follows.</p>
 
-<%= @customer.standard? ? 'STANDARD' : 'TAILORED' %> Smoothies:
+<%= @customer.standard? ? 'Standard' : 'Tailored' %> Smoothies:
 <ul>
   <% @customer.basket.smoothies.each_with_index do |smoothie, index| %>
     <p><%= index + 1 %>. <%= smoothie.name.titleize %></p>
